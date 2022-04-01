@@ -1,0 +1,143 @@
+---
+settings:
+  name: Set up and administration
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-cn,us-en,ja-jp,ko-kr
+sidebar:
+  entries:
+  - title: 所有 Cloud Manager 文档
+    url: https://docs.netapp.com/us-en/cloud-manager-family
+  - title: 设置和管理文档
+    url: "/index.html"
+  - title: 发行说明
+    entries:
+    - title: 新增功能
+      url: "/whats-new.html"
+    - title: 限制
+      url: "/reference-limitations.html"
+  - title: 入门
+    entries:
+    - title: 了解 Cloud Manager
+      url: "/concept-overview.html"
+    - title: 入门检查清单
+      url: "/reference-checklist-cm.html"
+    - title: 注册到 Cloud Central
+      url: "/task-signing-up.html"
+    - title: 登录到 Cloud Manager
+      url: "/task-logging-in.html"
+    - title: 设置 NetApp 帐户
+      entries:
+      - title: 了解 NetApp 客户
+        url: "/concept-netapp-accounts.html"
+      - title: 设置工作空间和用户
+        url: "/task-setting-up-netapp-accounts.html"
+    - title: 设置连接器
+      entries:
+      - title: 了解连接器
+        url: "/concept-connectors.html"
+      - title: 设置网络
+        url: "/reference-networking-cloud-manager.html"
+      - title: 在 AWS 中创建连接器
+        url: "/task-creating-connectors-aws.html"
+      - title: 在 Azure 中创建连接器
+        url: "/task-creating-connectors-azure.html"
+      - title: 在 Google Cloud 中创建 Connector
+        url: "/task-creating-connectors-gcp.html"
+    - title: 下一步行动
+      url: "/reference-whats-next.html"
+  - title: 管理 Cloud Manager
+    entries:
+    - title: NetApp 帐户
+      entries:
+      - title: 管理您的帐户
+        url: "/task-managing-netapp-accounts.html"
+      - title: 监控帐户中的操作
+        url: "/task-monitor-cm-operations.html"
+      - title: 用户角色
+        url: "/reference-user-roles.html"
+    - title: 连接器
+      entries:
+      - title: 高级部署
+        entries:
+        - title: 从 AWS Marketplace 创建
+          url: "/task-launching-aws-mktp.html"
+        - title: 从 Azure Marketplace 创建
+          url: "/task-launching-azure-mktp.html"
+        - title: 通过 Internet 在您自己的主机上安装
+          url: "/task-installing-linux.html"
+        - title: 在不使用 Internet 的情况下在内部安装
+          url: "/task-install-connector-onprem-no-internet.html"
+      - title: 查找 Connector 的系统 ID
+        url: "/task-finding-system-id.html"
+      - title: 管理现有连接器
+        url: "/task-managing-connectors.html"
+      - title: 安装 HTTPS 证书
+        url: "/task-installing-https-cert.html"
+      - title: 配置代理设置
+        url: "/task-configuring-proxy.html"
+      - title: 默认配置
+        url: "/reference-connector-default-config.html"
+    - title: AWS 凭据
+      entries:
+      - title: 概述
+        url: "/concept-accounts-aws.html"
+      - title: 管理凭据和订阅
+        url: "/task-adding-aws-accounts.html"
+    - title: Azure credentials
+      entries:
+      - title: 概述
+        url: "/concept-accounts-azure.html"
+      - title: 管理凭据和订阅
+        url: "/task-adding-azure-accounts.html"
+    - title: Google Cloud 凭据
+      entries:
+      - title: 概述
+        url: "/concept-accounts-gcp.html"
+      - title: 管理凭据和订阅
+        url: "/task-adding-gcp-accounts.html"
+    - title: NetApp 支持站点帐户
+      url: "/task-adding-nss-accounts.html"
+  - title: 参考
+    entries:
+    - title: Connector 的 AWS 权限
+      url: "/reference-permissions-aws.html"
+    - title: Connector 的 Azure 权限
+      url: "/reference-permissions-azure.html"
+    - title: 适用于 Connector 的 Google Cloud 权限
+      url: "/reference-permissions-gcp.html"
+  - title: 知识和支持
+    entries:
+    - title: 注册以获得支持
+      url: "/task-support-registration.html"
+    - title: 获取帮助
+      url: "/task-get-help.html"
+  - title: 法律声明
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: 入门
+    links:
+    - title: 了解 Cloud Manager
+      url: concept-overview.html
+    - title: 入门检查清单
+      url: reference-checklist-cm.html
+  - title: 管理 Cloud Manager
+    links:
+    - title: 管理您的 NetApp 帐户
+      url: task-managing-netapp-accounts.html
+    - title: 管理连接器
+      url: task-managing-connectors.html
+  - title: 博客社区
+    links:
+    - title: NetApp 社区
+      url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+    - title: Cloud Central 博客
+      url: https://cloud.netapp.com/blog
+    - title: 云网络研讨会
+      url: https://cloud.netapp.com/events
+product-family: {}

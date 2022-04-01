@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: reference-permissions-aws.html 
+keywords: permissions, actions, aws, aws permissions 
+summary: Cloud Manager 需要在云提供商中执行操作的权限。这些权限包括在 NetApp 提供的策略中。您可能希望了解 Cloud Manager 使用这些权限执行的操作。 
+---
+= AWS 中连接器的所需权限
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager 需要在云提供商中执行操作的权限。中包括这些权限 https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp 提供的策略"^]。您可能希望了解 Cloud Manager 使用这些权限执行的操作。
+
+Cloud Manager 使用 AWS 帐户对几个 AWS 服务进行 API 调用、包括 EC2 、 S3 、 Cloudformation 、 IAM 、 Security Token Service （安全令牌服务， STS ）和密钥管理服务（ KMS ）。
+
+[cols="50,50"]
+|===
+| 操作 | 目的 
+
+
+| "EC2 ： StartInstances " ， "EC2 ： StopInstances " ， "EC2 ： Describe Instances " ， "EC2 ： Describe InstanceStatus" ， "EC2 ： RunInstances " ， "EC2 ：终端实例 " ， "EC2 ： ModifyInstanceAttribute" ， | 启动 Cloud Volumes ONTAP 实例并停止、启动和监控实例。 
+
+
+| "EC2 ：描述实例属性 " 、 | 验证是否已为支持的实例类型启用增强网络。 
+
+
+| "EC2 ：描述图 " 、 "EC2 ：描述图 " 、 | 启动 Cloud Volumes ONTAP HA 配置。 
+
+
+| "EC2 ：创建标记 " 、 | 标记 Cloud Manager 使用 "Workingviron" 和 "Workingvironmid" 标记创建的每个资源。Cloud Manager 使用这些标签进行维护和成本分配。 
+
+
+| "EC2 ： CreateVolume" ， "EC2 ： Describe Volumes" ， "EC2 ： ModifyVolumeAttribute" ， "EC2 ： AttachVolume" ， "EC2 ： DeleteVolume" ， "EC2 ：详细卷 " ， | 管理 Cloud Volumes ONTAP 用作后端存储的 EBS 卷。 
+
+
+| "EC2 ： CreateSecurityGroup" ， "EC2 ： DeleteSecurityGroup" ， "EC2 ： Describe SecurityGroups" ， "EC2 ： RevokeSecurityGroupEated" ， "EC2 ： AuthorizeSecurityGroupEated" ， "EC2 ： AuthorizeSecurityGroupIn防护 " ， "EC2 ： RevokeSecurityGroupIn防护 " ， | 为 Cloud Volumes ONTAP 创建预定义的安全组。 
+
+
+| "EC2 ： CreateNetworkInterface" ， "EC2 ： Describe NetworkInterfaces" ， "EC2 ： DeleteNetworkInterface" ， "EC2 ： ModifyNetworkInterfaceAttribute" ， | 在目标子网中为 Cloud Volumes ONTAP 创建和管理网络接口。 
+
+
+| "EC2 ：描述性子网 " 、 "EC2 ：描述性 VPCS" 、 | 获取目标子网和安全组的列表、在为 Cloud Volumes ONTAP 创建新的工作环境时需要这些子网和安全组。 
+
+
+| "EC2 ：说明 " 、 | 确定启动 Cloud Volumes ONTAP 实例时的 DNS 服务器和默认域名。 
+
+
+| "EC2 ： CreateSnapshot " 、 "EC2 ： DeleteSnapshot " 、 "EC2 ：描述性快照 " 、 | 在初始设置期间和停止 Cloud Volumes ONTAP 实例时拍摄 EBS 卷的快照。 
+
+
+| "EC2 ： GetConsoleOutput " 、 | 捕获附加到 AutoSupport 消息的 Cloud Volumes ONTAP 控制台。 
+
+
+| "EC2 ：描述性密钥对 " 、 | 在启动实例时获取可用密钥对的列表。 
+
+
+| "EC2 ：描述性 " 、 | 获得可用 AWS 区域的列表。 
+
+
+| "EC2 ：删除标记 " 、 "EC2 ：描述标记 " 、 | 管理与 Cloud Volumes ONTAP 实例关联的资源标签。 
+
+
+| "CloudFormation ： CreateStack" ， "CloudFormation ： DeleteStack" ， "CloudFormation ： Describe Stacks" ， "CloudFormation ： Describe StackEvents " ， "CloudFormation ： ValidateTemplate" ， | 启动 Cloud Volumes ONTAP 实例。 
+
+
+| "IAM ： PassRole" ， "iam ： CreateRole" ， "iam ： DeleteRole" ， "iam ： PutRolePolicy" ， "iam ： CreateInstanceProfile" ， "IAM ： DeleteRolePolicy" ， "iam ： AddRoleToInstanceProfile" ， "iam ： RemoveRoleFromInstanceProfile" ， "iam ： DeleteInstanceProfile" ， | 启动 Cloud Volumes ONTAP HA 配置。 
+
+
+| "IAM ： ListInstanceProfiles" ， "STS ： DecodeAuthorizationMessage" ， "EC2 ： AssociateIamInstanceProfile" ， "EC2 ： Describe IamInstanceProfileAssociations" ， "EC2 ： DisassociateIamInstanceProfile" ， | 管理 Cloud Volumes ONTAP 实例的实例配置文件。 
+
+
+| "S3 ： GetBucketTagging" ， "S3 ： GetBucketLocation" ， "S3 ： ListAllMyBuckets" ， "S3 ： ListBucket" | 获取有关 AWS S3 存储槽的信息、以便 Cloud Manager 可以与 NetApp Data Fabric Cloud Sync 服务集成。 
+
+
+| "S3 ： CreateBucket" ， "S3 ： DeleteBucket" ， "S3 ： GetLifeycleConfiguration" ， "S3 ： PutLifeycleConfiguration" ， "S3 ： PutBucketTagging" ， "S3 ： ListBucketVersions" ， "S3 ： GetBucketPolicyStatus" ， "S3 ： GetBucketPublicAccessBlock" ， "S3 ： GetBucketAcl" ， "S3 ： GetBucketPolicy" ， "S3 ： PutBucketPublicAccessBlock" | 管理 Cloud Volumes ONTAP 系统用作数据分层容量层的 S3 存储分段。 
+
+
+| "kms ： List*" ， "kms ： reencryption*" ， "kms ： dese*" ， "kms ： CreateGrant" ， | 使用 AWS 密钥管理服务（ KMS ）对 Cloud Volumes ONTAP 启用数据加密。 
+
+
+| "CE ： GetReservationUtilization" ， "ce ： GetDimensionValues" ， "ce ： GetCostAndUsage" ， "ce ： GetTags " | 获取有关 Cloud Volumes ONTAP 的 AWS 成本数据。 
+
+
+| "EC2 ： CreatePlacementGroup" ， "EC2 ： DeletePlacementGroup" | 在单个 AWS 可用性区域中部署 HA 配置时， Cloud Manager 会启动 AWS 分布式放置组中的两个 HA 节点和调解器。 
+
+
+| "EC2 ： Describe 保留实例服务 " | Cloud Manager 在 Cloud Data sense 部署中使用权限来选择要使用的实例类型。 
+
+
+| "EC2 ： CreateTags " ， "EC2 ： DeleteTags " ， "EC2 ： Describe Tags " ， "tag ： getResources" ， "tag ： getTagKeys" ， "tag ： getTagValues " ， "tag ： TagResources" ， "tag ： UnagResources" | 用于使用 Cloud Manager 标记服务管理 AWS 资源上的标记。 
+
+
+| "S3 ： DeleteBucket" ， "S3 ： GetLifeycleConfiguration" ， "S3 ： PutLifeycleConfiguration" ， "S3 ： PutBucketTagging" ， "S3 ： ListBucketVersions" ， "S3 ： GetObject" ， "S3 ： ListBucket" ， "S3 ： ListAllMyBuckets" ， "S3 ： GetBucketTagging" ， "S3 ： GetBucketLocation" "S3 ： GetBucketPolicyStatus" ， "S3 ： GetBucketPublicAccessBlock" ， "S3 ： GetBucketAcl" ， "S3 ： GetBucketPolicy" ， "S3 ： PutBucketPublicAccessBlock" | Cloud Manager 会在您启用备份到 S3 服务时使用这些权限。 
+
+
+| "EKS ： ListClusters" ， "EKS ： Describe Cluster" ， "iam ： GetInstanceProfile" | 用于发现 Amazon EKS 集群。 
+|===

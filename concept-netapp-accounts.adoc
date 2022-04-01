@@ -1,0 +1,134 @@
+---
+sidebar: sidebar 
+permalink: concept-netapp-accounts.html 
+keywords: accounts, workspaces, Connector, users, cloud central, admin, Account Admin, Workspace Admin, account settings, workspaces, users, members, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces 
+summary: NetApp 帐户提供多租户功能，您可以在 Cloud Manager 中将用户和资源组织在隔离的工作空间中。 
+---
+= 了解 NetApp 客户
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+_NetApp 帐户 _ 提供多租户功能，可用于在 Cloud Manager 中将用户和资源组织在隔离的工作空间中。
+
+例如，多个用户可以在称为 _workworkspace 的隔离环境中部署和管理 Cloud Volumes ONTAP 系统。除非共享这些工作空间，否则其他用户不会看到这些工作空间。
+
+首次访问 Cloud Manager 时，系统会提示您选择或创建 NetApp 帐户：
+
+image:screenshot_account_selection.gif["Cloud Manager 设置向导的屏幕截图，提示您输入要在其中创建 Cloud Manager 的 NetApp 帐户。"]
+
+然后，帐户管理员可以通过管理用户（成员），工作空间，连接器和订阅来修改此帐户的设置：
+
+image:screenshot_account_settings.gif["屏幕截图显示了 \" 管理帐户 \" 小工具，您可以从中管理用户，工作空间和连接器。"]
+
+有关分步说明，请参见 link:task-setting-up-netapp-accounts.html["设置 NetApp 帐户"]。
+
+
+
+== MAX Cloud Volumes ONTAP 系统
+
+无论使用哪种许可模式，每个 NetApp 帐户最多只能有 20 个 Cloud Volumes ONTAP 系统。
+
+system_ 是 HA 对或单节点系统。例如，如果您有两个 Cloud Volumes ONTAP HA 对和两个单节点系统，则总共有 4 个系统，您的帐户中还有 16 个额外的系统。
+
+如有任何疑问，请联系您的客户代表或销售团队。
+
+
+
+== 帐户设置
+
+通过 Cloud Manager 中的 Manage Account 小工具，客户管理员可以管理 NetApp 帐户。如果您刚刚创建了帐户，则从头开始。但是，如果您已设置帐户，则会看到与该帐户关联的用户，工作空间，连接器和订阅。
+
+
+
+== 概述
+
+" 概述 " 页面将显示 " 帐户名称 " 和 " 帐户 ID" 。注册某些服务时，您可能需要提供帐户 ID 。此页面还包括一些 Cloud Manager 配置选项。
+
+
+
+== 成员
+
+成员是您与 NetApp 帐户关联的 NetApp Cloud Central 用户。通过将用户与某个帐户以及该帐户中的一个或多个工作空间相关联，这些用户可以在 Cloud Manager 中创建和管理工作环境。
+
+关联用户时，您会为其分配一个角色：
+
+* _Account Admin_ ：可以在 Cloud Manager 中执行任何操作。
+* _Workspace Admin_ ：可以在分配的工作空间中创建和管理资源。
+* _Compliance Viewer_ ：只能查看 Cloud Data 感知合规性信息，并为其有权访问的系统生成报告。
+* _SnapCenter Admin_ ：可以使用 SnapCenter 服务创建应用程序一致的备份并使用这些备份还原数据。_ 此服务当前处于测试阶段。 _
+
+
+link:reference-user-roles.html["详细了解这些角色"]。
+
+
+
+== 工作空间
+
+在 Cloud Manager 中，工作空间会将任意数量的 _work2_ 环境与其他工作环境隔离。除非帐户管理员将管理员与工作空间关联，否则 Workspace 管理员无法访问工作空间中的工作环境。
+
+工作环境代表存储系统：
+
+* 单节点 Cloud Volumes ONTAP 系统或 HA 对
+* 网络中的内部 ONTAP 集群
+* NetApp 私有存储配置中的 ONTAP 集群
+
+
+link:task-setting-up-netapp-accounts.html["了解如何添加工作空间"]。
+
+
+
+== 连接器
+
+借助连接器， Cloud Manager 可以管理公有云环境中的资源和流程。连接器在云提供商中部署的虚拟机实例上运行，或者在您配置的内部主机上运行。
+
+您可以将 Connector 与多个 NetApp 云数据服务结合使用。例如，如果您已经有适用于 Cloud Manager 的 Connector ，则可以在设置 Cloud Tiering 服务时选择它。
+
+link:concept-connectors.html["了解有关连接器的更多信息"]。
+
+
+
+== 订阅
+
+这些是与选定帐户关联的 NetApp 订阅。
+
+当您从云提供商的市场订阅 Cloud Manager 时，系统会将您重定向到 Cloud Central ，您需要在其中保存订阅并将其与特定帐户关联。
+
+订阅后，每个订阅均可从 " 管理帐户 " 小工具中获取。您将只看到与当前正在查看的帐户关联的订阅。
+
+您可以选择重命名订阅并取消订阅与一个或多个帐户的关联。
+
+例如，假设您有两个帐户，每个帐户都通过单独的订阅付费。您可能会解除某个订阅与某个帐户的关联，以便该帐户中的用户在创建 Cloud Volume ONTAP 工作环境时不会意外选择错误的订阅。
+
+link:task-managing-netapp-accounts.html["了解如何管理订阅"]。
+
+
+
+== 示例
+
+以下示例说明了如何设置帐户。
+
+
+NOTE: 在后面的两个示例映像中， Connector 和 Cloud Volumes ONTAP 系统实际上并不驻留在 NetApp 帐户中—它们运行在云提供商中。这是每个组件之间关系的概念表示。
+
+
+
+=== 示例 1
+
+以下示例显示了一个使用两个工作空间创建隔离环境的帐户。第一个工作空间用于生产环境，第二个工作空间用于开发环境。
+
+image:diagram_cloud_central_accounts_one.png["显示包含两个工作空间的单个 NetApp 帐户的示意图。每个工作空间都与同一个连接器相关联，每个工作空间都有自己的工作空间管理员"]
+
+
+
+=== 示例 2.
+
+下面是另一个示例，通过使用两个单独的 NetApp 帐户显示了最高的多租户级别。例如，服务提供商可能会在一个帐户中使用 Cloud Manager 为其客户提供服务，而使用另一个帐户为其业务部门之一提供灾难恢复。
+
+请注意，帐户 2 包含两个单独的连接器。如果您的系统位于不同的区域或不同的云提供商中，则可能会发生这种情况。
+
+image:diagram_cloud_central_accounts_two.png["该图显示了两个 NetApp 帐户，每个帐户都有多个工作空间及其关联的 Workspace Admins 。"]

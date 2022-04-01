@@ -1,0 +1,189 @@
+---
+sidebar: sidebar 
+permalink: reference-checklist-cm.html 
+keywords: networking overview, networking requirements, endpoints, urls, get started, getting started, deployment 
+summary: 使用此检查清单可了解在 Connector 具有出站 Internet 访问权限的典型部署中启动和运行 Cloud Manager 所需的资源。 
+---
+= 入门检查清单
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用此检查清单可了解在 Connector 具有出站 Internet 访问权限的典型部署中启动和运行 Cloud Manager 所需的资源。
+
+NetApp Cloud Central 登录:: 您需要注册到 https://cloud.netapp.com["NetApp Cloud Central"^] 以便您可以访问 Cloud Manager 和其他云服务。
+从 Web 浏览器到多个端点的网络访问:: 可以从 Web 浏览器访问 Cloud Manager 用户界面。使用 Cloud Manager 用户界面时，它会联系多个端点来完成数据管理任务。运行 Web 浏览器的计算机必须连接到以下端点：
++
+--
+[cols="2*"]
+|===
+| 端点 | 目的 
+
+
+| http://cloudmanager.netapp.com | 使用 SaaS UI 时，您的 Web 浏览器会联系此 URL 。 
+
+
+ a| 
+AWS 服务（ AmazonAWS.com ）：
+
+* 云形成
+* Cognito
+* 弹性计算云（ EC2 ）
+* 密钥管理服务（ KMS ）
+* 安全令牌服务（ STS ）
+* 简单存储服务 (S3)
+
+| 在 AWS 中部署 Cloud Manager 中的 Connector 时需要使用。确切的端点取决于部署 Connector 的区域。 https://docs.aws.amazon.com/general/latest/gr/rande.html["有关详细信息，请参阅 AWS 文档。"^] 
+
+
+| https://management.azure.com https://login.microsoftonline.com | 在大多数 Azure 地区部署 Cloud Manager 中的 Connector 时需要此功能。 
+
+
+| https://management.microsoftazure.de https://login.microsoftonline.de | 在 Azure 德国地区部署 Cloud Manager 中的 Connector 时需要此许可证。 
+
+
+| https://management.usgovcloudapiNet https://login.microsoftonline.com | 在 Azure US Gov 地区部署 Cloud Manager 中的 Connector 时需要此许可证。 
+
+
+| https://www.googleapis.com | 在 Google Cloud 中部署 Cloud Manager 中的 Connector 时需要使用。 
+
+
+| https://signin.b2c.netapp.com | 更新 NetApp 支持站点（ NSS ）凭据或向 Cloud Manager 添加新的 NSS 凭据时需要此功能。 
+
+
+| https://netapp-cloud-account.auth0.com \https://cdn.auth0.com \https://services.cloud.netapp.com | 您的 Web 浏览器连接到这些端点、以便通过 NetApp Cloud Central 进行集中式用户身份验证。 
+
+
+| https://widget.intercom.io | 用于与 NetApp 云专家交流的产品内聊天。 
+
+
+| 连接器的 IP 地址  a| 
+在大多数情况下，您应该从 SaaS UI 使用 Cloud Manager ，但是 link:concept-connectors.html#using-multiple-connectors-with-the-same-working-environment["使用本地 UI 时"]，然后必须从 Web 浏览器输入主机的 IP 地址。
+
+根据与云提供商的连接，使用分配给主机的专用 IP 或公有 IP ：
+
+* 如果您拥有 VPN 并直接访问虚拟网络，则专用 IP 可以正常工作
+* 公有 IP 可用于任何网络连接情形
+
+
+无论哪种情况，都可以通过确保安全组规则仅允许从授权的 IP 或子网进行访问来确保网络访问的安全。
+
+|===
+--
+Connector 的出站网络连接:: 登录到 Cloud Manager 后，客户管理员需要在云提供商或内部网络中部署 _Connector_ 。借助此连接器， Cloud Manager 可以管理公有云环境中的资源和流程。Azure NetApp Files ， Cloud Volumes Service 或 Cloud Sync 不需要连接器，但 Cloud Manager 中的所有其他服务和功能都需要连接器。 link:concept-connectors.html["了解有关连接器及其工作原理的更多信息"]。
++
+--
+* 部署 Connector 的网络位置必须具有出站 Internet 连接。
++
+连接器需要通过出站 Internet 访问来联系以下端点，以便管理公有云环境中的资源和流程。
+
++
+[cols="2*"]
+|===
+| 端点 | 目的 
+
+
+| https://support.netapp.com | 获取许可信息并向 NetApp 支持部门发送 AutoSupport 消息。 
+
+
+| https://*.cloudmanager.cloud.netapp.com | 在 Cloud Manager 中提供 SaaS 功能和服务。 
+
+
+| https://cloudmanagerinfraprod.azurecr.io \https://*.blob.core.windows.net | 升级 Connector 及其 Docker 组件。 
+|===
+* 如果您选择在自己的 Linux 主机上手动安装 Connector （而不是直接从 Cloud Manager 界面安装），则 Connector 的安装程序需要在安装过程中访问以下端点：
++
+** https://dl.fedoraProject.org/pub/epel/epEl-release-latest-7.noarch.rpm
+** https://s3.amazonaws.com/aws-cli/awscri-bundle.zip
+** https://*.blob.core.windows.net 或 https://hub.docker.com
++
+主机可能会在安装期间尝试更新操作系统软件包。主机可以联系这些操作系统软件包的不同镜像站点。
+
+
+
+* 除非您启动 Connector ，否则不会向其传入流量。
++
+通过 HTTP （ 80 ）和 HTTPS （ 443 ），您可以访问本地 UI ，在极少数情况下，您可以使用此界面。只有在需要连接到主机进行故障排除时，才需要使用 SSH （ 22 ）。
+
+
+
+--
+云提供商权限:: 您需要一个有权直接从 Cloud Manager 在云提供商中部署 Connector 的帐户。
++
+--
+
+NOTE: 可通过其他方法创建连接器：您可以从创建连接器 link:task-launching-aws-mktp.html["AWS Marketplace"]， link:task-launching-azure-mktp.html["Azure Marketplace"]也可以 link:task-installing-linux.html["手动安装软件"]。
+
+[cols="15,55,30"]
+|===
+| 位置 | 高级步骤 | 详细步骤 
+
+
+| AWS  a| 
+. 使用包含所需权限的 JSON 文件在 AWS 中创建 IAM 策略。
+. 将此策略附加到要从 Cloud Manager 创建 Connector 的 IAM 用户。
+. 创建 Connector 时，请为 Cloud Manager 提供具有所需权限的 IAM 用户的 AWS 访问密钥和机密密钥。
+
+| link:task-creating-connectors-aws.html["单击此处可查看详细步骤"]。 
+
+
+| Azure 酒店  a| 
+. 使用包含所需权限的 JSON 文件在 Azure 中创建自定义角色。
+. 将此角色分配给要从 Cloud Manager 创建 Connector 的用户。
+. 创建 Connector 时，请使用具有所需权限的 Microsoft 帐户（由 Microsoft 拥有和托管的登录提示符）登录。
+
+| link:task-creating-connectors-azure.html["单击此处可查看详细步骤"]。 
+
+
+| Google Cloud  a| 
+. 使用包含所需权限的 YAML 文件在 Google Cloud 中创建自定义角色。
+. 将此角色附加到将从 Cloud Manager 创建 Connector 的用户。
+. 如果您计划使用 Cloud Volumes ONTAP ，请设置具有所需权限的服务帐户。
+. 启用 Google Cloud API 。
+. 创建 Connector 时，请使用具有所需权限的 Google 帐户登录（登录提示由 Google 拥有并托管）。
+
+| link:task-creating-connectors-gcp.html["单击此处可查看详细步骤"]。 
+|===
+--
+为单个服务建立网络:: 设置完成后，您便可开始使用 Cloud Manager 提供的服务了。请注意，每个服务都有自己的网络要求。有关详细信息，请参见以下页面。
++
+--
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-aws.html["适用于 AWS 的 Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html["适用于 Azure 的 Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html["适用于 GCP 的 Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["在 ONTAP 系统之间进行数据复制"^]
+* https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-cloud-compliance.html["部署 Cloud Data sense"^]
++
+** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-getting-started-compliance.html["适用于 Cloud Volumes ONTAP 和内部 ONTAP 的云数据感知"^]
+** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-anf.html["适用于 Azure NetApp Files 的云数据感知"^]
+** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-fsx.html["适用于 ONTAP 的 Amazon FSX 的云数据感知"^]
+** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-s3.html["适用于 Amazon S3 的 Cloud Data sense"^]
+** https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-file-shares.html["适用于非 NetApp NFS 或 CIFS 文件共享的 Cloud Data sense"^]
+
+
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["内部 ONTAP 集群"^]
+* https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html["云分层"^]
++
+** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html["从 ONTAP 集群到 Amazon S3 的数据分层"^]
+** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-azure.html["从 ONTAP 集群到 Azure Blob 存储的数据分层"^]
+** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-gcp.html["从 ONTAP 集群到 Google 云存储的数据分层"^]
+** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-storagegrid.html["从 ONTAP 集群到 StorageGRID 的数据分层"^]
+** https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-s3-compat.html["从 ONTAP 集群到通用 S3 对象存储的数据分层"^]
+
+
+* https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["云备份"^]
++
+** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-aws.html["从 ONTAP 集群到 Amazon S3 的数据备份"^]
+** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-azure.html["将数据从 ONTAP 集群备份到 Azure Blob 存储"^]
+** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-gcp.html["将数据从 ONTAP 集群备份到 Google 云存储"^]
+** https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html["从 ONTAP 集群到 StorageGRID 的数据备份"^]
+
+
+
+
+--
+

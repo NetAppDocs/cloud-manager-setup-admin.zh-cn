@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations.html 
+keywords: limitations, active directory, ad, iscsi, key managers, ip address, govcloud, cloud manager, Cloud Volumes ONTAP, days, 14 days, running, Connectors should remain running 
+summary: 已知限制确定了本产品版本不支持的平台、设备或功能、或者这些平台、设备或功能无法与产品正确交互操作。仔细审查这些限制。 
+---
+= 已知限制
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+已知限制确定了本产品版本不支持的平台、设备或功能、或者这些平台、设备或功能无法与产品正确交互操作。仔细审查这些限制。
+
+这些限制特定于 Cloud Manager 的设置和管理： Connector ， SaaS 平台等。
+
+
+
+== 连接器限制
+
+
+
+=== 仅支持 HTTP 代理服务器
+
+如果您的公司策略要求您使用代理服务器与 Internet 进行所有 HTTP 通信，则必须将您的连接器配置为使用该 HTTP 代理服务器。代理服务器可以位于云中或网络中。
+
+Cloud Manager 不支持在 Connector 中使用 HTTPS 代理。
+
+
+
+=== 不支持 SSL 解密
+
+Cloud Manager 不支持启用了 SSL 解密的防火墙配置。如果启用了 SSL 解密，则 Cloud Manager 中会显示错误消息，并且 Connector 实例显示为非活动状态。
+
+为了增强安全性，您可以选择 link:task-installing-https-cert.html["安装由证书颁发机构（ CA ）签名的 HTTPS 证书"]。
+
+
+
+=== 加载本地 UI 时显示空白页面
+
+如果加载 Connector 的本地用户界面，则 UI 有时可能无法显示，您只会看到一个空白页面。
+
+此问题描述与缓存问题相关。临时解决策将使用匿名或专用 Web 浏览器会话。
+
+
+
+== SaaS 限制
+
+
+
+=== 对于政府区域， SaaS 平台已禁用
+
+如果您在 AWS GovCloud 区域， Azure Gov 区域或 Azure DoD 区域部署 Connector ，则只能通过 Connector 的主机 IP 地址访问 Cloud Manager 。对整个帐户禁用对 SaaS 平台的访问。
+
+这意味着，只有能够访问最终用户内部 VPC-vNet 的有权限用户才能使用 Cloud Manager 的 UI 或 API 。
+
+这也意味着 Cloud Manager 不提供以下服务：
+
+* 云数据感知
+* Kubernetes
+* 云分层
+* 全局文件缓存
+
+
+要使用这些服务，需要使用 SaaS 平台。
+
+
+NOTE: Cloud Backup ， Cloud Data sense 和监控服务在政府区域均受支持并可用。
+
+
+
+== 市场限制
+
+
+
+== Azure 和 Google Cloud 合作伙伴不支持按需购买
+
+如果您是 Microsoft Cloud 解决方案提供商（ CSP ）合作伙伴或 Google Cloud 合作伙伴，则不提供 NetApp 按需购买订阅。您必须购买许可证并使用 BYOL 许可证部署 NetApp 云解决方案。
+
+以下 NetApp 云服务不支持按需购买订阅：
+
+* Cloud Volumes ONTAP
+* 云分层
+* 云备份
+* 云数据感知
+

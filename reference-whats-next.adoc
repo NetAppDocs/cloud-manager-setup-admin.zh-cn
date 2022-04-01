@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: reference-whats-next.html 
+keywords: get started, create working environments, manage settings 
+summary: 登录并设置 Cloud Manager 后，用户便可开始创建和发现工作环境。 
+---
+= 下一步行动
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+登录并设置 Cloud Manager 后，用户便可开始创建和发现工作环境。
+
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["开始使用适用于 AWS 的 Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["开始使用适用于 Azure 的 Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["开始使用适用于 Google Cloud 的 Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf.html["设置 Azure NetApp Files"^]
+* https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/task-getting-started-fsx.html["设置适用于 ONTAP 的 Amazon FSX"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-service-aws/task-manage-cvs-aws.html["为 AWS 设置 Cloud Volumes Service"^]
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["发现内部 ONTAP 集群"^]
+* link:task-viewing-amazon-s3.html["发现您的 Amazon S3 存储分段"]
+
+
+如果您是管理员，则可以在创建首个 Connector 后管理 Cloud Manager 设置。
+
+* link:concept-connectors.html["了解连接器"]
+* link:task-installing-https-cert.html["管理 HTTPS 证书以确保安全访问"]
+* link:task-configuring-proxy.html["配置代理设置"]
+

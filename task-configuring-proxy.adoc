@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: task-configuring-proxy.html 
+keywords: proxy, proxy server, proxy, internet, HTTP, http, https 
+summary: 如果您的公司策略要求您使用代理服务器与 Internet 进行所有 HTTP 通信，则必须将您的连接器配置为使用该 HTTP 代理服务器。代理服务器可以位于云中或网络中。 
+---
+= 配置 Connector 以使用 HTTP 代理服务器
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您的公司策略要求您使用代理服务器与 Internet 进行所有 HTTP 通信，则必须将您的连接器配置为使用该 HTTP 代理服务器。代理服务器可以位于云中或网络中。
+
+Cloud Manager 不支持在 Connector 中使用 HTTPS 代理。
+
+
+
+== 在 Connector 上启用代理
+
+在将 Connector 配置为使用代理服务器时，该连接器及其管理的 Cloud Volumes ONTAP 系统（包括任何 HA 调解器）都会使用代理服务器。
+
+请注意，此操作将重新启动 Connector 。继续操作前，请确保 Connector 未执行任何操作。
+
+.步骤
+. link:task-logging-in.html["登录到 Cloud Manager SaaS 界面"^] 从已通过网络连接到 Connector 实例的计算机。
++
+如果此连接器没有公有 IP 地址，您需要 VPN 连接，或者您需要从与此连接器位于同一网络的跳转主机进行连接。
+
+. 单击 * 连接器 * 下拉列表，然后单击 * 转到特定连接器的本地 UID* 。
++
+image:screenshot_connector_local_ui.gif["标题中显示 Connector 图标和 Go to Local UI 操作的屏幕截图。"]
+
++
+在 Connector 上运行的 Cloud Manager 界面将加载到新的浏览器选项卡中。
+
+. 在 Cloud Manager 控制台的右上角，单击设置图标，然后选择 * 连接器设置 * 。
++
+image:screenshot_settings_icon.gif["一个屏幕截图，显示 Cloud Manager 控制台右上角的设置图标。"]
+
+. 在 * 常规 * 下，单击 * HTTP 代理配置 * 。
+. 设置代理：
++
+.. 单击 * 启用代理 * 。
+.. 使用语法指定服务器 http://_address:port_[]
+.. 如果服务器需要基本身份验证，请指定用户名和密码
+.. 单击 * 保存 * 。
++
+
+NOTE: Cloud Manager 不支持包含 @ 字符的密码。
+
+
+
+
+
+指定代理服务器后、新的 Cloud Volumes ONTAP 系统会自动配置为在发送 AutoSupport 消息时使用代理服务器。如果在用户创建 Cloud Volumes ONTAP 系统之前未指定代理服务器，则用户必须使用 System Manager 在每个系统的 AutoSupport 选项中手动设置代理服务器。
+
+
+
+== 启用直接 API 流量
+
+如果您配置了代理服务器，则无需通过代理即可将 API 调用直接发送到 Cloud Manager 。在 AWS ， Azure 或 Google Cloud 中运行的 Connectors 支持此选项。
+
+.步骤
+. 在 Cloud Manager 控制台的右上角，单击设置图标，然后选择 * 连接器设置 * 。
++
+image:screenshot_settings_icon.gif["一个屏幕截图，显示 Cloud Manager 控制台右上角的设置图标。"]
+
+. 在 * 常规 * 下，单击 * 支持直接 API 流量 * 。
+. 单击复选框以启用此选项，然后单击 * 保存 * 。
+

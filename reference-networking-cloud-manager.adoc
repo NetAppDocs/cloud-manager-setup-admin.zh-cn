@@ -1,0 +1,390 @@
+---
+sidebar: sidebar 
+permalink: reference-networking-cloud-manager.html 
+keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, proxy server, vpn, outbound, inbound, connections, jump host, URL, URLs, endpoints, endpoint, ports 
+summary: 设置您的网络，以便 Connector 能够管理公有云环境中的资源和流程。最重要的步骤是确保对各种端点的出站 Internet 访问。 
+---
+= 为连接器设置网络连接
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+设置您的网络，以便 Connector 可以管理公有云环境中的资源和流程。最重要的步骤是确保对各种端点的出站 Internet 访问。
+
+此页面上的信息适用于 Connector 具有出站 Internet 访问权限的典型部署。
+
+
+TIP: 如果您的网络使用代理服务器与 Internet 进行所有通信，则可以从设置页面指定代理服务器。请参见 link:task-configuring-proxy.html["将 Connector 配置为使用代理服务器"]。
+
+
+
+== 连接到目标网络
+
+连接器要求与您要创建的工作环境类型以及计划启用的服务建立网络连接。
+
+例如，如果您在公司网络中安装了连接器，则必须设置与启动 Cloud Volumes ONTAP 的 VPC 或 vNet 的 VPN 连接。
+
+
+
+== 可能与 172 范围内的 IP 地址冲突
+
+Cloud Manager 使用 IP 地址位于 172.17.0.0/16 和 172.18.0.0/16 范围的两个接口部署 Connector 。
+
+如果您的网络配置了其中任一范围的子网，则可能会在 Cloud Manager 中遇到连接失败。例如，在 Cloud Manager 中发现内部 ONTAP 集群可能会失败。
+
+临时解决策用于更改连接器接口的 IP 地址。请联系 NetApp 支持部门以获得帮助。
+
+
+
+== 出站 Internet 访问
+
+需要从 Connector 进行出站 Internet 访问。
+
+
+
+=== 用于管理公有云环境中资源的端点
+
+连接器需要通过出站 Internet 访问来管理公有云环境中的资源和流程。
+
+[cols="2*"]
+|===
+| 端点 | 目的 
+
+
+| https://support.netapp.com | 获取许可信息并向 NetApp 支持部门发送 AutoSupport 消息。 
+
+
+| https://*.cloudmanager.cloud.netapp.com | 在 Cloud Manager 中提供 SaaS 功能和服务。 
+
+
+| https://cloudmanagerinfraprod.azurecr.io \https://*.blob.core.windows.net | 升级 Connector 及其 Docker 组件。 
+|===
+
+
+=== 用于在 Linux 主机上安装 Connector 的端点
+
+您可以选择在自己的 Linux 主机上手动安装 Connector 软件。否则， Connector 的安装程序必须在安装过程中访问以下 URL ：
+
+* https://dl.fedoraProject.org/pub/epel/epEl-release-latest-7.noarch.rpm
+* https://s3.amazonaws.com/aws-cli/awscri-bundle.zip
+* https://*.blob.core.windows.net 或 https://hub.docker.com
+
+
+主机可能会在安装期间尝试更新操作系统软件包。主机可以联系这些操作系统软件包的不同镜像站点。
+
+
+
+== 端口和安全组
+
+除非您启动 Connector ，否则不会向其传入流量。HTTP 和 HTTPS 可用于访问 link:concept-connectors.html#the-local-user-interface["本地 UI"]，在极少数情况下使用。只有在需要连接到主机进行故障排除时，才需要使用 SSH 。
+
+
+
+=== AWS 中连接器的规则
+
+Connector 的安全组需要入站和出站规则。
+
+
+
+==== 入站规则
+
+[cols="10,10,80"]
+|===
+| 协议 | Port | 目的 
+
+
+| SSH | 22. | 提供对 Connector 主机的 SSH 访问 
+
+
+| HTTP | 80 | 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问以及从 Cloud Data sense 建立的连接 
+
+
+| HTTPS | 443. | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问 
+
+
+| TCP | 3128 | 如果您的 AWS 网络不使用 NAT 或代理，则可为云数据感知实例提供 Internet 访问 
+
+
+| TCP | 9060 | 支持启用和使用 Cloud Data sense （仅适用于 GovCloud 部署） 
+|===
+
+
+==== 出站规则
+
+连接器的预定义安全组将打开所有出站流量。如果可以接受，请遵循基本出站规则。如果您需要更严格的规则、请使用高级出站规则。
+
+
+
+===== 基本外向规则
+
+Connector 的预定义安全组包括以下出站规则。
+
+[cols="20,20,60"]
+|===
+| 协议 | Port | 目的 
+
+
+| 所有 TCP | 全部 | 所有出站流量 
+
+
+| 所有 UDP | 全部 | 所有出站流量 
+|===
+
+
+===== 高级出站规则
+
+如果您需要对出站流量设置严格的规则，则可以使用以下信息仅打开 Connector 进行出站通信所需的端口。
+
+
+NOTE: 源 IP 地址是 Connector 主机。
+
+[cols="5*"]
+|===
+| 服务 | 协议 | Port | 目标 | 目的 
+
+
+.9+| Active Directory | TCP | 88 | Active Directory 目录林 | Kerberos V 身份验证 
+
+
+| TCP | 139. | Active Directory 目录林 | NetBIOS 服务会话 
+
+
+| TCP | 389. | Active Directory 目录林 | LDAP 
+
+
+| TCP | 445 | Active Directory 目录林 | Microsoft SMB/CIFS over TCP （通过 TCP ）和 NetBIOS 成帧 
+
+
+| TCP | 464. | Active Directory 目录林 | Kerberos V 更改和设置密码（ set_change ） 
+
+
+| TCP | 749 | Active Directory 目录林 | Active Directory Kerberos V 更改和设置密码（ RPCSEC_GSS ） 
+
+
+| UDP | 137. | Active Directory 目录林 | NetBIOS 名称服务 
+
+
+| UDP | 138. | Active Directory 目录林 | NetBIOS 数据报服务 
+
+
+| UDP | 464. | Active Directory 目录林 | Kerberos 密钥管理 
+
+
+| API 调用和 AutoSupport | HTTPS | 443. | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 AWS 和 ONTAP 、并将 AutoSupport 消息发送到 NetApp 
+
+
+.2+| API 调用 | TCP | 3000 | ONTAP HA 调解器 | 与 ONTAP HA 调解器通信 
+
+
+| TCP | 8088 | 备份到 S3 | 对备份到 S3 进行 API 调用 
+
+
+| DNS | UDP | 53. | DNS | 用于云管理器进行 DNS 解析 
+
+
+| 云数据感知 | HTTP | 80 | 云数据感知实例 | 适用于 Cloud Volumes ONTAP 的云数据感知 
+|===
+
+
+=== Azure 中连接器的规则
+
+Connector 的安全组需要入站和出站规则。
+
+
+
+==== 入站规则
+
+[cols="3*"]
+|===
+| Port | 协议 | 目的 
+
+
+| 22. | SSH | 提供对 Connector 主机的 SSH 访问 
+
+
+| 80 | HTTP | 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问 
+
+
+| 443. | HTTPS | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问 
+|===
+
+
+==== 出站规则
+
+连接器的预定义安全组将打开所有出站流量。如果可以接受，请遵循基本出站规则。如果您需要更严格的规则、请使用高级出站规则。
+
+
+
+===== 基本外向规则
+
+Connector 的预定义安全组包括以下出站规则。
+
+[cols="3*"]
+|===
+| Port | 协议 | 目的 
+
+
+| 全部 | 所有 TCP | 所有出站流量 
+
+
+| 全部 | 所有 UDP | 所有出站流量 
+|===
+
+
+===== 高级出站规则
+
+如果您需要对出站流量设置严格的规则，则可以使用以下信息仅打开 Connector 进行出站通信所需的端口。
+
+
+NOTE: 源 IP 地址是 Connector 主机。
+
+[cols="5*"]
+|===
+| 服务 | Port | 协议 | 目标 | 目的 
+
+
+.9+| Active Directory | 88 | TCP | Active Directory 目录林 | Kerberos V 身份验证 
+
+
+| 139. | TCP | Active Directory 目录林 | NetBIOS 服务会话 
+
+
+| 389. | TCP | Active Directory 目录林 | LDAP 
+
+
+| 445 | TCP | Active Directory 目录林 | Microsoft SMB/CIFS over TCP （通过 TCP ）和 NetBIOS 成帧 
+
+
+| 464. | TCP | Active Directory 目录林 | Kerberos V 更改和设置密码（ set_change ） 
+
+
+| 749 | TCP | Active Directory 目录林 | Active Directory Kerberos V 更改和设置密码（ RPCSEC_GSS ） 
+
+
+| 137. | UDP | Active Directory 目录林 | NetBIOS 名称服务 
+
+
+| 138. | UDP | Active Directory 目录林 | NetBIOS 数据报服务 
+
+
+| 464. | UDP | Active Directory 目录林 | Kerberos 密钥管理 
+
+
+| API 调用和 AutoSupport | 443. | HTTPS | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 AWS 和 ONTAP 、并将 AutoSupport 消息发送到 NetApp 
+
+
+| DNS | 53. | UDP | DNS | 用于云管理器进行 DNS 解析 
+|===
+
+
+=== GCP 中连接器的规则
+
+Connector 的防火墙规则需要入站和出站规则。
+
+
+
+==== 入站规则
+
+[cols="10,10,80"]
+|===
+| 协议 | Port | 目的 
+
+
+| SSH | 22. | 提供对 Connector 主机的 SSH 访问 
+
+
+| HTTP | 80 | 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问 
+
+
+| HTTPS | 443. | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问 
+|===
+
+
+==== 出站规则
+
+连接器的预定义防火墙规则会打开所有出站流量。如果可以接受，请遵循基本出站规则。如果您需要更严格的规则、请使用高级出站规则。
+
+
+
+===== 基本外向规则
+
+Connector 的预定义防火墙规则包括以下出站规则。
+
+[cols="20,20,60"]
+|===
+| 协议 | Port | 目的 
+
+
+| 所有 TCP | 全部 | 所有出站流量 
+
+
+| 所有 UDP | 全部 | 所有出站流量 
+|===
+
+
+===== 高级出站规则
+
+如果您需要对出站流量设置严格的规则，则可以使用以下信息仅打开 Connector 进行出站通信所需的端口。
+
+
+NOTE: 源 IP 地址是 Connector 主机。
+
+[cols="5*"]
+|===
+| 服务 | 协议 | Port | 目标 | 目的 
+
+
+.9+| Active Directory | TCP | 88 | Active Directory 目录林 | Kerberos V 身份验证 
+
+
+| TCP | 139. | Active Directory 目录林 | NetBIOS 服务会话 
+
+
+| TCP | 389. | Active Directory 目录林 | LDAP 
+
+
+| TCP | 445 | Active Directory 目录林 | Microsoft SMB/CIFS over TCP （通过 TCP ）和 NetBIOS 成帧 
+
+
+| TCP | 464. | Active Directory 目录林 | Kerberos V 更改和设置密码（ set_change ） 
+
+
+| TCP | 749 | Active Directory 目录林 | Active Directory Kerberos V 更改和设置密码（ RPCSEC_GSS ） 
+
+
+| UDP | 137. | Active Directory 目录林 | NetBIOS 名称服务 
+
+
+| UDP | 138. | Active Directory 目录林 | NetBIOS 数据报服务 
+
+
+| UDP | 464. | Active Directory 目录林 | Kerberos 密钥管理 
+
+
+| API 调用和 AutoSupport | HTTPS | 443. | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 GCP 和 ONTAP 、并将 AutoSupport 消息发送到 NetApp 
+
+
+| DNS | UDP | 53. | DNS | 用于云管理器进行 DNS 解析 
+|===
+
+
+=== 内部连接器的端口
+
+在内部 Linux 主机上手动安装时， Connector 会使用以下 _inbound_ 端口。
+
+这些入站规则适用于以下两种部署模式：通过 Internet 访问或不通过 Internet 访问安装的内部连接器。
+
+[cols="10,10,80"]
+|===
+| 协议 | Port | 目的 
+
+
+| HTTP | 80 | 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问 
+
+
+| HTTPS | 443. | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问 
+|===

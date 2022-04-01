@@ -1,0 +1,186 @@
+---
+sidebar: sidebar 
+permalink: task-adding-nss-accounts.html 
+keywords: adding, creating, netapp support site account, nss, update account, update nss account, update nss credentials, delete nss account, remove nss account, change working environment, working environment nss 
+summary: 提供 NetApp 支持站点（ NSS ）帐户的凭据，以便为 Cloud Volumes ONTAP 启用关键工作流，并通过 Active IQ 提供预测性分析和主动式支持。 
+---
+= 在 Cloud Manager 中添加和管理 NetApp 支持站点帐户
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+提供 NetApp 支持站点（ NSS ）帐户的凭据，以便为 Cloud Volumes ONTAP 启用关键工作流，并通过 Active IQ 提供预测性分析和主动式支持。
+
+
+
+== 概述
+
+要启用以下任务，需要将 NetApp 支持站点帐户添加到 Cloud Manager ：
+
+* 自带许可证时部署 Cloud Volumes ONTAP （ BYOL ）
++
+需要提供您的 NSS 帐户，以便 Cloud Manager 可以上传您的许可证密钥并为您购买的期限启用订阅。这包括自动更新期限续订。
+
+* 注册按需购买 Cloud Volumes ONTAP 系统
++
+要激活对系统的支持并访问 NetApp 技术支持资源，需要提供 NSS 帐户。
+
+* 将 Cloud Volumes ONTAP 软件升级到最新版本
+* 在 Cloud Manager 中使用 Active IQ 数字顾问
+
+
+
+
+== 添加 NSS 帐户
+
+通过支持信息板，您可以从一个位置添加和管理所有 NetApp 支持站点帐户。
+
+.步骤
+. 如果您还没有 NetApp 支持站点帐户， https://register.netapp.com/register/start["注册一个"^]。
+. 在 Cloud Manager 控制台右上角，单击帮助图标，然后选择 * 支持 * 。
++
+image:screenshot-help-support.png["帮助菜单的屏幕截图，其中列出的第一个选项为支持"]
+
+. 单击 * NSS 管理 > 添加 NSS 帐户 * 。
+. 出现提示时，单击 * 继续 * 以重定向到 Microsoft 登录页面。
++
+NetApp 使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。
+
+. 在登录页面上，提供 NetApp 支持站点注册的电子邮件地址和密码以执行身份验证过程。
++
+此操作可使 Cloud Manager 使用您的 NSS 帐户。
+
++
+请注意帐户的以下要求：
+
++
+** 此帐户必须是客户级别的帐户（而不是来宾或临时帐户）。
+** 如果您计划部署基于节点的 BYOL 系统：
++
+*** 帐户必须获得访问 BYOL 系统序列号的授权。
+*** 如果您购买了安全的 BYOL 订阅，则需要安全的 NSS 帐户。
+
+
+
+
+
+
+现在，用户可以在创建新 Cloud Volumes ONTAP 系统，注册现有 Cloud Volumes ONTAP 系统以及在 Active IQ 中查看数据时选择帐户。
+
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["在 AWS 中启动 Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["在 Azure 中启动 Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["在 GCP 中启动 Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-registering.html["注册按需购买的系统"^]
+
+
+
+
+== 更新新身份验证方法的 NSS 帐户
+
+从 2021 年 11 月开始， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。由于此更新， Cloud Manager 将提示您更新先前添加的任何现有帐户的凭据。
+
+.步骤
+. 如果您尚未执行此操作， https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login["创建一个 Microsoft Azure Active Directory B2C 帐户，此帐户将链接到您的当前 NetApp 帐户"^]。
+. 在 Cloud Manager 控制台右上角，单击帮助图标，然后选择 * 支持 * 。
+. 单击 * NSS 管理 * 。
+. 对于要更新的 NSS 帐户，请单击 * 更新帐户 * 。
++
+image:screenshot-nss-update-account.png["显示更新帐户选项的屏幕截图"]
+
+. 出现提示时，单击 * 继续 * 以重定向到 Microsoft 登录页面。
++
+NetApp 使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。
+
+. 在登录页面上，提供 NetApp 支持站点注册的电子邮件地址和密码以执行身份验证过程。
++
+此过程完成后，您更新的帐户现在应在表中列为 _new_ 帐户。此帐户的 _older_ 版本以及任何现有的工作环境关联仍列在表中。
+
+. 如果现有 Cloud Volumes ONTAP 工作环境已附加到旧版本的帐户，请按照以下步骤进行操作 <<Attach a working environment to a different NSS account,将这些工作环境附加到其他 NSS 帐户>>。
+. 转到旧版本的 NSS 帐户，然后单击 image:icon-action.png["一个由三个并排点组成的图标"] 然后选择 * 删除 * 。
+
+
+
+
+== 更新 NSS 凭据
+
+每当更改 NSS 帐户的凭据时，您都需要在 Cloud Manager 中更新这些凭据。
+
+.步骤
+. 在 Cloud Manager 控制台右上角，单击帮助图标，然后选择 * 支持 * 。
+. 单击 * NSS 管理 * 。
+. 对于要更新的 NSS 帐户，请单击 image:icon-action.png["一个由三个并排点组成的图标"] 然后选择 * 更新凭据 * 。
++
+image:screenshot-nss-update-credentials.png["屏幕截图显示了 NetApp 支持站点帐户的操作菜单，其中包括选择删除选项的功能。"]
+
+. 出现提示时，单击 * 继续 * 以重定向到 Microsoft 登录页面。
++
+NetApp 使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。
+
+. 在登录页面上，提供 NetApp 支持站点注册的电子邮件地址和密码以执行身份验证过程。
+
+
+
+
+== 将工作环境附加到其他 NSS 帐户
+
+如果您的组织有多个 NetApp 支持站点帐户，则可以更改与 Cloud Volumes ONTAP 系统关联的帐户。
+
+只有配置为使用 NetApp 采用的 Microsoft Azure AD 进行身份管理的 NSS 帐户才支持此功能。在使用此功能之前，您需要单击 * 添加 NSS 帐户 * 或 * 更新帐户 * 。
+
+.步骤
+. 在 Cloud Manager 控制台右上角，单击帮助图标，然后选择 * 支持 * 。
+. 单击 * NSS 管理 * 。
+. 完成以下步骤以更改 NSS 帐户：
++
+.. 展开当前与工作环境关联的 NetApp 支持站点帐户对应的行。
+.. 对于要更改关联的工作环境，请单击 image:icon-action.png["一个由三个并排点组成的图标"]
+.. 选择 * 更改为其他 NSS 帐户 * 。
++
+image:screenshot-nss-change-account.png["屏幕截图显示了与 NetApp 支持站点帐户关联的工作环境的操作菜单。"]
+
+.. 选择帐户，然后单击 * 保存 * 。
+
+
+
+
+
+
+== 显示 NSS 帐户的电子邮件地址
+
+现在， NetApp 支持站点帐户使用 Microsoft Azure Active Directory 进行身份验证服务， Cloud Manager 中显示的 NSS 用户名通常是 Azure AD 生成的标识符。因此，您可能无法立即知道与该帐户关联的电子邮件地址。但 Cloud Manager 可以选择向您显示关联的电子邮件地址。
+
+
+TIP: 转到 "NSS 管理 " 页面时， Cloud Manager 会为表中的每个帐户生成一个令牌。此令牌包含有关关联电子邮件地址的信息。退出此页面后，此令牌将被删除。此信息永远不会缓存，这有助于保护您的隐私。
+
+.步骤
+. 在 Cloud Manager 控制台右上角，单击帮助图标，然后选择 * 支持 * 。
+. 单击 * NSS 管理 * 。
+. 对于要更新的 NSS 帐户，请单击 image:icon-action.png["一个由三个并排点组成的图标"] 然后选择 * 显示电子邮件地址 * 。
++
+image:screenshot-nss-display-email.png["屏幕截图显示了 NetApp 支持站点帐户的操作菜单，其中包括显示电子邮件地址的功能。"]
+
+
+
+Cloud Manager 将显示 NetApp 支持站点的用户名以及关联的电子邮件地址。您可以使用复制按钮复制电子邮件地址。
+
+
+
+== 删除 NSS 帐户
+
+删除您不想再与 Cloud Manager 结合使用的任何 NSS 帐户。
+
+请注意，您不能删除当前与 Cloud Volumes ONTAP 工作环境关联的帐户。您首先需要 <<Attach a working environment to a different NSS account,将这些工作环境附加到其他 NSS 帐户>>。
+
+.步骤
+. 在 Cloud Manager 控制台右上角，单击帮助图标，然后选择 * 支持 * 。
+. 单击 * NSS 管理 * 。
+. 对于要删除的 NSS 帐户，请单击 image:icon-action.png["一个由三个并排点组成的图标"] 然后选择 * 删除 * 。
++
+image:screenshot-nss-delete.png["屏幕截图显示了 NetApp 支持站点帐户的操作菜单，其中包括选择删除选项的功能。"]
+
+. 单击 * 删除 * 进行确认。
+

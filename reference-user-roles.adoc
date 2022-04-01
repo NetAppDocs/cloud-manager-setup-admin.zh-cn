@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: reference-user-roles.html 
+keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin, Cloud Compliance Viewer, Cloud Data Sense, SnapCenter Admin 
+summary: 帐户管理员，工作空间管理员，合规性查看器和 SnapCenter 管理员角色可为用户提供特定权限。 
+---
+= 角色
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+帐户管理员，工作空间管理员，合规性查看器和 SnapCenter 管理员角色可为用户提供特定权限。
+
+合规性查看器角色用于只读云数据感知访问。
+
+[cols="24,19,19,19,19"]
+|===
+| 任务 | 帐户管理员 | 工作空间管理员 | 合规性查看器 | SnapCenter 管理员 
+
+
+| 管理工作环境 | 是的。 | 是的。 | 否 | 否 
+
+
+| 在工作环境中启用服务 | 是的。 | 是的。 | 否 | 否 
+
+
+| 查看数据复制状态 | 是的。 | 是的。 | 否 | 否 
+
+
+| 查看时间表 | 是的。 | 是的。 | 否 | 否 
+
+
+| 在工作空间之间切换 | 是的。 | 是的。 | 是的。 | 否 
+
+
+| 查看数据感知扫描结果 | 是的。 | 是的。 | 是的。 | 否 
+
+
+| 删除工作环境 | 是的。 | 否 | 否 | 否 
+
+
+| 将 Kubernetes 集群连接到工作环境 | 是的。 | 否 | 否 | 否 
+
+
+| 接收 Cloud Volumes ONTAP 报告 | 是的。 | 否 | 否 | 否 
+
+
+| 创建连接器 | 是的。 | 否 | 否 | 否 
+
+
+| 管理 NetApp 帐户 | 是的。 | 否 | 否 | 否 
+
+
+| 管理凭据 | 是的。 | 否 | 否 | 否 
+
+
+| 修改 Cloud Manager 设置 | 是的。 | 否 | 否 | 否 
+
+
+| 查看和管理支持仪表板 | 是的。 | 否 | 否 | 否 
+
+
+| 从 Cloud Manager 中删除工作环境 | 是的。 | 否 | 否 | 否 
+
+
+| 安装 HTTPS 证书 | 是的。 | 否 | 否 | 否 
+
+
+| 使用 SnapCenter 服务 | 是的。 | 是的。 | 否 | 是的。 
+|===
+.相关链接
+* link:task-setting-up-netapp-accounts.html["在 NetApp 帐户中设置工作空间和用户"]
+* link:task-managing-netapp-accounts.html["管理 NetApp 帐户中的工作空间和用户"]
+

@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: task-adding-gcp-accounts.html 
+keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp marketplace, subscribe, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys 
+summary: 您可以管理与 Connector VM 实例关联的凭据。 
+---
+= 管理 Cloud Manager 的 GCP 凭据和订阅
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以管理与 Connector VM 实例关联的凭据。
+
+
+
+== 将 Marketplace 订阅与 GCP 凭据关联
+
+在 GCP 中部署 Connector 时， Cloud Manager 会创建一组与 Connector VM 实例关联的默认凭据。这些凭据是 Cloud Manager 用于部署 Cloud Volumes ONTAP 的凭据。
+
+您可以随时更改与这些凭据关联的 Marketplace 订阅。通过订阅，您可以创建按需购买的 Cloud Volumes ONTAP 系统并使用其他 NetApp 云服务。
+
+.步骤
+. 在 Cloud Manager 控制台的右上角，单击设置图标，然后选择 * 凭据 * 。
+. 单击一组凭据的操作菜单，然后选择 * 关联订阅 * 。
++
+image:screenshot_gcp_add_subscription.png["一组现有凭据的操作菜单屏幕截图。"]
+
+. 从下拉列表中选择 Google Cloud 项目和订阅。
++
+image:screenshot_gcp_associate.gif["为 Google Cloud 凭据选择的 Google Cloud 项目和订阅的屏幕截图。"]
+
+. 单击 * 关联 * 。
+. 如果您尚未订阅，请单击 * 添加订阅 * ，然后按照以下步骤创建新订阅。
++
+
+NOTE: 在完成以下步骤之前，请确保您在 Google Cloud 帐户中同时拥有计费管理员权限，并同时拥有 NetApp Cloud Central 登录权限。
+
+. 查看订阅步骤并单击 * 继续 * 。
++
+image:screenshot_gcp_sub_popup.png["订阅弹出窗口的屏幕截图。"]
+
+. 重定向到后 https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Google Cloud Marketplace 上的 NetApp Cloud Manager 页面"^]，确保在顶部导航菜单中选择了正确的项目。
++
+image:screenshot_gcp_cvo_marketplace.png["GCP CVO Marketplace 页面的屏幕截图。"]
+
+. 单击 * 订阅 * 。
+. 选择相应的计费帐户并同意条款和条件。
++
+image:screenshot_gcp_terms_and_conditions.png["GCP 条款和条件的屏幕截图。"]
+
+. 单击 * 订阅 * 。
++
+此步骤会将您的传输请求发送给 NetApp 。
+
+. 在弹出对话框中，单击 * 向 NetApp ， Inc. 注册 * 以重定向到 NetApp Cloud Central 。
++
+image:screenshot_gcp_marketplace_register.png["注册弹出窗口的屏幕截图。"]
+
++
+
+NOTE: 要将 GCP 订阅链接到您的 NetApp 帐户，必须完成此步骤。只有在从此页面重定向并登录到 NetApp Cloud Central 后，链接订阅的过程才会完成。
+
+. 重定向到 Cloud Central 后，登录到 NetApp Cloud Central 或注册，然后单击 * 完成 * 继续。
++
+GCP 订阅将链接到与您的用户登录关联的所有 NetApp 帐户。
+
++
+image:screenshot_gcp_sub_mapping.png["将 GCP 订阅映射到 NetApp 帐户的屏幕截图。"]
+
++
+
+NOTE: 如果贵组织的某个用户已从您的计费帐户订阅 NetApp Cloud Manager 订阅，则您将重定向到 https://cloud.netapp.com/ontap-cloud?x-gcp-marketplace-token=["NetApp Cloud Central 上的 Cloud Volumes ONTAP 页面"^] 而是。如果这是意外情况，请联系您的 NetApp 销售团队。Google 仅为每个 Google 计费帐户启用一个订阅。
+
+. 完成此过程后，导航回 Cloud Manager 中的凭据页面并选择此新订阅。
++
+image:screenshot_gcp_associate.gif["订阅分配页面的屏幕截图。"]
+
+
+
+
+
+== 对 Marketplace 订阅过程进行故障排除
+
+有时，通过 Google 云市场订阅 Cloud Volumes ONTAP 可能会由于权限不正确或在重定向到 NetApp Cloud Central 后意外地变得支离破碎。如果发生这种情况，请按照以下步骤完成订阅过程。
+
+.步骤
+. 导航到 https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Google Cloud Marketplace 上的 NetApp Cloud Manager 页面"^] 以检查订单的状态。如果页面显示 * 在提供商上管理 * ，请向下滚动并单击 * 管理订单 * 。
++
+image:screenshot_gcp_manage_orders.png["订阅后的 Marketplace 页面的屏幕截图。"]
+
++
+.. 如果订单显示绿色复选标记，这是意外的，则使用同一计费帐户的组织中的其他人可能已订阅。如果这是意外情况，或者您需要此订阅的详细信息，请联系您的 NetApp 销售团队。
++
+image:screenshot_gcp_green_marketplace.png["已接受授权的屏幕截图。"]
+
+.. 如果订单显示时钟和 * 待定 * 状态，请返回到 Marketplace 页面并选择 * 在提供商上管理 * 以完成上述流程。
++
+image:screenshot_gcp_pending_marketplace.png["待定市场授权的屏幕截图。"]
+
+
+
+

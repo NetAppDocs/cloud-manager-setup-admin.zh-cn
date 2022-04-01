@@ -1,0 +1,107 @@
+---
+sidebar: sidebar 
+permalink: reference-permissions-gcp.html 
+keywords: permissions, gcp, gcp permissions 
+summary: Cloud Manager 需要在云提供商中执行操作的权限。这些权限包括在 NetApp 提供的策略中。您可能希望了解 Cloud Manager 使用这些权限执行的操作。 
+---
+= Google Cloud 中连接器的所需权限
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager 需要在云提供商中执行操作的权限。中包括这些权限 https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp 提供的策略"^]。您可能希望了解 Cloud Manager 使用这些权限执行的操作。
+
+适用于 GCP 的 Cloud Manager 策略包括 Cloud Manager 部署和管理 Cloud Volumes ONTAP 所需的权限。
+
+[cols="50,50"]
+|===
+| 操作 | 目的 
+
+
+| — compute.disks.create — compute.disks.createSnapshot — compute.disks.delete — compute.disks.get — compute.disks.list — compute.disks.setLabels — compute.disks.use | 为 Cloud Volumes ONTAP 创建和管理磁盘。 
+
+
+| — compute.v防火墙 创建— compute.firewalls.delete — compute.v防火墙 .get — compute.v防火墙 列表 | 为 Cloud Volumes ONTAP 创建防火墙规则。 
+
+
+| — compute.globalOperations.get | 以获取操作状态。 
+
+
+| — compute.images.get — compute.images.getFromFamily — compute.images.list — compute.images.useReadOnly | 为 VM 实例获取映像。 
+
+
+| — compute.instances.attachDisk — compute.instances.detachDisk | 将磁盘连接和断开与 Cloud Volumes ONTAP 的连接。 
+
+
+| — compute.instances.create — compute.instances.delete | 创建和删除 Cloud Volumes ONTAP VM 实例。 
+
+
+| — compute.instances.get | 列出 VM 实例。 
+
+
+| — compute.instances.getSerialPortOutput | 以获取控制台日志。 
+
+
+| — compute.instances.list | 检索区域中实例的列表。 
+
+
+| — compute.instances.setDeletionProtection | 为实例设置删除保护。 
+
+
+| — compute.instances.setLabels | 以添加标签。 
+
+
+| — compute.instances.setMachineType — compute.instances.setMinCpuPlatform | 更改 Cloud Volumes ONTAP 的计算机类型。 
+
+
+| — compute.instances.setMetadata | 以添加元数据。 
+
+
+| — compute.instances.setTags | 为防火墙规则添加标记。 
+
+
+| — compute.instances.start — compute.instances.stop — compute.instances.updateDisplayDevice | 启动和停止 Cloud Volumes ONTAP 。 
+
+
+| — compute.machineTypes.get | 获取要检查 qoutas 的核心数。 
+
+
+| — compute.projects.get | 以支持多个项目。 
+
+
+| — compute.snapshots.create — compute.snapshots.delete — compute.snapshots.get — compute.snapshots.list — compute.snapshots.setLabels | 创建和管理永久性磁盘快照。 
+
+
+| — compute.networks.get — compute.networks.list — compute.regions.get — compute.regions.list — compute.subnetworks.get — compute.subnetworks.list — compute.zoneOperations.get — compute.zones.get — compute.zones.list | 获取创建新 Cloud Volumes ONTAP 虚拟机实例所需的网络信息。 
+
+
+| - deploymentmanager.compositeTypes.get - deploymentmanager.compositeTypes.list - deploymentmanager.deployments.create - deploymentmanager.deployments.delete - deploymentmanager.deployments.get - deploymentmanager.deployments.list - deploymentmanager.manifes.get - deploymentmanager.manifes.list - deploymentmanager.operations.get - deploymentmanager.resources.get - deploymentmanager.resources.list - deploymentmanager.typeProvider.get - deploymentmanager.typeProvider.get - deploymentmanager.typeProvider.list - get | 使用 Google Cloud 部署管理器部署 Cloud Volumes ONTAP 虚拟机实例。 
+
+
+| — logging.logEnrees.list — logging.privateLogEnrees.list | 获取堆栈日志驱动器。 
+
+
+| — resourcemanager.projects.get | 以支持多个项目。 
+
+
+| — storage.buctions.create — storage.buckets.delete — storage.buctions.get — storage.buctions.list — storage.buctions.update | 创建和管理用于数据分层的 Google Cloud Storage 存储分段。 
+
+
+| — cloudkms.cryptoKeyVersions.useToEncrypt — cloudkms.encryptoKeys.get — cloudkms.encryptoKeys.list — cloudkms.keyrings.list | 将云密钥管理服务中由客户管理的加密密钥与 Cloud Volumes ONTAP 结合使用。 
+
+
+| — compute.instances.setServiceAccount — iam.serviceAccounts.actAs — iam.serviceAccounts.getIamPolicy — iam.serviceAccounts.list — storage.objects.get — storage.objects.list | 在 Cloud Volumes ONTAP 实例上设置服务帐户。此服务帐户提供将数据分层到 Google Cloud Storage 存储分段的权限。 
+
+
+| — compute.addresses … list — compute.backendServices.create — compute.networks.updatePolicy — compute.regionBackendServices.create — compute.regionBackendServices.get — compute.regionBackendServices.list | 部署 HA 对。 
+
+
+| — compute.subnetworks.use — compute.subnetworks.useExternalIp — compute.instances.addAccessConfig | 启用 Cloud Data sense 。 
+
+
+| — container.clusters 。 get — container.clusters 。 list | 发现在 Google Kubernetes Engine 中运行的 Kubernetes 集群。 
+|===

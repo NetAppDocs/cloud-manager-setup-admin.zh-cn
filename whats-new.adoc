@@ -1,0 +1,237 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, enhancements, fixes' 
+summary: 了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户，连接器，云提供商凭据等。 
+---
+= 新增功能
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+了解 Cloud Manager 管理功能的新增功能： NetApp 帐户，连接器，云提供商凭据等。
+
+
+
+== 2022 年 2 月 27 日
+
+
+
+=== Google Cloud 中的连接器增强功能
+
+在 Google Cloud 中创建新的 Connector 时， Cloud Manager 现在将显示所有现有防火墙策略。以前， Cloud Manager 不会显示任何没有目标标记的策略。
+
+
+
+== 2022 年 1 月 30 日
+
+
+
+=== 有关 NetApp 支持站点帐户的提醒
+
+请注意， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。执行此更新后， Cloud Manager 将提示您更新先前添加的任何现有帐户的 NetApp 支持站点（ NSS ）凭据。
+
+如果您尚未将 NSS 帐户迁移到 IDaaS ，则首先需要迁移此帐户，然后在 Cloud Manager 中更新凭据。
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login["了解有关 NetApp 使用 Microsoft Azure AD 进行身份管理的更多信息"^]
+* link:task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method["了解如何将 NSS 帐户更新为新的身份验证方法"]
+
+
+
+
+== 2022 年 1 月 2 日
+
+
+
+=== 减少了连接器的端点
+
+我们减少了 Connector 为管理公有云环境中的资源和流程而需要联系的端点数量。
+
+link:reference-networking-cloud-manager.html#outbound-internet-access["查看所需端点的列表"]。
+
+
+
+=== 用于 Connector 的 EBS 磁盘加密
+
+现在，当您从 Cloud Manager 在 AWS 中部署新的 Connector 时，您可以选择使用默认主密钥或托管密钥对 Connector 的 EBS 磁盘进行加密。
+
+image:screenshot-connector-disk-encryption.png["在 AWS 中创建 Connector 时显示磁盘加密选项的屏幕截图。"]
+
+
+
+=== NSS 帐户的电子邮件地址
+
+Cloud Manager 现在可以显示与 NetApp 支持站点帐户关联的电子邮件地址。
+
+image:screenshot-nss-display-email.png["屏幕截图显示了 NetApp 支持站点帐户的操作菜单，其中包括显示电子邮件地址的功能。"]
+
+
+
+== 2021 年 11 月 28 日
+
+
+
+=== NetApp 支持站点帐户需要更新
+
+从 2021 年 12 月开始， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。执行此更新后， Cloud Manager 将提示您更新先前添加的任何现有 NetApp 支持站点帐户的凭据。
+
+* link:task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method["了解如何将 NSS 帐户更新为新的身份验证方法"]。
+* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login["了解有关 NetApp 使用 Microsoft Azure AD 进行身份管理的更多信息"^]
+
+
+
+
+=== 更改 Cloud Volumes ONTAP 的 NSS 帐户
+
+如果您的组织有多个 NetApp 支持站点帐户，您现在可以更改与 Cloud Volumes ONTAP 系统关联的帐户。
+
+link:task-adding-nss-accounts.html#attach-a-working-environment-to-a-different-nss-account["了解如何将工作环境附加到其他 NSS 帐户"]。
+
+
+
+== 2021 年 11 月 4 日
+
+
+
+=== SOC 2 类型 2 认证
+
+一家独立的认证公有会计师事务所和服务审计师对 Cloud Manager ， Cloud Sync ， Cloud Tiering ， Cloud Data sense 和 Cloud Backup （ Cloud Manager 平台）进行了检查，并确认他们已根据适用的信任服务标准获得 SOC 2 类型 2 报告。
+
+https://www.netapp.com/company/trust-center/compliance/soc-2/["查看 NetApp 的 SOC 2 报告"^]。
+
+
+
+=== 不再支持将连接器用作代理
+
+您不能再使用 Cloud Manager Connector 作为代理服务器从 Cloud Volumes ONTAP 发送 AutoSupport 消息。此功能已被删除，不再受支持。您需要通过 NAT 实例或环境的代理服务提供 AutoSupport 连接。
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html["了解有关使用 Cloud Volumes ONTAP 验证 AutoSupport 的更多信息"^]
+
+
+
+== 2021 年 10 月 31 日
+
+
+
+=== 使用服务主体进行身份验证
+
+在 Microsoft Azure 中创建新的 Connector 时，您现在可以使用 Azure 服务主体进行身份验证，而不是使用 Azure 帐户凭据进行身份验证。
+
+link:task-creating-connectors-azure.html#create-a-connector-using-a-service-principal["了解如何使用 Azure 服务主体进行身份验证"]。
+
+
+
+=== 凭据增强功能
+
+我们重新设计了 " 凭据 " 页面，以便于使用，并与 Cloud Manager 界面的当前外观一致。
+
+
+
+== 2021 年 9 月 2 日
+
+
+
+=== 已添加新的通知服务
+
+通知服务已推出，因此您可以查看在当前登录会话期间启动的 Cloud Manager 操作的状态。您可以验证操作是否成功或失败。 link:task-monitor-cm-operations.html["了解如何监控帐户中的操作"]。
+
+
+
+== 2021 年 8 月 1 日
+
+
+
+=== Connector 支持 RHEL 7.9
+
+现在，运行 Red Hat Enterprise Linux 7.9 的主机支持 Connector 。
+
+link:task-installing-linux.html["查看 Connector 的系统要求"]。
+
+
+
+== 2021 年 7 月 7 日
+
+
+
+=== 添加连接器向导的增强功能
+
+我们重新设计了 * 添加连接器 * 向导，以添加新选项并使其更易于使用。现在，您可以添加标记，指定角色（对于 AWS 或 Azure ），上传代理服务器的根证书，查看 Terraform 自动化的代码，查看进度详细信息等。
+
+* link:task-creating-connectors-aws.html["在 AWS 中创建连接器"]
+* link:task-creating-connectors-azure.html["在 Azure 中创建连接器"]
+* link:task-creating-connectors-gcp.html["在 GCP 中创建连接器"]
+
+
+
+
+=== 通过支持信息板管理 NSS 帐户
+
+现在， NetApp 支持站点（ NSS ）帐户可通过支持信息板进行管理，而不是从设置菜单进行管理。通过此更改，可以更轻松地从一个位置查找和管理所有与支持相关的信息。
+
+link:task-adding-nss-accounts.html["了解如何管理 NSS 帐户"]。
+
+image:screenshot_nss_management.png["支持信息板中可添加 NSS 帐户的 NSS 管理选项卡的屏幕截图。"]
+
+
+
+== 2021 年 5 月 5 日
+
+
+
+=== 时间线中的帐户
+
+Cloud Manager 中的时间线现在显示与帐户管理相关的操作和事件。这些操作包括关联用户，创建工作空间和创建连接器等。如果您需要确定执行特定操作的人员，或者需要确定操作的状态，则检查时间线会很有帮助。
+
+link:task-managing-netapp-accounts.html["了解如何筛选租户服务的时间线"]。
+
+
+
+== 2021 年 4 月 11 日
+
+
+
+=== API 直接调用 Cloud Manager
+
+如果您配置了代理服务器，则现在可以启用一个选项，在不通过代理的情况下直接向 Cloud Manager 发送 API 调用。在 AWS 或 Google Cloud 中运行的 Connectors 支持此选项。
+
+link:task-configuring-proxy.html["了解有关此设置的更多信息"]。
+
+
+
+=== 服务帐户用户
+
+现在，您可以创建服务帐户用户。
+
+服务帐户充当 " 用户 " ，可以通过授权 API 调用 Cloud Manager 来实现自动化。这样可以更轻松地管理自动化，因为您不需要基于可以随时离开公司的真实用户帐户构建自动化脚本。如果您使用的是联合，则可以创建令牌，而无需从云生成刷新令牌。
+
+link:task-managing-netapp-accounts.html#creating-and-managing-service-accounts["了解有关使用服务帐户的更多信息"]。
+
+
+
+=== 私有预览
+
+现在，您可以在帐户中允许进行私有预览，以便访问新的 NetApp 云服务，因为这些服务在 Cloud Manager 中作为预览版提供。
+
+link:task-managing-netapp-accounts.html#allowing-private-previews["了解有关此选项的更多信息"]。
+
+
+
+=== 第三方服务
+
+您还可以允许帐户中的第三方服务访问 Cloud Manager 中提供的第三方服务。
+
+link:task-managing-netapp-accounts.html#allowing-third-party-services["了解有关此选项的更多信息"]。
+
+
+
+== 2021 年 2 月 9 日
+
+
+
+=== 支持信息板改进
+
+我们更新了支持信息板，允许您添加 NetApp 支持站点凭据，以便为您注册支持。您也可以直接从信息板启动 NetApp 支持案例。只需单击帮助图标，然后单击 * 支持 * 。

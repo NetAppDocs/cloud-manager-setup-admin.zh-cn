@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: task-finding-system-id.html 
+keywords: system id, id, cloud manager system id, connector system id 
+summary: 为了帮助您入门， NetApp 代表可能会要求您提供 Connector 的系统 ID 。此 ID 通常用于许可和故障排除目的。 
+---
+= 查找连接器的系统 ID
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+为了帮助您入门， NetApp 代表可能会要求您提供 Connector 的系统 ID 。此 ID 通常用于许可和故障排除目的。
+
+.步骤
+. 在 Cloud Manager 控制台右上角，单击帮助图标。
+. 单击 * 支持 > 连接器 * 。
++
+系统 ID 显示在顶部。
+
++
+* 示例 *
+
++
+image:screenshot_system_id.gif["显示支持信息板中显示的 Cloud Manager 系统 ID 的屏幕截图。"]
+
+
