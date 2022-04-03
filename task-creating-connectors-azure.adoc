@@ -274,7 +274,7 @@ az role definition create --role-definition Policy_for_Setup_As_Service_Azure.js
 .. 从 Azure 门户中，打开 * 订阅 * 服务。
 .. 选择订阅。
 .. 单击 * 访问控制（ IAM ） > 添加 > 添加角色分配 * 。
-.. 在 * 角色 * 选项卡中，选择 * Cloud Manager 操作员 * 角色，然后单击 * 下一步 * 。
+.. 在 * 角色 * 选项卡中，选择 * Azure SetupAsService* 角色，然后单击 * 下一步 * 。
 .. 在 * 成员 * 选项卡中，完成以下步骤：
 +
 *** 保持选中 * 用户，组或服务主体 * 。

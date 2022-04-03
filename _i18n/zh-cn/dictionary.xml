@@ -1817,8 +1817,6 @@
   <block id="6505fd7495c0d65d3dcf8a473c69ddcf" category="doc">从 Azure Marketplace 创建 Connector</block>
   <block id="7f9fe9913d1b2a08f5ff2caaa85912bf" category="section-title">在 Azure 中创建连接器</block>
   <block id="2653228f6dbeaeda53ae60e7bb131779" category="paragraph">使用 Azure Marketplace 中的映像在 Azure 中部署 Connector ，然后登录到 Connector 以指定您的 NetApp 帐户。</block>
-  <block id="1d80646243999957d1e01e9849c2ed27" category="inline-link">转至 Azure Marketplace 页面的 Cloud Manager 。</block>
-  <block id="8202e734d42a9a45c8e93070745403ca" category="list-text"><block ref="ac928af2ed1a52edbabcdb5fb107f598" category="inline-link-rx"></block>。</block>
   <block id="225df19c00186b6ea3e256ba18a0a186" category="list-text">单击 * 立即获取 * ，然后单击 * 继续 * 。</block>
   <block id="74056a9be421d18494e08827c2a4c7f6" category="list-text">在 Azure 门户中，单击 * 创建 * ，然后按照步骤配置虚拟机。</block>
   <block id="d110361593d3c3b635cec5b83db5e311" category="paragraph">配置虚拟机时，请注意以下事项：</block>
@@ -2073,4 +2071,7 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 社区</block>
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 博客</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">云网络研讨会</block>
+  <block id="f350efde95c992c9fb3c75c0e8aefcf0" category="list-text">在 * 角色 * 选项卡中，选择 * Azure SetupAsService* 角色，然后单击 * 下一步 * 。</block>
+  <block id="61436c30fe3edb3aff76fa203adba8c5" category="inline-link">转到 Azure Marketplace 中的 NetApp Connector VM 页面</block>
+  <block id="cabf039014b588edb6021204b108f503" category="list-text"><block ref="cabf039014b588edb6021204b108f503" category="inline-link-rx"></block></block>
 </blocks>

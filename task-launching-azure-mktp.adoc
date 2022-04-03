@@ -22,7 +22,7 @@ summary: 最好直接从 Cloud Manager 创建 Connector ，但如果愿意，您
 使用 Azure Marketplace 中的映像在 Azure 中部署 Connector ，然后登录到 Connector 以指定您的 NetApp 帐户。
 
 .步骤
-. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager["转至 Azure Marketplace 页面的 Cloud Manager 。"^]。
+. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager["转到 Azure Marketplace 中的 NetApp Connector VM 页面"^]
 . 单击 * 立即获取 * ，然后单击 * 继续 * 。
 . 在 Azure 门户中，单击 * 创建 * ，然后按照步骤配置虚拟机。
 +
