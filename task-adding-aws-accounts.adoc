@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-adding-aws-accounts.html 
 keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam, credentials, adding credentials, add credentials 
-summary: 如果要在不同的 AWS 帐户中部署 Cloud Volumes ONTAP ，则需要为这些帐户提供所需的权限，然后将详细信息添加到 Cloud Manager 。如何提供权限取决于您是要为 Cloud Manager 提供 AWS 密钥还是要为受信任帐户中某个角色提供 ARN 。 
+summary: 添加和管理 AWS 凭据，以便 Cloud Manager 拥有在 AWS 帐户中部署和管理云资源所需的权限。如果您管理多个 AWS 订阅，则可以从凭据页面将其中每个订阅分配给不同的 AWS 凭据。 
 ---
 = 管理 Cloud Manager 的 AWS 凭据和订阅
 :hardbreaks:
@@ -27,7 +27,7 @@ summary: 如果要在不同的 AWS 帐户中部署 Cloud Volumes ONTAP ，则需
 
 * 将 AWS 凭据直接添加到 Cloud Manager
 +
-通过向 Cloud Manager 添加新的 AWS 凭据，您可以创建适用于 ONTAP 的 FSX 工作环境。 <<Add credentials to Cloud Manager,了解如何向 Cloud Manager 添加 AWS 凭据>>。
+向 Cloud Manager 添加新的 AWS 凭据可为 Cloud Manager 提供创建和管理适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。 <<Add credentials to Cloud Manager,了解如何向 Cloud Manager 添加 AWS 凭据>>。
 
 
 
@@ -45,7 +45,7 @@ summary: 如果要在不同的 AWS 帐户中部署 Cloud Volumes ONTAP ，则需
 
 == 向 Connector 添加凭据
 
-添加 AWS 凭据以使 Connector 能够在其他 AWS 帐户中部署和管理 Cloud Volumes ONTAP 。您可以在其他帐户中提供 IAM 角色的 ARN ，也可以提供 AWS 访问密钥。
+将 AWS 凭据添加到 Connector ，以便它可以在其他 AWS 帐户中部署和管理 Cloud Volumes ONTAP 。您可以在其他帐户中提供 IAM 角色的 ARN ，也可以提供 AWS 访问密钥。
 
 
 
@@ -142,7 +142,9 @@ image:screenshot_accounts_switch_aws.png["单击详细信息和 amp ；凭据页
 
 == 向 Cloud Manager 添加凭据
 
-通过提供 IAM 角色的 ARN ，为 Cloud Manager 提供为 ONTAP 工作环境创建 FSX 所需的权限，将 AWS 凭据添加到 Cloud Manager 。
+通过提供 IAM 角色的 ARN 将 AWS 凭据添加到 Cloud Manager 中，该角色为 Cloud Manager 提供创建适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。
+
+您可以在创建适用于 ONTAP 的 FSX 工作环境或创建新连接器时使用这些凭据。
 
 
 
@@ -159,29 +161,12 @@ image:screenshot_accounts_switch_aws.png["单击详细信息和 amp ；凭据页
 +
 ** 在 * 可信实体类型 * 下，选择 * AWS 帐户 * 。
 ** 选择 * 其他 AWS 帐户 * 并输入 Cloud Manager SaaS 的 ID ： 952013314444
-** 创建包含以下权限的策略：
+** 创建一个策略，其中包含创建适用于 ONTAP 的 FSX 工作环境或创建连接器所需的权限。
 +
-[source, json]
-----
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "fsx:*",
-                "ec2:Describe*",
-                "ec2:CreateTags",
-                "kms:Describe*",
-                "kms:List*",
-                "iam:CreateServiceLinkedRole"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
-----
+*** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["查看适用于 ONTAP 的 FSX 所需的权限"^]
+*** 从查看连接器部署策略 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略页面"^]
+
+
 
 
 . 复制 IAM 角色的角色 ARN ，以便您可以在下一步将其粘贴到 Cloud Manager 中。
@@ -211,7 +196,7 @@ image:screenshot_settings_icon.gif["一个屏幕截图，显示 Cloud Manager �
 
 
 
-现在，您可以在创建适用于 ONTAP 的 FSX 工作环境时使用这些凭据。
+现在，您可以在创建适用于 ONTAP 的 FSX 工作环境或创建新连接器时使用这些凭据。
 
 
 

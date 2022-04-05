@@ -189,7 +189,6 @@
   <block id="42dedb42cdb310c29307f9649dd6b146" category="list-text">应用程序（客户端） ID ：请参见 <block ref="6e43fddc58b77d10342452e0c5f86200" category="inline-xref-macro-rx"></block>。</block>
   <block id="e6bfb5bdb5586f534e2e3adf3bc1f74a" category="list-text">目录（租户） ID ：请参见 <block ref="6e43fddc58b77d10342452e0c5f86200" category="inline-xref-macro-rx"></block>。</block>
   <block id="aca5096ac18d904bd7d20b609f13571d" category="list-text">客户端密钥：请参见 <block ref="2f8da44aff19ae4d1a810f6d1d618984" category="inline-xref-macro-rx"></block>。</block>
-  <block id="7c08bc08a8b832fec3997fe53295c795" category="summary">如果要在不同的 AWS 帐户中部署 Cloud Volumes ONTAP ，则需要为这些帐户提供所需的权限，然后将详细信息添加到 Cloud Manager 。如何提供权限取决于您是要为 Cloud Manager 提供 AWS 密钥还是要为受信任帐户中某个角色提供 ARN 。</block>
   <block id="cd5bd8ef122a32412aa67ffac252516e" category="doc">管理 Cloud Manager 的 AWS 凭据和订阅</block>
   <block id="17f4974e92dfb1acf76817cf0d455050" category="paragraph">添加和管理 AWS 凭据，以便 Cloud Manager 拥有在 AWS 帐户中部署和管理云资源所需的权限。如果您管理多个 AWS 订阅，则可以从凭据页面将其中每个订阅分配给不同的 AWS 凭据。</block>
   <block id="9a1152221994c4390c82d2e946e8ba93" category="paragraph">您可以将 AWS 凭据添加到现有 Connector 或直接添加到 Cloud Manager ：</block>
@@ -198,13 +197,11 @@
   <block id="83e2c729c13db1077fa9b54d7289d7a0" category="paragraph">通过向现有连接器添加新的 AWS 凭据，您可以使用同一连接器在另一个 AWS 帐户中部署 Cloud Volumes ONTAP 。 <block ref="568ce14d3cdae759e790bc127b222228" category="inline-xref-macro-rx"></block>。</block>
   <block id="7b6cf044a66e935a098fb8cd83363e83" category="list-text">将 AWS 凭据直接添加到 Cloud Manager</block>
   <block id="899c13f90184c78b69349bbceb931d16" category="inline-xref">了解如何向 Cloud Manager 添加 AWS 凭据</block>
-  <block id="58a71fe0c0dd9716ed5652408295a31f" category="paragraph">通过向 Cloud Manager 添加新的 AWS 凭据，您可以创建适用于 ONTAP 的 FSX 工作环境。 <block ref="2b759c7fb1c1b2ce728a7fb1e8e64b6d" category="inline-xref-macro-rx"></block>。</block>
   <block id="d40f2c83e95f6746ea810ba2593deb2d" category="section-title">如何轮换凭据</block>
   <block id="e7273d95e9d37fd9da1a8a44576c6922" category="inline-link-macro">详细了解 AWS 凭据和权限</block>
   <block id="49a4eb544564882dc7440ee482a753dd" category="paragraph">您可以通过 Cloud Manager 通过以下几种方式提供 AWS 凭据：与 Connector 实例关联的 IAM 角色，在可信帐户中担任 IAM 角色或提供 AWS 访问密钥。 <block ref="327ad200be450c94b449dea92a32b142" category="inline-link-macro-rx"></block>。</block>
   <block id="c0f3d62ee13e3d6026170d25c9384876" category="paragraph">对于前两个选项， Cloud Manager 使用 AWS 安全令牌服务获取持续轮换的临时凭据。此过程是最佳实践，因为它是自动的，并且安全。</block>
   <block id="2107472aff38cfdebba436df3f42b23b" category="section-title">向 Connector 添加凭据</block>
-  <block id="bf17683d9b704c9b9680320ee2c58904" category="paragraph">添加 AWS 凭据以使 Connector 能够在其他 AWS 帐户中部署和管理 Cloud Volumes ONTAP 。您可以在其他帐户中提供 IAM 角色的 ARN ，也可以提供 AWS 访问密钥。</block>
   <block id="1b516070ab36ad4c186fe30bd203fb45" category="section-title">授予权限</block>
   <block id="8a128a994df87cb5973b2c0be1404679" category="paragraph">在将其他 AWS 凭据添加到 Connector 之前，您需要提供所需的权限。通过这些权限， Cloud Manager 可以管理该 AWS 帐户中的资源和进程。如何提供权限取决于您是要为 Cloud Manager 提供受信任帐户或 AWS 密钥中某个角色的 ARN 。</block>
   <block id="e5fc05695d6d40579715f8fc43e17cf6" category="inline-link-macro">了解 AWS 凭据和权限</block>
@@ -250,12 +247,10 @@
   <block id="cc993521b8909c4085841bf25067d9c0" category="list-text">* 查看 * ：确认有关新凭据的详细信息，然后单击 * 添加 * 。</block>
   <block id="59c42111c120e2a009a663d366f4914f" category="paragraph">现在，在创建新的工作环境时，您可以从 " 详细信息和凭据 " 页面切换到另一组凭据：</block>
   <block id="80eeb375dbaa0ef03077d457dd5bbb95" category="section-title">向 Cloud Manager 添加凭据</block>
-  <block id="4d84f954e430a979898b09e01ebb46b3" category="paragraph">通过提供 IAM 角色的 ARN ，为 Cloud Manager 提供为 ONTAP 工作环境创建 FSX 所需的权限，将 AWS 凭据添加到 Cloud Manager 。</block>
   <block id="d8a56d983b91f097e5ba55dd03a18509" category="section-title">设置 IAM 角色</block>
   <block id="d9a499196547b3d025fe2a7d3c56baa1" category="paragraph">设置一个 IAM 角色，使 Cloud Manager SaaS 能够承担此角色。</block>
   <block id="44030f19e52b4a03b050525f287bbc15" category="list-text">转到目标帐户中的 IAM 控制台。</block>
   <block id="7d85138efc851d16b36fe016a7d406df" category="list-text">选择 * 其他 AWS 帐户 * 并输入 Cloud Manager SaaS 的 ID ： 952013314444</block>
-  <block id="30c558b7179a7e55ad7f3ae5ca262466" category="list-text">创建包含以下权限的策略：</block>
   <block id="e08f06cebc90d5cc269f643f2df5ab95" category="list-text">复制 IAM 角色的角色 ARN ，以便您可以在下一步将其粘贴到 Cloud Manager 中。</block>
   <block id="cb42da6cc008fcaadb5690213a1db71a" category="inline-xref">现在，您可以将其添加到 Cloud Manager 中</block>
   <block id="dc5fa31c6cdecc325963ce45b8a4cda9" category="paragraph">IAM 角色现在具有所需的权限。 <block ref="f79ac87a9e39cf4133c2da90a5dae454" category="inline-xref-macro-rx"></block>。</block>
@@ -263,7 +258,6 @@
   <block id="5138a631dd35ae5628a6137742d99bcc" category="paragraph">如果您刚刚创建了 IAM 角色，则可能需要几分钟的时间，直到这些角色可用为止。请等待几分钟，然后再将凭据添加到 Cloud Manager 。</block>
   <block id="15d1c1365d4f855b7d77c93232a59906" category="list-text">* 凭据位置 * ：选择 * Amazon Web Services &gt; Cloud Manager* 。</block>
   <block id="8cf335d7d3b1dd5cdac30699d20489c0" category="list-text">* 定义凭据 * ：提供 IAM 角色的 ARN （ Amazon 资源名称）。</block>
-  <block id="c0abab76d53e87b10c7a7de184fc0f53" category="paragraph">现在，您可以在创建适用于 ONTAP 的 FSX 工作环境时使用这些凭据。</block>
   <block id="94935dba78b982df4dbaaf55737f4d0b" category="section-title">关联 AWS 订阅</block>
   <block id="99d8101dd6c55cd4a41adde2e1c707a9" category="paragraph">将 AWS 凭据添加到 Cloud Manager 后，您可以将 AWS Marketplace 订阅与这些凭据相关联。通过订阅，您可以按每小时费率（ PAYGO ）或使用年度合同为 Cloud Volumes ONTAP 付费，并使用其他 NetApp 云服务。</block>
   <block id="5ad7bc2b388bb236e1686ac8da3a1898" category="paragraph">在以下两种情况下，您可能会在将凭据添加到 Cloud Manager 后关联 AWS Marketplace 订阅：</block>
@@ -582,29 +576,22 @@
   <block id="84a965b235dbf71095fa90c6e442a58e" category="summary">了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户，连接器，云提供商凭据等。</block>
   <block id="490414e0366b091220802d406e52c076" category="doc">新增功能</block>
   <block id="f6197c5e32978fc6ef2a0a4b4ae9403a" category="paragraph">了解 Cloud Manager 管理功能的新增功能： NetApp 帐户，连接器，云提供商凭据等。</block>
-  <block id="f1c93420db258097a199364a47f6389a" category="section-title">2022 年 2 月 27 日</block>
   <block id="0fc27381f6df0f20af584e656aa215b9" category="section-title">Google Cloud 中的连接器增强功能</block>
   <block id="23ea931bf11f885e1a49e6970b0aa60a" category="paragraph">在 Google Cloud 中创建新的 Connector 时， Cloud Manager 现在将显示所有现有防火墙策略。以前， Cloud Manager 不会显示任何没有目标标记的策略。</block>
-  <block id="fc481daeaff685ebb8b174ea3c483b3d" category="section-title">2022 年 1 月 30 日</block>
   <block id="4c192c0d77af6017716138a0c469c687" category="section-title">有关 NetApp 支持站点帐户的提醒</block>
   <block id="553da3d1de1480b23203668d02c692f5" category="paragraph">请注意， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。执行此更新后， Cloud Manager 将提示您更新先前添加的任何现有帐户的 NetApp 支持站点（ NSS ）凭据。</block>
   <block id="a47acc65b2885cddfc6096e5aa5324f7" category="paragraph">如果您尚未将 NSS 帐户迁移到 IDaaS ，则首先需要迁移此帐户，然后在 Cloud Manager 中更新凭据。</block>
   <block id="b48762bb68eb4f8c518d5be6f1c76d16" category="inline-link">了解有关 NetApp 使用 Microsoft Azure AD 进行身份管理的更多信息</block>
   <block id="d9031e6782c3419c7b81c9c83572daf7" category="list-text"><block ref="d9031e6782c3419c7b81c9c83572daf7" category="inline-link-rx"></block></block>
   <block id="d843af49cdcc73f67f6a04467ff7a5b1" category="inline-link-macro">了解如何将 NSS 帐户更新为新的身份验证方法</block>
-  <block id="3c862e0ed1419b55d2a034c234cd6671" category="list-text"><block ref="3c862e0ed1419b55d2a034c234cd6671" category="inline-link-macro-rx"></block></block>
-  <block id="87cceaf9025d3baf5c01192f54b1f30d" category="section-title">2022 年 1 月 2 日</block>
   <block id="3eb3c5317b96f11c0338c5ff2b831a15" category="section-title">减少了连接器的端点</block>
   <block id="3ea953e33860f2fb58e83ea9f9842e28" category="paragraph">我们减少了 Connector 为管理公有云环境中的资源和流程而需要联系的端点数量。</block>
   <block id="deb7ce1a594b9c903900b5242dc0085e" category="inline-link-macro">查看所需端点的列表</block>
-  <block id="b56cb6a6a9f7499eaa70e7da17364356" category="paragraph"><block ref="c161e0d4dd835e95bcf25c6fa5cd5ef9" category="inline-link-macro-rx"></block>。</block>
   <block id="cdacfba529ee299ab36d1cdf539f519d" category="section-title">用于 Connector 的 EBS 磁盘加密</block>
   <block id="dcf92cfff3fdb05a27221d7e0f407165" category="paragraph">现在，当您从 Cloud Manager 在 AWS 中部署新的 Connector 时，您可以选择使用默认主密钥或托管密钥对 Connector 的 EBS 磁盘进行加密。</block>
   <block id="e47c7d2e2b0dfe5aea5df23ca3dc5523" category="inline-image-macro">在 AWS 中创建 Connector 时显示磁盘加密选项的屏幕截图。</block>
-  <block id="69235f900c0b4cbe26ece6b30beb0fa8" category="paragraph"><block ref="69235f900c0b4cbe26ece6b30beb0fa8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c9ace35ceff752453d1b0f7978e94417" category="section-title">NSS 帐户的电子邮件地址</block>
   <block id="09a67f36e39e8933808ee04f43addc27" category="paragraph">Cloud Manager 现在可以显示与 NetApp 支持站点帐户关联的电子邮件地址。</block>
-  <block id="e7c5ad171298e38494ee7665c2b581e3" category="section-title">2021 年 11 月 28 日</block>
   <block id="afd82a1708e69d4da8a44f0cbee4ae9c" category="section-title">NetApp 支持站点帐户需要更新</block>
   <block id="cd9cf4a2a1c115f8da1d3cd4b0b783dd" category="paragraph">从 2021 年 12 月开始， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。执行此更新后， Cloud Manager 将提示您更新先前添加的任何现有 NetApp 支持站点帐户的凭据。</block>
   <block id="39324a4f3b6b149e18eccdfc7337abd7" category="list-text"><block ref="3c862e0ed1419b55d2a034c234cd6671" category="inline-link-macro-rx"></block>。</block>
@@ -612,7 +599,6 @@
   <block id="e99f30e825d98bd08033ec588636b5fc" category="paragraph">如果您的组织有多个 NetApp 支持站点帐户，您现在可以更改与 Cloud Volumes ONTAP 系统关联的帐户。</block>
   <block id="410c9dea5614a1c565dab22836dac506" category="inline-link-macro">了解如何将工作环境附加到其他 NSS 帐户</block>
   <block id="716da4ef7d1a5f241e18d6b446014f1c" category="paragraph"><block ref="ef9f07c493626712a09129088a5e9304" category="inline-link-macro-rx"></block>。</block>
-  <block id="252e721a21fb8e3a5cde4b3b0b99f92f" category="section-title">2021 年 11 月 4 日</block>
   <block id="0b43e955bb49e08923e9b43ee20ef2b3" category="section-title">SOC 2 类型 2 认证</block>
   <block id="ac0f5e08f6053e35cd41705edc1764e6" category="paragraph">一家独立的认证公有会计师事务所和服务审计师对 Cloud Manager ， Cloud Sync ， Cloud Tiering ， Cloud Data sense 和 Cloud Backup （ Cloud Manager 平台）进行了检查，并确认他们已根据适用的信任服务标准获得 SOC 2 类型 2 报告。</block>
   <block id="582a36961cbdd6ca90f6672041cdab83" category="inline-link">查看 NetApp 的 SOC 2 报告</block>
@@ -621,18 +607,15 @@
   <block id="5c8306d9be4948716015bb2f9e79b2c6" category="paragraph">您不能再使用 Cloud Manager Connector 作为代理服务器从 Cloud Volumes ONTAP 发送 AutoSupport 消息。此功能已被删除，不再受支持。您需要通过 NAT 实例或环境的代理服务提供 AutoSupport 连接。</block>
   <block id="52fc1a06d2ae446b85445e7fc0cf985d" category="inline-link">了解有关使用 Cloud Volumes ONTAP 验证 AutoSupport 的更多信息</block>
   <block id="0cee696240caf705fad7f17ef37c4a7b" category="paragraph"><block ref="0cee696240caf705fad7f17ef37c4a7b" category="inline-link-rx"></block></block>
-  <block id="f113b79a4bb13850776b0f197bc567c4" category="section-title">2021 年 10 月 31 日</block>
   <block id="67b68df6bafe01dd2b7c0f5e85ec62ff" category="section-title">使用服务主体进行身份验证</block>
   <block id="8c14c862f5a121ac56cd7c2e45b59e09" category="paragraph">在 Microsoft Azure 中创建新的 Connector 时，您现在可以使用 Azure 服务主体进行身份验证，而不是使用 Azure 帐户凭据进行身份验证。</block>
   <block id="2b5f7271b3a292c88ce5b4850153c1f4" category="inline-link-macro">了解如何使用 Azure 服务主体进行身份验证</block>
   <block id="051567b32d3e33a05e8a851cf866c6ce" category="paragraph"><block ref="8cd32335430c25ac68d0cf69c4942ed3" category="inline-link-macro-rx"></block>。</block>
   <block id="c4f5f37a3eac48a6747104e3821bdfc7" category="section-title">凭据增强功能</block>
   <block id="927ebf0b3ebac11b90b010cce510f149" category="paragraph">我们重新设计了 " 凭据 " 页面，以便于使用，并与 Cloud Manager 界面的当前外观一致。</block>
-  <block id="3b7a1a77cdd08778e0827fbf312442b7" category="section-title">2021 年 9 月 2 日</block>
   <block id="b965147e511dac4e3aebd73ea41829e3" category="section-title">已添加新的通知服务</block>
   <block id="3c1b23b324258ff4cbade594bf9bba9d" category="inline-link-macro">了解如何监控帐户中的操作</block>
   <block id="e2945895b2a6a405c218350491024401" category="paragraph">通知服务已推出，因此您可以查看在当前登录会话期间启动的 Cloud Manager 操作的状态。您可以验证操作是否成功或失败。 <block ref="f47b918ef0cfcb851278e7a8f756b776" category="inline-link-macro-rx"></block>。</block>
-  <block id="feaee5d58494deaebb1ce5a1c3fce93b" category="section-title">2021 年 8 月 1 日</block>
   <block id="81de4fabd4db5e6833366e4bcef85f1e" category="section-title">Connector 支持 RHEL 7.9</block>
   <block id="a95742b809057568fda07a87694945f1" category="paragraph">现在，运行 Red Hat Enterprise Linux 7.9 的主机支持 Connector 。</block>
   <block id="2a75ac250c22787b79b100a2a614a4e2" category="inline-link-macro">查看 Connector 的系统要求</block>
@@ -657,7 +640,6 @@
   <block id="9b67e1ec262493b1df3ec41cc4fbd4a0" category="paragraph">Cloud Manager 中的时间线现在显示与帐户管理相关的操作和事件。这些操作包括关联用户，创建工作空间和创建连接器等。如果您需要确定执行特定操作的人员，或者需要确定操作的状态，则检查时间线会很有帮助。</block>
   <block id="2355c6490a09de53516a5be37a0fe654" category="inline-link-macro">了解如何筛选租户服务的时间线</block>
   <block id="5a8ad48c9b03f69b19da38f8dbd7c49d" category="paragraph"><block ref="a092f71e9bc6341ca08fc630392b20df" category="inline-link-macro-rx"></block>。</block>
-  <block id="13c380d451c296cda1d1289b9dc25114" category="section-title">2021 年 4 月 11 日</block>
   <block id="a751a999298090bf2562492d1817e583" category="section-title">API 直接调用 Cloud Manager</block>
   <block id="c22052aa83aad03ab1340970700a2c27" category="paragraph">如果您配置了代理服务器，则现在可以启用一个选项，在不通过代理的情况下直接向 Cloud Manager 发送 API 调用。在 AWS 或 Google Cloud 中运行的 Connectors 支持此选项。</block>
   <block id="9dede71b8a52f35ab437be508256e623" category="inline-link-macro">了解有关此设置的更多信息</block>
@@ -673,7 +655,6 @@
   <block id="e4be032a3be0dcfffde1cc853ce81a9f" category="section-title">第三方服务</block>
   <block id="4823145b3655f45dcb57edeef856c1a9" category="paragraph">您还可以允许帐户中的第三方服务访问 Cloud Manager 中提供的第三方服务。</block>
   <block id="55e1f633897fc0a0ce5b8e8e0fb09370" category="paragraph"><block ref="9a04b22be906f506f76b327c13da5a90" category="inline-link-macro-rx"></block>。</block>
-  <block id="efeacc9945f3d51aeaecae7e217dd7c9" category="section-title">2021 年 2 月 9 日</block>
   <block id="094be1dbadd11ed5e81a249dfb9a643a" category="section-title">支持信息板改进</block>
   <block id="2a42bd1b25c8685af4b1b1d1ca8e4805" category="paragraph">我们更新了支持信息板，允许您添加 NetApp 支持站点凭据，以便为您注册支持。您也可以直接从信息板启动 NetApp 支持案例。只需单击帮助图标，然后单击 * 支持 * 。</block>
   <block id="92a9dce082b446716ce27506e84c5196" category="summary">创建 Cloud Volumes ONTAP 系统时，您需要选择要用于该系统的 Azure 凭据和 Marketplace 订阅。如果您管理多个 Azure Marketplace 订阅，则可以从 " 凭据 " 页面将其中每个订阅分配给不同的 Azure 凭据。</block>
@@ -1957,22 +1938,13 @@
   <block id="a376d701bcf6f33dfc99e261c767ae1e" category="list-text">Google Cloud ：请参见上文第 7 步</block>
   <block id="40d888ab986f8a54cf9072a0737f622d" category="doc">从 Cloud Manager 在 AWS 中创建连接器</block>
   <block id="24a6e24dbd4eec4ffe9ac5f4338dec68" category="paragraph">此页面介绍如何直接从 Cloud Manager 在 AWS 中创建 Connector 。 <block ref="f56df5f8b4fd558a7482d6115403eadd" category="inline-link-macro-rx"></block>。</block>
-  <block id="eb557b60d5f15013d7faca6409fad27c" category="section-title">设置 AWS 权限以创建 Connector</block>
-  <block id="3022a750f167dc8c51e46e437855cb56" category="paragraph">在从 Cloud Manager 部署 Connector 之前，您需要确保您的 AWS 帐户具有正确的权限。</block>
-  <block id="3fce63b068834ddb30f7d7bf42a97ade" category="list-text">从以下位置下载 Connector IAM 策略：</block>
-  <block id="324197c492971b6abe6108b6ed0e2722" category="inline-link">创建适用于 ONTAP 的 FSX 工作环境</block>
-  <block id="0475825abc36c8993637256f9779d334" category="admonition">有关适用于 ONTAP 的 Amazon FSX 的 IAM 用户权限，请参见<block ref="79335d92d67824e544bfa8d4eae956d4" category="inline-link-rx"></block>。</block>
   <block id="a5e94222d72ddc1fb2fdfd796ec40c93" category="list-text">在 AWS IAM 控制台中，通过复制并粘贴 Connector IAM 策略中的文本来创建您自己的策略。</block>
   <block id="2d730f3a28c08580541e1585e4c3f134" category="list-text">将上一步中创建的策略附加到要从 Cloud Manager 创建 Connector 的 IAM 用户。</block>
   <block id="3faf40ec673a27da72957bee9f22e597" category="paragraph">AWS 用户现在具有从 Cloud Manager 创建 Connector 所需的权限。在 Cloud Manager 提示时，您需要为此用户指定 AWS 访问密钥。</block>
-  <block id="3982c5bc27c7b1cc13f2ac6e75957dfb" category="section-title">在 AWS 中创建连接器</block>
   <block id="555955942c711a4d2bbe3fdd1980539b" category="paragraph">您可以通过 Cloud Manager 直接从其用户界面在 AWS 中创建 Connector 。</block>
-  <block id="d0b4e1a7ded8f840bde9834a6b28299b" category="list-text">具有的 IAM 用户的 AWS 访问密钥和机密密钥<block ref="a18b1518901620e43c44c260945ff7cb" category="inline-link-rx"></block> 以创建 Connector 。</block>
   <block id="696168c9b9e3d6be0b4ff452721f4186" category="list-text">您选择的 AWS 区域中的 VPC ，子网和密钥对。</block>
   <block id="31394c3a86d99c92bf2cb604d7b8bd52" category="list-text">如果您不希望 Cloud Manager 自动为 Connector 创建 IAM 角色，则需要创建您自己的角色<block ref="a089a902a75ad2c7ce37bae7ba8de60b" category="inline-link-rx"></block>。</block>
-  <block id="49fa930391d4fd8f222455531dfac4ed" category="paragraph">这些权限适用于 Connector 实例。这是一组与上述第一个项目中提供的权限不同的权限。</block>
   <block id="7cddf1ab764729128f3c7130203d73a0" category="list-text">选择 * Amazon Web Services* 作为您的云提供商，然后单击 * 继续 * 。</block>
-  <block id="eb432672750da037f1d1ac6895f2e7bc" category="list-text">* AWS Credentials* ：指定满足权限要求的 AWS 访问密钥和机密密钥，然后选择您所在的地区。</block>
   <block id="694c0d1ad033ac65143fd7073852f718" category="list-text">* 详细信息 * ：提供有关连接器的详细信息。</block>
   <block id="bb535485e7b97661af60ecc59e655498" category="list-text">输入实例的名称。</block>
   <block id="edda80be79ac3f7cac925a65c6a3e5b5" category="list-text">向实例添加自定义标记（元数据）。</block>
@@ -2074,4 +2046,56 @@
   <block id="f350efde95c992c9fb3c75c0e8aefcf0" category="list-text">在 * 角色 * 选项卡中，选择 * Azure SetupAsService* 角色，然后单击 * 下一步 * 。</block>
   <block id="61436c30fe3edb3aff76fa203adba8c5" category="inline-link">转到 Azure Marketplace 中的 NetApp Connector VM 页面</block>
   <block id="cabf039014b588edb6021204b108f503" category="list-text"><block ref="cabf039014b588edb6021204b108f503" category="inline-link-rx"></block></block>
+  <block id="e8303b3c359355a29e343d1741791f05" category="paragraph">向 Cloud Manager 添加新的 AWS 凭据可为 Cloud Manager 提供创建和管理适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。 <block ref="2b759c7fb1c1b2ce728a7fb1e8e64b6d" category="inline-xref-macro-rx"></block>。</block>
+  <block id="448746f589ceea8f1b3191a05fe6c57c" category="paragraph">将 AWS 凭据添加到 Connector ，以便它可以在其他 AWS 帐户中部署和管理 Cloud Volumes ONTAP 。您可以在其他帐户中提供 IAM 角色的 ARN ，也可以提供 AWS 访问密钥。</block>
+  <block id="86a80f2c5791260c43446585966588d0" category="paragraph">通过提供 IAM 角色的 ARN 将 AWS 凭据添加到 Cloud Manager 中，该角色为 Cloud Manager 提供创建适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。</block>
+  <block id="620ca61d4ab126187e2b08ea732bc73d" category="paragraph">您可以在创建适用于 ONTAP 的 FSX 工作环境或创建新连接器时使用这些凭据。</block>
+  <block id="e8d22804fac9dc3460dec3cade490b3d" category="list-text">创建一个策略，其中包含创建适用于 ONTAP 的 FSX 工作环境或创建连接器所需的权限。</block>
+  <block id="3d35bba2e5ea6e739fb94736dc402017" category="inline-link">查看适用于 ONTAP 的 FSX 所需的权限</block>
+  <block id="df00618b6e4c6f7fcb9a7fbb4c65b54e" category="list-text"><block ref="df00618b6e4c6f7fcb9a7fbb4c65b54e" category="inline-link-rx"></block></block>
+  <block id="a7670b1f58884f1ec2ecfbedc687193d" category="list-text">从查看连接器部署策略<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block></block>
+  <block id="174c30e12e5caabc3d6093c8f5d239eb" category="paragraph">现在，您可以在创建适用于 ONTAP 的 FSX 工作环境或创建新连接器时使用这些凭据。</block>
+  <block id="ba26e4556a0f160834687982b0479336" category="section-title">2022 年 2 月 27 日</block>
+  <block id="3ac47455b10c6fb4061a70a91fdbfde2" category="section-title">2022 年 1 月 30 日</block>
+  <block id="56e138c1cde783765ac6d2c9d4217fad" category="list-text"><block ref="56e138c1cde783765ac6d2c9d4217fad" category="inline-link-rx"></block></block>
+  <block id="586301717819197e24001cac47efdaaa" category="section-title">2022 年 1 月 2 日</block>
+  <block id="3f9908dd0d34e73be621e521e51cd6a8" category="paragraph"><block ref="5f52a012a929ebfb0b0a901a58e91a4c" category="inline-link-rx"></block>。</block>
+  <block id="1a3140f260afcdb189bbb444b89966c4" category="paragraph"><block ref="1a3140f260afcdb189bbb444b89966c4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e07973e7f57415cf8c19fe68b62a728c" category="paragraph"><block ref="e07973e7f57415cf8c19fe68b62a728c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f61163b681442ac500a8018c87241770" category="section-title">2021 年 11 月 28 日</block>
+  <block id="0c8656a54bb3c58b8facb7ba72092bdc" category="section-title">2021 年 11 月 4 日</block>
+  <block id="784044bd2af30d58bbb0dbcea3adbad6" category="section-title">2021 年 10 月 31 日</block>
+  <block id="d798cbf5a08fbeb9fdd3652e5b00bb4c" category="section-title">2021 年 9 月 2 日</block>
+  <block id="9e27c4a53794e4f6cfc9949de58e5091" category="section-title">2021 年 8 月 1 日</block>
+  <block id="29c251ed5a57bbffe470654ccbbe714c" category="section-title">2021 年 4 月 11 日</block>
+  <block id="d42fa6c698bffd937b50724aa035c2cb" category="section-title">2021 年 2 月 9 日</block>
+  <block id="56871f8b2603f3216127f57d5542b3ae" category="section-title">设置 AWS 身份验证</block>
+  <block id="d86822a8a437c0121eb90d96b8941d16" category="paragraph">Cloud Manager 需要先向 AWS 进行身份验证，然后才能在 VPC 中部署 Connector 实例。您可以选择以下身份验证方法之一：</block>
+  <block id="c09f2e8bf26d5b89650345ce64a72729" category="list-text">让 Cloud Manager 承担 IAM 角色</block>
+  <block id="9090a5b56ee3987b74cdf74ad414661f" category="list-text">为 IAM 用户提供 AWS 访问密钥和机密密钥</block>
+  <block id="236a8e62b3972cd5f32e0bdf357731a7" category="paragraph">您使用的身份验证方法必须具有在 AWS 中部署 Connector 实例所需的权限。</block>
+  <block id="30db7b9fd99be0ab8460cabb34938d21" category="section-title">设置 IAM 角色</block>
+  <block id="50ddbbe6b962ea257339e20cddd80182" category="paragraph">设置一个 IAM 角色， Cloud Manager 可以承担此角色，以便在 AWS 中部署 Connector 。</block>
+  <block id="6def7e4cb7f5db1eb46c3ef625472320" category="list-text">从下载 Connector IAM 策略<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block>。</block>
+  <block id="030666f5f4873ade91adc709ec10ea4d" category="paragraph">此策略包含在 AWS 中创建 Connector 所需的权限。在 Cloud Manager 创建 Connector 时，它会将一组新的权限应用于 Connector 实例。</block>
+  <block id="0e78dc7220ea8b6abafe6ef7aaad9998" category="list-text">转到目标帐户中的 AWS IAM 控制台。</block>
+  <block id="eec3f9d91aeef5beb63d80162a34ba3b" category="list-text">选择 * 其他 AWS 帐户 * ，然后输入 Cloud Manager SaaS 帐户的 ID ： 952013314444</block>
+  <block id="cb7eb4c83c01cf01decd10b272ecd3de" category="list-text">创建一个包含先前下载的 Connector IAM 策略中所示权限的策略。</block>
+  <block id="171bb61bae05c7779ab40b861597ba33" category="list-text">复制 IAM 角色的角色 ARN ，以便您可以在创建 Connector 时将其粘贴到 Cloud Manager 中。</block>
+  <block id="d47c23803528fa45fad33a3f83dfcf54" category="paragraph">IAM 角色现在具有所需的权限。</block>
+  <block id="c3f217f9a4bf83b62b55576a453f4e95" category="section-title">为 IAM 用户设置权限</block>
+  <block id="90f42b795a98a48d78b53e8d6d353987" category="paragraph">创建 Connector 时，您可以为拥有部署 Connector 实例所需权限的 IAM 用户提供 AWS 访问密钥和机密密钥。</block>
+  <block id="feeae7fc16d497b9cfb3dac7745882d8" category="list-text">从下载 Connector 部署策略<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block>。</block>
+  <block id="2fee7712f844ac3827af8e70987e1692" category="paragraph">此 IAM 策略包括在 AWS 中创建 Connector 所需的权限。在 Cloud Manager 创建 Connector 时，它会将一组新的权限应用于 Connector 实例。</block>
+  <block id="2148f456d9af28f7a3c6836b09b86d79" category="list-text">确保您有权访问 IAM 用户的访问密钥和机密密钥。</block>
+  <block id="94ee7072c2750da1997438a715efb7d4" category="section-title">创建连接器</block>
+  <block id="4f17567a3649c9a7e40e769fe63ec8b1" category="list-text">AWS 身份验证方法： Cloud Manager 可承担的 IAM 角色的 ARN ，或者 IAM 用户的 AWS 访问密钥和机密密钥。</block>
+  <block id="fafb693c24f4f5cc7a281b93dae71348" category="paragraph">这些权限是 Connector 在公有 云环境中管理资源所需的权限。它与您为创建 Connector 实例提供的权限集不同。</block>
+  <block id="0f3262c52ea3cde7a6e7d8f3ced3e5d5" category="list-text">* AWS Credentials* ：指定您的 AWS 区域，然后选择身份验证方法，即 Cloud Manager 可以承担的 IAM 角色或 AWS 访问密钥和机密密钥。</block>
+  <block id="8b8f36850755c4ac43a0df238add8748" category="inline-link-macro">了解如何添加其他凭据</block>
+  <block id="c1174544170df213c211f69888f8d5fd" category="admonition">如果选择 * 承担角色 * ，则可以从 Connector 部署向导创建第一组凭据。必须从 " 凭据 " 页面创建任何其他凭据集。然后，这些文件将从向导的下拉列表中显示。 <block ref="21eba73392ef6be6fd6da758f5bd2e93" category="inline-link-macro-rx"></block>。</block>
+  <block id="971244fe0532e4f8237c05b5893a87cc" category="sidebar">云提供商帐户</block>
+  <block id="6dc6b060b761d145366b9ed041137917" category="sidebar">管理 AWS 凭据</block>
+  <block id="c135c603177e58023474a65f829c0fd3" category="sidebar">管理 Azure 凭据</block>
+  <block id="15f599d5c4282f662b38657a0b5c5739" category="sidebar">管理 Google Cloud 凭据</block>
 </blocks>

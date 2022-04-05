@@ -38,7 +38,7 @@ summary: 了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户
 如果您尚未将 NSS 帐户迁移到 IDaaS ，则首先需要迁移此帐户，然后在 Cloud Manager 中更新凭据。
 
 * https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login["了解有关 NetApp 使用 Microsoft Azure AD 进行身份管理的更多信息"^]
-* link:task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method["了解如何将 NSS 帐户更新为新的身份验证方法"]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method["了解如何将 NSS 帐户更新为新的身份验证方法"]
 
 
 
@@ -51,7 +51,7 @@ summary: 了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户
 
 我们减少了 Connector 为管理公有云环境中的资源和流程而需要联系的端点数量。
 
-link:reference-networking-cloud-manager.html#outbound-internet-access["查看所需端点的列表"]。
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html#outbound-internet-access["查看所需端点的列表"]。
 
 
 
@@ -59,7 +59,7 @@ link:reference-networking-cloud-manager.html#outbound-internet-access["查看所
 
 现在，当您从 Cloud Manager 在 AWS 中部署新的 Connector 时，您可以选择使用默认主密钥或托管密钥对 Connector 的 EBS 磁盘进行加密。
 
-image:screenshot-connector-disk-encryption.png["在 AWS 中创建 Connector 时显示磁盘加密选项的屏幕截图。"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-connector-disk-encryption.png["在 AWS 中创建 Connector 时显示磁盘加密选项的屏幕截图。"]
 
 
 
@@ -67,7 +67,7 @@ image:screenshot-connector-disk-encryption.png["在 AWS 中创建 Connector 时�
 
 Cloud Manager 现在可以显示与 NetApp 支持站点帐户关联的电子邮件地址。
 
-image:screenshot-nss-display-email.png["屏幕截图显示了 NetApp 支持站点帐户的操作菜单，其中包括显示电子邮件地址的功能。"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-nss-display-email.png["屏幕截图显示了 NetApp 支持站点帐户的操作菜单，其中包括显示电子邮件地址的功能。"]
 
 
 

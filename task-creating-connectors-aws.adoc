@@ -24,37 +24,73 @@ TIP: 在创建首个 Cloud Volumes ONTAP 工作环境时，如果您还没有连
 
 
 
-== 设置 AWS 权限以创建 Connector
+== 设置 AWS 身份验证
 
-在从 Cloud Manager 部署 Connector 之前，您需要确保您的 AWS 帐户具有正确的权限。
+Cloud Manager 需要先向 AWS 进行身份验证，然后才能在 VPC 中部署 Connector 实例。您可以选择以下身份验证方法之一：
+
+* 让 Cloud Manager 承担 IAM 角色
+* 为 IAM 用户提供 AWS 访问密钥和机密密钥
+
+
+您使用的身份验证方法必须具有在 AWS 中部署 Connector 实例所需的权限。
+
+
+
+=== 设置 IAM 角色
+
+设置一个 IAM 角色， Cloud Manager 可以承担此角色，以便在 AWS 中部署 Connector 。
 
 .步骤
-. 从以下位置下载 Connector IAM 策略：
+. 从下载 Connector IAM 策略 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略页面"^]。
 +
-https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp Cloud Manager ： AWS ， Azure 和 GCP 策略"^]
+此策略包含在 AWS 中创建 Connector 所需的权限。在 Cloud Manager 创建 Connector 时，它会将一组新的权限应用于 Connector 实例。
+
+. 转到目标帐户中的 AWS IAM 控制台。
+. 在访问管理下，单击 * 角色 > 创建角色 * ，然后按照步骤创建角色。
++
+请务必执行以下操作：
 
 +
+** 在 * 可信实体类型 * 下，选择 * AWS 帐户 * 。
+** 选择 * 其他 AWS 帐户 * ，然后输入 Cloud Manager SaaS 帐户的 ID ： 952013314444
+** 创建一个包含先前下载的 Connector IAM 策略中所示权限的策略。
 
-TIP: 有关适用于 ONTAP 的 Amazon FSX 的 IAM 用户权限，请参见 https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/task-creating-fsx-working-environment.html["创建适用于 ONTAP 的 FSX 工作环境"^]。
+
+. 复制 IAM 角色的角色 ARN ，以便您可以在创建 Connector 时将其粘贴到 Cloud Manager 中。
+
+
+IAM 角色现在具有所需的权限。
+
+
+
+=== 为 IAM 用户设置权限
+
+创建 Connector 时，您可以为拥有部署 Connector 实例所需权限的 IAM 用户提供 AWS 访问密钥和机密密钥。
+
+.步骤
+. 从下载 Connector 部署策略 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略页面"^]。
++
+此 IAM 策略包括在 AWS 中创建 Connector 所需的权限。在 Cloud Manager 创建 Connector 时，它会将一组新的权限应用于 Connector 实例。
 
 . 在 AWS IAM 控制台中，通过复制并粘贴 Connector IAM 策略中的文本来创建您自己的策略。
 . 将上一步中创建的策略附加到要从 Cloud Manager 创建 Connector 的 IAM 用户。
+. 确保您有权访问 IAM 用户的访问密钥和机密密钥。
 
 
 AWS 用户现在具有从 Cloud Manager 创建 Connector 所需的权限。在 Cloud Manager 提示时，您需要为此用户指定 AWS 访问密钥。
 
 
 
-== 在 AWS 中创建连接器
+== 创建连接器
 
 您可以通过 Cloud Manager 直接从其用户界面在 AWS 中创建 Connector 。
 
 .您需要什么？ #8217 ；将需要什么
-* 具有的 IAM 用户的 AWS 访问密钥和机密密钥 https://mysupport.netapp.com/site/info/cloud-manager-policies["所需权限"^] 以创建 Connector 。
+* AWS 身份验证方法： Cloud Manager 可承担的 IAM 角色的 ARN ，或者 IAM 用户的 AWS 访问密钥和机密密钥。
 * 您选择的 AWS 区域中的 VPC ，子网和密钥对。
 * 如果您不希望 Cloud Manager 自动为 Connector 创建 IAM 角色，则需要创建您自己的角色 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.13.json["使用此策略"^]。
 +
-这些权限适用于 Connector 实例。这是一组与上述第一个项目中提供的权限不同的权限。
+这些权限是 Connector 在公有 云环境中管理资源所需的权限。它与您为创建 Connector 实例提供的权限集不同。
 
 
 
@@ -73,7 +109,11 @@ link:reference-networking-cloud-manager.html["详细了解 Connector 的网络�
 . 按照向导中的步骤创建 Connector ：
 +
 ** * 准备就绪 * ：查看您需要的内容。
-** * AWS Credentials* ：指定满足权限要求的 AWS 访问密钥和机密密钥，然后选择您所在的地区。
+** * AWS Credentials* ：指定您的 AWS 区域，然后选择身份验证方法，即 Cloud Manager 可以承担的 IAM 角色或 AWS 访问密钥和机密密钥。
++
+
+TIP: 如果选择 * 承担角色 * ，则可以从 Connector 部署向导创建第一组凭据。必须从 " 凭据 " 页面创建任何其他凭据集。然后，这些文件将从向导的下拉列表中显示。 link:task-adding-aws-accounts.html["了解如何添加其他凭据"]。
+
 ** * 详细信息 * ：提供有关连接器的详细信息。
 +
 *** 输入实例的名称。

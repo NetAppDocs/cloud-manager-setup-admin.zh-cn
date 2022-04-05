@@ -126,18 +126,36 @@ homepage:
       url: concept-overview.html
     - title: 入门检查清单
       url: reference-checklist-cm.html
-  - title: 管理 Cloud Manager
+  - title: 连接器
     links:
-    - title: 管理您的 NetApp 帐户
-      url: task-managing-netapp-accounts.html
+    - title: 了解连接器
+      url: concept-connectors.html
+    - title: 设置网络
+      url: reference-networking-cloud-manager.html
     - title: 管理连接器
       url: task-managing-connectors.html
+  - title: NetApp 帐户
+    links:
+    - title: 了解 NetApp 客户
+      url: concept-netapp-accounts.html
+    - title: 设置工作空间和用户
+      url: task-setting-up-netapp-accounts.html
+    - title: 管理您的 NetApp 帐户
+      url: task-managing-netapp-accounts.html
+  - title: 云提供商帐户
+    links:
+    - title: 管理 AWS 凭据
+      url: task-adding-aws-accounts.html
+    - title: 管理 Azure 凭据
+      url: task-adding-azure-accounts.html
+    - title: 管理 Google Cloud 凭据
+      url: task-adding-gcp-accounts.html
   - title: 博客社区
     links:
     - title: NetApp 社区
       url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
     - title: Cloud Central 博客
-      url: https://cloud.netapp.com/blog
+      url: https://cloud.netapp.com/blog/topic/cloud-manager
     - title: 云网络研讨会
       url: https://cloud.netapp.com/events
 product-family: {}
