@@ -219,7 +219,7 @@ link:task-managing-connectors.html["了解如何在连接器之间切换"]。
 * 下载 AutoSupport 消息（通常在遇到问题时由 NetApp 人员指导）
 
 
-link:task-managing-connectors.html["了解如何访问本地 UI"^]。
+link:task-managing-connectors.html#access-the-local-ui["了解如何访问本地 UI"]。
 
 
 

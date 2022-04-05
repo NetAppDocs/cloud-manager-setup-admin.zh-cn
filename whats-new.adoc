@@ -186,7 +186,7 @@ image:screenshot_nss_management.png["支持信息板中可添加 NSS 帐户的 N
 
 Cloud Manager 中的时间线现在显示与帐户管理相关的操作和事件。这些操作包括关联用户，创建工作空间和创建连接器等。如果您需要确定执行特定操作的人员，或者需要确定操作的状态，则检查时间线会很有帮助。
 
-link:task-managing-netapp-accounts.html["了解如何筛选租户服务的时间线"]。
+link:task-monitor-cm-operations.html#auditing-user-activity-in-your-account["了解如何筛选租户服务的时间线"]。
 
 
 

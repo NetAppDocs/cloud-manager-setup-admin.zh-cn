@@ -104,7 +104,7 @@ link:concept-connectors.html["了解有关连接器的更多信息"]。
 
 例如，假设您有两个帐户，每个帐户都通过单独的订阅付费。您可能会解除某个订阅与某个帐户的关联，以便该帐户中的用户在创建 Cloud Volume ONTAP 工作环境时不会意外选择错误的订阅。
 
-link:task-managing-netapp-accounts.html["了解如何管理订阅"]。
+link:task-managing-netapp-accounts.html#managing-subscriptions["了解如何管理订阅"]。
 
 
 

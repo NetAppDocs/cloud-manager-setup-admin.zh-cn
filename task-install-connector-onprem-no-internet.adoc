@@ -74,13 +74,13 @@ sudo sysctl enable docker && sudo sysctl start docker
 +
 [source, cli]
 ----
-chmod +x /path/cloud-manager-connector-offline-v3.9.14
+chmod +x /path/cloud-manager-connector-offline-v3.9.16
 ----
 . 运行安装脚本：
 +
 [source, cli]
 ----
-sudo /path/cloud-manager-connector-offline-v3.9.14
+sudo /path/cloud-manager-connector-offline-v3.9.16
 ----
 . 打开 Web 浏览器并输入 https://_ipaddress_[] 其中 _ipaddress_ 是 Linux 主机的 IP 地址。
 +

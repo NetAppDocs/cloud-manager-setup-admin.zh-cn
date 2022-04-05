@@ -251,7 +251,7 @@ link:concept-netapp-accounts.html#users-workspaces-and-service-connectors["详�
 
 例如，假设您有两个帐户，每个帐户都通过单独的订阅付费。您可能会解除某个订阅与某个帐户的关联，以便该帐户中的用户在创建 Cloud Volume ONTAP 工作环境时不会意外选择错误的订阅。
 
-link:concept-netapp-accounts.html["了解有关订阅的更多信息"]。
+link:concept-netapp-accounts.html#subscriptions["了解有关订阅的更多信息"]。
 
 .步骤
 . 从 Cloud Manager 顶部，单击 * 帐户 * 下拉列表，然后单击 * 管理帐户 * 。
@@ -316,7 +316,7 @@ image:screenshot_subscription_menu.gif["订阅的操作菜单的屏幕截图。"
 * 全局文件缓存
 
 
-如果禁用 SaaS 平台，则需要从执行所有任务 link:task-managing-connectors.html#accessing-the-local-ui["Connector 上提供的本地用户界面"]。
+如果禁用 SaaS 平台，则需要从执行所有任务 link:task-managing-connectors.html#access-the-local-ui["Connector 上提供的本地用户界面"]。
 
 
 CAUTION: 此操作不可逆，将阻止您使用 Cloud Manager SaaS 平台。您需要从本地连接器执行操作。您将无法使用 NetApp 的许多集成云服务，重新启用 SaaS 平台需要 NetApp 支持的帮助。
