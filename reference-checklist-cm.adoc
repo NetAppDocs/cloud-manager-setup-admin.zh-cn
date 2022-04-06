@@ -125,8 +125,8 @@ NOTE: 可通过其他方法创建连接器：您可以从创建连接器 link:ta
 
 | AWS  a| 
 . 使用包含所需权限的 JSON 文件在 AWS 中创建 IAM 策略。
-. 将此策略附加到要从 Cloud Manager 创建 Connector 的 IAM 用户。
-. 创建 Connector 时，请为 Cloud Manager 提供具有所需权限的 IAM 用户的 AWS 访问密钥和机密密钥。
+. 将策略附加到 IAM 角色或 IAM 用户。
+. 创建 Connector 时，请为 Cloud Manager 提供 IAM 角色的 ARN 或 IAM 用户的 AWS 访问密钥和机密密钥。
 
 | link:task-creating-connectors-aws.html["单击此处可查看详细步骤"]。 
 

@@ -19,9 +19,9 @@ summary: 通过 Cloud Manager ，您可以选择部署 Cloud Volumes ONTAP 时�
 
 == 初始 AWS 凭据
 
-从 Cloud Manager 部署 Connector 时，您需要使用有权启动 Connector 实例的 AWS 帐户。中列出了所需的权限 https://mysupport.netapp.com/site/info/cloud-manager-policies["AWS 的连接器部署策略"^]。
+从 Cloud Manager 部署 Connector 时，您需要为 IAM 用户提供 IAM 角色的 ARN 或访问密钥。您使用的身份验证方法必须具有在 AWS 中部署 Connector 实例所需的权限。中列出了所需的权限 https://mysupport.netapp.com/site/info/cloud-manager-policies["AWS 的连接器部署策略"^]。
 
-当 Cloud Manager 在 AWS 中启动 Connector 实例时，它会为此实例创建 IAM 角色和实例配置文件。它还会附加一个策略，为 Cloud Manager 提供管理该 AWS 帐户中资源和进程的权限。 link:reference-permissions-aws.html["查看 Cloud Manager 如何使用权限"]。
+当 Cloud Manager 在 AWS 中启动 Connector 实例时，它会为此实例创建 IAM 角色和实例配置文件。此外，它还会附加一个策略，为 Connector 提供管理该 AWS 帐户中资源和进程的权限。 link:reference-permissions-aws.html["查看 Cloud Manager 如何使用权限"]。
 
 image:diagram_permissions_initial_aws.png["一个概念映像，显示 Cloud Central 在 AWS 帐户中部署 Cloud Manager 。IAM 策略会分配给一个 IAM 角色，该角色会附加到 Cloud Manager 实例。"]
 
@@ -33,6 +33,12 @@ image:screenshot_accounts_select_aws.gif["屏幕截图，显示 \"Details\" 和 
 
 == 其他 AWS 凭据
 
+可以通过两种方式添加其他 AWS 凭据。
+
+
+
+=== 将 AWS 凭据添加到现有 Connector
+
 如果您要在不同的 AWS 帐户中启动 Cloud Volumes ONTAP ，则可以选择一种 link:task-adding-aws-accounts.html["为 IAM 用户或受信任帐户中某个角色的 ARN 提供 AWS 密钥"]。下图显示了另外两个帐户，一个通过可信帐户中的 IAM 角色提供权限，另一个通过 IAM 用户的 AWS 密钥提供权限：
 
 image:diagram_permissions_multiple_aws.png["一个概念映像，显示另外两个帐户。每个都有一个 IAM 策略，一个附加到 IAM 用户，另一个附加到 IAM 角色。"]
@@ -42,6 +48,12 @@ image:diagram_permissions_multiple_aws.png["一个概念映像，显示另外两
 添加另一组凭据后，您可以在创建新的工作环境时切换到这些凭据：
 
 image:screenshot_accounts_switch_aws.png["单击详细信息和 amp ；凭据页面中的切换帐户后，显示在云提供商帐户之间进行选择的屏幕截图。"]
+
+
+
+=== 将 AWS 凭据直接添加到 Cloud Manager
+
+向 Cloud Manager 添加新的 AWS 凭据可为 Cloud Manager 提供创建和管理适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。
 
 
 

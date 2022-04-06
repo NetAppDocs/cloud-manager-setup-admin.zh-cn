@@ -4,9 +4,7 @@
   <block id="97911b3c54a4e826b34c1f79026316c5" category="doc">AWS 凭据和权限</block>
   <block id="9ef43b020d41cab5808d78fdf855c429" category="section-title">初始 AWS 凭据</block>
   <block id="09c2333ff15fa85698d91a366cce26dd" category="inline-link">AWS 的连接器部署策略</block>
-  <block id="c589feeabec091dfc239d5a30560f811" category="paragraph">从 Cloud Manager 部署 Connector 时，您需要使用有权启动 Connector 实例的 AWS 帐户。中列出了所需的权限<block ref="9be18605563c3a58e34718e4132dfa94" category="inline-link-rx"></block>。</block>
   <block id="fc0c3a7106304eb9ddef850338d745b5" category="inline-link-macro">查看 Cloud Manager 如何使用权限</block>
-  <block id="d6661c6680dabea31fc0cadb00318ba4" category="paragraph">当 Cloud Manager 在 AWS 中启动 Connector 实例时，它会为此实例创建 IAM 角色和实例配置文件。它还会附加一个策略，为 Cloud Manager 提供管理该 AWS 帐户中资源和进程的权限。 <block ref="b8a131e0e4ba17426040261bffd33680" category="inline-link-macro-rx"></block>。</block>
   <block id="9453317eefe931f5b594916ac3611513" category="inline-image-macro">一个概念映像，显示 Cloud Central 在 AWS 帐户中部署 Cloud Manager 。IAM 策略会分配给一个 IAM 角色，该角色会附加到 Cloud Manager 实例。</block>
   <block id="0d85fcc18cd2063bb32c594b05295dab" category="paragraph"><block ref="0d85fcc18cd2063bb32c594b05295dab" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d18588545b1946bb3cd35f4bdd5897ae" category="paragraph">在为 Cloud Volumes ONTAP 创建新工作环境时， Cloud Manager 会默认选择以下 AWS 凭据：</block>
@@ -1308,8 +1306,6 @@
   <block id="0ba40ecb813b20bd8c3277c4afcbd451" category="cell">高级步骤</block>
   <block id="0a4bb09bc90ee0ee6fecb0e670cb0d8e" category="cell">详细步骤</block>
   <block id="24cad866db16645e21b9558ab1423dd7" category="list-text">使用包含所需权限的 JSON 文件在 AWS 中创建 IAM 策略。</block>
-  <block id="ad01c5f0e03c0e276970e5f33abaa085" category="list-text">将此策略附加到要从 Cloud Manager 创建 Connector 的 IAM 用户。</block>
-  <block id="71d76e7dea2925738e11f66b4d0dd47e" category="list-text">创建 Connector 时，请为 Cloud Manager 提供具有所需权限的 IAM 用户的 AWS 访问密钥和机密密钥。</block>
   <block id="f07d8d4b6f3d955c1eb0855074a01312" category="inline-link-macro">单击此处可查看详细步骤</block>
   <block id="73856384803c1d59c9062e35ed8febaf" category="cell"><block ref="91a026967ac18ce9eaa438d489d16df3" category="inline-link-macro-rx"></block>。</block>
   <block id="00105321859184c39f1ab3f40e508a0b" category="list-text">使用包含所需权限的 JSON 文件在 Azure 中创建自定义角色。</block>
@@ -2065,4 +2061,10 @@
   <block id="d1640a3b53ec580119ad1efa519fa5a4" category="list-text"><block ref="d1640a3b53ec580119ad1efa519fa5a4" category="inline-link-rx"></block></block>
   <block id="571331341f9a044145a7015b8d5b9b03" category="list-text"><block ref="571331341f9a044145a7015b8d5b9b03" category="inline-link-rx"></block></block>
   <block id="a37da40b1cf1ce86308b603dbc497d9d" category="paragraph"><block ref="443587ef67dfdb72c89535a3fb85e4c4" category="inline-link-macro-rx"></block>。</block>
+  <block id="2ccfed3e301f0a6be8255ec614634e40" category="paragraph">从 Cloud Manager 部署 Connector 时，您需要为 IAM 用户提供 IAM 角色的 ARN 或访问密钥。您使用的身份验证方法必须具有在 AWS 中部署 Connector 实例所需的权限。中列出了所需的权限<block ref="9be18605563c3a58e34718e4132dfa94" category="inline-link-rx"></block>。</block>
+  <block id="8ecde67149129962cfc66840199e548a" category="paragraph">当 Cloud Manager 在 AWS 中启动 Connector 实例时，它会为此实例创建 IAM 角色和实例配置文件。此外，它还会附加一个策略，为 Connector 提供管理该 AWS 帐户中资源和进程的权限。 <block ref="b8a131e0e4ba17426040261bffd33680" category="inline-link-macro-rx"></block>。</block>
+  <block id="de60a486c1b92dffa7eb55af0b1c8bb0" category="paragraph">可以通过两种方式添加其他 AWS 凭据。</block>
+  <block id="9a512cb6f8c6b3e4e3ee11942b6c1ca9" category="paragraph">向 Cloud Manager 添加新的 AWS 凭据可为 Cloud Manager 提供创建和管理适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。</block>
+  <block id="1e0ffea311b606e155cd79847cc310dd" category="list-text">将策略附加到 IAM 角色或 IAM 用户。</block>
+  <block id="4522caea722d5e7e4eedf46bebdf92b1" category="list-text">创建 Connector 时，请为 Cloud Manager 提供 IAM 角色的 ARN 或 IAM 用户的 AWS 访问密钥和机密密钥。</block>
 </blocks>
