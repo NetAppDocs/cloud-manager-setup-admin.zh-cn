@@ -76,7 +76,7 @@ NOTE: Cloud Backup ， Cloud Data sense 和监控服务在政府区域均受支�
 
 
 
-== Azure 和 Google Cloud 合作伙伴不支持按需购买
+=== Azure 和 Google Cloud 合作伙伴不支持按需购买
 
 如果您是 Microsoft Cloud 解决方案提供商（ CSP ）合作伙伴或 Google Cloud 合作伙伴，则不提供 NetApp 按需购买订阅。您必须购买许可证并使用 BYOL 许可证部署 NetApp 云解决方案。
 
