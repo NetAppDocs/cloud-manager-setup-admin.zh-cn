@@ -6,6 +6,7 @@ summary: 您可以监控 Cloud Manager 正在执行的操作的状态，以查�
 ---
 = 监控帐户中的操作
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

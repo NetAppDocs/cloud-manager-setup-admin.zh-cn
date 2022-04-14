@@ -6,6 +6,7 @@ summary: 添加和管理 AWS 凭据，以便 Cloud Manager 拥有在 AWS 帐户�
 ---
 = 管理 Cloud Manager 的 AWS 凭据和订阅
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

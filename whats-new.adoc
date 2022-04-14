@@ -6,6 +6,7 @@ summary: 了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户
 ---
 = 新增功能
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 客户管理员需要先部署 Connector ，然后才能使用大多数
 ---
 = 从 Cloud Manager 在 AWS 中创建连接器
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

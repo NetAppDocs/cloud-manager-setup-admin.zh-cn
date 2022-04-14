@@ -6,6 +6,7 @@ summary: Cloud Manager 需要在云提供商中执行操作的权限。这些权
 ---
 = Google Cloud 中连接器的所需权限
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

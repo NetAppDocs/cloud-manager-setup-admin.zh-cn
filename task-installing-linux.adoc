@@ -6,6 +6,7 @@ summary: 创建 Connector 的最常见方法是直接从 Cloud Manager 或云提
 ---
 = 在可访问 Internet 的现有 Linux 主机上安装 Connector
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

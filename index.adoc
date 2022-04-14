@@ -7,6 +7,7 @@ summary: 开始使用 Cloud Manager ，以便您可以开始使用 NetApp 的云
 ---
 = 设置和管理 Cloud Manager
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

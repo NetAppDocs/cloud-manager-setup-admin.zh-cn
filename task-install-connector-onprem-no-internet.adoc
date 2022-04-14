@@ -6,6 +6,7 @@ summary: 您可以在无法访问 Internet 的内部 Linux 主机上安装 Conne
 ---
 = 在不访问 Internet 的情况下在内部安装 Connector
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 提供 NetApp 支持站点（ NSS ）帐户的凭据，以便为 Cloud 
 ---
 = 在 Cloud Manager 中添加和管理 NetApp 支持站点帐户
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

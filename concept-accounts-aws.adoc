@@ -6,6 +6,7 @@ summary: 通过 Cloud Manager ，您可以选择部署 Cloud Volumes ONTAP 时�
 ---
 = AWS 凭据和权限
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

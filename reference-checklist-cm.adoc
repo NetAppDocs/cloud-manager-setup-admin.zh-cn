@@ -6,6 +6,7 @@ summary: 使用此检查清单可了解在 Connector 具有出站 Internet 访�
 ---
 = 入门检查清单
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

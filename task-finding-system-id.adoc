@@ -6,6 +6,7 @@ summary: 为了帮助您入门， NetApp 代表可能会要求您提供 Connecto
 ---
 = 查找连接器的系统 ID
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

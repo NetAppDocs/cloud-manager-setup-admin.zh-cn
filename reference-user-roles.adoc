@@ -6,6 +6,7 @@ summary: 帐户管理员，工作空间管理员，合规性查看器和 SnapCen
 ---
 = 角色
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 借助 Cloud Manager ， IT 专家和云架构师可以使用 NetApp �
 ---
 = 了解 Cloud Manager
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 您可以管理与 Connector VM 实例关联的凭据。
 ---
 = 管理 Cloud Manager 的 GCP 凭据和订阅
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

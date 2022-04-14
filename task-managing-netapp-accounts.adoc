@@ -6,6 +6,7 @@ summary: 执行初始设置后，您可以稍后通过管理用户，服务帐�
 ---
 = 管理您的 NetApp 帐户
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

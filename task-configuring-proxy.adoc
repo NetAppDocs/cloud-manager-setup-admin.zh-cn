@@ -6,6 +6,7 @@ summary: 如果您的公司策略要求您使用代理服务器与 Internet 进�
 ---
 = 配置 Connector 以使用 HTTP 代理服务器
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

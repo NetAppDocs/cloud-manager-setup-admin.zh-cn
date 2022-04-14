@@ -6,6 +6,7 @@ summary: 设置您的网络，以便 Connector 能够管理公有云环境中的
 ---
 = 为连接器设置网络连接
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -147,34 +148,7 @@ NOTE: 源 IP 地址是 Connector 主机。
 | 服务 | 协议 | Port | 目标 | 目的 
 
 
-.9+| Active Directory | TCP | 88 | Active Directory 目录林 | Kerberos V 身份验证 
-
-
-| TCP | 139. | Active Directory 目录林 | NetBIOS 服务会话 
-
-
-| TCP | 389. | Active Directory 目录林 | LDAP 
-
-
-| TCP | 445 | Active Directory 目录林 | Microsoft SMB/CIFS over TCP （通过 TCP ）和 NetBIOS 成帧 
-
-
-| TCP | 464. | Active Directory 目录林 | Kerberos V 更改和设置密码（ set_change ） 
-
-
-| TCP | 749 | Active Directory 目录林 | Active Directory Kerberos V 更改和设置密码（ RPCSEC_GSS ） 
-
-
-| UDP | 137. | Active Directory 目录林 | NetBIOS 名称服务 
-
-
-| UDP | 138. | Active Directory 目录林 | NetBIOS 数据报服务 
-
-
-| UDP | 464. | Active Directory 目录林 | Kerberos 密钥管理 
-
-
-| API 调用和 AutoSupport | HTTPS | 443. | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 AWS 和 ONTAP 、并将 AutoSupport 消息发送到 NetApp 
+| API 调用和 AutoSupport | HTTPS | 443. | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 AWS 和 ONTAP ，云数据感知，勒索软件服务以及向 NetApp 发送 AutoSupport 消息 
 
 
 .2+| API 调用 | TCP | 3000 | ONTAP HA 调解器 | 与 ONTAP HA 调解器通信 
@@ -247,34 +221,7 @@ NOTE: 源 IP 地址是 Connector 主机。
 | 服务 | Port | 协议 | 目标 | 目的 
 
 
-.9+| Active Directory | 88 | TCP | Active Directory 目录林 | Kerberos V 身份验证 
-
-
-| 139. | TCP | Active Directory 目录林 | NetBIOS 服务会话 
-
-
-| 389. | TCP | Active Directory 目录林 | LDAP 
-
-
-| 445 | TCP | Active Directory 目录林 | Microsoft SMB/CIFS over TCP （通过 TCP ）和 NetBIOS 成帧 
-
-
-| 464. | TCP | Active Directory 目录林 | Kerberos V 更改和设置密码（ set_change ） 
-
-
-| 749 | TCP | Active Directory 目录林 | Active Directory Kerberos V 更改和设置密码（ RPCSEC_GSS ） 
-
-
-| 137. | UDP | Active Directory 目录林 | NetBIOS 名称服务 
-
-
-| 138. | UDP | Active Directory 目录林 | NetBIOS 数据报服务 
-
-
-| 464. | UDP | Active Directory 目录林 | Kerberos 密钥管理 
-
-
-| API 调用和 AutoSupport | 443. | HTTPS | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 AWS 和 ONTAP 、并将 AutoSupport 消息发送到 NetApp 
+| API 调用和 AutoSupport | 443. | HTTPS | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 AWS 和 ONTAP ，云数据感知，勒索软件服务以及向 NetApp 发送 AutoSupport 消息 
 
 
 | DNS | 53. | UDP | DNS | 用于云管理器进行 DNS 解析 
@@ -338,34 +285,7 @@ NOTE: 源 IP 地址是 Connector 主机。
 | 服务 | 协议 | Port | 目标 | 目的 
 
 
-.9+| Active Directory | TCP | 88 | Active Directory 目录林 | Kerberos V 身份验证 
-
-
-| TCP | 139. | Active Directory 目录林 | NetBIOS 服务会话 
-
-
-| TCP | 389. | Active Directory 目录林 | LDAP 
-
-
-| TCP | 445 | Active Directory 目录林 | Microsoft SMB/CIFS over TCP （通过 TCP ）和 NetBIOS 成帧 
-
-
-| TCP | 464. | Active Directory 目录林 | Kerberos V 更改和设置密码（ set_change ） 
-
-
-| TCP | 749 | Active Directory 目录林 | Active Directory Kerberos V 更改和设置密码（ RPCSEC_GSS ） 
-
-
-| UDP | 137. | Active Directory 目录林 | NetBIOS 名称服务 
-
-
-| UDP | 138. | Active Directory 目录林 | NetBIOS 数据报服务 
-
-
-| UDP | 464. | Active Directory 目录林 | Kerberos 密钥管理 
-
-
-| API 调用和 AutoSupport | HTTPS | 443. | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 GCP 和 ONTAP 、并将 AutoSupport 消息发送到 NetApp 
+| API 调用和 AutoSupport | HTTPS | 443. | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 GCP 和 ONTAP ，云数据感知，勒索软件服务以及向 NetApp 发送 AutoSupport 消息 
 
 
 | DNS | UDP | 53. | DNS | 用于云管理器进行 DNS 解析 

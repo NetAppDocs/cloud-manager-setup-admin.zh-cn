@@ -6,6 +6,7 @@ summary: 通过服务帐户， Cloud Manager 可以部署和管理与 Connector 
 ---
 = Google Cloud 项目，权限和帐户
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
