@@ -60,7 +60,6 @@ Cloud Manager 不支持启用了 SSL 解密的防火墙配置。如果启用了 
 
 这也意味着 Cloud Manager 不提供以下服务：
 
-* 云数据感知
 * Kubernetes
 * 云分层
 * 全局文件缓存

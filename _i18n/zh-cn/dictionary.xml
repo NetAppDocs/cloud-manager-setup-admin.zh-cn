@@ -1570,7 +1570,6 @@
   <block id="6aef346cd7f1d02d8a385ef5501430b5" category="paragraph">如果您在 AWS GovCloud 区域， Azure Gov 区域或 Azure DoD 区域部署 Connector ，则只能通过 Connector 的主机 IP 地址访问 Cloud Manager 。对整个帐户禁用对 SaaS 平台的访问。</block>
   <block id="01b185b57976f8db5702424954f912de" category="paragraph">这意味着，只有能够访问最终用户内部 VPC-vNet 的有权限用户才能使用 Cloud Manager 的 UI 或 API 。</block>
   <block id="b1ba27dfecc5d2afa7479b0e66831cb2" category="paragraph">这也意味着 Cloud Manager 不提供以下服务：</block>
-  <block id="0c5ef63d65ae4e936e045b291f083144" category="paragraph">要使用这些服务，需要使用 SaaS 平台。</block>
   <block id="7719c1d7366788cfbb45dc7ab4e61716" category="admonition">Cloud Backup ， Cloud Data sense 和监控服务在政府区域均受支持并可用。</block>
   <block id="4c8bad6756ca0d84a9a56e8303428c9c" category="section-title">市场限制</block>
   <block id="09b41782e7d4a148f9a7da9ba9dd8aab" category="section-title">Azure 和 Google Cloud 合作伙伴不支持按需购买</block>
@@ -2083,4 +2082,5 @@
   <block id="bece28b158ab337d9ed24b00d7d02cc7" category="list-text">单击 * 致电我们 * 可查找 NetApp 技术支持的电话号码。</block>
   <block id="efe81cff8e6f47ec59ef94167b76bf5a" category="list-text">单击 * 打开问题描述 * ，选择一个选项，然后单击 * 发送 * 。</block>
   <block id="cbb1040836732e478409dacf7e45171a" category="paragraph">NetApp 代表将审核您的案例，并尽快与您联系。</block>
+  <block id="8f8ddac26068fbb5a6761635f0559bf3" category="paragraph">要使用这些服务，需要使用 SaaS 平台。</block>
 </blocks>
