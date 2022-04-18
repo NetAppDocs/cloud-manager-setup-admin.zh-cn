@@ -997,7 +997,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:26:59 +0000">04/14/2022</time>
+    <time datetime="2022-04-18 14:43:12 +0000">04/18/2022</time>
     
   
 
@@ -1148,12 +1148,12 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问以及从 Cloud Data sense 建立的连接</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">443.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问，以及从 Cloud Data sense 实例建立的连接</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
@@ -1267,13 +1267,6 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">用于云管理器进行 DNS 解析</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">云数据感知</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">云数据感知实例</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">适用于 Cloud Volumes ONTAP 的云数据感知</p></td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1294,26 +1287,31 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">协议</th>
+<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">目的</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SSH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">提供对 Connector 主机的 SSH 访问</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问，以及从 Cloud Data sense 实例建立的连接</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9060</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">支持启用和使用 Cloud Data Asense （仅适用于政府云部署）</p></td>
 </tr>
 </tbody>
 </table>
@@ -1336,20 +1334,20 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">协议</th>
+<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">目的</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">全部</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">所有 TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">全部</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">所有出站流量</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">全部</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">所有 UDP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">全部</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">所有出站流量</p></td>
 </tr>
 </tbody>
@@ -1383,8 +1381,8 @@
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">服务</th>
-<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">协议</th>
+<th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">目标</th>
 <th class="tableblock halign-left valign-top">目的</th>
 </tr>
@@ -1392,15 +1390,15 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">API 调用和 AutoSupport</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">出站 Internet 和 ONTAP 集群管理 LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">API 调用 AWS 和 ONTAP ，云数据感知，勒索软件服务以及向 NetApp 发送 AutoSupport 消息</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">53.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">用于云管理器进行 DNS 解析</p></td>
 </tr>
