@@ -134,6 +134,30 @@ service service-manager start
 
 
 
+== 更改连接器的 IP 地址
+
+如果您的业务需要，您可以更改云提供商自动分配的 Connector 实例的内部 IP 地址和公有 IP 地址。
+
+.步骤
+. 按照云提供商的说明更改连接器实例的本地 IP 地址或公有 IP 地址（或两者）。
+. 如果您更改了公有 IP 地址，并且需要连接到在 Connector 上运行的本地用户界面，请重新启动 Connector 实例以向 Cloud Manager 注册新的 IP 地址。
+. 如果更改了专用 IP 地址，请更新 Cloud Volumes ONTAP 配置文件的备份位置，以便将备份发送到 Connector 上的新专用 IP 地址。
++
+.. 从 Cloud Volumes ONTAP 命令行界面运行以下命令以删除当前备份目标：
++
+[source, cli]
+----
+system configuration backup settings modify -destination ""
+----
+.. 转到 Cloud Manager 并打开工作环境。
+.. 单击菜单并选择 * 高级 > 配置备份 * 。
+.. 单击 * 设置备份目标 * 。
+
+
+
+
+
+
 == 编辑 Connector 的 URI
 
 添加并删除 Connector 的 URI 。

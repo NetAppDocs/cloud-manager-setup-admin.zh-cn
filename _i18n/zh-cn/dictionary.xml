@@ -2082,4 +2082,13 @@
   <block id="8f8ddac26068fbb5a6761635f0559bf3" category="paragraph">要使用这些服务，需要使用 SaaS 平台。</block>
   <block id="0c01b3b7191c43507ad9ca43d6443731" category="cell">提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问，以及从 Cloud Data sense 实例建立的连接</block>
   <block id="b774573fe7b53358246a054f6d44ca83" category="cell">支持启用和使用 Cloud Data Asense （仅适用于政府云部署）</block>
+  <block id="5c6b09600cdfc594130f9f3c053efecb" category="section-title">更改连接器的 IP 地址</block>
+  <block id="a0dc112a414c5a75d4f2454974efc323" category="paragraph">如果您的业务需要，您可以更改云提供商自动分配的 Connector 实例的内部 IP 地址和公有 IP 地址。</block>
+  <block id="bfe6d8b96fb30d923a8089019f265d6b" category="list-text">按照云提供商的说明更改连接器实例的本地 IP 地址或公有 IP 地址（或两者）。</block>
+  <block id="8c0635d246e617ea8806fe6beb1557c2" category="list-text">如果您更改了公有 IP 地址，并且需要连接到在 Connector 上运行的本地用户界面，请重新启动 Connector 实例以向 Cloud Manager 注册新的 IP 地址。</block>
+  <block id="c2b41de08c51bfb56dcd23e174ea8788" category="list-text">如果更改了专用 IP 地址，请更新 Cloud Volumes ONTAP 配置文件的备份位置，以便将备份发送到 Connector 上的新专用 IP 地址。</block>
+  <block id="a6a2880e12afb78f4820f1aaf905127c" category="list-text">从 Cloud Volumes ONTAP 命令行界面运行以下命令以删除当前备份目标：</block>
+  <block id="c3386ad05590d977aa139a8aac605f20" category="list-text">转到 Cloud Manager 并打开工作环境。</block>
+  <block id="1962304593497a2b02537345ac7be337" category="list-text">单击菜单并选择 * 高级 &gt; 配置备份 * 。</block>
+  <block id="b30f3d123c465c70e2c71150136ed92d" category="list-text">单击 * 设置备份目标 * 。</block>
 </blocks>
