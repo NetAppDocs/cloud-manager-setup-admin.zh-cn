@@ -1400,7 +1400,6 @@
   <block id="7dca630291dc35d5447daa0c9abf8da4" category="cell">提供对 Connector 主机的 SSH 访问</block>
   <block id="293c9ea246ff9985dc6f62a650f78986" category="cell">HTTP</block>
   <block id="f033ab37c30201f73f142449d037028d" category="cell">80</block>
-  <block id="e41468f89241b53dc9a8cebeff010b25" category="cell">提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问以及从 Cloud Data sense 建立的连接</block>
   <block id="0e8433f9a404f1f3ba601c14b026d321" category="cell">HTTPS</block>
   <block id="13f3cf8c531952d72e5847c4183e6910" category="cell">443.</block>
   <block id="2f0c197eb73a7c6da10b03384f241025" category="cell">提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问</block>
@@ -1435,8 +1434,6 @@
   <block id="ed5f2bdecbd4bd349d09412d1ff6a6fb" category="cell">DNS</block>
   <block id="d82c8d1619ad8176d665453cfb2e55f0" category="cell">53.</block>
   <block id="dd8679112f038315d04028c46da1fef7" category="cell">用于云管理器进行 DNS 解析</block>
-  <block id="6cf25d0dcbf586ed6aff3b930e4d8019" category="cell">云数据感知实例</block>
-  <block id="059ace13ef3980df592dafb754ef8883" category="cell">适用于 Cloud Volumes ONTAP 的云数据感知</block>
   <block id="b445de53411a165e9c56da6430c38d59" category="section-title">Azure 中连接器的规则</block>
   <block id="63b34d7f22329c0eb7915fca7a346007" category="cell">提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问</block>
   <block id="b52a434afaffee3d1646df3eb9acc853" category="section-title">GCP 中连接器的规则</block>
@@ -2083,4 +2080,6 @@
   <block id="efe81cff8e6f47ec59ef94167b76bf5a" category="list-text">单击 * 打开问题描述 * ，选择一个选项，然后单击 * 发送 * 。</block>
   <block id="cbb1040836732e478409dacf7e45171a" category="paragraph">NetApp 代表将审核您的案例，并尽快与您联系。</block>
   <block id="8f8ddac26068fbb5a6761635f0559bf3" category="paragraph">要使用这些服务，需要使用 SaaS 平台。</block>
+  <block id="0c01b3b7191c43507ad9ca43d6443731" category="cell">提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问，以及从 Cloud Data sense 实例建立的连接</block>
+  <block id="b774573fe7b53358246a054f6d44ca83" category="cell">支持启用和使用 Cloud Data Asense （仅适用于政府云部署）</block>
 </blocks>

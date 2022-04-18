@@ -101,10 +101,10 @@ Connector 的安全组需要入站和出站规则。
 | SSH | 22. | 提供对 Connector 主机的 SSH 访问 
 
 
-| HTTP | 80 | 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问以及从 Cloud Data sense 建立的连接 
+| HTTP | 80 | 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问 
 
 
-| HTTPS | 443. | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问 
+| HTTPS | 443. | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问，以及从 Cloud Data sense 实例建立的连接 
 
 
 | TCP | 3128 | 如果您的 AWS 网络不使用 NAT 或代理，则可为云数据感知实例提供 Internet 访问 
@@ -158,9 +158,6 @@ NOTE: 源 IP 地址是 Connector 主机。
 
 
 | DNS | UDP | 53. | DNS | 用于云管理器进行 DNS 解析 
-
-
-| 云数据感知 | HTTP | 80 | 云数据感知实例 | 适用于 Cloud Volumes ONTAP 的云数据感知 
 |===
 
 
@@ -174,16 +171,19 @@ Connector 的安全组需要入站和出站规则。
 
 [cols="3*"]
 |===
-| Port | 协议 | 目的 
+| 协议 | Port | 目的 
 
 
-| 22. | SSH | 提供对 Connector 主机的 SSH 访问 
+| SSH | 22. | 提供对 Connector 主机的 SSH 访问 
 
 
-| 80 | HTTP | 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问 
+| HTTP | 80 | 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问 
 
 
-| 443. | HTTPS | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问 
+| HTTPS | 443. | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问，以及从 Cloud Data sense 实例建立的连接 
+
+
+| TCP | 9060 | 支持启用和使用 Cloud Data Asense （仅适用于政府云部署） 
 |===
 
 
@@ -199,13 +199,13 @@ Connector 的预定义安全组包括以下出站规则。
 
 [cols="3*"]
 |===
-| Port | 协议 | 目的 
+| 协议 | Port | 目的 
 
 
-| 全部 | 所有 TCP | 所有出站流量 
+| 所有 TCP | 全部 | 所有出站流量 
 
 
-| 全部 | 所有 UDP | 所有出站流量 
+| 所有 UDP | 全部 | 所有出站流量 
 |===
 
 
@@ -218,13 +218,13 @@ NOTE: 源 IP 地址是 Connector 主机。
 
 [cols="5*"]
 |===
-| 服务 | Port | 协议 | 目标 | 目的 
+| 服务 | 协议 | Port | 目标 | 目的 
 
 
-| API 调用和 AutoSupport | 443. | HTTPS | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 AWS 和 ONTAP ，云数据感知，勒索软件服务以及向 NetApp 发送 AutoSupport 消息 
+| API 调用和 AutoSupport | HTTPS | 443. | 出站 Internet 和 ONTAP 集群管理 LIF | API 调用 AWS 和 ONTAP ，云数据感知，勒索软件服务以及向 NetApp 发送 AutoSupport 消息 
 
 
-| DNS | 53. | UDP | DNS | 用于云管理器进行 DNS 解析 
+| DNS | UDP | 53. | DNS | 用于云管理器进行 DNS 解析 
 |===
 
 
