@@ -1144,7 +1144,6 @@
   <block id="e3b183b81588a53a9977e2f408f637ca" category="paragraph">连接器应始终保持运行状态。对于您启用的服务的持续运行状况和运行来说，这一点非常重要。</block>
   <block id="6eee50fc3992cd30620eeeea86d66be2" category="paragraph">例如，连接器是 Cloud Volumes ONTAP PAYGO 系统运行状况和操作的关键组件。如果某个连接器已关闭，则 Cloud Volumes ONTAP PAYGO 系统将在与某个连接器失去通信超过 14 天之后关闭。</block>
   <block id="fa1f9e92f4f0aa51cba859b2dbc37a02" category="section-title">如何创建 Connector</block>
-  <block id="f6c61aa88880378ad453485b248634e5" category="paragraph">在工作空间管理员创建 Cloud Volumes ONTAP 工作环境并使用上述任何其他功能之前，客户管理员需要先创建连接器。</block>
   <block id="71e28ecafe43c8df318f195746ba6a2f" category="paragraph">客户管理员可以通过多种方式创建 Connector ：</block>
   <block id="3e889e02d7a02cbc9daaa364c56aa381" category="list-text">直接从 Cloud Manager （建议）</block>
   <block id="2a6d41af9b09f97725c64e2705d629b2" category="inline-link-macro">在 AWS 中创建</block>
@@ -2091,4 +2090,6 @@
   <block id="c3386ad05590d977aa139a8aac605f20" category="list-text">转到 Cloud Manager 并打开工作环境。</block>
   <block id="1962304593497a2b02537345ac7be337" category="list-text">单击菜单并选择 * 高级 &gt; 配置备份 * 。</block>
   <block id="b30f3d123c465c70e2c71150136ed92d" category="list-text">单击 * 设置备份目标 * 。</block>
+  <block id="cc5581f22ce63f7556f4354dd88e93e0" category="paragraph">在工作空间管理员创建 Cloud Volumes ONTAP 工作环境并使用上述任何其他服务之前，客户管理员需要先创建连接器。</block>
+  <block id="75af5b4615967c5f4c52ae9be3a8526c" category="paragraph">我们通常每月更新一次 Connector 软件，以引入新功能并提高稳定性。虽然 Cloud Manager 平台中的大多数服务和功能均通过基于 SaaS 的软件提供，但有几项特性和功能取决于 Connector 的版本。其中包括 Cloud Volumes ONTAP 管理，内部 ONTAP 集群管理，设置和帮助。</block>
 </blocks>
