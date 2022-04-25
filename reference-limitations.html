@@ -997,7 +997,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:48:06 +0000">04/14/2022</time>
+    <time datetime="2022-04-25 21:02:05 +0000">04/25/2022</time>
     
   
 
@@ -1017,6 +1017,18 @@
 <div class="sect1">
 <h2 id="连接器限制">连接器限制</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="可能与-172-范围内的-ip-地址冲突">可能与 172 范围内的 IP 地址冲突</h3>
+<div class="paragraph">
+<p>Cloud Manager 使用 IP 地址位于 172.17.0.0/16 和 172.18.0.0/16 范围的两个接口部署 Connector 。</p>
+</div>
+<div class="paragraph">
+<p>如果您的网络配置了其中任一范围的子网，则可能会在 Cloud Manager 中遇到连接失败。例如，在 Cloud Manager 中发现内部 ONTAP 集群可能会失败。</p>
+</div>
+<div class="paragraph">
+<p>临时解决策用于更改连接器接口的 IP 地址。请联系 NetApp 支持部门以获得帮助。</p>
+</div>
+</div>
 <div class="sect2">
 <h3 id="仅支持-http-代理服务器">仅支持 HTTP 代理服务器</h3>
 <div class="paragraph">
@@ -1042,6 +1054,18 @@
 </div>
 <div class="paragraph">
 <p>此问题描述与缓存问题相关。临时解决策将使用匿名或专用 Web 浏览器会话。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="不支持共享-linux-主机">不支持共享 Linux 主机</h3>
+<div class="paragraph">
+<p>与其他应用程序共享的 VM 不支持此连接器。虚拟机必须专用于 Connector 软件。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="第三方代理和扩展">第三方代理和扩展</h3>
+<div class="paragraph">
+<p>Connector VM 不支持第三方代理或 VM 扩展。</p>
 </div>
 </div>
 </div>
