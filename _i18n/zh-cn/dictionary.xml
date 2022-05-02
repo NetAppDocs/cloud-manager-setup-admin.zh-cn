@@ -571,10 +571,7 @@
   <block id="84a965b235dbf71095fa90c6e442a58e" category="summary">了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户，连接器，云提供商凭据等。</block>
   <block id="490414e0366b091220802d406e52c076" category="doc">新增功能</block>
   <block id="f6197c5e32978fc6ef2a0a4b4ae9403a" category="paragraph">了解 Cloud Manager 管理功能的新增功能： NetApp 帐户，连接器，云提供商凭据等。</block>
-  <block id="0fc27381f6df0f20af584e656aa215b9" category="section-title">Google Cloud 中的连接器增强功能</block>
   <block id="23ea931bf11f885e1a49e6970b0aa60a" category="paragraph">在 Google Cloud 中创建新的 Connector 时， Cloud Manager 现在将显示所有现有防火墙策略。以前， Cloud Manager 不会显示任何没有目标标记的策略。</block>
-  <block id="4c192c0d77af6017716138a0c469c687" category="section-title">有关 NetApp 支持站点帐户的提醒</block>
-  <block id="553da3d1de1480b23203668d02c692f5" category="paragraph">请注意， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。执行此更新后， Cloud Manager 将提示您更新先前添加的任何现有帐户的 NetApp 支持站点（ NSS ）凭据。</block>
   <block id="a47acc65b2885cddfc6096e5aa5324f7" category="paragraph">如果您尚未将 NSS 帐户迁移到 IDaaS ，则首先需要迁移此帐户，然后在 Cloud Manager 中更新凭据。</block>
   <block id="b48762bb68eb4f8c518d5be6f1c76d16" category="inline-link">了解有关 NetApp 使用 Microsoft Azure AD 进行身份管理的更多信息</block>
   <block id="d9031e6782c3419c7b81c9c83572daf7" category="list-text"><block ref="d9031e6782c3419c7b81c9c83572daf7" category="inline-link-rx"></block></block>
@@ -956,7 +953,6 @@
   <block id="ca11f864d1d24298bcf7e821561507f3" category="cell">用于使用 Cloud Manager 标记服务管理 AWS 资源上的标记。</block>
   <block id="9257ea230a460909e07d0bfe81207794" category="cell">"S3 ： DeleteBucket" ， "S3 ： GetLifeycleConfiguration" ， "S3 ： PutLifeycleConfiguration" ， "S3 ： PutBucketTagging" ， "S3 ： ListBucketVersions" ， "S3 ： GetObject" ， "S3 ： ListBucket" ， "S3 ： ListAllMyBuckets" ， "S3 ： GetBucketTagging" ， "S3 ： GetBucketLocation" "S3 ： GetBucketPolicyStatus" ， "S3 ： GetBucketPublicAccessBlock" ， "S3 ： GetBucketAcl" ， "S3 ： GetBucketPolicy" ， "S3 ： PutBucketPublicAccessBlock"</block>
   <block id="2445d6dfa41a1dd564df073cc12fb413" category="cell">Cloud Manager 会在您启用备份到 S3 服务时使用这些权限。</block>
-  <block id="9492f1b92768f2baaad9549670647478" category="cell">"EKS ： ListClusters" ， "EKS ： Describe Cluster" ， "iam ： GetInstanceProfile"</block>
   <block id="716a2c38419203ac88bbd14e10539866" category="cell">用于发现 Amazon EKS 集群。</block>
   <block id="63f6e1958614b96c8fd95bf42f5748fd" category="summary">注册到 NetApp Cloud Central ，以便您可以访问 NetApp 的云服务。</block>
   <block id="fb74c4ef62549ee8dd9207310052bd9c" category="doc">注册到 NetApp Cloud Central</block>
@@ -1817,11 +1813,8 @@
   <block id="198fe9ebcb781bf0ef99cc9c20067692" category="paragraph">创建 Connector 的最常见方法是直接从 Cloud Manager 或云提供商的市场创建。但是，您可以选择在网络或云中的现有 Linux 主机上下载并安装 Connector 软件。这些步骤特定于可访问 Internet 的主机。</block>
   <block id="dc68b79f0ef7708bb6b593e10e6a0631" category="paragraph"><block ref="4c54a8bb31cbafd8cd337aae920ff024" category="inline-link-macro-rx"></block>。</block>
   <block id="38522fbf43585538a7a55ea25460e779" category="list-text">AWS EC2 实例类型</block>
-  <block id="b16b01fe868a2b46f872d190b6d9b912" category="list-text">满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 T3.xlarge ，并在直接从 Cloud Manager 部署 Connector 时使用该实例类型。</block>
   <block id="893ba5865a015de9dc77765cdf7184e3" category="list-text">Azure 虚拟机大小</block>
-  <block id="a70a1c03a508e9db0b89842d54d18080" category="list-text">满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 DS3 v2 ，并在直接从 Cloud Manager 部署 Connector 时使用该 VM 大小。</block>
   <block id="0779e9296a32341a31830e6c4e36d7f5" category="list-text">GCP 计算机类型</block>
-  <block id="ef445d60087b65b2686e2d8256ef4f1e" category="list-text">满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 n1-standard-4 ，并在直接从 Cloud Manager 部署 Connector 时使用该计算机类型。</block>
   <block id="7ebcb503cdda50b6cfafe4b188689a5c" category="inline-link-macro">连接器的网络连接要求</block>
   <block id="8f13fe03e92b3df99e4fdab3f70b8bd0" category="list-text">要安装 Connector ，需要进行出站 Internet 访问，而要使 Connector 能够管理公有云环境中的资源和流程，则需要进行出站 Internet 访问。有关端点列表，请参见 <block ref="4ec3519046179fc5881484cb894283f9" category="inline-link-macro-rx"></block>。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="list-title">关于此任务</block>
@@ -1966,8 +1959,6 @@
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 博客</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">云网络研讨会</block>
   <block id="f350efde95c992c9fb3c75c0e8aefcf0" category="list-text">在 * 角色 * 选项卡中，选择 * Azure SetupAsService* 角色，然后单击 * 下一步 * 。</block>
-  <block id="61436c30fe3edb3aff76fa203adba8c5" category="inline-link">转到 Azure Marketplace 中的 NetApp Connector VM 页面</block>
-  <block id="cabf039014b588edb6021204b108f503" category="list-text"><block ref="cabf039014b588edb6021204b108f503" category="inline-link-rx"></block></block>
   <block id="e8303b3c359355a29e343d1741791f05" category="paragraph">向 Cloud Manager 添加新的 AWS 凭据可为 Cloud Manager 提供创建和管理适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。 <block ref="2b759c7fb1c1b2ce728a7fb1e8e64b6d" category="inline-xref-macro-rx"></block>。</block>
   <block id="448746f589ceea8f1b3191a05fe6c57c" category="paragraph">将 AWS 凭据添加到 Connector ，以便它可以在其他 AWS 帐户中部署和管理 Cloud Volumes ONTAP 。您可以在其他帐户中提供 IAM 角色的 ARN ，也可以提供 AWS 访问密钥。</block>
   <block id="86a80f2c5791260c43446585966588d0" category="paragraph">通过提供 IAM 角色的 ARN 将 AWS 凭据添加到 Cloud Manager 中，该角色为 Cloud Manager 提供创建适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。</block>
@@ -1979,7 +1970,6 @@
   <block id="174c30e12e5caabc3d6093c8f5d239eb" category="paragraph">现在，您可以在创建适用于 ONTAP 的 FSX 工作环境或创建新连接器时使用这些凭据。</block>
   <block id="ba26e4556a0f160834687982b0479336" category="section-title">2022 年 2 月 27 日</block>
   <block id="3ac47455b10c6fb4061a70a91fdbfde2" category="section-title">2022 年 1 月 30 日</block>
-  <block id="56e138c1cde783765ac6d2c9d4217fad" category="list-text"><block ref="56e138c1cde783765ac6d2c9d4217fad" category="inline-link-rx"></block></block>
   <block id="586301717819197e24001cac47efdaaa" category="section-title">2022 年 1 月 2 日</block>
   <block id="3f9908dd0d34e73be621e521e51cd6a8" category="paragraph"><block ref="5f52a012a929ebfb0b0a901a58e91a4c" category="inline-link-rx"></block>。</block>
   <block id="1a3140f260afcdb189bbb444b89966c4" category="paragraph"><block ref="1a3140f260afcdb189bbb444b89966c4" category="inline-image-macro-rx" type="image"></block></block>
@@ -2092,4 +2082,47 @@
   <block id="b30f3d123c465c70e2c71150136ed92d" category="list-text">单击 * 设置备份目标 * 。</block>
   <block id="cc5581f22ce63f7556f4354dd88e93e0" category="paragraph">在工作空间管理员创建 Cloud Volumes ONTAP 工作环境并使用上述任何其他服务之前，客户管理员需要先创建连接器。</block>
   <block id="75af5b4615967c5f4c52ae9be3a8526c" category="paragraph">我们通常每月更新一次 Connector 软件，以引入新功能并提高稳定性。虽然 Cloud Manager 平台中的大多数服务和功能均通过基于 SaaS 的软件提供，但有几项特性和功能取决于 Connector 的版本。其中包括 Cloud Volumes ONTAP 管理，内部 ONTAP 集群管理，设置和帮助。</block>
+  <block id="3cdc0b8cb855b1fb9c206c3d696b6c9e" category="list-text">满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 T3.xlarge 。</block>
+  <block id="a6daae7da601d04e5cdb89d612a8d9b1" category="list-text">满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 DS3 v2 。</block>
+  <block id="a364c69650d36423667264592b72c7ce" category="list-text">满足上述 CPU 和 RAM 要求的实例类型。我们建议使用n1-standard-4。</block>
+  <block id="984ca77a9a51746d3dd5a855a71d3493" category="inline-link">屏蔽VM功能</block>
+  <block id="5e59673ea4dc0650f587413c4848c02c" category="paragraph">在具有支持的操作系统的VM实例上、Google Cloud支持Connector<block ref="bd10301ee2e8f0cb38112a71d2b6920c" category="inline-link-rx"></block></block>
+  <block id="49644953fd4e9612a9842d17bef5e79b" category="section-title">2022年5月2日</block>
+  <block id="def752908b0fa662bfb5de654a533140" category="section-title">连接器3.9.18</block>
+  <block id="0a6b76c04095167ad3b2e08901195ca3" category="list-text">现在、以下Google Cloud地区支持Connector：</block>
+  <block id="b11df59ba05c25c3a8734d54b7501ae7" category="list-text">新德里(亚洲-南2)</block>
+  <block id="68fb6cfeb81e52feef062b88d7037b7e" category="list-text">墨尔本(澳大利亚南部2)</block>
+  <block id="4b14bbd178377e932c7e97664c276be7" category="list-text">米兰(欧洲-西部8)</block>
+  <block id="dcbe8ad0293bd53296a9d2ec0f030d10" category="list-text">圣地亚哥(南美洲-西维1)</block>
+  <block id="3b61cbbfa7452cc07df9dbea0756d650" category="inline-link">查看支持的区域的完整列表</block>
+  <block id="0ec2b2e4840acfd3f21b50b176ec45f1" category="paragraph"><block ref="0ec2b2e4840acfd3f21b50b176ec45f1" category="inline-link-rx"></block></block>
+  <block id="5750adecdd8602aee9e0d7052b8cd392" category="list-text">当您选择要与Connector结合使用的Google Cloud服务帐户时、Cloud Manager现在会显示与每个服务帐户关联的电子邮件地址。通过查看电子邮件地址、可以更轻松地区分同名服务帐户。</block>
+  <block id="898d465c80c6b6783418f6fa71db0946" category="inline-image-macro">服务帐户字段的屏幕截图</block>
+  <block id="506e06ca3e996f21913a49d1f4920902" category="paragraph"><block ref="506e06ca3e996f21913a49d1f4920902" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2e0bddfca809f95cf3d5d7adfccca0e2" category="list-text">我们已在具有支持的操作系统的VM实例上对Google Cloud中的Connector进行了认证<block ref="bd10301ee2e8f0cb38112a71d2b6920c" category="inline-link-rx"></block></block>
+  <block id="561748ecfe4fd0bd9f15c851d5de4d29" category="inline-link">了解这些增强功能</block>
+  <block id="d2b88fcff484dc7cae448a7e8c287a1f" category="list-text">此版本的连接器还包括Cloud Volumes ONTAP 增强功能。<block ref="60a968f5f71ebaff72f2727ce31f8e5b" category="inline-link-rx"></block></block>
+  <block id="5e9d36e4528c82da2b7294c252e52427" category="list-text">要使Connector能够部署Cloud Volumes ONTAP 、需要新的AWS权限。</block>
+  <block id="bfd761a70b5f9cd277ef7c878344df38" category="paragraph">现在、在单个可用性区域(AZ)中部署HA对时、创建AWS分布放置组需要以下权限：</block>
+  <block id="0080f4096e51a12d4256890c125c5c46" category="paragraph">现在、要优化Cloud Manager创建布局组的方式、需要这些权限。</block>
+  <block id="eaf263597aafb24c99ce4e16af420ae8" category="inline-link">Cloud Manager 策略页面</block>
+  <block id="26dd25d183752a9f37249174f3d3ff89" category="paragraph">请务必为您添加到Cloud Manager的每组AWS凭据提供这些权限。您可以在上找到最新的权限列表<block ref="0e92ab1ca454f31f07a6e5fba6519a3a" category="inline-link-rx"></block>。</block>
+  <block id="5e16db4c47abe8cb1c5bd746df2fd94a" category="section-title">2022 年 4 月 3 日</block>
+  <block id="5dc3495f29e6f1332d6d809ba30cbf83" category="section-title">连接器3.9.17</block>
+  <block id="dc45cdfe41bbcfa7f2d8bf1ed54a89ed" category="list-text">现在，您可以通过让 Cloud Manager 承担您在环境中设置的 IAM 角色来创建 Connector 。此身份验证方法比共享 AWS 访问密钥和机密密钥更安全。</block>
+  <block id="c1ef500163b033b0cacf87c830339c6e" category="inline-link">了解如何使用 IAM 角色创建连接器</block>
+  <block id="1d74a995b1a421dcb50976efb8094b21" category="paragraph"><block ref="f92b2fbbcca658498705715523d67bd6" category="inline-link-rx"></block>。</block>
+  <block id="1d99a1c8fadd3f9a537fec830e9791e0" category="list-text">此版本的连接器还包括Cloud Volumes ONTAP 增强功能。<block ref="66c4cd7232189d67ede2231e4ccd26ce" category="inline-link-rx"></block></block>
+  <block id="8c4a1103eeca70528bc946c2246ec6f1" category="section-title">连接器3.9.16</block>
+  <block id="8452efafcd305c048b35a9ac1eaa0a58" category="list-text">此版本的连接器还包括Cloud Volumes ONTAP 增强功能。<block ref="f53661746a388d6e170677167c0cb4ac" category="inline-link-rx"></block></block>
+  <block id="1bb66afbb0f9c20ad9ce021a7051d622" category="section-title">连接器3.9.15</block>
+  <block id="3934da05a8696f0f2771f6794b16d0fe" category="paragraph">此版本的连接器包含Cloud Volumes ONTAP 增强功能。<block ref="56b0b409fd26975ec3a06e3bfbb1d0c5" category="inline-link-rx"></block></block>
+  <block id="54e507c4461f09157653db1c97f633b3" category="cell">"EKS：ListClusters"、"EKS：Describe Cluster"、"iam：GetInstanceProfile"、</block>
+  <block id="e0399b3db0c9216059d2e42a30b09612" category="cell">"EC2：Describe PlacementGroups"、"iam：GetRolePolicy"、</block>
+  <block id="4811a96d917e86f9cc499d8404bd91c9" category="cell">为部署在单个可用性区域(AZ)中的HA对创建AWS分布式放置组。</block>
+  <block id="40ca3108b6381f9eda9574daf00c3b01" category="list-text">转到Azure Marketplace中的NetApp Connector VM页面。</block>
+  <block id="0c5f74a83e5cbc5c6c230dd0caf096f7" category="inline-link">适用于商业区域的Azure Marketplace页面</block>
+  <block id="5fb9ace1b2fee444b848b1ad1c5d886c" category="list-text"><block ref="5fb9ace1b2fee444b848b1ad1c5d886c" category="inline-link-rx"></block></block>
+  <block id="8ac340f924d72696326df51a32dbdee5" category="inline-link">Azure政府区域的Azure Marketplace页面</block>
+  <block id="d60d2a63a86471881f173bb3041b00f7" category="list-text"><block ref="d60d2a63a86471881f173bb3041b00f7" category="inline-link-rx"></block></block>
 </blocks>

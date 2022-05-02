@@ -98,5 +98,8 @@ Cloud Manager 使用 AWS 帐户对几个 AWS 服务进行 API 调用、包括 EC
 | "S3 ： DeleteBucket" ， "S3 ： GetLifeycleConfiguration" ， "S3 ： PutLifeycleConfiguration" ， "S3 ： PutBucketTagging" ， "S3 ： ListBucketVersions" ， "S3 ： GetObject" ， "S3 ： ListBucket" ， "S3 ： ListAllMyBuckets" ， "S3 ： GetBucketTagging" ， "S3 ： GetBucketLocation" "S3 ： GetBucketPolicyStatus" ， "S3 ： GetBucketPublicAccessBlock" ， "S3 ： GetBucketAcl" ， "S3 ： GetBucketPolicy" ， "S3 ： PutBucketPublicAccessBlock" | Cloud Manager 会在您启用备份到 S3 服务时使用这些权限。 
 
 
-| "EKS ： ListClusters" ， "EKS ： Describe Cluster" ， "iam ： GetInstanceProfile" | 用于发现 Amazon EKS 集群。 
+| "EKS：ListClusters"、"EKS：Describe Cluster"、"iam：GetInstanceProfile"、 | 用于发现 Amazon EKS 集群。 
+
+
+| "EC2：Describe PlacementGroups"、"iam：GetRolePolicy"、 | 为部署在单个可用性区域(AZ)中的HA对创建AWS分布式放置组。 
 |===

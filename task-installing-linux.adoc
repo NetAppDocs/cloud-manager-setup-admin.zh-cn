@@ -30,9 +30,14 @@ NOTE: 如果要在 Google Cloud 中创建 Cloud Volumes ONTAP 系统，则必须
 需要一个专用主机:: 与其他应用程序共享的主机不支持此连接器。主机必须是专用主机。
 CPU:: 4 个核心或 4 个 vCPU
 RAM:: 16 GB
-AWS EC2 实例类型:: 满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 T3.xlarge ，并在直接从 Cloud Manager 部署 Connector 时使用该实例类型。
-Azure 虚拟机大小:: 满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 DS3 v2 ，并在直接从 Cloud Manager 部署 Connector 时使用该 VM 大小。
-GCP 计算机类型:: 满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 n1-standard-4 ，并在直接从 Cloud Manager 部署 Connector 时使用该计算机类型。
+AWS EC2 实例类型:: 满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 T3.xlarge 。
+Azure 虚拟机大小:: 满足上述 CPU 和 RAM 要求的实例类型。我们建议使用 DS3 v2 。
+GCP 计算机类型:: 满足上述 CPU 和 RAM 要求的实例类型。我们建议使用n1-standard-4。
++
+--
+在具有支持的操作系统的VM实例上、Google Cloud支持Connector https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["屏蔽VM功能"^]
+
+--
 支持的操作系统::
 +
 --

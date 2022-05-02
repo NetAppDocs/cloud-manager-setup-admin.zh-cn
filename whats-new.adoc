@@ -18,13 +18,73 @@ summary: 了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户
 
 
 
+== 2022年5月2日
+
+
+
+=== 连接器3.9.18
+
+* 现在、以下Google Cloud地区支持Connector：
++
+** 新德里(亚洲-南2)
+** 墨尔本(澳大利亚南部2)
+** 米兰(欧洲-西部8)
+** 圣地亚哥(南美洲-西维1)
+
+
++
+https://cloud.netapp.com/cloud-volumes-global-regions["查看支持的区域的完整列表"^]
+
+* 当您选择要与Connector结合使用的Google Cloud服务帐户时、Cloud Manager现在会显示与每个服务帐户关联的电子邮件地址。通过查看电子邮件地址、可以更轻松地区分同名服务帐户。
++
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-google-cloud-service-account.png["服务帐户字段的屏幕截图"]
+
+* 我们已在具有支持的操作系统的VM实例上对Google Cloud中的Connector进行了认证 https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["屏蔽VM功能"^]
+* 此版本的连接器还包括Cloud Volumes ONTAP 增强功能。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-may-2022["了解这些增强功能"^]
+* 要使Connector能够部署Cloud Volumes ONTAP 、需要新的AWS权限。
++
+现在、在单个可用性区域(AZ)中部署HA对时、创建AWS分布放置组需要以下权限：
+
++
+[source, json]
+----
+"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",
+----
++
+现在、要优化Cloud Manager创建布局组的方式、需要这些权限。
+
++
+请务必为您添加到Cloud Manager的每组AWS凭据提供这些权限。您可以在上找到最新的权限列表 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略页面"^]。
+
+
+
+
+
+== 2022 年 4 月 3 日
+
+
+
+=== 连接器3.9.17
+
+* 现在，您可以通过让 Cloud Manager 承担您在环境中设置的 IAM 角色来创建 Connector 。此身份验证方法比共享 AWS 访问密钥和机密密钥更安全。
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["了解如何使用 IAM 角色创建连接器"]。
+
+* 此版本的连接器还包括Cloud Volumes ONTAP 增强功能。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#3-april-2022["了解这些增强功能"^]
+
+
+
+
 == 2022 年 2 月 27 日
 
 
 
-=== Google Cloud 中的连接器增强功能
+=== 连接器3.9.16
 
-在 Google Cloud 中创建新的 Connector 时， Cloud Manager 现在将显示所有现有防火墙策略。以前， Cloud Manager 不会显示任何没有目标标记的策略。
+* 在 Google Cloud 中创建新的 Connector 时， Cloud Manager 现在将显示所有现有防火墙策略。以前， Cloud Manager 不会显示任何没有目标标记的策略。
+* 此版本的连接器还包括Cloud Volumes ONTAP 增强功能。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#27-february-2022["了解这些增强功能"^]
+
 
 
 
@@ -32,15 +92,9 @@ summary: 了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户
 
 
 
-=== 有关 NetApp 支持站点帐户的提醒
+=== 连接器3.9.15
 
-请注意， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。执行此更新后， Cloud Manager 将提示您更新先前添加的任何现有帐户的 NetApp 支持站点（ NSS ）凭据。
-
-如果您尚未将 NSS 帐户迁移到 IDaaS ，则首先需要迁移此帐户，然后在 Cloud Manager 中更新凭据。
-
-* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login["了解有关 NetApp 使用 Microsoft Azure AD 进行身份管理的更多信息"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method["了解如何将 NSS 帐户更新为新的身份验证方法"]
-
+此版本的连接器包含Cloud Volumes ONTAP 增强功能。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#30-january-2022["了解这些增强功能"^]
 
 
 
@@ -79,6 +133,8 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/mai
 === NetApp 支持站点帐户需要更新
 
 从 2021 年 12 月开始， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。执行此更新后， Cloud Manager 将提示您更新先前添加的任何现有 NetApp 支持站点帐户的凭据。
+
+如果您尚未将 NSS 帐户迁移到 IDaaS ，则首先需要迁移此帐户，然后在 Cloud Manager 中更新凭据。
 
 * link:task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method["了解如何将 NSS 帐户更新为新的身份验证方法"]。
 * https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login["了解有关 NetApp 使用 Microsoft Azure AD 进行身份管理的更多信息"^]
