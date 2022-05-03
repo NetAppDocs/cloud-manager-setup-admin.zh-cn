@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -997,7 +997,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:26:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-03 00:01:47 +0000">05/03/2022</time>
     
   
 
@@ -1012,12 +1012,104 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="2022年5月2日">2022年5月2日</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="连接器3-9-18">连接器3.9.18</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>现在、以下Google Cloud地区支持Connector：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>新德里(亚洲-南2)</p>
+</li>
+<li>
+<p>墨尔本(澳大利亚南部2)</p>
+</li>
+<li>
+<p>米兰(欧洲-西部8)</p>
+</li>
+<li>
+<p>圣地亚哥(南美洲-西维1)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">"查看支持的区域的完整列表"</a></p>
+</div>
+</li>
+<li>
+<p>当您选择要与Connector结合使用的Google Cloud服务帐户时、Cloud Manager现在会显示与每个服务帐户关联的电子邮件地址。通过查看电子邮件地址、可以更轻松地区分同名服务帐户。</p>
+<div class="paragraph">
+<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-google-cloud-service-account.png" alt="服务帐户字段的屏幕截图"></span></p>
+</div>
+</li>
+<li>
+<p>我们已在具有支持的操作系统的VM实例上对Google Cloud中的Connector进行了认证 <a href="https://cloud.google.com/compute/shielded-vm/docs/shielded-vm" target="_blank" rel="noopener">"屏蔽VM功能"</a></p>
+</li>
+<li>
+<p>此版本的连接器还包括Cloud Volumes ONTAP 增强功能。 <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-may-2022" target="_blank" rel="noopener">"了解这些增强功能"</a></p>
+</li>
+<li>
+<p>要使Connector能够部署Cloud Volumes ONTAP 、需要新的AWS权限。</p>
+<div class="paragraph">
+<p>现在、在单个可用性区域(AZ)中部署HA对时、创建AWS分布放置组需要以下权限：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>现在、要优化Cloud Manager创建布局组的方式、需要这些权限。</p>
+</div>
+<div class="paragraph">
+<p>请务必为您添加到Cloud Manager的每组AWS凭据提供这些权限。您可以在上找到最新的权限列表 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 策略页面"</a>。</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="2022-年-4-月-3-日">2022 年 4 月 3 日</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="连接器3-9-17">连接器3.9.17</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>现在，您可以通过让 Cloud Manager 承担您在环境中设置的 IAM 角色来创建 Connector 。此身份验证方法比共享 AWS 访问密钥和机密密钥更安全。</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html">"了解如何使用 IAM 角色创建连接器"</a>。</p>
+</div>
+</li>
+<li>
+<p>此版本的连接器还包括Cloud Volumes ONTAP 增强功能。 <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#3-april-2022" target="_blank" rel="noopener">"了解这些增强功能"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="2022-年-2-月-27-日">2022 年 2 月 27 日</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="google-cloud-中的连接器增强功能">Google Cloud 中的连接器增强功能</h3>
-<div class="paragraph">
+<h3 id="连接器3-9-16">连接器3.9.16</h3>
+<div class="ulist">
+<ul>
+<li>
 <p>在 Google Cloud 中创建新的 Connector 时， Cloud Manager 现在将显示所有现有防火墙策略。以前， Cloud Manager 不会显示任何没有目标标记的策略。</p>
+</li>
+<li>
+<p>此版本的连接器还包括Cloud Volumes ONTAP 增强功能。 <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#27-february-2022" target="_blank" rel="noopener">"了解这些增强功能"</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1026,22 +1118,9 @@
 <h2 id="2022-年-1-月-30-日">2022 年 1 月 30 日</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="有关-netapp-支持站点帐户的提醒">有关 NetApp 支持站点帐户的提醒</h3>
+<h3 id="连接器3-9-15">连接器3.9.15</h3>
 <div class="paragraph">
-<p>请注意， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。执行此更新后， Cloud Manager 将提示您更新先前添加的任何现有帐户的 NetApp 支持站点（ NSS ）凭据。</p>
-</div>
-<div class="paragraph">
-<p>如果您尚未将 NSS 帐户迁移到 IDaaS ，则首先需要迁移此帐户，然后在 Cloud Manager 中更新凭据。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login" target="_blank" rel="noopener">"了解有关 NetApp 使用 Microsoft Azure AD 进行身份管理的更多信息"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method">"了解如何将 NSS 帐户更新为新的身份验证方法"</a></p>
-</li>
-</ul>
+<p>此版本的连接器包含Cloud Volumes ONTAP 增强功能。 <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#30-january-2022" target="_blank" rel="noopener">"了解这些增强功能"</a></p>
 </div>
 </div>
 </div>
@@ -1085,6 +1164,9 @@
 <h3 id="netapp-支持站点帐户需要更新">NetApp 支持站点帐户需要更新</h3>
 <div class="paragraph">
 <p>从 2021 年 12 月开始， NetApp 现在使用 Microsoft Azure Active Directory 作为身份提供程序来提供特定于支持和许可的身份验证服务。执行此更新后， Cloud Manager 将提示您更新先前添加的任何现有 NetApp 支持站点帐户的凭据。</p>
+</div>
+<div class="paragraph">
+<p>如果您尚未将 NSS 帐户迁移到 IDaaS ，则首先需要迁移此帐户，然后在 Cloud Manager 中更新凭据。</p>
 </div>
 <div class="ulist">
 <ul>

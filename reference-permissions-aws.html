@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/reference-permissions-aws.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/reference-permissions-aws.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/reference-permissions-aws.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/reference-permissions-aws.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -997,7 +997,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:26:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-03 00:01:47 +0000">05/03/2022</time>
     
   
 
@@ -1123,8 +1123,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager 会在您启用备份到 S3 服务时使用这些权限。</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EKS ： ListClusters" ， "EKS ： Describe Cluster" ， "iam ： GetInstanceProfile"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"EKS：ListClusters"、"EKS：Describe Cluster"、"iam：GetInstanceProfile"、</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">用于发现 Amazon EKS 集群。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2：Describe PlacementGroups"、"iam：GetRolePolicy"、</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">为部署在单个可用性区域(AZ)中的HA对创建AWS分布式放置组。</p></td>
 </tr>
 </tbody>
 </table>
