@@ -999,7 +999,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:26:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-04 14:38:42 +0000">05/04/2022</time>
     
   
 
@@ -1009,68 +1009,99 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>如果您需要对连接器进行故障排除，了解其配置方式可能会有所帮助。</p>
+<p>您可能希望在部署连接器之前或需要对任何问题进行故障排除时了解有关连接器的更多信息。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="具有-internet-访问权限的默认配置">具有 Internet 访问权限的默认配置</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>如果您从Cloud Manager、云提供商的市场部署了Connector、或者在可访问Internet的内部Linux主机上手动安装了Connector、则以下配置详细信息适用。</p>
+</div>
+<div class="sect2">
+<h3 id="aws详细信息">AWS详细信息</h3>
+<div class="paragraph">
+<p>如果您从Cloud Manager或云提供商的市场部署了Connector、请注意以下事项：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>如果您从 Cloud Manager （或直接从云提供商的市场）部署了 Connector ，请注意以下事项：</p>
-<div class="ulist">
-<ul>
-<li>
-<p>在 AWS 中、 EC2 Linux 实例的用户名为 EC2-user 。</p>
+<p>EC2实例类型为T3.xlarge。</p>
 </li>
 <li>
-<p>映像的操作系统如下：</p>
-<div class="ulist">
-<ul>
-<li>
-<p>AWS ： Red Hat Enterprise Linux 7.6 （ HVM ）</p>
-</li>
-<li>
-<p>Azure ： CentOS 7.6</p>
-</li>
-<li>
-<p>GCP ： CentOS 7.9</p>
+<p>此映像的操作系统为Red Hat Enterprise Linux 7.6 (HVM)。</p>
 <div class="paragraph">
 <p>操作系统不包含 GUI 。您必须使用终端访问系统。</p>
 </div>
 </li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<li>
+<p>EC2 Linux实例的用户名为EC2-user。</p>
 </li>
 <li>
-<p>从 Cloud Manager 部署时，默认系统磁盘如下所示：</p>
+<p>默认系统磁盘为50 GiB GP2磁盘。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure详细信息">Azure详细信息</h3>
+<div class="paragraph">
+<p>如果您从Cloud Manager或云提供商的市场部署了Connector、请注意以下事项：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>AWS ： 50 GiB GP2 磁盘</p>
+<p>VM类型为DS3 v2。</p>
 </li>
 <li>
-<p>Azure ： 100 GiB 高级 SSD 磁盘</p>
+<p>映像的操作系统为CentOS 7.6。</p>
+<div class="paragraph">
+<p>操作系统不包含 GUI 。您必须使用终端访问系统。</p>
+</div>
 </li>
 <li>
-<p>Google Cloud ： 100 GiB SSD 永久性磁盘</p>
+<p>默认系统磁盘为100 GiB高级SSD磁盘。</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="google-cloud详细信息">Google Cloud详细信息</h3>
+<div class="paragraph">
+<p>如果您从Cloud Manager或云提供商的市场部署了Connector、请注意以下事项：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>VM实例为n1-standard-4。</p>
 </li>
 <li>
-<p>Connector 安装文件夹位于以下位置：</p>
+<p>映像的操作系统为CentOS 7.9。</p>
 <div class="paragraph">
-<p>/opt/application/netapp/cloudmanager</p>
+<p>操作系统不包含 GUI 。您必须使用终端访问系统。</p>
 </div>
 </li>
 <li>
+<p>默认系统磁盘为100 GiB SSD永久性磁盘。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="安装文件夹">安装文件夹</h3>
+<div class="paragraph">
+<p>Connector 安装文件夹位于以下位置：</p>
+</div>
+<div class="paragraph">
+<p>/opt/application/netapp/cloudmanager</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="日志文件">日志文件</h3>
+<div class="paragraph">
 <p>日志文件包含在以下文件夹中：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1087,7 +1118,11 @@
 </li>
 </ul>
 </div>
-</li>
+</div>
+<div class="sect2">
+<h3 id="连接器服务">连接器服务</h3>
+<div class="ulist">
+<ul>
 <li>
 <p>云管理器服务的名称是 OCCM 。</p>
 </li>
@@ -1097,8 +1132,14 @@
 <p>如果 MySQL 服务已关闭，则 OCCM 服务也将关闭。</p>
 </div>
 </li>
-<li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="软件包">软件包</h3>
+<div class="paragraph">
 <p>如果尚未安装下列软件包，则 Cloud Manager 会在 Linux 主机上安装这些软件包：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1130,9 +1171,12 @@
 </li>
 </ul>
 </div>
-</li>
-<li>
+</div>
+<div class="sect2">
+<h3 id="端口">端口</h3>
+<div class="paragraph">
 <p>Connector 在 Linux 主机上使用以下端口：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1155,8 +1199,6 @@
 </li>
 </ul>
 </div>
-</li>
-</ul>
 </div>
 </div>
 </div>
