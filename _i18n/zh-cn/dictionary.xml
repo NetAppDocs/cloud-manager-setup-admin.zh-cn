@@ -1871,17 +1871,7 @@
   <block id="d091f5f5ef56e437171dce81de151778" category="summary">如果您需要对连接器进行故障排除，了解其配置方式可能会有所帮助。</block>
   <block id="6e8114a6676a5923599d8d78479d23d8" category="doc">Connector 的默认配置</block>
   <block id="87047facc49847cec237f6d055d56b31" category="section-title">具有 Internet 访问权限的默认配置</block>
-  <block id="10f2e7fb8617ff712fbe7aa54032781c" category="list-text">如果您从 Cloud Manager （或直接从云提供商的市场）部署了 Connector ，请注意以下事项：</block>
-  <block id="b222582f646de6fbdc5d97b39ae8192d" category="list-text">在 AWS 中、 EC2 Linux 实例的用户名为 EC2-user 。</block>
-  <block id="1c809a23dbe4e8bcccad6aa2a0c8c0e2" category="list-text">映像的操作系统如下：</block>
-  <block id="7ca420018a135668285e51700826f06a" category="list-text">AWS ： Red Hat Enterprise Linux 7.6 （ HVM ）</block>
-  <block id="955934a26058d02cfec6d0f285c4a307" category="list-text">Azure ： CentOS 7.6</block>
-  <block id="72c52a7fd1e647b2a2830c39c7942919" category="list-text">GCP ： CentOS 7.9</block>
   <block id="953e61420be6157aa122dfd3475d4070" category="paragraph">操作系统不包含 GUI 。您必须使用终端访问系统。</block>
-  <block id="4325e913be25be97380072015ae5e7cc" category="list-text">从 Cloud Manager 部署时，默认系统磁盘如下所示：</block>
-  <block id="09563c397639582ef720de7349c524bc" category="list-text">AWS ： 50 GiB GP2 磁盘</block>
-  <block id="7733c97f1ef8dd1877b419499696175b" category="list-text">Azure ： 100 GiB 高级 SSD 磁盘</block>
-  <block id="0d3dd665317c1c18249ab1e0e27a84fc" category="list-text">Google Cloud ： 100 GiB SSD 永久性磁盘</block>
   <block id="6bcce13786258734e514d9a072a3c23a" category="list-text">Connector 安装文件夹位于以下位置：</block>
   <block id="1290fecb35d9c7e8b4f1faf1f9b5c7f3" category="paragraph">/opt/application/netapp/cloudmanager</block>
   <block id="af22c16aeca9d8bc2515764efff73455" category="list-text">日志文件包含在以下文件夹中：</block>
@@ -2125,4 +2115,27 @@
   <block id="5fb9ace1b2fee444b848b1ad1c5d886c" category="list-text"><block ref="5fb9ace1b2fee444b848b1ad1c5d886c" category="inline-link-rx"></block></block>
   <block id="8ac340f924d72696326df51a32dbdee5" category="inline-link">Azure政府区域的Azure Marketplace页面</block>
   <block id="d60d2a63a86471881f173bb3041b00f7" category="list-text"><block ref="d60d2a63a86471881f173bb3041b00f7" category="inline-link-rx"></block></block>
+  <block id="da14ee4a8100ac08980150bcda1e397d" category="inline-link-macro">了解Connector的默认配置</block>
+  <block id="84fc34721c0c912a148a70d22ac7cd5a" category="paragraph"><block ref="2e3b01a9181b70ea3432226bf12e488f" category="inline-link-macro-rx"></block>。</block>
+  <block id="2fc22405cb36e8596d9bdb7b52cbf10c" category="paragraph">您可能希望在部署连接器之前或需要对任何问题进行故障排除时了解有关连接器的更多信息。</block>
+  <block id="2c6b952beb0b945d11bcb7f47c9fc222" category="paragraph">如果您从Cloud Manager、云提供商的市场部署了Connector、或者在可访问Internet的内部Linux主机上手动安装了Connector、则以下配置详细信息适用。</block>
+  <block id="5eeca886fa07462826a9ea747483f528" category="section-title">AWS详细信息</block>
+  <block id="52a3f135a86ccbbb1fcbcae6bafe5d71" category="paragraph">如果您从Cloud Manager或云提供商的市场部署了Connector、请注意以下事项：</block>
+  <block id="6b3a1b41a32e70a38db42e8ec15a6fba" category="list-text">EC2实例类型为T3.xlarge。</block>
+  <block id="1c4a1f461d9d9ab860d5238735bbfa23" category="list-text">此映像的操作系统为Red Hat Enterprise Linux 7.6 (HVM)。</block>
+  <block id="09572768e7bd2d34b2a051ebb8774173" category="list-text">EC2 Linux实例的用户名为EC2-user。</block>
+  <block id="3e08af2c96d38d93f2b461c17451752f" category="list-text">默认系统磁盘为50 GiB GP2磁盘。</block>
+  <block id="b8c4a5bd8ed4eb470e80955a542dd4bf" category="section-title">Azure详细信息</block>
+  <block id="82e44dd5e94a855110f9dea154fed0ed" category="list-text">VM类型为DS3 v2。</block>
+  <block id="6b20346212b35fa23c8778f7b40af243" category="list-text">映像的操作系统为CentOS 7.6。</block>
+  <block id="474a089504b47eb34ee00ee62f121108" category="list-text">默认系统磁盘为100 GiB高级SSD磁盘。</block>
+  <block id="f246cf5f23e765f0a7ebed4a6c1d923a" category="section-title">Google Cloud详细信息</block>
+  <block id="eea8625f5c96ad7dadcdf9b2b4ddc80d" category="list-text">VM实例为n1-standard-4。</block>
+  <block id="eac23d653ed188286a19e5301fe3807e" category="list-text">映像的操作系统为CentOS 7.9。</block>
+  <block id="6cb5fb9b61376b8ee3092321445fdea4" category="list-text">默认系统磁盘为100 GiB SSD永久性磁盘。</block>
+  <block id="bc4aa6323016172de14a6835883b27c7" category="section-title">安装文件夹</block>
+  <block id="81fae4ea40cc442afa43dab4cc001004" category="section-title">日志文件</block>
+  <block id="7ab07ea46199c644dddf2520b843394b" category="section-title">连接器服务</block>
+  <block id="27fe4eb3edbaff8f250e2d51f7462681" category="section-title">软件包</block>
+  <block id="407c4e9fac86b98147da49acd4fa0d01" category="section-title">端口</block>
 </blocks>

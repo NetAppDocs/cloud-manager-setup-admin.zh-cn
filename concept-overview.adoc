@@ -56,6 +56,8 @@ NetApp 免费提供 Cloud Manager 软件。
 
 对于大多数任务， Cloud Manager 会提示您在云网络中部署 Connector ，这会导致云提供商为计算实例和关联存储收取费用。您可以选择在内部运行 Connector 软件。
 
+link:reference-connector-default-config.html["了解Connector的默认配置"]。
+
 
 
 == Cloud Manager 的工作原理

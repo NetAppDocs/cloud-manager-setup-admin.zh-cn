@@ -14,78 +14,121 @@ summary: 如果您需要对连接器进行故障排除，了解其配置方式�
 
 
 [role="lead"]
-如果您需要对连接器进行故障排除，了解其配置方式可能会有所帮助。
+您可能希望在部署连接器之前或需要对任何问题进行故障排除时了解有关连接器的更多信息。
 
 
 
 == 具有 Internet 访问权限的默认配置
 
-* 如果您从 Cloud Manager （或直接从云提供商的市场）部署了 Connector ，请注意以下事项：
-+
-** 在 AWS 中、 EC2 Linux 实例的用户名为 EC2-user 。
-** 映像的操作系统如下：
-+
-*** AWS ： Red Hat Enterprise Linux 7.6 （ HVM ）
-*** Azure ： CentOS 7.6
-*** GCP ： CentOS 7.9
+如果您从Cloud Manager、云提供商的市场部署了Connector、或者在可访问Internet的内部Linux主机上手动安装了Connector、则以下配置详细信息适用。
+
+
+
+=== AWS详细信息
+
+如果您从Cloud Manager或云提供商的市场部署了Connector、请注意以下事项：
+
+* EC2实例类型为T3.xlarge。
+* 此映像的操作系统为Red Hat Enterprise Linux 7.6 (HVM)。
 +
 操作系统不包含 GUI 。您必须使用终端访问系统。
 
+* EC2 Linux实例的用户名为EC2-user。
+* 默认系统磁盘为50 GiB GP2磁盘。
 
 
 
 
-* 从 Cloud Manager 部署时，默认系统磁盘如下所示：
+=== Azure详细信息
+
+如果您从Cloud Manager或云提供商的市场部署了Connector、请注意以下事项：
+
+* VM类型为DS3 v2。
+* 映像的操作系统为CentOS 7.6。
 +
-** AWS ： 50 GiB GP2 磁盘
-** Azure ： 100 GiB 高级 SSD 磁盘
-** Google Cloud ： 100 GiB SSD 永久性磁盘
+操作系统不包含 GUI 。您必须使用终端访问系统。
+
+* 默认系统磁盘为100 GiB高级SSD磁盘。
 
 
-* Connector 安装文件夹位于以下位置：
+
+
+=== Google Cloud详细信息
+
+如果您从Cloud Manager或云提供商的市场部署了Connector、请注意以下事项：
+
+* VM实例为n1-standard-4。
+* 映像的操作系统为CentOS 7.9。
 +
+操作系统不包含 GUI 。您必须使用终端访问系统。
+
+* 默认系统磁盘为100 GiB SSD永久性磁盘。
+
+
+
+
+=== 安装文件夹
+
+Connector 安装文件夹位于以下位置：
+
 /opt/application/netapp/cloudmanager
 
-* 日志文件包含在以下文件夹中：
-+
-** /opt/application/netapp/cloudmanager/log
+
+
+=== 日志文件
+
+日志文件包含在以下文件夹中：
+
+* /opt/application/netapp/cloudmanager/log
 +
 此文件夹中的日志提供了有关连接器和 Docker 映像的详细信息。
 
-** /opt/application/netapp/cloudmanager/docker_occm/data/log
+* /opt/application/netapp/cloudmanager/docker_occm/data/log
 +
 此文件夹中的日志提供了有关云服务以及在 Connector 上运行的 Cloud Manager 服务的详细信息。
 
 
+
+
+
+=== 连接器服务
 
 * 云管理器服务的名称是 OCCM 。
 * OCUM 服务依赖于 MySQL 服务。
 +
 如果 MySQL 服务已关闭，则 OCCM 服务也将关闭。
 
-* 如果尚未安装下列软件包，则 Cloud Manager 会在 Linux 主机上安装这些软件包：
-+
-** 7 邮政编码
-** AWSCLI
-** Docker
-** Java
-** Kubectl
-** MySQL
-** Tridentctl
-** 拉拔
-** wget
 
 
-* Connector 在 Linux 主机上使用以下端口：
-+
-** 80 用于 HTTP 访问
-** 443 用于 HTTPS 访问
-** 3306 表示云管理器数据库
-** 8080 用于云管理器 API 代理
-** 8666 用于 Service Manager API
-** 8777 ，用于运行状况检查程序容器服务 API
 
 
+=== 软件包
+
+如果尚未安装下列软件包，则 Cloud Manager 会在 Linux 主机上安装这些软件包：
+
+* 7 邮政编码
+* AWSCLI
+* Docker
+* Java
+* Kubectl
+* MySQL
+* Tridentctl
+* 拉拔
+* wget
+
+
+
+
+=== 端口
+
+Connector 在 Linux 主机上使用以下端口：
+
+* 80 用于 HTTP 访问
+* 443 用于 HTTPS 访问
+* 3306 表示云管理器数据库
+* 8080 用于云管理器 API 代理
+* 8666 用于 Service Manager API
+* 8777 ，用于运行状况检查程序容器服务 API
 
 
 
