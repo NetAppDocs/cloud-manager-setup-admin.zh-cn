@@ -999,7 +999,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:26:59 +0000">04/14/2022</time>
+    <time datetime="2022-05-09 14:21:46 +0000">05/09/2022</time>
     
   
 
@@ -1012,7 +1012,7 @@
 <p>客户管理员需要先部署 <em>Connector</em> ，然后才能使用大多数 Cloud Manager 功能。 <a href="concept-connectors.html">"了解何时需要连接器"</a>。借助此连接器， Cloud Manager 可以管理公有云环境中的资源和流程。</p>
 </div>
 <div class="paragraph">
-<p>此页面介绍如何直接从 Cloud Manager 在 GCP 中创建 Connector 。 <a href="concept-connectors.html#how-to-create-a-connector">"了解部署 Connector 的其他方法"</a>。</p>
+<p>此页面介绍如何直接从Cloud Manager在Google Cloud中创建Connector。 <a href="concept-connectors.html#how-to-create-a-connector">"了解部署 Connector 的其他方法"</a>。</p>
 </div>
 <div class="paragraph">
 <p>这些步骤必须由具有帐户管理员角色的用户完成。Workspace 管理员无法创建 Connector 。</p>
@@ -1035,13 +1035,13 @@
 <h2 id="设置权限">设置权限</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>在部署 Connector 之前，您需要确保您的 GCP 帐户具有正确的权限，并且已为 Connector VM 设置服务帐户。</p>
+<p>在部署Connector之前、您需要确保Google Cloud帐户具有正确的权限、并且已为Connector VM设置服务帐户。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步骤</div>
 <ol class="arabic">
 <li>
-<p>确保部署 Connector 的 GCP 用户在中具有权限 <a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">"GCP 的连接器部署策略"</a>。</p>
+<p>确保部署Connector的Google Cloud用户在中具有权限 <a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">"适用于Google Cloud的连接器部署策略"</a>。</p>
 <div class="paragraph">
 <p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"您可以使用 YAML 文件创建自定义角色"</a> 然后将其附加到用户。您需要使用 gcloud 命令行创建角色。</p>
 </div>
@@ -1054,13 +1054,13 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"在 GCP 中创建角色"</a> 其中包括中定义的权限 <a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">"适用于 GCP 的 Cloud Manager 策略"</a>。同样，您需要使用 gcloud 命令行。</p>
+<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"在 GCP 中创建角色"</a> 其中包括中定义的权限 <a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">"适用于Google Cloud的Cloud Manager策略"</a>。同样，您需要使用 gcloud 命令行。</p>
 <div class="paragraph">
 <p>此 YAML 文件中包含的权限与步骤 1 中的权限不同。</p>
 </div>
 </li>
 <li>
-<p><a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account" target="_blank" rel="noopener">"创建 GCP 服务帐户并应用刚刚创建的自定义角色"</a>。</p>
+<p><a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account" target="_blank" rel="noopener">"创建Google Cloud服务帐户并应用您刚刚创建的自定义角色"</a>。</p>
 </li>
 <li>
 <p>如果要在其他项目中部署 Cloud Volumes ONTAP ， <a href="https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console" target="_blank" rel="noopener">"通过向该项目添加具有 Cloud Manager 角色的服务帐户来授予访问权限"</a>。您需要对每个项目重复此步骤。</p>
@@ -1071,7 +1071,7 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>GCP 用户现在具有创建 Connector 所需的权限，并且已为 Connector VM 设置服务帐户。</p>
+<p>现在、Google Cloud用户具有创建Connector所需的权限、并且已为Connector VM设置服务帐户。</p>
 </div>
 <div class="sect2">
 <h3 id="共享-vpc-权限">共享 VPC 权限</h3>
@@ -1089,7 +1089,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">服务帐户</th>
+<th class="tableblock halign-left valign-top">身份</th>
 <th class="tableblock halign-left valign-top">创建者</th>
 <th class="tableblock halign-left valign-top">托管在中</th>
 <th class="tableblock halign-left valign-top">服务项目权限</th>
@@ -1099,7 +1099,27 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager 服务帐户</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于部署Connector的Google帐户</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">自定义</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">服务项目</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">"在此 .yaml 文件中找到的权限"</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>compute.networkUser</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">在服务项目中部署Connector</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">连接器服务帐户</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">自定义</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">服务项目</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -1140,7 +1160,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Google API 服务代理</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Cloud</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">服务项目</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1156,11 +1176,11 @@
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">代表部署与 GCP API 交互。允许 Cloud Manager 使用共享网络。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">代表部署与Google Cloud API进行交互。允许 Cloud Manager 使用共享网络。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Google Compute Engine 默认服务帐户</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Cloud</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">服务项目</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -1176,7 +1196,7 @@
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">代表部署部署部署 GCP 实例和计算基础架构。允许 Cloud Manager 使用共享网络。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">代表部署部署部署部署Google Cloud实例和计算基础架构。允许 Cloud Manager 使用共享网络。</p></td>
 </tr>
 </tbody>
 </table>
@@ -1235,7 +1255,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="在-gcp-中创建连接器">在 GCP 中创建连接器</h2>
+<h2 id="在google-cloud中创建连接器">在Google Cloud中创建连接器</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>直接从 Cloud Manager 用户界面或使用 gcloud 在 Google Cloud 中创建 Connector 。</p>
@@ -1340,7 +1360,7 @@
 <li>
 <p>使用您首选的方法登录到 gcloud SDK 。</p>
 <div class="paragraph">
-<p>在我们的示例中，我们将使用安装了 gcloud SDK 的本地 Shell ，但您可以在 GCP 控制台中使用原生 Google Cloud Shell 。</p>
+<p>在我们的示例中、我们将使用安装了gcloud SDK的本地Shell、但您可以在Google云控制台中使用原生 Google Cloud Shell。</p>
 </div>
 <div class="paragraph">
 <p>有关 Google Cloud SDK 的详细信息，请访问 <a href="https://cloud.google.com/sdk" target="_blank" rel="noopener">"Google Cloud SDK 文档页面"</a>。</p>
