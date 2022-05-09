@@ -728,33 +728,25 @@
   <block id="8429d024ccbeae43501123bceabf2dec" category="paragraph">通过修改 Azure 服务凭据的详细信息，在 Cloud Manager 中编辑 Azure 凭据。例如，如果为服务主体应用程序创建了新密钥，则可能需要更新客户端密钥。</block>
   <block id="ace843a9a86d3677aa70c0e5dd1d64b5" category="doc">从 Cloud Manager 在 Google Cloud 中创建 Connector</block>
   <block id="49dc29bc56279a820af0d347c1b82bb9" category="paragraph">客户管理员需要先部署 _Connector_ ，然后才能使用大多数 Cloud Manager 功能。 <block ref="39840e1bb98f6582f1bf4e505d666ea1" category="inline-link-macro-rx"></block>。借助此连接器， Cloud Manager 可以管理公有云环境中的资源和流程。</block>
-  <block id="7c18071a544e575d10f8edb95130f9f8" category="paragraph">此页面介绍如何直接从 Cloud Manager 在 GCP 中创建 Connector 。 <block ref="f56df5f8b4fd558a7482d6115403eadd" category="inline-link-macro-rx"></block>。</block>
   <block id="5d6324823833716e10f3e57d934ecd8a" category="section-title">设置权限</block>
-  <block id="0fd2c530f900e25466c67241a360e1a8" category="paragraph">在部署 Connector 之前，您需要确保您的 GCP 帐户具有正确的权限，并且已为 Connector VM 设置服务帐户。</block>
-  <block id="ffbc0a333b58a4301b9886ca74d7bc9b" category="inline-link">GCP 的连接器部署策略</block>
-  <block id="75ea13002fdfc33d802148a3a98e50f4" category="list-text">确保部署 Connector 的 GCP 用户在中具有权限<block ref="4c3863d6122739f4791db15211aa44fb" category="inline-link-rx"></block>。</block>
   <block id="937e4aacfb1148c32f2cc162ab0584ad" category="inline-link">您可以使用 YAML 文件创建自定义角色</block>
   <block id="1d51205234c08b687882a95b353982c7" category="paragraph"><block ref="70ef2814a9ccb32291159ef5c5ae86a7" category="inline-link-rx"></block> 然后将其附加到用户。您需要使用 gcloud 命令行创建角色。</block>
   <block id="a5e7f9aeb24d1d27868194bf1021f6bc" category="list-text">设置一个服务帐户，该帐户具有 Cloud Manager 在项目中创建和管理 Cloud Volumes ONTAP 系统所需的权限。</block>
   <block id="b7f5517a2500bccfce6377826f6bed54" category="paragraph">创建此服务帐户时，您需要将其与 Connector VM 关联。</block>
   <block id="65a39e4477ac1c2ee4e6f7ab03f80f8b" category="inline-link">在 GCP 中创建角色</block>
   <block id="b5202e3c2a4fb621516045f4d6bc3d60" category="inline-link">适用于 GCP 的 Cloud Manager 策略</block>
-  <block id="929581b32e817fc83fc94db05b5959cf" category="list-text"><block ref="b3e2dfdb02c4ef9473e0b3fb573ce75f" category="inline-link-rx"></block> 其中包括中定义的权限<block ref="e91a62d6158aa053a2e619736c05b1a6" category="inline-link-rx"></block>。同样，您需要使用 gcloud 命令行。</block>
   <block id="1ec6f779fe5a9d8e3450d32017a21e22" category="paragraph">此 YAML 文件中包含的权限与步骤 1 中的权限不同。</block>
   <block id="270b7569730a90507cf88195b5a8a7ee" category="inline-link">创建 GCP 服务帐户并应用刚刚创建的自定义角色</block>
   <block id="c30c9ad6a6f620b9a2a07c6f14399a1e" category="list-text"><block ref="63a6eacd526447284dd7555861e56994" category="inline-link-rx"></block>。</block>
   <block id="37a4b78df3288cf5c1bd086a6d1d5f9f" category="inline-link">通过向该项目添加具有 Cloud Manager 角色的服务帐户来授予访问权限</block>
   <block id="24e3dee161bfcb834ffc481206a123e7" category="list-text">如果要在其他项目中部署 Cloud Volumes ONTAP ，<block ref="7fd81496d9765541412df8e9d20889a5" category="inline-link-rx"></block>。您需要对每个项目重复此步骤。</block>
-  <block id="6b369d4fc86497786b15b7689e64001b" category="paragraph">GCP 用户现在具有创建 Connector 所需的权限，并且已为 Connector VM 设置服务帐户。</block>
   <block id="436551d909ff1add0114d9105eddf95f" category="section-title">共享 VPC 权限</block>
   <block id="15660d75ef0f69d0acd64487e9544b7a" category="paragraph">如果您使用共享 VPC 将资源部署到服务项目中，则需要以下权限。此表仅供参考，您的环境应在 IAM 配置完成后反映权限表。</block>
-  <block id="8009300c174dfc14a2da3e25ccd6deea" category="cell">服务帐户</block>
   <block id="ef1d00d8a237a1bbe431e1091f5715fb" category="cell">创建者</block>
   <block id="b3b70561d21898703c46811dcb865200" category="cell">托管在中</block>
   <block id="2b50514b464068d6b60775a6b2e8df9b" category="cell">服务项目权限</block>
   <block id="85a0d28132b3045832b7e4472ac166e5" category="cell">托管项目权限</block>
   <block id="261addf78c7b2c961032b3dd08ba0b1f" category="cell">目的</block>
-  <block id="56b9092cae65c5d15fa17f9be7d62d6e" category="cell">Cloud Manager 服务帐户</block>
   <block id="90589c47f06eb971d548591f23c285af" category="cell">自定义</block>
   <block id="6021eec4920c52f3a4df07a5381d9fb0" category="cell">服务项目</block>
   <block id="396139b8280c186c5b4e76556ee3ca75" category="inline-link">在此 .yaml 文件中找到的权限</block>
@@ -768,11 +760,8 @@
   <block id="382b0f5185773fa0f67a8ed8056c7759" category="cell">不适用</block>
   <block id="9da64c05f602835b1e7e3c537166bbc1" category="cell">（可选）适用于数据分层和 Cloud Backup</block>
   <block id="386abe7036c62f0f27d3787e317b4aff" category="cell">Google API 服务代理</block>
-  <block id="c731f72e1d22a7c5e01a7cb789a8885e" category="cell">GCP</block>
   <block id="f295764441aac0df9246f1a621487073" category="list-text">（默认）编辑器</block>
-  <block id="3f2721954e657c817803830fa0789abb" category="cell">代表部署与 GCP API 交互。允许 Cloud Manager 使用共享网络。</block>
   <block id="786c13b749589e9a2a94540f24f240c3" category="cell">Google Compute Engine 默认服务帐户</block>
-  <block id="98b051f4226382303219e5e317fde66f" category="cell">代表部署部署部署 GCP 实例和计算基础架构。允许 Cloud Manager 使用共享网络。</block>
   <block id="2a01d572b1447155c310cabafac3fae9" category="paragraph">注释：</block>
   <block id="a143e53bf3d41d3d4dd612ba13200112" category="list-text">只有在未向部署传递防火墙规则并选择让 Cloud Manager 为您创建这些规则的情况下，主机项目才需要使用 deploymentManager.editor.如果未指定任何规则， Cloud Manager 将在包含 VPC0 防火墙规则的主机项目中创建部署。</block>
   <block id="8e7c4c2e8dfd2e81f9feb42ddfb2e9a8" category="list-text">只有当您不向部署传递防火墙规则并选择让 Cloud Manager 为您创建这些规则时，才需要 firewall.create 和 firewall.delete 。这些权限位于 Cloud Manager 服务帐户 .yaml 文件中。如果要使用共享 VPC 部署 HA 对，则会使用这些权限为 VC1 ， 2 和 3 创建防火墙规则。对于所有其他部署，这些权限还将用于为 VPC0 创建规则。</block>
@@ -787,7 +776,6 @@
   <block id="9e636409b20980fb5089c87705851b4d" category="list-text">Cloud Resource Manager API</block>
   <block id="1101b09020ade12e90a562489e315c8d" category="list-text">计算引擎 API</block>
   <block id="71660685d00034957db3f9a31c160978" category="list-text">身份和访问管理（ IAM ） API</block>
-  <block id="1b9afce7f2077ff3630469557123d5c5" category="section-title">在 GCP 中创建连接器</block>
   <block id="4642830f208507b4a2a5ff5bed0d9b97" category="paragraph">直接从 Cloud Manager 用户界面或使用 gcloud 在 Google Cloud 中创建 Connector 。</block>
   <block id="21c199e82e474a9a5607a2b9ccb8e66f" category="inline-link">所需权限</block>
   <block id="f4a16580e0572ca5e418a9435dc09de4" category="list-text">。<block ref="a18b1518901620e43c44c260945ff7cb" category="inline-link-rx"></block> 适用于您的 Google Cloud 帐户，如本页面第一部分所述。</block>
@@ -806,7 +794,6 @@
   <block id="43da6e9199aecb615e775a9a6d77b458" category="paragraph">此实例应在大约 7 分钟后准备就绪。您应停留在页面上，直到此过程完成。</block>
   <block id="7f22bf39aaf5ce5980111c3587bef5b5" category="open-title">云</block>
   <block id="7e5741f3894a13d9d98fbc97bbd73942" category="list-text">使用您首选的方法登录到 gcloud SDK 。</block>
-  <block id="d96e80f8ed30ec9dd1848342c4bedc26" category="paragraph">在我们的示例中，我们将使用安装了 gcloud SDK 的本地 Shell ，但您可以在 GCP 控制台中使用原生 Google Cloud Shell 。</block>
   <block id="f05aa4ef12b89074e9217f86e7189979" category="inline-link-macro">Google Cloud SDK 文档页面</block>
   <block id="5e9620d5e6d58444e08927ced1242490" category="paragraph">有关 Google Cloud SDK 的详细信息，请访问 <block ref="92b2bbdf9ac5c3468751e6db384e0670" category="inline-link-macro-rx"></block>。</block>
   <block id="39a7d4615e67a2eb620f4c75bfd35de1" category="list-text">验证您是否以具有上一节中定义的所需权限的用户身份登录：</block>
@@ -2138,4 +2125,23 @@
   <block id="7ab07ea46199c644dddf2520b843394b" category="section-title">连接器服务</block>
   <block id="27fe4eb3edbaff8f250e2d51f7462681" category="section-title">软件包</block>
   <block id="407c4e9fac86b98147da49acd4fa0d01" category="section-title">端口</block>
+  <block id="3c29f8c71add9d192508a1409906b5cf" category="paragraph">此页面介绍如何直接从Cloud Manager在Google Cloud中创建Connector。 <block ref="f56df5f8b4fd558a7482d6115403eadd" category="inline-link-macro-rx"></block>。</block>
+  <block id="265157c47da67d7829e580d4e498814c" category="paragraph">在部署Connector之前、您需要确保Google Cloud帐户具有正确的权限、并且已为Connector VM设置服务帐户。</block>
+  <block id="e32a11bfee0ac384bf304116edad5b72" category="inline-link">适用于Google Cloud的连接器部署策略</block>
+  <block id="e31760fac1a7adfa41132adaff0abf52" category="list-text">确保部署Connector的Google Cloud用户在中具有权限<block ref="e51fdc439ac794ccecf0832f25d2c22b" category="inline-link-rx"></block>。</block>
+  <block id="b42f82c4ad27a30bff1121f55882a07c" category="inline-link">适用于Google Cloud的Cloud Manager策略</block>
+  <block id="c0dbffc55b00e76faab42aaa6e7e035b" category="list-text"><block ref="b3e2dfdb02c4ef9473e0b3fb573ce75f" category="inline-link-rx"></block> 其中包括中定义的权限<block ref="b2da2d8566bd2cf4941d85fc39037563" category="inline-link-rx"></block>。同样，您需要使用 gcloud 命令行。</block>
+  <block id="bffde7130bcbd48dc4d26900909a6ec0" category="inline-link">创建Google Cloud服务帐户并应用您刚刚创建的自定义角色</block>
+  <block id="8ffe57ff2d6f0334349512874d9ed89d" category="list-text"><block ref="e91ca9f63029ef70f3223d4f72fac132" category="inline-link-rx"></block>。</block>
+  <block id="4d146cf655f47126afe85429c3491d43" category="paragraph">现在、Google Cloud用户具有创建Connector所需的权限、并且已为Connector VM设置服务帐户。</block>
+  <block id="c9c5c65fb4af9cf90eb99b3b84424189" category="cell">身份</block>
+  <block id="229ac9492e379cef84bf38f29f6941cd" category="cell">用于部署Connector的Google帐户</block>
+  <block id="a546c9049428d60032b181f2f82657b4" category="cell">服务项目</block>
+  <block id="7687e23e0eab2e92a5ee0cfc67ebab98" category="list-text"><block ref="7687e23e0eab2e92a5ee0cfc67ebab98" category="inline-link-rx"></block></block>
+  <block id="0739a8d84cae34de0d2732632c0d3e8e" category="cell">在服务项目中部署Connector</block>
+  <block id="483a6486004960ab28236293d3cf2bce" category="cell">连接器服务帐户</block>
+  <block id="9165bdf7bcd983e5b9eeeea3649fe93d" category="cell">代表部署与Google Cloud API进行交互。允许 Cloud Manager 使用共享网络。</block>
+  <block id="abb8f06c60f79c0d26aa84ecd4b682a9" category="cell">代表部署部署部署部署Google Cloud实例和计算基础架构。允许 Cloud Manager 使用共享网络。</block>
+  <block id="c251b4e4495910558d988ba699a63a67" category="section-title">在Google Cloud中创建连接器</block>
+  <block id="70d434e2bfd18a27962842edd06609f7" category="paragraph">在我们的示例中、我们将使用安装了gcloud SDK的本地Shell、但您可以在Google云控制台中使用原生 Google Cloud Shell。</block>
 </blocks>
