@@ -1364,7 +1364,6 @@
   <block id="911d15b7ac55478d2b567e8488658687" category="section-title">可能与 172 范围内的 IP 地址冲突</block>
   <block id="3853b1ba353b50f09828dc0d39b3ed95" category="paragraph">Cloud Manager 使用 IP 地址位于 172.17.0.0/16 和 172.18.0.0/16 范围的两个接口部署 Connector 。</block>
   <block id="9f608f9c1c8b1ff5590819babfd8d682" category="paragraph">如果您的网络配置了其中任一范围的子网，则可能会在 Cloud Manager 中遇到连接失败。例如，在 Cloud Manager 中发现内部 ONTAP 集群可能会失败。</block>
-  <block id="9bf0231c4a9bbfcd51ea4f7ad43e1483" category="paragraph">临时解决策用于更改连接器接口的 IP 地址。请联系 NetApp 支持部门以获得帮助。</block>
   <block id="c8f224037ea295aeec347c94779d9932" category="section-title">出站 Internet 访问</block>
   <block id="d7a9479796563c8f42a47db3973f774c" category="paragraph">需要从 Connector 进行出站 Internet 访问。</block>
   <block id="5137b25e1ad14548ebb74e1d06668375" category="section-title">用于管理公有云环境中资源的端点</block>
@@ -2147,4 +2146,6 @@
   <block id="390e66de0b25a9d9b226d4ede6fa20b5" category="section-title">2022年5月12日</block>
   <block id="e2632c3a4c1aff50543e98b03420fd3c" category="section-title">连接器3.9.18修补程序</block>
   <block id="8156333613ef46e2aeaf70650af07b00" category="paragraph">我们更新了Connector以引入错误修复。最值得注意的修复方法是、当问题描述 位于共享VPC中时、它会影响Google Cloud中的Cloud Volumes ONTAP 部署。</block>
+  <block id="9d629a9ec3f84748aec778918407cebb" category="inline-link-macro">Cloud Manager Connector IP与现有网络冲突</block>
+  <block id="a1fd2cb29c69b5f22a015cf8e9b56775" category="paragraph">请参见知识库文章 <block ref="a91fb084431280c2dea29b2cdbf32954" category="inline-link-macro-rx"></block> 有关如何更改连接器接口的IP地址的说明。</block>
 </blocks>

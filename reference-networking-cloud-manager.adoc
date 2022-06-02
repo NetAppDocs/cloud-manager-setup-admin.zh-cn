@@ -37,7 +37,7 @@ Cloud Manager 使用 IP 地址位于 172.17.0.0/16 和 172.18.0.0/16 范围的�
 
 如果您的网络配置了其中任一范围的子网，则可能会在 Cloud Manager 中遇到连接失败。例如，在 Cloud Manager 中发现内部 ONTAP 集群可能会失败。
 
-临时解决策用于更改连接器接口的 IP 地址。请联系 NetApp 支持部门以获得帮助。
+请参见知识库文章 link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/Cloud_Manager_shows_inactive_as_Connector_IP_range_in_172.x.x.x_conflict_with_docker_network["Cloud Manager Connector IP与现有网络冲突"] 有关如何更改连接器接口的IP地址的说明。
 
 
 
