@@ -18,6 +18,27 @@ summary: 了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户
 
 
 
+== 2022年6月7日
+
+
+
+=== 连接器3.9.19
+
+* 现在、AWS雅加达地区(亚太地区东南部3)支持Connector。
+* 现在、Azure巴西东南部地区支持Connector。
++
+https://cloud.netapp.com/cloud-volumes-global-regions["查看支持的区域的完整列表"^]
+
+* 此版本的Connector还包括Cloud Volumes ONTAP 增强功能和内部ONTAP 集群增强功能。
++
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#7-june-2022["了解Cloud Volumes ONTAP 增强功能"^]
+** https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/whats-new.html#7-june-2022["了解ONTAP 内部集群增强功能"^]
+
+
+
+
+
+
 == 2022年5月12日
 
 

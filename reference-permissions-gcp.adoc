@@ -105,4 +105,7 @@ Cloud Manager 需要在云提供商中执行操作的权限。中包括这些权
 
 
 | — container.clusters 。 get — container.clusters 。 list | 发现在 Google Kubernetes Engine 中运行的 Kubernetes 集群。 
+
+
+| —compute.instanceGroups.get—compute.addresses。get | 在HA对上创建和管理Storage VM。 
 |===

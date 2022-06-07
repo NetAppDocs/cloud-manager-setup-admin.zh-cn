@@ -1892,7 +1892,6 @@
   <block id="a15b1a7954f2d926c5ee7f261a97b4d2" category="paragraph">/var/lib/docker/volumes/ds_occmdata/_data/log</block>
   <block id="590b2ea5933ad8ead3c9a15a914f1a9c" category="list-text">所有服务均在 Docker 容器中运行</block>
   <block id="f76b4c57c56377745199382d59cdeed3" category="paragraph">这些服务取决于运行的 Docker 运行时服务</block>
-  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">所有 Cloud Manager 文档</block>
   <block id="b7117438679aa668508b75822322c225" category="sidebar">设置和管理文档</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">发行说明</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
@@ -2148,4 +2147,17 @@
   <block id="8156333613ef46e2aeaf70650af07b00" category="paragraph">我们更新了Connector以引入错误修复。最值得注意的修复方法是、当问题描述 位于共享VPC中时、它会影响Google Cloud中的Cloud Volumes ONTAP 部署。</block>
   <block id="9d629a9ec3f84748aec778918407cebb" category="inline-link-macro">Cloud Manager Connector IP与现有网络冲突</block>
   <block id="a1fd2cb29c69b5f22a015cf8e9b56775" category="paragraph">请参见知识库文章 <block ref="a91fb084431280c2dea29b2cdbf32954" category="inline-link-macro-rx"></block> 有关如何更改连接器接口的IP地址的说明。</block>
+  <block id="f8b475a3fefebada77a30229238d0a1a" category="section-title">2022年6月7日</block>
+  <block id="40beea3ec23a7affa39b1a1cbd52f21d" category="section-title">连接器3.9.19</block>
+  <block id="fb9fefdc512037af8c4c1f84c436bd8e" category="list-text">现在、AWS雅加达地区(亚太地区东南部3)支持Connector。</block>
+  <block id="49ed7ab586a5135eae3ee7b3aea2ae20" category="list-text">现在、Azure巴西东南部地区支持Connector。</block>
+  <block id="1765dff10197df4bf080f41e5537f2a5" category="list-text">此版本的Connector还包括Cloud Volumes ONTAP 增强功能和内部ONTAP 集群增强功能。</block>
+  <block id="03e6ae21f561049c3e8010740c63aab3" category="inline-link">了解Cloud Volumes ONTAP 增强功能</block>
+  <block id="2027473f3ca71543274163d3bb9dd8e1" category="list-text"><block ref="2027473f3ca71543274163d3bb9dd8e1" category="inline-link-rx"></block></block>
+  <block id="6ff2a7981cc8a7efd758e8ffec4cc69e" category="inline-link">了解ONTAP 内部集群增强功能</block>
+  <block id="f0aff813a70ef2591adfbb6a1a06b553" category="list-text"><block ref="f0aff813a70ef2591adfbb6a1a06b553" category="inline-link-rx"></block></block>
+  <block id="d91c9747b757db55982f71a386bfd0d6" category="cell">—compute.instanceGroups.get—compute.addresses。get</block>
+  <block id="e6896223c5f9bd9bbdd1b0c9eac6686f" category="cell">在HA对上创建和管理Storage VM。</block>
+  <block id="4a95dbd25f9c78f9b32c636955913f0c" category="cell">"EC2：Describe卷修改"、"EC2：ModifyVolume"、</block>
+  <block id="2ab6f4b7f1eda4096fbe91764dbb5eb6" category="cell">用于设置和管理支持Amazon EBS弹性卷功能的Cloud Volumes ONTAP 聚合。</block>
 </blocks>
