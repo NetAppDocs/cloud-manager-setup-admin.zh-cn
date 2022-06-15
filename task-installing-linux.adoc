@@ -89,7 +89,7 @@ Red Hat Enterprise Linux 系统必须在 Red Hat 订购管理中注册。如果�
 +
 [source, cli]
 ----
-chmod +x OnCommandCloudManager-V3.9.16.sh
+chmod +x OnCommandCloudManager-V3.9.19.sh
 ----
 . 运行安装脚本。
 +
@@ -98,7 +98,7 @@ chmod +x OnCommandCloudManager-V3.9.16.sh
 +
 [source, cli]
 ----
- ./OnCommandCloudManager-V3.9.16.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
+ ./OnCommandCloudManager-V3.9.19.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
 ----
 +
 _silent_ 运行安装时不提示您提供信息。
