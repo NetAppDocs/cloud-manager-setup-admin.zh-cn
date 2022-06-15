@@ -1471,7 +1471,6 @@
   <block id="342df35452bbec008148c714d47038f6" category="list-text">如果订单显示时钟和 * 待定 * 状态，请返回到 Marketplace 页面并选择 * 在提供商上管理 * 以完成上述流程。</block>
   <block id="9547217bb6aa822040056cba67310321" category="inline-image-macro">待定市场授权的屏幕截图。</block>
   <block id="e6ec8d6dff39d45a9056311495699cef" category="paragraph"><block ref="e6ec8d6dff39d45a9056311495699cef" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4c7da566c048accbd9ccb27c9b060bde" category="summary">您可以在无法访问 Internet 的内部 Linux 主机上安装 Connector 。然后，您可以发现内部 ONTAP 集群，在它们之间复制数据，并使用 Cloud Data sense 扫描数据。</block>
   <block id="424a4bbc5d90882baf6dfd31a70caf62" category="doc">在不访问 Internet 的情况下在内部安装 Connector</block>
   <block id="92241232df0720bddf843b8b16c8be1a" category="paragraph">这些安装说明专门针对上述使用情形。 <block ref="f56df5f8b4fd558a7482d6115403eadd" category="inline-link-macro-rx"></block>。</block>
   <block id="93144470251168b3e5488b736447f48f" category="section-title">验证主机要求</block>
@@ -1527,8 +1526,6 @@
   <block id="533c556705825be9a1a97d191373f80f" category="list-text"><block ref="533c556705825be9a1a97d191373f80f" category="inline-link-rx"></block></block>
   <block id="8160a46a5d4541efd7702f3fa8a2ecad" category="inline-link">在内部 ONTAP 集群之间复制数据</block>
   <block id="1b8412d43fb2448299621a31132c8729" category="list-text"><block ref="1b8412d43fb2448299621a31132c8729" category="inline-link-rx"></block></block>
-  <block id="44260f7555e9d7359b83f5d558c95bf0" category="inline-link">使用 Cloud Data sense 扫描卷数据</block>
-  <block id="19ffc38fbe7641c4f1c1b5bba95bd159" category="list-text"><block ref="19ffc38fbe7641c4f1c1b5bba95bd159" category="inline-link-rx"></block></block>
   <block id="c4d9d6c8e652595e9d46970f56499783" category="inline-link-macro">了解如何升级 Connector</block>
   <block id="873c98dded4257d9b65fdcad74460e91" category="paragraph">如果有新版本的 Connector 软件可用，则这些软件将发布到 NetApp 支持站点。 <block ref="c7624839f14a2e41667804d3cbb29094" category="inline-link-macro-rx"></block>。</block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="summary">已知限制确定了本产品版本不支持的平台、设备或功能、或者这些平台、设备或功能无法与产品正确交互操作。仔细审查这些限制。</block>
@@ -2160,4 +2157,9 @@
   <block id="2ab6f4b7f1eda4096fbe91764dbb5eb6" category="cell">用于设置和管理支持Amazon EBS弹性卷功能的Cloud Volumes ONTAP 聚合。</block>
   <block id="fe133d1f6db8d046e4b328c0d9a967a1" category="paragraph">无论使用哪种许可模式、每个NetApp帐户最多只能有50个Cloud Volumes ONTAP 系统。</block>
   <block id="ae5034ae6657395ba1fc2a16d2c55db3" category="paragraph">system_ 是 HA 对或单节点系统。例如、如果您有八个Cloud Volumes ONTAP HA对和四个单节点系统、则总共有12个系统、帐户中还有38个系统。</block>
+  <block id="bea9d9e1b3f9260b5dafbfee794aead7" category="summary">您可以在无法访问 Internet 的内部 Linux 主机上安装 Connector 。然后、您可以发现内部ONTAP 集群、在它们之间复制数据、使用Cloud Backup备份卷、并使用Cloud Data sense对其进行扫描。</block>
+  <block id="89b945901df4999cfbb07b91df7f3e83" category="inline-link">使用云备份将内部ONTAP 卷数据备份到StorageGRID</block>
+  <block id="0ef5e09df96e6b4d97470a69c3a5bb03" category="list-text"><block ref="0ef5e09df96e6b4d97470a69c3a5bb03" category="inline-link-rx"></block></block>
+  <block id="c6e51205c48cc37a7cc66b973d442adf" category="inline-link">使用云数据感知扫描内部ONTAP 卷数据</block>
+  <block id="a2946220130b0d51ecc66e35f8a65cbe" category="list-text"><block ref="a2946220130b0d51ecc66e35f8a65cbe" category="inline-link-rx"></block></block>
 </blocks>
