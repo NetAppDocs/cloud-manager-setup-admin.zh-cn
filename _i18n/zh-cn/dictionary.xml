@@ -1125,7 +1125,6 @@
   <block id="c305e694f602a4913fd20d15e3508fcc" category="paragraph">Connector VM 不支持第三方代理或 VM 扩展。</block>
   <block id="9b2658aca840a5bb63ea0f460945616d" category="section-title">连接器应保持运行状态</block>
   <block id="e3b183b81588a53a9977e2f408f637ca" category="paragraph">连接器应始终保持运行状态。对于您启用的服务的持续运行状况和运行来说，这一点非常重要。</block>
-  <block id="6eee50fc3992cd30620eeeea86d66be2" category="paragraph">例如，连接器是 Cloud Volumes ONTAP PAYGO 系统运行状况和操作的关键组件。如果某个连接器已关闭，则 Cloud Volumes ONTAP PAYGO 系统将在与某个连接器失去通信超过 14 天之后关闭。</block>
   <block id="fa1f9e92f4f0aa51cba859b2dbc37a02" category="section-title">如何创建 Connector</block>
   <block id="71e28ecafe43c8df318f195746ba6a2f" category="paragraph">客户管理员可以通过多种方式创建 Connector ：</block>
   <block id="3e889e02d7a02cbc9daaa364c56aa381" category="list-text">直接从 Cloud Manager （建议）</block>
@@ -2162,4 +2161,5 @@
   <block id="0ef5e09df96e6b4d97470a69c3a5bb03" category="list-text"><block ref="0ef5e09df96e6b4d97470a69c3a5bb03" category="inline-link-rx"></block></block>
   <block id="c6e51205c48cc37a7cc66b973d442adf" category="inline-link">使用云数据感知扫描内部ONTAP 卷数据</block>
   <block id="a2946220130b0d51ecc66e35f8a65cbe" category="list-text"><block ref="a2946220130b0d51ecc66e35f8a65cbe" category="inline-link-rx"></block></block>
+  <block id="fe287ea744fed512490d3282fcd528aa" category="paragraph">例如、连接器是Cloud Volumes ONTAP 运行状况和运行的关键组件。如果某个连接器已关闭、则使用基于节点的许可的Cloud Volumes ONTAP PAYGO系统将在与某个连接器失去通信超过14天之后关闭。</block>
 </blocks>
