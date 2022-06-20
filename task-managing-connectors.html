@@ -993,7 +993,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-18 19:06:41 +0000">04/18/2022</time>
+    <time datetime="2022-06-20 19:53:34 +0000">06/20/2022</time>
     
   
 
@@ -1036,38 +1036,22 @@
 <h2 id="访问本地-ui">访问本地 UI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>虽然您应该从 SaaS 用户界面执行几乎所有任务，但连接器上仍提供本地用户界面。需要从连接器本身执行的几项任务需要使用此接口：</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="task-configuring-proxy.html">"设置代理服务器"</a></p>
-</li>
-<li>
-<p>安装修补程序（您通常与 NetApp 人员一起安装修补程序）</p>
-</li>
-<li>
-<p>下载 AutoSupport 消息（通常在遇到问题时由 NetApp 人员指导）</p>
-</li>
-</ul>
+<p>虽然您应该从 SaaS 用户界面执行几乎所有任务，但连接器上仍提供本地用户界面。如果您要从无法访问出站Internet的政府区域或站点访问Cloud Manager、则需要使用在Connector上运行的本地用户界面。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步骤</div>
 <ol class="arabic">
 <li>
-<p><a href="task-logging-in.html" target="_blank" rel="noopener">"登录到 Cloud Manager SaaS 界面"</a> 从已通过网络连接到 Connector 实例的计算机。</p>
+<p>打开 Web 浏览器并输入以下 URL ：</p>
 <div class="paragraph">
-<p>如果此连接器没有公有 IP 地址，您需要 VPN 连接，或者您需要从与此连接器位于同一网络的跳转主机进行连接。</p>
+<p>https://<em>ipaddress</em>[]</p>
+</div>
+<div class="paragraph">
+<p><em>ipaddress</em> 可以是 localhost ，专用 IP 地址或公有 IP 地址，具体取决于主机的配置。例如，如果连接器位于公有云中且没有公有 IP 地址，则必须输入与连接器主机连接的主机的专用 IP 地址。</p>
 </div>
 </li>
 <li>
-<p>单击 * 连接器 * 下拉列表，然后单击 * 转到本地 UID* 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_connector_local_ui.gif" alt="标题中显示 Connector 图标和 Go to Local UI 操作的屏幕截图。"></span></p>
-</div>
-<div class="paragraph">
-<p>在 Connector 上运行的 Cloud Manager 界面将加载到新的浏览器选项卡中。</p>
-</div>
+<p>输入您的用户名和密码以登录。</p>
 </li>
 </ol>
 </div>
