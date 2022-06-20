@@ -970,7 +970,6 @@
   <block id="4b8bff03335e3b9e10cd47a213ff79e2" category="paragraph"><block ref="4b8bff03335e3b9e10cd47a213ff79e2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a9512880dd99d7a0ea8a44aae7aaf9aa" category="paragraph">Cloud Manager 将刷新并显示与选定 Connector 关联的工作环境。</block>
   <block id="61fb0edb10f3698f23f558d3a9ffae84" category="section-title">访问本地 UI</block>
-  <block id="13f82657bcb08b6808b377b42bb36b38" category="paragraph">虽然您应该从 SaaS 用户界面执行几乎所有任务，但连接器上仍提供本地用户界面。需要从连接器本身执行的几项任务需要使用此接口：</block>
   <block id="8f1f697128124fa5f7ac3ca04e2076b2" category="inline-link-macro">设置代理服务器</block>
   <block id="e18fe7db665c72786571535a9d181827" category="list-text"><block ref="e18fe7db665c72786571535a9d181827" category="inline-link-macro-rx"></block></block>
   <block id="5534b7b22bef2cb909c67010ed56403f" category="list-text">安装修补程序（您通常与 NetApp 人员一起安装修补程序）</block>
@@ -978,7 +977,6 @@
   <block id="049e58b9154b9217b877a3ecc16fc5cf" category="inline-link-macro">登录到 Cloud Manager SaaS 界面</block>
   <block id="c372128408c839bd88cba5d74f93343f" category="list-text"><block ref="6dc57c9a66b985810d1730868aac7fd2" category="inline-link-macro-rx"></block> 从已通过网络连接到 Connector 实例的计算机。</block>
   <block id="9d277575663069d52e56d4f8641722bb" category="paragraph">如果此连接器没有公有 IP 地址，您需要 VPN 连接，或者您需要从与此连接器位于同一网络的跳转主机进行连接。</block>
-  <block id="fe21300b1f75f7d8f3a770f3424dd83c" category="list-text">单击 * 连接器 * 下拉列表，然后单击 * 转到本地 UID* 。</block>
   <block id="aa5200385a837d314289fa0e1a6076d8" category="inline-image-macro">标题中显示 Connector 图标和 Go to Local UI 操作的屏幕截图。</block>
   <block id="1830014a8a628750265ffacd0aadfae4" category="paragraph"><block ref="1830014a8a628750265ffacd0aadfae4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e39eb53ef1cb43062749c69a86d41297" category="paragraph">在 Connector 上运行的 Cloud Manager 界面将加载到新的浏览器选项卡中。</block>
@@ -1543,8 +1541,6 @@
   <block id="3197827325be6e413fb43c8aa3862608" category="section-title">对于政府区域， SaaS 平台已禁用</block>
   <block id="6aef346cd7f1d02d8a385ef5501430b5" category="paragraph">如果您在 AWS GovCloud 区域， Azure Gov 区域或 Azure DoD 区域部署 Connector ，则只能通过 Connector 的主机 IP 地址访问 Cloud Manager 。对整个帐户禁用对 SaaS 平台的访问。</block>
   <block id="01b185b57976f8db5702424954f912de" category="paragraph">这意味着，只有能够访问最终用户内部 VPC-vNet 的有权限用户才能使用 Cloud Manager 的 UI 或 API 。</block>
-  <block id="b1ba27dfecc5d2afa7479b0e66831cb2" category="paragraph">这也意味着 Cloud Manager 不提供以下服务：</block>
-  <block id="7719c1d7366788cfbb45dc7ab4e61716" category="admonition">Cloud Backup ， Cloud Data sense 和监控服务在政府区域均受支持并可用。</block>
   <block id="4c8bad6756ca0d84a9a56e8303428c9c" category="section-title">市场限制</block>
   <block id="09b41782e7d4a148f9a7da9ba9dd8aab" category="section-title">Azure 和 Google Cloud 合作伙伴不支持按需购买</block>
   <block id="3bb34cc4b91242a4a34cd43a6fe0fd46" category="paragraph">如果您是 Microsoft Cloud 解决方案提供商（ CSP ）合作伙伴或 Google Cloud 合作伙伴，则不提供 NetApp 按需购买订阅。您必须购买许可证并使用 BYOL 许可证部署 NetApp 云解决方案。</block>
@@ -2037,7 +2033,6 @@
   <block id="bece28b158ab337d9ed24b00d7d02cc7" category="list-text">单击 * 致电我们 * 可查找 NetApp 技术支持的电话号码。</block>
   <block id="efe81cff8e6f47ec59ef94167b76bf5a" category="list-text">单击 * 打开问题描述 * ，选择一个选项，然后单击 * 发送 * 。</block>
   <block id="cbb1040836732e478409dacf7e45171a" category="paragraph">NetApp 代表将审核您的案例，并尽快与您联系。</block>
-  <block id="8f8ddac26068fbb5a6761635f0559bf3" category="paragraph">要使用这些服务，需要使用 SaaS 平台。</block>
   <block id="0c01b3b7191c43507ad9ca43d6443731" category="cell">提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问，以及从 Cloud Data sense 实例建立的连接</block>
   <block id="b774573fe7b53358246a054f6d44ca83" category="cell">支持启用和使用 Cloud Data Asense （仅适用于政府云部署）</block>
   <block id="5c6b09600cdfc594130f9f3c053efecb" category="section-title">更改连接器的 IP 地址</block>
@@ -2162,4 +2157,10 @@
   <block id="c6e51205c48cc37a7cc66b973d442adf" category="inline-link">使用云数据感知扫描内部ONTAP 卷数据</block>
   <block id="a2946220130b0d51ecc66e35f8a65cbe" category="list-text"><block ref="a2946220130b0d51ecc66e35f8a65cbe" category="inline-link-rx"></block></block>
   <block id="fe287ea744fed512490d3282fcd528aa" category="paragraph">例如、连接器是Cloud Volumes ONTAP 运行状况和运行的关键组件。如果某个连接器已关闭、则使用基于节点的许可的Cloud Volumes ONTAP PAYGO系统将在与某个连接器失去通信超过14天之后关闭。</block>
+  <block id="f959d763eb10941db3ab7db04cdccc7d" category="paragraph">虽然您应该从 SaaS 用户界面执行几乎所有任务，但连接器上仍提供本地用户界面。如果您要从无法访问出站Internet的政府区域或站点访问Cloud Manager、则需要使用在Connector上运行的本地用户界面。</block>
+  <block id="bf16d7909c891a5a760cab0ad77d53bc" category="list-text">输入您的用户名和密码以登录。</block>
+  <block id="bb88bf03aaf2d1b8891c8b85df8bd28f" category="paragraph">请注意、这些地区仅支持Cloud Volumes ONTAP 、云备份、云数据感知和复制服务。政府地区不支持任何其他NetApp服务。</block>
+  <block id="4141e80854c65807682dd0ff767b4228" category="inline-link-macro">了解如何在Connector上访问本地UI</block>
+  <block id="b5d309d79224e6f55d1d4c6b68090c82" category="paragraph"><block ref="2061c033ff26af000ddf0a91359fc3b2" category="inline-link-macro-rx"></block>。</block>
+  <block id="60eb2845b0a0e58270dc0f4a47eeb2b9" category="paragraph">如果您要从无法访问出站Internet的政府区域或站点访问Cloud Manager、则需要登录到在Connector上运行的本地用户界面。 <block ref="2061c033ff26af000ddf0a91359fc3b2" category="inline-link-macro-rx"></block>。</block>
 </blocks>

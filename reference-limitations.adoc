@@ -80,17 +80,9 @@ Connector VM 不支持第三方代理或 VM 扩展。
 
 这意味着，只有能够访问最终用户内部 VPC-vNet 的有权限用户才能使用 Cloud Manager 的 UI 或 API 。
 
-这也意味着 Cloud Manager 不提供以下服务：
+请注意、这些地区仅支持Cloud Volumes ONTAP 、云备份、云数据感知和复制服务。政府地区不支持任何其他NetApp服务。
 
-* Kubernetes
-* 云分层
-* 全局文件缓存
-
-
-要使用这些服务，需要使用 SaaS 平台。
-
-
-NOTE: Cloud Backup ， Cloud Data sense 和监控服务在政府区域均受支持并可用。
+link:task-managing-connectors.html#access-the-local-ui["了解如何在Connector上访问本地UI"]。
 
 
 

@@ -16,6 +16,8 @@ summary: 'Cloud Manager 界面可通过基于 SaaS 的用户界面访问，请�
 [role="lead"]
 Cloud Manager 界面可通过基于 SaaS 的用户界面访问，请访问 https://cloudmanager.netapp.com[]。
 
+如果您要从无法访问出站Internet的政府区域或站点访问Cloud Manager、则需要登录到在Connector上运行的本地用户界面。 link:task-managing-connectors.html#access-the-local-ui["了解如何在Connector上访问本地UI"]。
+
 
 TIP: 您可以使用单点登录使用公司目录中的凭据（联合身份）登录。要了解更多信息，请转到 https://cloud.netapp.com/help-center["Cloud Central 帮助中心"^] 然后单击 * Cloud Central 登录选项 * 。
 

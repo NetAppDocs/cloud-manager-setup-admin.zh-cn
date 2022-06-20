@@ -38,25 +38,17 @@ Cloud Manager 将刷新并显示与选定 Connector 关联的工作环境。
 
 == 访问本地 UI
 
-虽然您应该从 SaaS 用户界面执行几乎所有任务，但连接器上仍提供本地用户界面。需要从连接器本身执行的几项任务需要使用此接口：
-
-* link:task-configuring-proxy.html["设置代理服务器"]
-* 安装修补程序（您通常与 NetApp 人员一起安装修补程序）
-* 下载 AutoSupport 消息（通常在遇到问题时由 NetApp 人员指导）
-
+虽然您应该从 SaaS 用户界面执行几乎所有任务，但连接器上仍提供本地用户界面。如果您要从无法访问出站Internet的政府区域或站点访问Cloud Manager、则需要使用在Connector上运行的本地用户界面。
 
 .步骤
-. link:task-logging-in.html["登录到 Cloud Manager SaaS 界面"^] 从已通过网络连接到 Connector 实例的计算机。
+. 打开 Web 浏览器并输入以下 URL ：
 +
-如果此连接器没有公有 IP 地址，您需要 VPN 连接，或者您需要从与此连接器位于同一网络的跳转主机进行连接。
-
-. 单击 * 连接器 * 下拉列表，然后单击 * 转到本地 UID* 。
-+
-image:screenshot_connector_local_ui.gif["标题中显示 Connector 图标和 Go to Local UI 操作的屏幕截图。"]
+https://_ipaddress_[]
 
 +
-在 Connector 上运行的 Cloud Manager 界面将加载到新的浏览器选项卡中。
+_ipaddress_ 可以是 localhost ，专用 IP 地址或公有 IP 地址，具体取决于主机的配置。例如，如果连接器位于公有云中且没有公有 IP 地址，则必须输入与连接器主机连接的主机的专用 IP 地址。
 
+. 输入您的用户名和密码以登录。
 
 
 
