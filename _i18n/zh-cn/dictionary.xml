@@ -956,9 +956,7 @@
   <block id="eefda50da2224ff311614c053cf3f8f6" category="summary">Cloud Manager 界面可通过基于 SaaS 的用户界面访问，请访问<block ref="ed21e31bd71ab546f26978ff562b5c5d" category="inline-link-rx"></block>。</block>
   <block id="ae9e8c2e99c4eb5ab4d5d43ef6eb0e5e" category="doc">登录到 Cloud Manager</block>
   <block id="89e460c9a52ba6b696ff1bf3de604ff8" category="list-text">打开 Web 浏览器并转到<block ref="ed21e31bd71ab546f26978ff562b5c5d" category="inline-link-rx"></block>。</block>
-  <block id="465b9d23562359c56377ba35bfcf5c48" category="list-text">使用您的 NetApp Cloud Central 凭据登录。</block>
   <block id="7e3c9594a3f6833ecddbf1cbe150528c" category="inline-image-macro">Cloud Central 的登录屏幕。</block>
-  <block id="33ec64420d3361f9794053a9add38468" category="paragraph"><block ref="33ec64420d3361f9794053a9add38468" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1c6b5d54a9051a8a77fa6a66f0a8cc9b" category="paragraph">您现在已登录，可以开始使用 Cloud Manager 管理混合多云基础架构。</block>
   <block id="660bef525617f48933744ba42660cbd7" category="summary">创建一个或多个连接器后，您可以通过在连接器之间切换，连接到在连接器上运行的本地用户界面等方式来管理这些连接器。</block>
   <block id="25f39581bcecd91d6c252b00ea32b305" category="doc">管理现有连接器</block>
@@ -2163,4 +2161,16 @@
   <block id="60eb2845b0a0e58270dc0f4a47eeb2b9" category="paragraph">如果您要从无法访问出站Internet的政府区域或站点访问Cloud Manager、则需要登录到在Connector上运行的本地用户界面。 <block ref="2061c033ff26af000ddf0a91359fc3b2" category="inline-link-macro-rx"></block>。</block>
   <block id="3ac6338087c4180b5cbb359584abab3a" category="paragraph">无论使用哪种许可模式，每个 NetApp 帐户最多只能有 20 个 Cloud Volumes ONTAP 系统。</block>
   <block id="b730a5e05a41eebeb51f5aee7c746386" category="paragraph">system_ 是 HA 对或单节点系统。例如、如果您有两个Cloud Volumes ONTAP HA对和两个单节点系统、则总共有4个系统、您的帐户中还有16个额外的系统。</block>
+  <block id="38ce4e90f119b89b2fdf1f274431e262" category="section-title">2022年6月28日</block>
+  <block id="47d69a1f17128c359904338c3502fe31" category="section-title">使用NetApp凭据登录</block>
+  <block id="f646305c890b8deec88379aeecbe56a5" category="paragraph">当新用户注册到Cloud Central时、他们现在可以选择*使用NetApp*登录选项以使用其NetApp支持站点凭据登录。这是输入电子邮件地址和密码的替代方法。</block>
+  <block id="f27b2370dfece83354cbb560bf251abc" category="admonition">使用电子邮件地址和密码的现有登录需要继续使用该登录方法。注册的新用户可以使用"Log in with NetApp"选项。</block>
+  <block id="38f56a558a4d21cafea24d2843b0d77d" category="list-text">输入NetApp Cloud Central凭据或单击*使用NetApp*登录并输入NetApp支持站点凭据、即可登录。</block>
+  <block id="7fd998996aeaec7fba56157b137fee51" category="paragraph">您需要选择在注册到Cloud Central时使用的选项。</block>
+  <block id="decc333898509c715afbf4242e91a6fc" category="list-text">如果您通过输入电子邮件和密码进行注册、则每次登录时都需要输入这些凭据。</block>
+  <block id="13a0adeb2b159ac19c415adb2a302ac7" category="list-text">如果您通过使用NetApp支持站点凭据登录进行注册、则每次都需要使用该登录选项。</block>
+  <block id="e7330d051a059d074bb6d948d1b195a1" category="paragraph"><block ref="e7330d051a059d074bb6d948d1b195a1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0a3af967406da233deb44a3e3518540a" category="list-text">如果您已注册NetApp支持站点帐户、请单击*使用NetApp*登录、然后输入您的NetApp支持站点凭据。</block>
+  <block id="0eac24292d137662727eddfcb308122d" category="paragraph">每次登录时、您都需要使用在此注册过程中选择的选项。</block>
+  <block id="5bcda5b087049d72bac31d0484792c9e" category="admonition">使用NetApp登录时、您的NetApp支持站点凭据不会添加到支持信息板中的Cloud Manager中。</block>
 </blocks>

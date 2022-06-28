@@ -22,9 +22,21 @@ TIP: 您可以使用单点登录使用公司目录中的凭据（联合身份）
 .步骤
 . 打开 Web 浏览器并转到 https://cloud.netapp.com/["NetApp Cloud Central"^]。
 . 单击 * 注册 * 。
-. 填写表单并单击 * 注册 * 。
+. 您有两种选择：
++
+.. 填写表单并单击 * 注册 * 。
 +
 image:screenshot_cloud_central_signup.gif["Cloud Central 注册表的屏幕截图，您可以在其中输入电子邮件地址，密码，公司，名称和电话号码。"]
+
+.. 如果您已注册NetApp支持站点帐户、请单击*使用NetApp*登录、然后输入您的NetApp支持站点凭据。
++
+每次登录时、您都需要使用在此注册过程中选择的选项。
+
++
+
+NOTE: 使用NetApp登录时、您的NetApp支持站点凭据不会添加到支持信息板中的Cloud Manager中。
+
+
 
 . 等待收到 NetApp Cloud Central 发送的电子邮件。
 . 单击电子邮件中的链接以验证您的电子邮件地址。
