@@ -949,7 +949,6 @@
   <block id="cb95642e206c980191590d63445b26a7" category="list-text">单击 * 注册 * 。</block>
   <block id="2ca0e0597feba3b9ab097009f96b443c" category="list-text">填写表单并单击 * 注册 * 。</block>
   <block id="8ed42493503a731371f86e4d62e09eb3" category="inline-image-macro">Cloud Central 注册表的屏幕截图，您可以在其中输入电子邮件地址，密码，公司，名称和电话号码。</block>
-  <block id="9b0c385c128d0aaabafd6fbaa770073f" category="paragraph"><block ref="9b0c385c128d0aaabafd6fbaa770073f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5009d2196c166295505299d3ccfa44a4" category="list-text">等待收到 NetApp Cloud Central 发送的电子邮件。</block>
   <block id="47e1be43e59b17b4231ddf8bb9c249db" category="list-text">单击电子邮件中的链接以验证您的电子邮件地址。</block>
   <block id="079c633ad298feda51d946a3bb2ffee8" category="paragraph">现在，您已有活动的 Cloud Central 用户登录。</block>
@@ -2173,4 +2172,5 @@
   <block id="0eac24292d137662727eddfcb308122d" category="paragraph">每次登录时、您都需要使用在此注册过程中选择的选项。</block>
   <block id="5bcda5b087049d72bac31d0484792c9e" category="admonition">使用NetApp登录时、您的NetApp支持站点凭据不会添加到支持信息板中的Cloud Manager中。</block>
   <block id="bb3811f4fe37370092ea428b21cf1249" category="list-text">如果您已注册NetApp支持站点帐户、请单击*使用NetApp*登录、然后输入您的NetApp支持站点凭据。</block>
+  <block id="fa4e197c715b6a6e61487c84fa10bc13" category="paragraph"><block ref="fa4e197c715b6a6e61487c84fa10bc13" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

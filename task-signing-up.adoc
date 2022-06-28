@@ -26,7 +26,7 @@ TIP: 您可以使用单点登录使用公司目录中的凭据（联合身份）
 +
 .. 填写表单并单击 * 注册 * 。
 +
-image:screenshot_cloud_central_signup.gif["Cloud Central 注册表的屏幕截图，您可以在其中输入电子邮件地址，密码，公司，名称和电话号码。"]
+image:screenshot-cloud-central-signup.png["Cloud Central 注册表的屏幕截图，您可以在其中输入电子邮件地址，密码，公司，名称和电话号码。"]
 
 .. 如果您已注册NetApp支持站点帐户、请单击*使用NetApp*登录、然后输入您的NetApp支持站点凭据。
 +
