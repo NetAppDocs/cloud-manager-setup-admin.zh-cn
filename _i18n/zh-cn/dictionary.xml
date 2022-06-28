@@ -2170,7 +2170,7 @@
   <block id="decc333898509c715afbf4242e91a6fc" category="list-text">如果您通过输入电子邮件和密码进行注册、则每次登录时都需要输入这些凭据。</block>
   <block id="13a0adeb2b159ac19c415adb2a302ac7" category="list-text">如果您通过使用NetApp支持站点凭据登录进行注册、则每次都需要使用该登录选项。</block>
   <block id="e7330d051a059d074bb6d948d1b195a1" category="paragraph"><block ref="e7330d051a059d074bb6d948d1b195a1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0a3af967406da233deb44a3e3518540a" category="list-text">如果您已注册NetApp支持站点帐户、请单击*使用NetApp*登录、然后输入您的NetApp支持站点凭据。</block>
   <block id="0eac24292d137662727eddfcb308122d" category="paragraph">每次登录时、您都需要使用在此注册过程中选择的选项。</block>
   <block id="5bcda5b087049d72bac31d0484792c9e" category="admonition">使用NetApp登录时、您的NetApp支持站点凭据不会添加到支持信息板中的Cloud Manager中。</block>
+  <block id="bb3811f4fe37370092ea428b21cf1249" category="list-text">如果您已注册NetApp支持站点帐户、请单击*使用NetApp*登录、然后输入您的NetApp支持站点凭据。</block>
 </blocks>
