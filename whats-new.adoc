@@ -26,7 +26,7 @@ summary: 了解 Cloud Manager 管理功能的新增功能，包括 NetApp 帐户
 
 * 我们引入了一种新方法来导航到Cloud Manager界面中不断增长的功能列表。现在、将鼠标悬停在左侧面板上即可轻松找到所有熟悉的Cloud Manager功能。
 +
-image:screenshot-navigation.png["显示Cloud Manager中新的左侧导航菜单的屏幕截图。"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-navigation.png["显示Cloud Manager中新的左侧导航菜单的屏幕截图。"]
 
 * 现在、您可以将Cloud Manager配置为通过电子邮件发送通知、这样、即使您未登录到系统、您也可以了解重要的系统活动。
 +
@@ -40,7 +40,7 @@ link:task-monitor-cm-operations.html["了解有关监控帐户中操作的更多
 下面是Azure Blob工作环境的示例：
 
 +
-image:screenshot-azure-blob.png["显示Azure Blob工作环境的屏幕截图、您可以在其中查看有关存储帐户的详细信息的简要概述。"]
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-azure-blob.png["显示Azure Blob工作环境的屏幕截图、您可以在其中查看有关存储帐户的详细信息的简要概述。"]
 
 * 我们重新设计了Amazon S3工作环境的资源页面、提供了有关S3存储分段的更多详细信息、例如容量、加密详细信息等。
 * 现在、以下Google Cloud地区支持Connector：
