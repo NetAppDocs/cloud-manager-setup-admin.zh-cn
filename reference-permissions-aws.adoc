@@ -16,93 +16,457 @@ summary: Cloud Manager 需要在云提供商中执行操作的权限。这些权
 [role="lead"]
 Cloud Manager 需要在云提供商中执行操作的权限。中包括这些权限 https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp 提供的策略"^]。您可能希望了解 Cloud Manager 使用这些权限执行的操作。
 
-Cloud Manager 使用 AWS 帐户对几个 AWS 服务进行 API 调用、包括 EC2 、 S3 、 Cloudformation 、 IAM 、 Security Token Service （安全令牌服务， STS ）和密钥管理服务（ KMS ）。
+以下各节介绍了如何对每个NetApp云服务使用权限。如果您的公司策略规定仅在需要时提供权限、则此信息会很有用。
 
-[cols="50,50"]
+
+
+== AppTemplate标记
+
+在使用AppTemplate标记服务时、Connector会发出以下API请求来管理AWS资源上的标记：
+
+* EC2：CreateTags
+* EC2：DeleteTags
+* EC2：Describe标记
+* 标记：getResources
+* 标记：getTag密钥
+* 标记：getTagValues
+* 标记：标记资源
+* 标记：未标记资源
+
+
+
+
+== 云备份
+
+Connector会发出以下API请求来部署Cloud Backup的还原实例：
+
+* EC2：StartInstances
+* EC2：StopInstances
+* EC2：Describe实例
+* EC2：Describe实例状态
+* EC2：RunInstances
+* EC2：终端状态
+* EC2：Describe实例属性
+* EC2：Describe
+* EC2：CreateTags
+* EC2：CreateVolume
+* EC2：CreateSecurityGroup
+* EC2：Describe子网
+* EC2：Describe
+* EC2：Describe注册
+* CloudFormation：CreateStack
+* CloudFormation：DeleteStack
+* CloudFormation：Describe堆栈
+
+
+Connector会发出以下API请求来管理Amazon S3中的备份：
+
+* S3 ： GetBucketLocation
+* S3 ： ListAllMy桶
+* S3 ： ListBucket
+* S3 ： CreateBucket
+* S3 ： GetLifeycleConfiguration
+* S3 ： PutLifeycleConfiguration
+* S3 ： PutBucketTagging
+* S3 ： ListBucketVersions
+* S3 ： GetBucketAcl
+* S3：PutBucketPublicAccessBlock
+* 公里：列表*
+* 公里：描述*
+* S3 ： GetObject
+* EC2：介绍VpcEndpoints
+* Kms：ListAliases
+* S3 ： PutEncryptionConfiguration
+
+
+在使用搜索和还原方法还原卷和文件时、Connector会发出以下API请求：
+
+* S3 ： CreateBucket
+* S3 ： DeleteObject
+* S3 ： DeleteObjectVersion
+* S3 ： GetBucketAcl
+* S3 ： ListBucket
+* S3 ： ListBucketVersions
+* S3 ： ListBucketMultipartUploads
+* S3 ： PutObject
+* S3：PutBucketAcl
+* S3 ： PutLifeycleConfiguration
+* S3：PutBucketPublicAccessBlock
+* S3 ： AbortMultipartUpload
+* S3 ： ListMultipartUploadPart
+* Athena：StartQueryExecutionc
+* Athena：GetQueryResults
+* Athena：GetQueryExecution
+* Athena：StopQueryExecution
+* 胶水：CreateDatabase
+* 胶水：CreateTable
+* 粘附：BatechDelete分区
+
+
+
+
+== 云数据感知
+
+Connector发出以下API请求以部署Cloud Data sense实例：
+
+* EC2：Describe实例
+* EC2：Describe实例状态
+* EC2：RunInstances
+* EC2：终端状态
+* EC2：CreateTags
+* EC2：CreateVolume
+* EC2：Attach卷
+* EC2：CreateSecurityGroup
+* EC2：DeleteSecurityGroup
+* EC2：Describe安全性组
+* EC2：CreateNetworkInterface
+* EC2：Describe网络接口
+* EC2：DeleteNetworkInterface
+* EC2：Describe子网
+* EC2：Describe
+* EC2：CreateSnapshot
+* EC2：Describe注册
+* CloudFormation：CreateStack
+* CloudFormation：DeleteStack
+* CloudFormation：Describe堆栈
+* CloudFormation：Describe StackEvents
+* IAM：AddRoleToInstanceProfile
+* EC2：AssociateIamInstanceProfile
+* EC2：Describe IamInstanceProfileAssociations
+
+
+在使用Cloud Data sense时、Connector会发出以下API请求来扫描S3存储分段：
+
+* IAM：AddRoleToInstanceProfile
+* EC2：AssociateIamInstanceProfile
+* EC2：Describe IamInstanceProfileAssociations
+* S3 ： GetBucketTagging
+* S3 ： GetBucketLocation
+* S3 ： ListAllMy桶
+* S3 ： ListBucket
+* S3：GetBucketPolicyStatus
+* S3 ： GetBucketPolicy
+* S3 ： GetBucketAcl
+* S3 ： GetObject
+* IAM：GetRole
+* S3 ： DeleteObject
+* S3 ： DeleteObjectVersion
+* S3 ： PutObject
+* STS：AssumeRole
+
+
+
+
+== 云分层
+
+在使用Cloud Tiering时、Connector会发出以下API请求、将数据分层到Amazon S3。
+
+[cols="3*"]
 |===
-| 操作 | 目的 
+| Action | 用于设置？ | 用于日常操作？ 
 
 
-| "EC2 ： StartInstances " ， "EC2 ： StopInstances " ， "EC2 ： Describe Instances " ， "EC2 ： Describe InstanceStatus" ， "EC2 ： RunInstances " ， "EC2 ：终端实例 " ， "EC2 ： ModifyInstanceAttribute" ， | 启动 Cloud Volumes ONTAP 实例并停止、启动和监控实例。 
+| S3 ： CreateBucket | 是的。 | 否 
 
 
-| "EC2 ：描述实例属性 " 、 | 验证是否已为支持的实例类型启用增强网络。 
+| S3 ： PutLifeycleConfiguration | 是的。 | 否 
 
 
-| "EC2 ：描述图 " 、 "EC2 ：描述图 " 、 | 启动 Cloud Volumes ONTAP HA 配置。 
+| S3 ： GetLifeycleConfiguration | 是的。 | 是的。 
 
 
-| "EC2 ：创建标记 " 、 | 标记 Cloud Manager 使用 "Workingviron" 和 "Workingvironmid" 标记创建的每个资源。Cloud Manager 使用这些标签进行维护和成本分配。 
-
-
-| "EC2 ： CreateVolume" ， "EC2 ： Describe Volumes" ， "EC2 ： ModifyVolumeAttribute" ， "EC2 ： AttachVolume" ， "EC2 ： DeleteVolume" ， "EC2 ：详细卷 " ， | 管理 Cloud Volumes ONTAP 用作后端存储的 EBS 卷。 
-
-
-| "EC2 ： CreateSecurityGroup" ， "EC2 ： DeleteSecurityGroup" ， "EC2 ： Describe SecurityGroups" ， "EC2 ： RevokeSecurityGroupEated" ， "EC2 ： AuthorizeSecurityGroupEated" ， "EC2 ： AuthorizeSecurityGroupIn防护 " ， "EC2 ： RevokeSecurityGroupIn防护 " ， | 为 Cloud Volumes ONTAP 创建预定义的安全组。 
-
-
-| "EC2 ： CreateNetworkInterface" ， "EC2 ： Describe NetworkInterfaces" ， "EC2 ： DeleteNetworkInterface" ， "EC2 ： ModifyNetworkInterfaceAttribute" ， | 在目标子网中为 Cloud Volumes ONTAP 创建和管理网络接口。 
-
-
-| "EC2 ：描述性子网 " 、 "EC2 ：描述性 VPCS" 、 | 获取目标子网和安全组的列表、在为 Cloud Volumes ONTAP 创建新的工作环境时需要这些子网和安全组。 
-
-
-| "EC2 ：说明 " 、 | 确定启动 Cloud Volumes ONTAP 实例时的 DNS 服务器和默认域名。 
-
-
-| "EC2 ： CreateSnapshot " 、 "EC2 ： DeleteSnapshot " 、 "EC2 ：描述性快照 " 、 | 在初始设置期间和停止 Cloud Volumes ONTAP 实例时拍摄 EBS 卷的快照。 
-
-
-| "EC2 ： GetConsoleOutput " 、 | 捕获附加到 AutoSupport 消息的 Cloud Volumes ONTAP 控制台。 
-
-
-| "EC2 ：描述性密钥对 " 、 | 在启动实例时获取可用密钥对的列表。 
-
-
-| "EC2 ：描述性 " 、 | 获得可用 AWS 区域的列表。 
-
-
-| "EC2 ：删除标记 " 、 "EC2 ：描述标记 " 、 | 管理与 Cloud Volumes ONTAP 实例关联的资源标签。 
-
-
-| "CloudFormation ： CreateStack" ， "CloudFormation ： DeleteStack" ， "CloudFormation ： Describe Stacks" ， "CloudFormation ： Describe StackEvents " ， "CloudFormation ： ValidateTemplate" ， | 启动 Cloud Volumes ONTAP 实例。 
-
-
-| "IAM ： PassRole" ， "iam ： CreateRole" ， "iam ： DeleteRole" ， "iam ： PutRolePolicy" ， "iam ： CreateInstanceProfile" ， "IAM ： DeleteRolePolicy" ， "iam ： AddRoleToInstanceProfile" ， "iam ： RemoveRoleFromInstanceProfile" ， "iam ： DeleteInstanceProfile" ， | 启动 Cloud Volumes ONTAP HA 配置。 
-
-
-| "IAM ： ListInstanceProfiles" ， "STS ： DecodeAuthorizationMessage" ， "EC2 ： AssociateIamInstanceProfile" ， "EC2 ： Describe IamInstanceProfileAssociations" ， "EC2 ： DisassociateIamInstanceProfile" ， | 管理 Cloud Volumes ONTAP 实例的实例配置文件。 
-
-
-| "S3 ： GetBucketTagging" ， "S3 ： GetBucketLocation" ， "S3 ： ListAllMyBuckets" ， "S3 ： ListBucket" | 获取有关 AWS S3 存储槽的信息、以便 Cloud Manager 可以与 NetApp Data Fabric Cloud Sync 服务集成。 
-
-
-| "S3 ： CreateBucket" ， "S3 ： DeleteBucket" ， "S3 ： GetLifeycleConfiguration" ， "S3 ： PutLifeycleConfiguration" ， "S3 ： PutBucketTagging" ， "S3 ： ListBucketVersions" ， "S3 ： GetBucketPolicyStatus" ， "S3 ： GetBucketPublicAccessBlock" ， "S3 ： GetBucketAcl" ， "S3 ： GetBucketPolicy" ， "S3 ： PutBucketPublicAccessBlock" | 管理 Cloud Volumes ONTAP 系统用作数据分层容量层的 S3 存储分段。 
-
-
-| "kms ： List*" ， "kms ： reencryption*" ， "kms ： dese*" ， "kms ： CreateGrant" ， | 使用 AWS 密钥管理服务（ KMS ）对 Cloud Volumes ONTAP 启用数据加密。 
-
-
-| "CE ： GetReservationUtilization" ， "ce ： GetDimensionValues" ， "ce ： GetCostAndUsage" ， "ce ： GetTags " | 获取有关 Cloud Volumes ONTAP 的 AWS 成本数据。 
-
-
-| "EC2 ： CreatePlacementGroup" ， "EC2 ： DeletePlacementGroup" | 在单个 AWS 可用性区域中部署 HA 配置时， Cloud Manager 会启动 AWS 分布式放置组中的两个 HA 节点和调解器。 
-
-
-| "EC2 ： Describe 保留实例服务 " | Cloud Manager 在 Cloud Data sense 部署中使用权限来选择要使用的实例类型。 
-
-
-| "EC2 ： CreateTags " ， "EC2 ： DeleteTags " ， "EC2 ： Describe Tags " ， "tag ： getResources" ， "tag ： getTagKeys" ， "tag ： getTagValues " ， "tag ： TagResources" ， "tag ： UnagResources" | 用于使用 Cloud Manager 标记服务管理 AWS 资源上的标记。 
-
-
-| "S3 ： DeleteBucket" ， "S3 ： GetLifeycleConfiguration" ， "S3 ： PutLifeycleConfiguration" ， "S3 ： PutBucketTagging" ， "S3 ： ListBucketVersions" ， "S3 ： GetObject" ， "S3 ： ListBucket" ， "S3 ： ListAllMyBuckets" ， "S3 ： GetBucketTagging" ， "S3 ： GetBucketLocation" "S3 ： GetBucketPolicyStatus" ， "S3 ： GetBucketPublicAccessBlock" ， "S3 ： GetBucketAcl" ， "S3 ： GetBucketPolicy" ， "S3 ： PutBucketPublicAccessBlock" | Cloud Manager 会在您启用备份到 S3 服务时使用这些权限。 
-
-
-| "EKS：ListClusters"、"EKS：Describe Cluster"、"iam：GetInstanceProfile"、 | 用于发现 Amazon EKS 集群。 
-
-
-| "EC2：Describe PlacementGroups"、"iam：GetRolePolicy"、 | 为部署在单个可用性区域(AZ)中的HA对创建AWS分布式放置组。 
-
-
-| "EC2：Describe卷修改"、"EC2：ModifyVolume"、 | 用于设置和管理支持Amazon EBS弹性卷功能的Cloud Volumes ONTAP 聚合。 
+| EC2：Describe注册 | 是的。 | 是的。 
 |===
+
+
+== Cloud Volumes ONTAP
+
+Connector会发出以下API请求、以便在AWS中部署和管理Cloud Volumes ONTAP。
+
+[cols="5*"]
+|===
+| 目的 | Action | 用于部署？ | 用于日常操作？ | 用于删除？ 
+
+
+.13+| 创建和管理Cloud Volumes ONTAP 实例的IAM角色和实例配置文件 | IAM：ListInstanceProfile | 是的。 | 是的。 | 否 
+
+
+| IAM：CreateRole | 是的。 | 否 | 否 
+
+
+| IAM：DeleteRole | 否 | 是的。 | 是的。 
+
+
+| IAM：PutRolePolicy | 是的。 | 否 | 否 
+
+
+| IAM：CreateInstanceProfile | 是的。 | 否 | 否 
+
+
+| IAM：DeleteRolePolicy | 否 | 是的。 | 是的。 
+
+
+| IAM：AddRoleToInstanceProfile | 是的。 | 否 | 否 
+
+
+| IAM：RemoveRoleFromInstanceProfile | 否 | 是的。 | 是的。 
+
+
+| IAM：DeleteInstanceProfile | 否 | 是的。 | 是的。 
+
+
+| IAM：PassRole | 是的。 | 否 | 否 
+
+
+| EC2：AssociateIamInstanceProfile | 是的。 | 是的。 | 否 
+
+
+| EC2：Describe IamInstanceProfileAssociations | 是的。 | 是的。 | 否 
+
+
+| EC2：DisassociateIamInstanceProfile | 否 | 是的。 | 否 
+
+
+| 对授权状态消息进行解码 | STS：DecodeAuthorizationMessage | 是的。 | 是的。 | 否 
+
+
+| 描述可供帐户使用的指定映像(AMI) | EC2：Describe | 是的。 | 是的。 | 否 
+
+
+| 描述VPC中的路由表(仅HA对需要) | EC2：Describe RouteTables | 是的。 | 否 | 否 
+
+
+.7+| 停止、启动和监控实例 | EC2：StartInstances | 是的。 | 是的。 | 否 
+
+
+| EC2：StopInstances | 是的。 | 是的。 | 否 
+
+
+| EC2：Describe实例 | 是的。 | 是的。 | 否 
+
+
+| EC2：Describe实例状态 | 是的。 | 是的。 | 否 
+
+
+| EC2：RunInstances | 是的。 | 否 | 否 
+
+
+| EC2：终端状态 | 否 | 否 | 是的。 
+
+
+| EC2：ModifyInstance属性 | 否 | 是的。 | 否 
+
+
+| 验证是否已为支持的实例类型启用增强型网络连接 | EC2：Describe实例属性 | 否 | 是的。 | 否 
+
+
+| 使用"WorkingEnvironment"和"WorkingEnvironmentId"标记标记资源、用于维护和成本分配 | EC2：CreateTags | 是的。 | 是的。 | 否 
+
+
+.6+| 管理Cloud Volumes ONTAP 用作后端存储的EBS卷 | EC2：CreateVolume | 是的。 | 是的。 | 否 
+
+
+| EC2：Describe卷 | 是的。 | 是的。 | 是的。 
+
+
+| EC2：ModifyVolumeAttribute | 否 | 是的。 | 是的。 
+
+
+| EC2：Attach卷 | 是的。 | 是的。 | 否 
+
+
+| EC2：DeleteVolume | 否 | 是的。 | 是的。 
+
+
+| EC2：分离卷 | 否 | 是的。 | 是的。 
+
+
+.7+| 创建和管理Cloud Volumes ONTAP 的安全组 | EC2：CreateSecurityGroup | 是的。 | 否 | 否 
+
+
+| EC2：DeleteSecurityGroup | 否 | 是的。 | 是的。 
+
+
+| EC2：Describe安全性组 | 是的。 | 是的。 | 是的。 
+
+
+| EC2：RevokeSecurityGroupEgress | 是的。 | 否 | 否 
+
+
+| EC2：AuthorizeSecurityGroupEgress | 是的。 | 否 | 否 
+
+
+| EC2：AuthorizeSecurityGroupIngress | 是的。 | 否 | 否 
+
+
+| EC2：RevokeSecurityGroupIngress | 是的。 | 是的。 | 否 
+
+
+.4+| 在目标子网中为Cloud Volumes ONTAP 创建和管理网络接口 | EC2：CreateNetworkInterface | 是的。 | 否 | 否 
+
+
+| EC2：Describe网络接口 | 是的。 | 是的。 | 否 
+
+
+| EC2：DeleteNetworkInterface | 否 | 是的。 | 是的。 
+
+
+| EC2：ModifyNetworkInterfaceAttribute | 否 | 是的。 | 否 
+
+
+.2+| 获取目标子网和安全组的列表 | EC2：Describe子网 | 是的。 | 是的。 | 否 
+
+
+| EC2：Describe | 是的。 | 是的。 | 否 
+
+
+| 获取DNS服务器和Cloud Volumes ONTAP 实例的默认域名 | EC2：Describe DhcpOptions | 是的。 | 否 | 否 
+
+
+.3+| 为Cloud Volumes ONTAP 的EBS卷创建快照 | EC2：CreateSnapshot | 是的。 | 是的。 | 否 
+
+
+| EC2：DeleteSnapshot | 否 | 是的。 | 是的。 
+
+
+| EC2：Describe Snapshot | 否 | 是的。 | 否 
+
+
+| 捕获附加到AutoSupport 消息的Cloud Volumes ONTAP 控制台 | EC2：GetConsoleOutput | 是的。 | 是的。 | 否 
+
+
+| 获取可用密钥对的列表 | EC2：Describe KeyPairs | 是的。 | 否 | 否 
+
+
+| 获取可用AWS区域的列表 | EC2：Describe注册 | 是的。 | 是的。 | 否 
+
+
+.2+| 管理与Cloud Volumes ONTAP 实例关联的资源的标记 | EC2：DeleteTags | 否 | 是的。 | 是的。 
+
+
+| EC2：Describe标记 | 否 | 是的。 | 否 
+
+
+.5+| 为AWS CloudFormation模板创建和管理堆栈 | CloudFormation：CreateStack | 是的。 | 否 | 否 
+
+
+| CloudFormation：DeleteStack | 是的。 | 否 | 否 
+
+
+| CloudFormation：Describe堆栈 | 是的。 | 是的。 | 否 
+
+
+| CloudFormation：Describe StackEvents | 是的。 | 否 | 否 
+
+
+| CloudFormation：验证模板 | 是的。 | 否 | 否 
+
+
+.15+| 创建和管理Cloud Volumes ONTAP 系统用作数据分层容量层的S3存储分段 | S3 ： CreateBucket | 是的。 | 是的。 | 否 
+
+
+| S3 ： DeleteBucket | 否 | 是的。 | 是的。 
+
+
+| S3 ： GetLifeycleConfiguration | 否 | 是的。 | 否 
+
+
+| S3 ： PutLifeycleConfiguration | 否 | 是的。 | 否 
+
+
+| S3 ： PutBucketTagging | 否 | 是的。 | 否 
+
+
+| S3 ： ListBucketVersions | 否 | 是的。 | 否 
+
+
+| S3：GetBucketPolicyStatus | 否 | 是的。 | 否 
+
+
+| S3：GetBucketPublicAccessBlock | 否 | 是的。 | 否 
+
+
+| S3 ： GetBucketAcl | 否 | 是的。 | 否 
+
+
+| S3 ： GetBucketPolicy | 否 | 是的。 | 否 
+
+
+| S3：PutBucketPublicAccessBlock | 否 | 是的。 | 否 
+
+
+| S3 ： GetBucketTagging | 否 | 是的。 | 否 
+
+
+| S3 ： GetBucketLocation | 否 | 是的。 | 否 
+
+
+| S3 ： ListAllMy桶 | 否 | 否 | 否 
+
+
+| S3 ： ListBucket | 否 | 是的。 | 否 
+
+
+.4+| 使用AWS密钥管理服务(KMS)对Cloud Volumes ONTAP 启用数据加密 | 公里：列表* | 是的。 | 是的。 | 否 
+
+
+| kms：重新加密* | 是的。 | 否 | 否 
+
+
+| 公里：描述* | 是的。 | 是的。 | 否 
+
+
+| 公里：CreateGrant | 是的。 | 是的。 | 否 
+
+
+.4+| 获取Cloud Volumes ONTAP 的AWS成本数据 | CE：GetReservationUtilization | 否 | 是的。 | 否 
+
+
+| CE：GetDimensionValues | 否 | 是的。 | 否 
+
+
+| CE：GetCostAndUsage | 否 | 是的。 | 否 
+
+
+| CE：GetTags | 否 | 是的。 | 否 
+
+
+.2+| 在一个AWS可用性区域中为两个HA节点和调解器创建和管理一个AWS分布式放置组 | EC2：CreatePlacementGroup | 是的。 | 否 | 否 
+
+
+| EC2：DeletePlacementGroup | 否 | 是的。 | 是的。 
+
+
+.2+| 创建报告 | FSX：描述* | 否 | 是的。 | 否 
+
+
+| FSX：List* | 否 | 是的。 | 否 
+
+
+.2+| 创建和管理支持Amazon EBS弹性卷功能的聚合 | EC2：Describe卷修改 | 否 | 是的。 | 否 
+
+
+| EC2：ModifyVolume | 否 | 是的。 | 否 
+|===
+
+
+== 全局文件缓存
+
+Connector会发出以下API请求、以便在部署期间部署全局文件缓存实例：
+
+* CloudFormation：Describe堆栈
+* CloudWatch：GetMetricStatistics
+* CloudFormation：ListStack
+
+
+
+
+== Kubernetes
+
+Connector会发出以下API请求来发现和管理Amazon EKS集群：
+
+* EC2：Describe注册
+* EKS：ListClusters
+* EKS：Describe集群
+* IAM：GetInstanceProfile
+

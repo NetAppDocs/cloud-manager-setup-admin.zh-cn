@@ -27,12 +27,14 @@ summary: 大多数情况下，您需要在云或内部网络中部署 Connector 
 === 服务
 
 * 适用于 ONTAP 的 Amazon FSX 管理功能
-* Amazon S3 存储分段发现
+* Amazon S3发现
+* Azure Blob发现
 * 云备份
 * 云数据感知
 * 云分层
 * Cloud Volumes ONTAP
 * 全局文件缓存
+* Google Cloud Storage发现
 * Kubernetes 集群
 * 监控
 * 内部 ONTAP 集群
@@ -95,9 +97,7 @@ summary: 大多数情况下，您需要在云或内部网络中部署 Connector 
 
 == 如何创建 Connector
 
-在工作空间管理员创建 Cloud Volumes ONTAP 工作环境并使用上述任何其他服务之前，客户管理员需要先创建连接器。
-
-客户管理员可以通过多种方式创建 Connector ：
+在工作空间管理员创建 Cloud Volumes ONTAP 工作环境并使用上述任何其他服务之前，客户管理员需要先创建连接器。管理员可以通过多种方式创建Connector：
 
 * 直接从 Cloud Manager （建议）
 +
