@@ -959,145 +959,1046 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 20:51:46 +0000">06/07/2022</time>
+    <time datetime="2022-07-03 15:53:52 +0000">07/03/2022</time>
     
   
 
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>Cloud Manager 需要在云提供商中执行操作的权限。中包括这些权限 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"NetApp 提供的策略"</a>。您可能希望了解 Cloud Manager 使用这些权限执行的操作。</p>
 </div>
 <div class="paragraph">
-<p>Cloud Manager 使用 AWS 帐户对几个 AWS 服务进行 API 调用、包括 EC2 、 S3 、 Cloudformation 、 IAM 、 Security Token Service （安全令牌服务， STS ）和密钥管理服务（ KMS ）。</p>
+<p>以下各节介绍了如何对每个NetApp云服务使用权限。如果您的公司策略规定仅在需要时提供权限、则此信息会很有用。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apptemplate标记">AppTemplate标记</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在使用AppTemplate标记服务时、Connector会发出以下API请求来管理AWS资源上的标记：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>EC2：CreateTags</p>
+</li>
+<li>
+<p>EC2：DeleteTags</p>
+</li>
+<li>
+<p>EC2：Describe标记</p>
+</li>
+<li>
+<p>标记：getResources</p>
+</li>
+<li>
+<p>标记：getTag密钥</p>
+</li>
+<li>
+<p>标记：getTagValues</p>
+</li>
+<li>
+<p>标记：标记资源</p>
+</li>
+<li>
+<p>标记：未标记资源</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="云备份">云备份</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Connector会发出以下API请求来部署Cloud Backup的还原实例：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>EC2：StartInstances</p>
+</li>
+<li>
+<p>EC2：StopInstances</p>
+</li>
+<li>
+<p>EC2：Describe实例</p>
+</li>
+<li>
+<p>EC2：Describe实例状态</p>
+</li>
+<li>
+<p>EC2：RunInstances</p>
+</li>
+<li>
+<p>EC2：终端状态</p>
+</li>
+<li>
+<p>EC2：Describe实例属性</p>
+</li>
+<li>
+<p>EC2：Describe</p>
+</li>
+<li>
+<p>EC2：CreateTags</p>
+</li>
+<li>
+<p>EC2：CreateVolume</p>
+</li>
+<li>
+<p>EC2：CreateSecurityGroup</p>
+</li>
+<li>
+<p>EC2：Describe子网</p>
+</li>
+<li>
+<p>EC2：Describe</p>
+</li>
+<li>
+<p>EC2：Describe注册</p>
+</li>
+<li>
+<p>CloudFormation：CreateStack</p>
+</li>
+<li>
+<p>CloudFormation：DeleteStack</p>
+</li>
+<li>
+<p>CloudFormation：Describe堆栈</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Connector会发出以下API请求来管理Amazon S3中的备份：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>S3 ： GetBucketLocation</p>
+</li>
+<li>
+<p>S3 ： ListAllMy桶</p>
+</li>
+<li>
+<p>S3 ： ListBucket</p>
+</li>
+<li>
+<p>S3 ： CreateBucket</p>
+</li>
+<li>
+<p>S3 ： GetLifeycleConfiguration</p>
+</li>
+<li>
+<p>S3 ： PutLifeycleConfiguration</p>
+</li>
+<li>
+<p>S3 ： PutBucketTagging</p>
+</li>
+<li>
+<p>S3 ： ListBucketVersions</p>
+</li>
+<li>
+<p>S3 ： GetBucketAcl</p>
+</li>
+<li>
+<p>S3：PutBucketPublicAccessBlock</p>
+</li>
+<li>
+<p>公里：列表*</p>
+</li>
+<li>
+<p>公里：描述*</p>
+</li>
+<li>
+<p>S3 ： GetObject</p>
+</li>
+<li>
+<p>EC2：介绍VpcEndpoints</p>
+</li>
+<li>
+<p>Kms：ListAliases</p>
+</li>
+<li>
+<p>S3 ： PutEncryptionConfiguration</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>在使用搜索和还原方法还原卷和文件时、Connector会发出以下API请求：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>S3 ： CreateBucket</p>
+</li>
+<li>
+<p>S3 ： DeleteObject</p>
+</li>
+<li>
+<p>S3 ： DeleteObjectVersion</p>
+</li>
+<li>
+<p>S3 ： GetBucketAcl</p>
+</li>
+<li>
+<p>S3 ： ListBucket</p>
+</li>
+<li>
+<p>S3 ： ListBucketVersions</p>
+</li>
+<li>
+<p>S3 ： ListBucketMultipartUploads</p>
+</li>
+<li>
+<p>S3 ： PutObject</p>
+</li>
+<li>
+<p>S3：PutBucketAcl</p>
+</li>
+<li>
+<p>S3 ： PutLifeycleConfiguration</p>
+</li>
+<li>
+<p>S3：PutBucketPublicAccessBlock</p>
+</li>
+<li>
+<p>S3 ： AbortMultipartUpload</p>
+</li>
+<li>
+<p>S3 ： ListMultipartUploadPart</p>
+</li>
+<li>
+<p>Athena：StartQueryExecutionc</p>
+</li>
+<li>
+<p>Athena：GetQueryResults</p>
+</li>
+<li>
+<p>Athena：GetQueryExecution</p>
+</li>
+<li>
+<p>Athena：StopQueryExecution</p>
+</li>
+<li>
+<p>胶水：CreateDatabase</p>
+</li>
+<li>
+<p>胶水：CreateTable</p>
+</li>
+<li>
+<p>粘附：BatechDelete分区</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="云数据感知">云数据感知</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Connector发出以下API请求以部署Cloud Data sense实例：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>EC2：Describe实例</p>
+</li>
+<li>
+<p>EC2：Describe实例状态</p>
+</li>
+<li>
+<p>EC2：RunInstances</p>
+</li>
+<li>
+<p>EC2：终端状态</p>
+</li>
+<li>
+<p>EC2：CreateTags</p>
+</li>
+<li>
+<p>EC2：CreateVolume</p>
+</li>
+<li>
+<p>EC2：Attach卷</p>
+</li>
+<li>
+<p>EC2：CreateSecurityGroup</p>
+</li>
+<li>
+<p>EC2：DeleteSecurityGroup</p>
+</li>
+<li>
+<p>EC2：Describe安全性组</p>
+</li>
+<li>
+<p>EC2：CreateNetworkInterface</p>
+</li>
+<li>
+<p>EC2：Describe网络接口</p>
+</li>
+<li>
+<p>EC2：DeleteNetworkInterface</p>
+</li>
+<li>
+<p>EC2：Describe子网</p>
+</li>
+<li>
+<p>EC2：Describe</p>
+</li>
+<li>
+<p>EC2：CreateSnapshot</p>
+</li>
+<li>
+<p>EC2：Describe注册</p>
+</li>
+<li>
+<p>CloudFormation：CreateStack</p>
+</li>
+<li>
+<p>CloudFormation：DeleteStack</p>
+</li>
+<li>
+<p>CloudFormation：Describe堆栈</p>
+</li>
+<li>
+<p>CloudFormation：Describe StackEvents</p>
+</li>
+<li>
+<p>IAM：AddRoleToInstanceProfile</p>
+</li>
+<li>
+<p>EC2：AssociateIamInstanceProfile</p>
+</li>
+<li>
+<p>EC2：Describe IamInstanceProfileAssociations</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>在使用Cloud Data sense时、Connector会发出以下API请求来扫描S3存储分段：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IAM：AddRoleToInstanceProfile</p>
+</li>
+<li>
+<p>EC2：AssociateIamInstanceProfile</p>
+</li>
+<li>
+<p>EC2：Describe IamInstanceProfileAssociations</p>
+</li>
+<li>
+<p>S3 ： GetBucketTagging</p>
+</li>
+<li>
+<p>S3 ： GetBucketLocation</p>
+</li>
+<li>
+<p>S3 ： ListAllMy桶</p>
+</li>
+<li>
+<p>S3 ： ListBucket</p>
+</li>
+<li>
+<p>S3：GetBucketPolicyStatus</p>
+</li>
+<li>
+<p>S3 ： GetBucketPolicy</p>
+</li>
+<li>
+<p>S3 ： GetBucketAcl</p>
+</li>
+<li>
+<p>S3 ： GetObject</p>
+</li>
+<li>
+<p>IAM：GetRole</p>
+</li>
+<li>
+<p>S3 ： DeleteObject</p>
+</li>
+<li>
+<p>S3 ： DeleteObjectVersion</p>
+</li>
+<li>
+<p>S3 ： PutObject</p>
+</li>
+<li>
+<p>STS：AssumeRole</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="云分层">云分层</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在使用Cloud Tiering时、Connector会发出以下API请求、将数据分层到Amazon S3。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">操作</th>
-<th class="tableblock halign-left valign-top">目的</th>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">用于设置？</th>
+<th class="tableblock halign-left valign-top">用于日常操作？</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ： StartInstances " ， "EC2 ： StopInstances " ， "EC2 ： Describe Instances " ， "EC2 ： Describe InstanceStatus" ， "EC2 ： RunInstances " ， "EC2 ：终端实例 " ， "EC2 ： ModifyInstanceAttribute" ，</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">启动 Cloud Volumes ONTAP 实例并停止、启动和监控实例。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： CreateBucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ：描述实例属性 " 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">验证是否已为支持的实例类型启用增强网络。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： PutLifeycleConfiguration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ：描述图 " 、 "EC2 ：描述图 " 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">启动 Cloud Volumes ONTAP HA 配置。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： GetLifeycleConfiguration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ：创建标记 " 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">标记 Cloud Manager 使用 "Workingviron" 和 "Workingvironmid" 标记创建的每个资源。Cloud Manager 使用这些标签进行维护和成本分配。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ： CreateVolume" ， "EC2 ： Describe Volumes" ， "EC2 ： ModifyVolumeAttribute" ， "EC2 ： AttachVolume" ， "EC2 ： DeleteVolume" ， "EC2 ：详细卷 " ，</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">管理 Cloud Volumes ONTAP 用作后端存储的 EBS 卷。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ： CreateSecurityGroup" ， "EC2 ： DeleteSecurityGroup" ， "EC2 ： Describe SecurityGroups" ， "EC2 ： RevokeSecurityGroupEated" ， "EC2 ： AuthorizeSecurityGroupEated" ， "EC2 ： AuthorizeSecurityGroupIn防护 " ， "EC2 ： RevokeSecurityGroupIn防护 " ，</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">为 Cloud Volumes ONTAP 创建预定义的安全组。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ： CreateNetworkInterface" ， "EC2 ： Describe NetworkInterfaces" ， "EC2 ： DeleteNetworkInterface" ， "EC2 ： ModifyNetworkInterfaceAttribute" ，</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">在目标子网中为 Cloud Volumes ONTAP 创建和管理网络接口。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ：描述性子网 " 、 "EC2 ：描述性 VPCS" 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">获取目标子网和安全组的列表、在为 Cloud Volumes ONTAP 创建新的工作环境时需要这些子网和安全组。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ：说明 " 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">确定启动 Cloud Volumes ONTAP 实例时的 DNS 服务器和默认域名。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ： CreateSnapshot " 、 "EC2 ： DeleteSnapshot " 、 "EC2 ：描述性快照 " 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">在初始设置期间和停止 Cloud Volumes ONTAP 实例时拍摄 EBS 卷的快照。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ： GetConsoleOutput " 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">捕获附加到 AutoSupport 消息的 Cloud Volumes ONTAP 控制台。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ：描述性密钥对 " 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">在启动实例时获取可用密钥对的列表。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ：描述性 " 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">获得可用 AWS 区域的列表。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ：删除标记 " 、 "EC2 ：描述标记 " 、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">管理与 Cloud Volumes ONTAP 实例关联的资源标签。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"CloudFormation ： CreateStack" ， "CloudFormation ： DeleteStack" ， "CloudFormation ： Describe Stacks" ， "CloudFormation ： Describe StackEvents " ， "CloudFormation ： ValidateTemplate" ，</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">启动 Cloud Volumes ONTAP 实例。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"IAM ： PassRole" ， "iam ： CreateRole" ， "iam ： DeleteRole" ， "iam ： PutRolePolicy" ， "iam ： CreateInstanceProfile" ， "IAM ： DeleteRolePolicy" ， "iam ： AddRoleToInstanceProfile" ， "iam ： RemoveRoleFromInstanceProfile" ， "iam ： DeleteInstanceProfile" ，</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">启动 Cloud Volumes ONTAP HA 配置。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"IAM ： ListInstanceProfiles" ， "STS ： DecodeAuthorizationMessage" ， "EC2 ： AssociateIamInstanceProfile" ， "EC2 ： Describe IamInstanceProfileAssociations" ， "EC2 ： DisassociateIamInstanceProfile" ，</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">管理 Cloud Volumes ONTAP 实例的实例配置文件。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"S3 ： GetBucketTagging" ， "S3 ： GetBucketLocation" ， "S3 ： ListAllMyBuckets" ， "S3 ： ListBucket"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">获取有关 AWS S3 存储槽的信息、以便 Cloud Manager 可以与 NetApp Data Fabric Cloud Sync 服务集成。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"S3 ： CreateBucket" ， "S3 ： DeleteBucket" ， "S3 ： GetLifeycleConfiguration" ， "S3 ： PutLifeycleConfiguration" ， "S3 ： PutBucketTagging" ， "S3 ： ListBucketVersions" ， "S3 ： GetBucketPolicyStatus" ， "S3 ： GetBucketPublicAccessBlock" ， "S3 ： GetBucketAcl" ， "S3 ： GetBucketPolicy" ， "S3 ： PutBucketPublicAccessBlock"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">管理 Cloud Volumes ONTAP 系统用作数据分层容量层的 S3 存储分段。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"kms ： List*" ， "kms ： reencryption*" ， "kms ： dese*" ， "kms ： CreateGrant" ，</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">使用 AWS 密钥管理服务（ KMS ）对 Cloud Volumes ONTAP 启用数据加密。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"CE ： GetReservationUtilization" ， "ce ： GetDimensionValues" ， "ce ： GetCostAndUsage" ， "ce ： GetTags "</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">获取有关 Cloud Volumes ONTAP 的 AWS 成本数据。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ： CreatePlacementGroup" ， "EC2 ： DeletePlacementGroup"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">在单个 AWS 可用性区域中部署 HA 配置时， Cloud Manager 会启动 AWS 分布式放置组中的两个 HA 节点和调解器。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ： Describe 保留实例服务 "</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager 在 Cloud Data sense 部署中使用权限来选择要使用的实例类型。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2 ： CreateTags " ， "EC2 ： DeleteTags " ， "EC2 ： Describe Tags " ， "tag ： getResources" ， "tag ： getTagKeys" ， "tag ： getTagValues " ， "tag ： TagResources" ， "tag ： UnagResources"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Cloud Manager 标记服务管理 AWS 资源上的标记。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"S3 ： DeleteBucket" ， "S3 ： GetLifeycleConfiguration" ， "S3 ： PutLifeycleConfiguration" ， "S3 ： PutBucketTagging" ， "S3 ： ListBucketVersions" ， "S3 ： GetObject" ， "S3 ： ListBucket" ， "S3 ： ListAllMyBuckets" ， "S3 ： GetBucketTagging" ， "S3 ： GetBucketLocation" "S3 ： GetBucketPolicyStatus" ， "S3 ： GetBucketPublicAccessBlock" ， "S3 ： GetBucketAcl" ， "S3 ： GetBucketPolicy" ， "S3 ： PutBucketPublicAccessBlock"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager 会在您启用备份到 S3 服务时使用这些权限。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EKS：ListClusters"、"EKS：Describe Cluster"、"iam：GetInstanceProfile"、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用于发现 Amazon EKS 集群。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2：Describe PlacementGroups"、"iam：GetRolePolicy"、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">为部署在单个可用性区域(AZ)中的HA对创建AWS分布式放置组。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"EC2：Describe卷修改"、"EC2：ModifyVolume"、</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用于设置和管理支持Amazon EBS弹性卷功能的Cloud Volumes ONTAP 聚合。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe注册</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-volumes-ontap">Cloud Volumes ONTAP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Connector会发出以下API请求、以便在AWS中部署和管理Cloud Volumes ONTAP。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">目的</th>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">用于部署？</th>
+<th class="tableblock halign-left valign-top">用于日常操作？</th>
+<th class="tableblock halign-left valign-top">用于删除？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="13"><p class="tableblock">创建和管理Cloud Volumes ONTAP 实例的IAM角色和实例配置文件</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：ListInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：CreateRole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：DeleteRole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：PutRolePolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：CreateInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：DeleteRolePolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：AddRoleToInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：RemoveRoleFromInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：DeleteInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IAM：PassRole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：AssociateIamInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe IamInstanceProfileAssociations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：DisassociateIamInstanceProfile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">对授权状态消息进行解码</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STS：DecodeAuthorizationMessage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述可供帐户使用的指定映像(AMI)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述VPC中的路由表(仅HA对需要)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe RouteTables</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">停止、启动和监控实例</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：StartInstances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：StopInstances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe实例</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe实例状态</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：RunInstances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：终端状态</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：ModifyInstance属性</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">验证是否已为支持的实例类型启用增强型网络连接</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe实例属性</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用"WorkingEnvironment"和"WorkingEnvironmentId"标记标记资源、用于维护和成本分配</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：CreateTags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock">管理Cloud Volumes ONTAP 用作后端存储的EBS卷</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：CreateVolume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe卷</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：ModifyVolumeAttribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Attach卷</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：DeleteVolume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：分离卷</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">创建和管理Cloud Volumes ONTAP 的安全组</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：CreateSecurityGroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：DeleteSecurityGroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe安全性组</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：RevokeSecurityGroupEgress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：AuthorizeSecurityGroupEgress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：AuthorizeSecurityGroupIngress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：RevokeSecurityGroupIngress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">在目标子网中为Cloud Volumes ONTAP 创建和管理网络接口</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：CreateNetworkInterface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe网络接口</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：DeleteNetworkInterface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：ModifyNetworkInterfaceAttribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">获取目标子网和安全组的列表</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe子网</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">获取DNS服务器和Cloud Volumes ONTAP 实例的默认域名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe DhcpOptions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">为Cloud Volumes ONTAP 的EBS卷创建快照</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：CreateSnapshot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：DeleteSnapshot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe Snapshot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">捕获附加到AutoSupport 消息的Cloud Volumes ONTAP 控制台</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：GetConsoleOutput</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">获取可用密钥对的列表</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe KeyPairs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">获取可用AWS区域的列表</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe注册</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">管理与Cloud Volumes ONTAP 实例关联的资源的标记</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：DeleteTags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe标记</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">为AWS CloudFormation模板创建和管理堆栈</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CloudFormation：CreateStack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CloudFormation：DeleteStack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CloudFormation：Describe堆栈</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CloudFormation：Describe StackEvents</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CloudFormation：验证模板</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="15"><p class="tableblock">创建和管理Cloud Volumes ONTAP 系统用作数据分层容量层的S3存储分段</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： CreateBucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： DeleteBucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： GetLifeycleConfiguration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： PutLifeycleConfiguration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： PutBucketTagging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： ListBucketVersions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3：GetBucketPolicyStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3：GetBucketPublicAccessBlock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： GetBucketAcl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： GetBucketPolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3：PutBucketPublicAccessBlock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： GetBucketTagging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： GetBucketLocation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： ListAllMy桶</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 ： ListBucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">使用AWS密钥管理服务(KMS)对Cloud Volumes ONTAP 启用数据加密</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">公里：列表*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kms：重新加密*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">公里：描述*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">公里：CreateGrant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">获取Cloud Volumes ONTAP 的AWS成本数据</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CE：GetReservationUtilization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CE：GetDimensionValues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CE：GetCostAndUsage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CE：GetTags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">在一个AWS可用性区域中为两个HA节点和调解器创建和管理一个AWS分布式放置组</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：CreatePlacementGroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：DeletePlacementGroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">创建报告</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FSX：描述*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FSX：List*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">创建和管理支持Amazon EBS弹性卷功能的聚合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：Describe卷修改</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EC2：ModifyVolume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="全局文件缓存">全局文件缓存</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Connector会发出以下API请求、以便在部署期间部署全局文件缓存实例：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CloudFormation：Describe堆栈</p>
+</li>
+<li>
+<p>CloudWatch：GetMetricStatistics</p>
+</li>
+<li>
+<p>CloudFormation：ListStack</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kubernetes">Kubernetes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Connector会发出以下API请求来发现和管理Amazon EKS集群：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>EC2：Describe注册</p>
+</li>
+<li>
+<p>EKS：ListClusters</p>
+</li>
+<li>
+<p>EKS：Describe集群</p>
+</li>
+<li>
+<p>IAM：GetInstanceProfile</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 
     </article>
     <!-- Page Container -->

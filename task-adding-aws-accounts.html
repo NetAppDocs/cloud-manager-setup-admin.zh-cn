@@ -959,7 +959,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:26:59 +0000">04/14/2022</time>
+    <time datetime="2022-07-03 15:53:52 +0000">07/03/2022</time>
     
   
 
@@ -982,15 +982,21 @@
 <div class="ulist">
 <ul>
 <li>
-<p>将 AWS 凭据添加到现有 Connector</p>
+<p>向现有Connector添加其他AWS凭据</p>
 <div class="paragraph">
-<p>通过向现有连接器添加新的 AWS 凭据，您可以使用同一连接器在另一个 AWS 帐户中部署 Cloud Volumes ONTAP 。 <a href="#Add credentials to a Connector">了解如何将 AWS 凭据添加到 Connector</a>。</p>
+<p>通过向现有连接器添加新的 AWS 凭据，您可以使用同一连接器在另一个 AWS 帐户中部署 Cloud Volumes ONTAP 。 <a href="#Add additional credentials to a Connector">了解如何将 AWS 凭据添加到 Connector</a>。</p>
 </div>
 </li>
 <li>
-<p>将 AWS 凭据直接添加到 Cloud Manager</p>
+<p>将AWS凭据添加到Cloud Manager以创建Connector</p>
 <div class="paragraph">
-<p>向 Cloud Manager 添加新的 AWS 凭据可为 Cloud Manager 提供创建和管理适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。 <a href="#Add credentials to Cloud Manager">了解如何向 Cloud Manager 添加 AWS 凭据</a>。</p>
+<p>向Cloud Manager添加新的AWS凭据可为Cloud Manager提供创建Connector所需的权限。 <a href="#Add credentials to Cloud Manager for creating a Connector">了解如何向 Cloud Manager 添加 AWS 凭据</a>。</p>
+</div>
+</li>
+<li>
+<p>将AWS凭据添加到Cloud Manager for FSX for ONTAP</p>
+<div class="paragraph">
+<p>向Cloud Manager添加新的AWS凭据可为Cloud Manager提供创建和管理适用于ONTAP 的FSX所需的权限。 <a href="https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html" target="_blank" rel="noopener">"了解如何为适用于 ONTAP 的 FSX 设置权限"</a></p>
 </div>
 </li>
 </ul>
@@ -1012,7 +1018,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="向-connector-添加凭据">向 Connector 添加凭据</h2>
+<h2 id="向connector添加其他凭据">向Connector添加其他凭据</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>将 AWS 凭据添加到 Connector ，以便它可以在其他 AWS 帐户中部署和管理 Cloud Volumes ONTAP 。您可以在其他帐户中提供 IAM 角色的 ARN ，也可以提供 AWS 访问密钥。</p>
@@ -1177,13 +1183,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="向-cloud-manager-添加凭据">向 Cloud Manager 添加凭据</h2>
+<h2 id="向cloud-manager添加用于创建connector的凭据">向Cloud Manager添加用于创建Connector的凭据</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>通过提供 IAM 角色的 ARN 将 AWS 凭据添加到 Cloud Manager 中，该角色为 Cloud Manager 提供创建适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。</p>
-</div>
-<div class="paragraph">
-<p>您可以在创建适用于 ONTAP 的 FSX 工作环境或创建新连接器时使用这些凭据。</p>
+<p>通过提供IAM角色的ARN为Cloud Manager提供创建Connector所需的权限、将AWS凭据添加到Cloud Manager。您可以在创建新的Connector时选择这些凭据。</p>
 </div>
 <div class="sect2">
 <h3 id="设置-iam-角色">设置 IAM 角色</h3>
@@ -1210,16 +1213,9 @@
 <p>选择 * 其他 AWS 帐户 * 并输入 Cloud Manager SaaS 的 ID ： 952013314444</p>
 </li>
 <li>
-<p>创建一个策略，其中包含创建适用于 ONTAP 的 FSX 工作环境或创建连接器所需的权限。</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html" target="_blank" rel="noopener">"查看适用于 ONTAP 的 FSX 所需的权限"</a></p>
-</li>
-<li>
+<p>创建包含创建Connector所需权限的策略。</p>
+<div class="paragraph">
 <p>从查看连接器部署策略 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"Cloud Manager 策略页面"</a></p>
-</li>
-</ul>
 </div>
 </li>
 </ul>
@@ -1270,7 +1266,7 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>现在，您可以在创建适用于 ONTAP 的 FSX 工作环境或创建新连接器时使用这些凭据。</p>
+<p>现在、您可以在创建新Connector时使用这些凭据。</p>
 </div>
 </div>
 </div>
