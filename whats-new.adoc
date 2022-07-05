@@ -30,7 +30,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/mai
 
 * 现在、您可以将Cloud Manager配置为通过电子邮件发送通知、这样、即使您未登录到系统、您也可以了解重要的系统活动。
 +
-link:task-monitor-cm-operations.html["了解有关监控帐户中操作的更多信息"]。
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["了解有关监控帐户中操作的更多信息"]。
 
 * Cloud Manager现在支持Azure Blob存储和Google Cloud Storage作为工作环境、类似于Amazon S3支持。
 +
