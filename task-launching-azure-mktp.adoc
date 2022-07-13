@@ -81,9 +81,9 @@ image:screenshot_set_up_cloud_manager.gif["屏幕截图显示了设置 Cloud Man
 在 Azure 中部署 Connector 时，您应已启用 https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["系统分配的受管身份"^]。现在，您必须先创建一个自定义角色，然后为一个或多个订阅的 Connector 虚拟机分配此角色，从而授予所需的 Azure 权限。
 
 .步骤
-. 使用云管理器策略创建自定义角色：
+. 创建自定义角色：
 +
-.. 下载 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager Azure 策略"^]。
+.. 复制的内容 link:reference-permissions-azure.html["Connector的自定义角色权限"] 并将其保存在JSON文件中。
 .. 通过将 Azure 订阅 ID 添加到可分配范围来修改 JSON 文件。
 +
 您应该为每个 Azure 订阅添加 ID 、用户将从中创建 Cloud Volumes ONTAP 系统。
@@ -92,17 +92,33 @@ image:screenshot_set_up_cloud_manager.gif["屏幕截图显示了设置 Cloud Man
 * 示例 *
 
 +
-"Assignablesscaps" ： ["/subscriptions/d333af45-0d07-4154 － 943D-C25 FBzzzzz" 、 "/subscriptions/54b91999 － b3e6-4599 － 908e-416e0zzzzz" 、 "/subscription/398e471c － 3b4ae-7b5bzzz"
-
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+----
 .. 使用 JSON 文件在 Azure 中创建自定义角色。
 +
-以下示例说明了如何使用 Azure CLI 2.0 创建自定义角色：
+以下步骤介绍如何在 Azure Cloud Shell 中使用 Bash 创建角色。
 
 +
-`AZ role definition create -role-definition C ： \Policy_for_cloud Manager_Azure_3.9.8.json`
+*** start https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] 并选择 Bash 环境。
+*** 上传 JSON 文件。
++
+image:screenshot_azure_shell_upload.png["Azure Cloud Shell 的屏幕截图，您可以在其中选择上传文件的选项。"]
 
+*** 输入以下 Azure 命令行界面命令：
++
+[source, azurecli]
+----
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
+----
 +
 现在，您应该拥有一个名为 Cloud Manager Operator 的自定义角色，可以将该角色分配给 Connector 虚拟机。
+
+
 
 
 
@@ -113,7 +129,7 @@ image:screenshot_set_up_cloud_manager.gif["屏幕截图显示了设置 Cloud Man
 .. 在 * 角色 * 选项卡中，选择 * Cloud Manager 操作员 * 角色，然后单击 * 下一步 * 。
 +
 
-NOTE: Cloud Manager Operator 是中提供的默认名称 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略"]。如果您为角色选择了其他名称，请选择该名称。
+NOTE: Cloud Manager Operator是Cloud Manager策略中提供的默认名称。如果您为角色选择了其他名称，请选择该名称。
 
 .. 在 * 成员 * 选项卡中，完成以下步骤：
 +

@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: reference-permissions.html 
+keywords: permissions, actions 
+summary: 要使用Cloud Manager中的功能和服务、您需要提供权限、以便Cloud Manager可以在您的云环境中执行操作。使用此页面上的链接快速访问Cloud Manager中所需的权限。 
+---
+= Cloud Manager权限摘要
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+要使用Cloud Manager中的功能和服务、您需要提供权限、以便Cloud Manager可以在您的云环境中执行操作。使用此页面上的链接可根据您的目标快速访问所需的权限。
+
+
+
+== AWS权限
+
+[cols="25,60,40"]
+|===
+| 目的 | Description | 链接。 
+
+
+| 连接器部署 | 从Cloud Manager创建Connector的用户需要特定权限才能在AWS中部署实例。 | link:task-creating-connectors-aws.html["从 Cloud Manager 在 AWS 中创建连接器"] 
+
+
+| 连接器操作 | Cloud Manager启动Connector时、它会将一个策略附加到实例、该实例提供管理AWS帐户中资源和进程所需的权限。如果需要、您需要自行设置策略 link:task-launching-aws-mktp.html["从市场启动Connector"] 或者 link:task-adding-aws-accounts.html#add-credentials-to-a-connector["向Connector添加更多AWS凭据"]。此外、您还需要确保在后续版本中添加新权限时策略是最新的。 | link:reference-permissions-aws.html["Connector 的 AWS 权限"] 
+
+
+| Cloud Volumes ONTAP 操作 | 必须将IAM角色附加到AWS中的每个Cloud Volumes ONTAP 节点。HA调解器也是如此。默认选项是让Cloud Manager为您创建IAM角色、但您可以使用自己的角色。 | https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html["了解如何自己设置IAM角色"^] 
+|===
+
+
+== Azure权限
+
+[cols="25,60,40"]
+|===
+| 目的 | Description | 链接。 
+
+
+| 连接器部署 | 从Cloud Manager部署Connector时、您需要使用有权在Azure中部署Connector VM的Azure帐户或服务主体。 | link:task-creating-connectors-azure.html["从 Cloud Manager 在 Azure 中创建 Connector"] 
+
+
+| 连接器操作  a| 
+当Cloud Manager在Azure中部署Connector VM时、它会创建一个自定义角色、此角色可提供在该Azure订阅中管理资源和进程所需的权限。
+
+如果需要、您需要自己设置自定义角色 link:task-launching-azure-mktp.html["从市场启动Connector"] 或者 link:task-adding-azure-accounts.html#adding-additional-azure-credentials-to-cloud-manager["向Connector添加更多Azure凭据"]。
+
+此外、您还需要确保在后续版本中添加新权限时策略是最新的。
+ a| 
+link:reference-permissions-azure.html["Connector 的 Azure 权限"]
+
+|===
+
+
+== Google Cloud权限
+
+[cols="25,60,40"]
+|===
+| 目的 | Description | 链接。 
+
+
+| 连接器部署 | 从Cloud Manager部署Connector的Google Cloud用户需要特定权限才能在Google Cloud中部署Connector。 | link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector["设置部署Connector的权限"] 
+
+
+| 连接器操作 | Connector VM实例的服务帐户必须具有执行日常操作的特定权限。在从Cloud Manager部署服务帐户时、您需要将其与Connector相关联。此外、您还需要确保在后续版本中添加新权限时策略是最新的。 | link:task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector["为Connector设置服务帐户"] 
+|===

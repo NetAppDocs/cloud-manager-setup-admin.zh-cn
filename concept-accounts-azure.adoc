@@ -20,7 +20,7 @@ summary: 通过 Cloud Manager ，您可以选择部署 Cloud Volumes ONTAP 时�
 
 == 初始 Azure 凭据
 
-从 Cloud Manager 部署 Connector 时，您需要使用有权部署 Connector 虚拟机的 Azure 帐户或服务主体。中列出了所需的权限 https://mysupport.netapp.com/site/info/cloud-manager-policies["适用于 Azure 的连接器部署策略"^]。
+从 Cloud Manager 部署 Connector 时，您需要使用有权部署 Connector 虚拟机的 Azure 帐户或服务主体。中列出了所需的权限 link:task-creating-connectors-azure.html["适用于 Azure 的连接器部署策略"]。
 
 当 Cloud Manager 在 Azure 中部署 Connector 虚拟机时，它会启用 https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["系统分配的受管身份"^] 在虚拟机上，创建自定义角色并将其分配给虚拟机。此角色为 Cloud Manager 提供了管理该 Azure 订阅中的资源和流程的权限。 link:reference-permissions-azure.html["查看 Cloud Manager 如何使用权限"]。
 

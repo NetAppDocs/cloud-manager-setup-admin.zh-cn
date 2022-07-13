@@ -46,7 +46,6 @@
   <block id="28593cc8bcd7f02af87999270a737f43" category="paragraph"><block ref="70914cf64b30f894c82eb432d6410289" category="inline-xref-macro-rx"></block>。</block>
   <block id="e3e02b70df514c22082124328763d018" category="list-text">提供有关 Azure AD 服务主体的详细信息。此服务主体还需要特定权限。</block>
   <block id="3436333152b4e50a69b25e424a5d0873" category="paragraph"><block ref="1b633d2a7bc357dbd77dec7eba8d64c7" category="inline-xref-macro-rx"></block>。</block>
-  <block id="798b7f6ab4fe287d95d3324c86ca3a51" category="section-title">请注意 Azure 地区</block>
   <block id="573514d5de621ecfe56c91e7c665d73d" category="inline-link">Azure 区域对</block>
   <block id="6882deeb4b60915fc6b7a36d03f329e3" category="inline-link">了解 Cloud Volumes ONTAP 如何使用 Azure 专用链路</block>
   <block id="3390be7199c4e1acf84371ce3c4ae2a4" category="paragraph">此连接器应部署在与其管理的 Cloud Volumes ONTAP 系统所在的同一 Azure 区域或中<block ref="71e0e9a7366955554f0600c5ea8cfc7f" category="inline-link-rx"></block> 对于 Cloud Volumes ONTAP 系统。此要求可确保在 Cloud Volumes ONTAP 与其关联存储帐户之间使用 Azure 专用链路连接。<block ref="8fd2062cae8df3766c9ddefca48991a5" category="inline-link-rx"></block>。</block>
@@ -55,9 +54,6 @@
   <block id="4feea8fb07471b49da12ae6ce993e00f" category="section-title">为 Azure 帐户设置权限</block>
   <block id="f832e35d89df1b2ebc46772eb73d40a5" category="paragraph">在从 Cloud Manager 部署 Connector 之前，您需要确保 Azure 帐户具有正确的权限。</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步骤</block>
-  <block id="f77bfbcd12728e6d28c201e9b5b77681" category="inline-link">Connector 的 Azure 策略</block>
-  <block id="17b3083c14747c49acf12e5dca172fed" category="list-text">下载<block ref="b9d6bafa5b8d921ebba5bb8e1ac8d1eb" category="inline-link-rx"></block>。</block>
-  <block id="ac5599fbf028bd057932418b2b3fad78" category="admonition">右键单击链接并单击 * 将链接另存为 ...* 以下载此文件。</block>
   <block id="7bbde741a2c304e2ecf076f2318ce3ce" category="list-text">通过将 Azure 订阅 ID 添加到可分配范围来修改 JSON 文件。</block>
   <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">* 示例 *</block>
   <block id="fd8ab92694783ee668986d87ece652dd" category="list-text">使用 JSON 文件在 Azure 中创建自定义角色。</block>
@@ -75,7 +71,6 @@
   <block id="761218505548d0e5a2977bd7c31de50a" category="list-text">单击 * 添加 * &gt; * 添加角色分配 * ，然后添加权限：</block>
   <block id="407df91196b1a54a89a9911a8ac6a332" category="list-text">选择 * Azure SetupAsService* 角色，然后单击 * 下一步 * 。</block>
   <block id="25b6fc1a8ebb7aa3a82a611b3dc7cc8d" category="inline-link">适用于 Azure 的连接器部署策略</block>
-  <block id="038e515f1984b1499d6de9d68fbffd90" category="admonition">Azure SetupAsService 是中提供的默认名称<block ref="b213beea5dcffbdb5285c373f56890d9" category="inline-link-rx"></block>。如果您为角色选择了其他名称，请选择该名称。</block>
   <block id="8663f7025266bcb72c4429db8da6c602" category="list-text">保持选中 * 用户，组或服务主体 * 。</block>
   <block id="42cffe053a918fe3b27cd3bef2758b91" category="list-text">单击 * 选择成员 * ，选择您的用户帐户，然后单击 * 选择 * 。</block>
   <block id="5a378b18f7bf0c4cabc6c655cd2f535e" category="list-text">单击 * 下一步 * 。</block>
@@ -86,8 +81,6 @@
   <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">您需要什么？ #8217 ；将需要什么</block>
   <block id="cec61994be2c9633fc4acb202e4b9c41" category="list-text">Azure 订阅。</block>
   <block id="3c8e2502b00949bb2ead22830ddfa05d" category="list-text">您选择的 Azure 区域中的 vNet 和子网。</block>
-  <block id="ca2375d4e16ca14e8df2fd7b55942f62" category="inline-link">使用此策略</block>
-  <block id="c8df33e70f41b01e0dfda183bdbeedc2" category="list-text">如果您不希望 Cloud Manager 自动为 Connector 创建 Azure 角色，则需要创建您自己的角色<block ref="8d464d7765bebe391c6baca51b3ee73f" category="inline-link-rx"></block>。</block>
   <block id="bb0af45d6e9045bc2046c5f245006f7c" category="paragraph">这些权限适用于 Connector 实例本身。它是一组与您先前设置的权限不同的权限，只需部署 Connector 即可。</block>
   <block id="d2b74161d054c69894469355bb22cb63" category="list-text">如果要创建首个工作环境，请单击 * 添加工作环境 * 并按照提示进行操作。否则，请单击 * 连接器 * 下拉列表并选择 * 添加连接器 * 。</block>
   <block id="df5b4e7d7b6a4648ec54c1e80de11594" category="inline-image-macro">标题中显示 Connector 图标和 Add Connector 操作的屏幕截图。</block>
@@ -103,7 +96,6 @@
   <block id="5d149ff1e8243862b942bfa90d45a31b" category="admonition">如果您已登录到 Azure 帐户，则 Cloud Manager 将自动使用该帐户。如果您有多个帐户，则可能需要先注销，以确保您使用的是正确的帐户。</block>
   <block id="ec444652764a4ae69cee1fdb97fdab30" category="list-text">* 虚拟机身份验证 * ：选择 Azure 订阅，位置，新资源组或现有资源组，然后选择身份验证方法。</block>
   <block id="a6100ac4fa5cb7bbb1c49e95165b96b2" category="inline-link">所需权限</block>
-  <block id="2eaf8914a8b445117f14bfb36ce037d4" category="list-text">* 详细信息 * ：输入实例的名称，指定标记，然后选择是希望 Cloud Manager 创建具有所需权限的新角色，还是要选择使用设置的现有角色<block ref="16441962512c331410f2b1943d634de1" category="inline-link-rx"></block>。</block>
   <block id="e1ca9b0274808b9c445718fa4b9a5d26" category="paragraph">请注意，您可以选择与此角色关联的订阅。您选择的每个订阅都为 Connector 提供了在这些订阅中部署 Cloud Volumes ONTAP 的权限。</block>
   <block id="316cce18546001b2f1149ed17a4d3900" category="list-text">* 网络 * ：选择 vNet 和子网，是否启用公有 IP 地址，并可选择指定代理配置。</block>
   <block id="39c1f44dc3cf3d61f829ba697b33eaac" category="list-text">* 安全组 * ：选择是创建新的安全组，还是选择允许入站 HTTP ， HTTPS 和 SSH 访问的现有安全组。</block>
@@ -141,7 +133,6 @@
   <block id="07429b136ade673e85f1a27e25a0239c" category="paragraph">您已创建 AD 应用程序和服务主体。</block>
   <block id="705ea5b8b9077bcdc0aedb01e5cc4c58" category="section-title">将应用程序分配给角色</block>
   <block id="dc68a3c4f100c3e513fc370143459b4d" category="paragraph">您必须将服务主体绑定到计划部署 Connector 的 Azure 订阅，并为其分配自定义 "Azure SetupAsService" 角色。</block>
-  <block id="61c26d2a982d7e6a07fc686669e8b239" category="list-text">下载<block ref="b213beea5dcffbdb5285c373f56890d9" category="inline-link-rx"></block>。</block>
   <block id="1efe3dd87fa14ed122c5ea4f702755d8" category="list-text">将应用程序分配给角色：</block>
   <block id="973ddd4ad0d28fecb4f9f0a53ca5ab21" category="list-text">从 Azure 门户中，打开 * 订阅 * 服务。</block>
   <block id="9d13605979e591928497f3c94aa907c2" category="list-text">选择订阅。</block>
@@ -212,15 +203,11 @@
   <block id="e1a3d580d5cb42904b96dc05c0e0903d" category="paragraph">请务必执行以下操作：</block>
   <block id="e506de832b98c2693eb3f400ef0722c0" category="list-text">在 * 可信实体类型 * 下，选择 * AWS 帐户 * 。</block>
   <block id="c8797509010c3097dda2b0cd6f8eb8ba" category="list-text">选择 * 其他 AWS 帐户 * ，然后输入 Connector 实例所在帐户的 ID 。</block>
-  <block id="4aaa495471a5ae62d8384762205bf782" category="inline-link">Cloud Manager 策略页面</block>
-  <block id="123f2e62fb6e53ac1b3fd91d12e190e0" category="list-text">使用 Cloud Manager IAM 策略创建策略，该策略可从获得<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block>。</block>
   <block id="acfd530320fb795ab16e7f6023fd56af" category="list-text">复制 IAM 角色的角色 ARN ，以便稍后将其粘贴到 Cloud Manager 中。</block>
   <block id="119e27fea013f52fa0d99cc4eb1a4886" category="inline-xref">现在，您可以将凭据添加到 Connector</block>
   <block id="0c618f5554982d1866596b56dc00c461" category="paragraph">现在，此帐户具有所需权限。 <block ref="513a481d36e6d6a9d162b21b254968af" category="inline-xref-macro-rx"></block>。</block>
   <block id="e7e95c3a4b88e02526b2bf48eb3cff3b" category="section-title">通过提供 AWS 密钥授予权限</block>
   <block id="c0851f89d0743555ee49b54a9e68b74c" category="paragraph">如果要为 IAM 用户提供 Cloud Manager 的 AWS 密钥，则需要向该用户授予所需的权限。Cloud Manager IAM 策略定义了允许云管理器使用的 AWS 操作和资源。</block>
-  <block id="5341982b7fb5c2eec2ffa5b04b5bbc02" category="list-text">从下载 Cloud Manager IAM 策略<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block>。</block>
-  <block id="7f8eb4219de7c8bc3c457f348326f5df" category="list-text">从 IAM 控制台，通过从 Cloud Manager IAM 策略复制和粘贴文本来创建您自己的策略。</block>
   <block id="47d50d25f4b51617534e107d21701e80" category="inline-link">AWS 文档：创建 IAM 策略</block>
   <block id="8466ec46633472a027af5c909c923782" category="paragraph"><block ref="8466ec46633472a027af5c909c923782" category="inline-link-rx"></block></block>
   <block id="923890d009c62cd46ebbcc491c981264" category="list-text">将策略附加到 IAM 角色或 IAM 用户。</block>
@@ -647,8 +634,6 @@
   <block id="f4753a613899e6c5fa411aae13fc0512" category="list-text">登录 Azure 门户。</block>
   <block id="282ccfcd6f389e2ad3c5056679ea3afb" category="list-text">打开 * 订阅 * 服务，然后选择要部署 Cloud Volumes ONTAP 的订阅。</block>
   <block id="5c07604385195b6bcbbeecaa66fb9501" category="list-text">选择 * Cloud Manager Operator* 角色。</block>
-  <block id="d76af3fd99bc3d655a1c7ebb39340b6f" category="inline-link">Cloud Manager 策略</block>
-  <block id="201d14274af4e7bd04557d82951359ef" category="admonition">Cloud Manager Operator 是中提供的默认名称<block ref="7fc49a88d4bedbc1252c1f5516a8dc2a" category="inline-link-rx"></block>。如果您为角色选择了其他名称，请选择该名称。</block>
   <block id="b9a77d024885f40214c971bf6ccbb248" category="list-text">分配对 * 虚拟机 * 的访问权限。</block>
   <block id="a303be0f8e15381d348f17b447f814ac" category="list-text">选择创建 Connector 虚拟机的订阅。</block>
   <block id="6391d178a2b7f97a4c5c12d28e3ee3e3" category="list-text">选择 Connector 虚拟机。</block>
@@ -675,11 +660,8 @@
   <block id="cd4f03f41a7064df7af17a65df797ab1" category="paragraph">创建一个 Azure Active Directory （ AD ）应用程序和服务主体， Cloud Manager 可使用该应用程序和服务主体进行基于角色的访问控制。</block>
   <block id="0f98c4b330efbe50f880663944194f88" category="section-title">将应用程序分配给角色</block>
   <block id="5d54a97b7ccccaba5b4e8617f7d160eb" category="paragraph">您必须将服务主体绑定到一个或多个 OnCommand 订阅，并为其分配自定义 "Cloud Manager 操作员 " 角色，以便 管理器在 Azure 中具有权限。</block>
-  <block id="a3cbca0607a5eb622a196459b3cbbfbc" category="inline-link">Cloud Manager Azure 策略</block>
-  <block id="76c32f81d886c55078d148a87e24c0e2" category="list-text">下载<block ref="6a4863841954beb647e568baf833d149" category="inline-link-rx"></block>。</block>
   <block id="69d64492530dd5ee6b0c49b4e7b88a54" category="list-text">通过将 Azure 订阅 ID 添加到可分配范围来修改 JSON 文件。</block>
   <block id="256ea00265c09da54fc1bcb24714eae2" category="paragraph">您应该为每个 Azure 订阅添加 ID 、用户将从中创建 Cloud Volumes ONTAP 系统。</block>
-  <block id="426b13072a9ef91957a6a40c02d179de" category="paragraph">现在，您应具有一个名为 _Cloud Manager Operator_ 的自定义角色。</block>
   <block id="1cdc9deb4c090c1db0afe5486b8c231e" category="paragraph">如果要从多个 Azure 订阅部署 Cloud Volumes ONTAP ，则必须将服务主体绑定到每个订阅。使用 Cloud Manager ，您可以选择部署 Cloud Volumes ONTAP 时要使用的订阅。</block>
   <block id="bd7448fe036ae96be692a410632dfb27" category="section-title">添加 Windows Azure 服务管理 API 权限</block>
   <block id="9f58682ff91305ed0576df0a3587138c" category="section-title">获取应用程序 ID 和目录 ID</block>
@@ -713,14 +695,7 @@
   <block id="8429d024ccbeae43501123bceabf2dec" category="paragraph">通过修改 Azure 服务凭据的详细信息，在 Cloud Manager 中编辑 Azure 凭据。例如，如果为服务主体应用程序创建了新密钥，则可能需要更新客户端密钥。</block>
   <block id="ace843a9a86d3677aa70c0e5dd1d64b5" category="doc">从 Cloud Manager 在 Google Cloud 中创建 Connector</block>
   <block id="49dc29bc56279a820af0d347c1b82bb9" category="paragraph">客户管理员需要先部署 _Connector_ ，然后才能使用大多数 Cloud Manager 功能。 <block ref="39840e1bb98f6582f1bf4e505d666ea1" category="inline-link-macro-rx"></block>。借助此连接器， Cloud Manager 可以管理公有云环境中的资源和流程。</block>
-  <block id="5d6324823833716e10f3e57d934ecd8a" category="section-title">设置权限</block>
-  <block id="937e4aacfb1148c32f2cc162ab0584ad" category="inline-link">您可以使用 YAML 文件创建自定义角色</block>
-  <block id="1d51205234c08b687882a95b353982c7" category="paragraph"><block ref="70ef2814a9ccb32291159ef5c5ae86a7" category="inline-link-rx"></block> 然后将其附加到用户。您需要使用 gcloud 命令行创建角色。</block>
-  <block id="a5e7f9aeb24d1d27868194bf1021f6bc" category="list-text">设置一个服务帐户，该帐户具有 Cloud Manager 在项目中创建和管理 Cloud Volumes ONTAP 系统所需的权限。</block>
-  <block id="b7f5517a2500bccfce6377826f6bed54" category="paragraph">创建此服务帐户时，您需要将其与 Connector VM 关联。</block>
   <block id="65a39e4477ac1c2ee4e6f7ab03f80f8b" category="inline-link">在 GCP 中创建角色</block>
-  <block id="b5202e3c2a4fb621516045f4d6bc3d60" category="inline-link">适用于 GCP 的 Cloud Manager 策略</block>
-  <block id="1ec6f779fe5a9d8e3450d32017a21e22" category="paragraph">此 YAML 文件中包含的权限与步骤 1 中的权限不同。</block>
   <block id="270b7569730a90507cf88195b5a8a7ee" category="inline-link">创建 GCP 服务帐户并应用刚刚创建的自定义角色</block>
   <block id="c30c9ad6a6f620b9a2a07c6f14399a1e" category="list-text"><block ref="63a6eacd526447284dd7555861e56994" category="inline-link-rx"></block>。</block>
   <block id="37a4b78df3288cf5c1bd086a6d1d5f9f" category="inline-link">通过向该项目添加具有 Cloud Manager 角色的服务帐户来授予访问权限</block>
@@ -734,8 +709,6 @@
   <block id="261addf78c7b2c961032b3dd08ba0b1f" category="cell">目的</block>
   <block id="90589c47f06eb971d548591f23c285af" category="cell">自定义</block>
   <block id="6021eec4920c52f3a4df07a5381d9fb0" category="cell">服务项目</block>
-  <block id="396139b8280c186c5b4e76556ee3ca75" category="inline-link">在此 .yaml 文件中找到的权限</block>
-  <block id="1fbaa05447f4c2c1df5db0d323f1ef8d" category="list-text"><block ref="1fbaa05447f4c2c1df5db0d323f1ef8d" category="inline-link-rx"></block></block>
   <block id="40f49838c90873745fc1b1382a2c4b68" category="list-text">compute.networkUser</block>
   <block id="d9dae3e5d95c5ba752d5beb73a01f9f0" category="list-text">deploymentmanager.editor</block>
   <block id="06ca5d86ca92fe80348aec87cb3071db" category="cell">在服务项目中部署和维护 Cloud Volumes ONTAP 和服务</block>
@@ -762,8 +735,6 @@
   <block id="1101b09020ade12e90a562489e315c8d" category="list-text">计算引擎 API</block>
   <block id="71660685d00034957db3f9a31c160978" category="list-text">身份和访问管理（ IAM ） API</block>
   <block id="4642830f208507b4a2a5ff5bed0d9b97" category="paragraph">直接从 Cloud Manager 用户界面或使用 gcloud 在 Google Cloud 中创建 Connector 。</block>
-  <block id="21c199e82e474a9a5607a2b9ccb8e66f" category="inline-link">所需权限</block>
-  <block id="f4a16580e0572ca5e418a9435dc09de4" category="list-text">。<block ref="a18b1518901620e43c44c260945ff7cb" category="inline-link-rx"></block> 适用于您的 Google Cloud 帐户，如本页面第一部分所述。</block>
   <block id="9d2307f8f5a2d2672e417c7fb2c70c0e" category="list-text">Google Cloud 项目。</block>
   <block id="566f8342f1a7975e05d47735cbd31877" category="list-text">一种具有创建和管理 Cloud Volumes ONTAP 所需权限的服务帐户，如本页面第一部分所述。</block>
   <block id="bea8942e248f7318b017a2750ff8ec51" category="list-text">您选择的 Google Cloud 区域中的 VPC 和子网。</block>
@@ -844,10 +815,6 @@
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">获取帮助</block>
   <block id="d7e90f350e428587b096549117aa6b60" category="summary">最好直接从 Cloud Manager 创建 Connector ，但如果您不想指定 AWS 访问密钥，则可以从 AWS Marketplace 启动 Connector 。创建并设置 Connector 后， Cloud Manager 将在您创建新的工作环境时自动使用它。</block>
   <block id="e96bc5b1e40abf07ff070b96c65057db" category="doc">从 AWS Marketplace 创建 Connector</block>
-  <block id="5669d6d88226e478d2b4da9cd43b96b5" category="list-text">为 EC2 实例创建 IAM 策略和角色：</block>
-  <block id="2c52ba4c07c496312cf7153c08cf7511" category="list-text">从以下位置下载 Cloud Manager IAM 策略：</block>
-  <block id="2580ec6c57475a15435c1a0ccc50e6d1" category="inline-link">NetApp Cloud Manager ： AWS ， Azure 和 GCP 策略</block>
-  <block id="244c6f7d9f1edc83d65920768cb6f9cd" category="paragraph"><block ref="244c6f7d9f1edc83d65920768cb6f9cd" category="inline-link-rx"></block></block>
   <block id="2d7f301de264581382e23e0ee22d9345" category="list-text">创建角色类型为 Amazon EC2 的 IAM 角色，并将您在上一步骤中创建的策略附加到该角色。</block>
   <block id="b00b1f51aba44811e0f61d74eec7e04b" category="inline-link">AWS Marketplace 上的 Cloud Manager 页面</block>
   <block id="d69392574f5dab79aa43319b4e54fd67" category="list-text">现在转到<block ref="46abe95496a5b5a2812b7657abaac71b" category="inline-link-rx"></block> 从 AMI 部署 Cloud Manager 。</block>
@@ -871,9 +838,6 @@
   <block id="3dcd3a438eecbdd8bc716a93dbc7adf7" category="list-text">* 审阅 * ：查看您选择的内容，然后单击 * 启动 * 。</block>
   <block id="10a3df02c55e733eca6fef076545645a" category="paragraph">AWS 使用指定的设置启动软件。Connector 实例和软件应在大约五分钟内运行。</block>
   <block id="1574ea6eaa169a957e1542cd590656c0" category="summary">Cloud Manager 需要在云提供商中执行操作的权限。这些权限包括在 NetApp 提供的策略中。您可能希望了解 Cloud Manager 使用这些权限执行的操作。</block>
-  <block id="06645c43c34bb238a7352c0ffaf29f49" category="doc">AWS 中连接器的所需权限</block>
-  <block id="9edd86f763fc6d21418429b5c63134af" category="inline-link">NetApp 提供的策略</block>
-  <block id="cfd01abeea487fb705ae7a8ea38814da" category="paragraph">Cloud Manager 需要在云提供商中执行操作的权限。中包括这些权限<block ref="d2f8d77175d2dd5e5ed1a096c2593510" category="inline-link-rx"></block>。您可能希望了解 Cloud Manager 使用这些权限执行的操作。</block>
   <block id="06df33001c1d7187fdd81ea1f5b277aa" category="cell">操作</block>
   <block id="e81639b3c138e7deea81d6ea285642c3" category="cell">在目标子网中为 Cloud Volumes ONTAP 创建和管理网络接口。</block>
   <block id="63f6e1958614b96c8fd95bf42f5748fd" category="summary">注册到 NetApp Cloud Central ，以便您可以访问 NetApp 的云服务。</block>
@@ -1076,13 +1040,10 @@
   <block id="176cadcb8516ed122391204572190282" category="paragraph">创建 Connector 需要特定权限，而 Connector 实例本身也需要另一组权限。</block>
   <block id="dd5605419268a28968870a791ffa5636" category="section-title">创建 Connector 的权限</block>
   <block id="6c51ef2296d7715cb54f48c8d44f3afd" category="paragraph">从 Cloud Manager 创建 Connector 的用户需要特定权限才能在您选择的云提供商中部署此实例。Cloud Manager 将在您创建 Connector 时提醒您权限要求。</block>
-  <block id="d6ca6f9693d70349338d5cfc2a4ed14d" category="inline-link">查看每个云提供商的策略</block>
-  <block id="7a32c945ddaaec186092a26d2e60e8a1" category="paragraph"><block ref="97c1ddd30e350e4bba9005e77be36c2a" category="inline-link-rx"></block>。</block>
   <block id="6a0fd1625625b6ba22f292e6abf6c379" category="section-title">Connector 实例的权限</block>
   <block id="48705bd5c2f175e7ce9e54f37ca55748" category="paragraph">Connector 需要特定的云提供商权限才能代表您执行操作。例如，部署和管理 Cloud Volumes ONTAP 。</block>
   <block id="cc70da69df19fa8788685b364569f472" category="paragraph">直接从 Cloud Manager 创建 Connector 时， Cloud Manager 会使用所需权限创建 Connector 。您无需执行任何操作。</block>
   <block id="c5cb1aae8f24e840ca9afb72665913ba" category="paragraph">如果您自己从 AWS Marketplace ， Azure Marketplace 或通过手动安装软件来创建 Connector ，则需要确保已设置正确的权限。</block>
-  <block id="97c1ddd30e350e4bba9005e77be36c2a" category="paragraph"><block ref="97c1ddd30e350e4bba9005e77be36c2a" category="inline-link-rx"></block></block>
   <block id="97f74fde6498f04d18068ba31dd3c106" category="section-title">每个连接器的工作环境数量</block>
   <block id="22a7df47bcc01e95741806c9d0945bc4" category="paragraph">Connector 可以在 Cloud Manager 中管理多个工作环境。一个 Connector 应管理的最大工作环境数因情况而异。具体取决于工作环境的类型，卷数量，要管理的容量以及用户数量。</block>
   <block id="63e8317d7c5806dc1cb56752525c4d52" category="paragraph">如果您要进行大规模部署，请与 NetApp 代表合作来估算您的环境规模。如果您在此过程中遇到任何问题，请通过产品内聊天联系我们。</block>
@@ -1454,7 +1415,6 @@
   <block id="8160a46a5d4541efd7702f3fa8a2ecad" category="inline-link">在内部 ONTAP 集群之间复制数据</block>
   <block id="1b8412d43fb2448299621a31132c8729" category="list-text"><block ref="1b8412d43fb2448299621a31132c8729" category="inline-link-rx"></block></block>
   <block id="c4d9d6c8e652595e9d46970f56499783" category="inline-link-macro">了解如何升级 Connector</block>
-  <block id="873c98dded4257d9b65fdcad74460e91" category="paragraph">如果有新版本的 Connector 软件可用，则这些软件将发布到 NetApp 支持站点。 <block ref="c7624839f14a2e41667804d3cbb29094" category="inline-link-macro-rx"></block>。</block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="summary">已知限制确定了本产品版本不支持的平台、设备或功能、或者这些平台、设备或功能无法与产品正确交互操作。仔细审查这些限制。</block>
   <block id="482723983a4f2af954e36ff41e567451" category="doc">已知限制</block>
   <block id="47f2759fe4750b7d11811d254e4b55c3" category="paragraph">这些限制特定于 Cloud Manager 的设置和管理： Connector ， SaaS 平台等。</block>
@@ -1478,7 +1438,6 @@
   <block id="23f3047d4e3293aa33674f2e6fec99b0" category="summary">通过 Cloud Manager ，您可以选择部署 Cloud Volumes ONTAP 时要使用的 Azure 凭据。您可以使用初始 Azure 凭据部署所有 Cloud Volumes ONTAP 系统，也可以添加其他凭据。</block>
   <block id="1ab5193f89cf79df51fd4138318923ac" category="doc">Azure 凭据和权限</block>
   <block id="08a6159f6d9d986210470d2ab6dff166" category="section-title">初始 Azure 凭据</block>
-  <block id="86653ff5a858c68c1b4274e6ca323682" category="paragraph">从 Cloud Manager 部署 Connector 时，您需要使用有权部署 Connector 虚拟机的 Azure 帐户或服务主体。中列出了所需的权限<block ref="b213beea5dcffbdb5285c373f56890d9" category="inline-link-rx"></block>。</block>
   <block id="1985b326c07cdcb2a260ae0c0c6fde8d" category="inline-link">系统分配的受管身份</block>
   <block id="1f7df2f579ada06ecfbe6c7dd2202c0d" category="paragraph">当 Cloud Manager 在 Azure 中部署 Connector 虚拟机时，它会启用<block ref="3b529d5441a4ea26741352247ca08bac" category="inline-link-rx"></block> 在虚拟机上，创建自定义角色并将其分配给虚拟机。此角色为 Cloud Manager 提供了管理该 Azure 订阅中的资源和流程的权限。 <block ref="b33ffc79b09539d2f8a3c7bf7cc14d0e" category="inline-link-macro-rx"></block>。</block>
   <block id="451cb4f832557d9ef4df49bdebe02caa" category="inline-image-macro">一个概念映像，显示 Cloud Central 在 Azure 帐户和订阅中部署 Cloud Manager 。系统分配的受管身份将被启用，并为 Cloud Manager 虚拟机分配自定义角色。</block>
@@ -1498,8 +1457,6 @@
   <block id="7ae95d0cd91dd096febcd5adb599771a" category="paragraph">以上各节介绍了从 NetApp Cloud Central 为 Connector 推荐的部署方法。您也可以从在 Azure 中部署 Connector <block ref="42416828ae8ae7a901a48c71094e7a44" category="inline-link-macro-rx"></block>，您可以 <block ref="562eb722c78878c7a1bcbac21fbdef4a" category="inline-link-macro-rx"></block>。</block>
   <block id="65f0e30e3c24202dbbc18402c495e104" category="paragraph">如果您使用 Marketplace ，则会以相同方式提供权限。您只需手动创建并设置 Connector 的托管身份，然后为任何其他帐户提供权限即可。</block>
   <block id="67ae2bc9115f67bfaadac4861db76177" category="paragraph">对于内部部署，您不能为 Connector 设置托管身份，但可以像使用服务主体为其他帐户提供权限一样提供权限。</block>
-  <block id="7fe172a8a607498420f7616f4da0455f" category="doc">Azure 中连接器的所需权限</block>
-  <block id="dfc1e99a3d224664f0ac3cdfd535a957" category="paragraph">Cloud Manager Azure 策略包括 Cloud Manager 在 Azure 中部署和管理 Cloud Volumes ONTAP 所需的权限。</block>
   <block id="d97ba5e3e0f58b633ff060180e9fbaff" category="cell">Microsoft.Compute/locations/operations/read" ， Microsoft.Compute/locations/vmSizes/read" ， Microsoft.Compute/operations/read" ， Microsoft.Compute/virtualMachines/instanceView/read" ， Microsoft.Compute/virtualMachines/powerOff/action" ， Microsoft.Compute/virtualMachines/read" ， Microsoft.Compute/virtualMachines/restart/action" ， Microsoft.Compute/virtualMachines/start/action" ， Microsoft.Compute/virtualMachines/deallocate/action" ， Microsoft.Compute/virtualMachines/vmSizes/read" ， " Microsoft.Compute/virtualMachines/write" ，</block>
   <block id="03e844f92068480c699196ff085bc846" category="cell">创建 Cloud Volumes ONTAP 并停止、启动、删除和获取系统状态。</block>
   <block id="fd9c6454134af594d0f4aceb332bb30b" category="cell">"Microsoft.compute/images/write" 、 "Microsoft.compute/images/read" 、</block>
@@ -1564,8 +1521,6 @@
   <block id="a3e15006a0362130cf46b948ce3a5626" category="inline-link-macro">发现您的 Amazon S3 存储分段</block>
   <block id="3f48c5e9be05508878e1ceb77d8423a7" category="list-text"><block ref="3f48c5e9be05508878e1ceb77d8423a7" category="inline-link-macro-rx"></block></block>
   <block id="ca82fdd9a480fcc34a6b470f5ec8e908" category="inline-link-macro">配置代理设置</block>
-  <block id="91e052fcfd90f5b7f85fae79cd7c6174" category="doc">Google Cloud 中连接器的所需权限</block>
-  <block id="43db2d5daf3a0d765cb047fb4af50659" category="paragraph">适用于 GCP 的 Cloud Manager 策略包括 Cloud Manager 部署和管理 Cloud Volumes ONTAP 所需的权限。</block>
   <block id="8224e3db072d582bb34ae19441c597fe" category="cell">— compute.disks.create — compute.disks.createSnapshot — compute.disks.delete — compute.disks.get — compute.disks.list — compute.disks.setLabels — compute.disks.use</block>
   <block id="f66d598893a55fa43b7676b10c66160f" category="cell">为 Cloud Volumes ONTAP 创建和管理磁盘。</block>
   <block id="186d5d18725ed27ea017283ab0d492cb" category="cell">— compute.v防火墙 创建— compute.firewalls.delete — compute.v防火墙 .get — compute.v防火墙 列表</block>
@@ -1646,10 +1601,6 @@
   <block id="94b1721579eea40ee683582aae52b01e" category="paragraph">现在，已安装并设置 Connector 。您必须先授予 Azure 权限，然后用户才能在 Azure 中部署 Cloud Volumes ONTAP 。</block>
   <block id="53093f6c5402328654bf860d6c52db0a" category="section-title">正在授予 Azure 权限</block>
   <block id="74aac1234eeac8d40c64bd3b59349316" category="paragraph">在 Azure 中部署 Connector 时，您应已启用<block ref="3b529d5441a4ea26741352247ca08bac" category="inline-link-rx"></block>。现在，您必须先创建一个自定义角色，然后为一个或多个订阅的 Connector 虚拟机分配此角色，从而授予所需的 Azure 权限。</block>
-  <block id="e11f7121214115c4ddc44f09771f3e9e" category="list-text">使用云管理器策略创建自定义角色：</block>
-  <block id="c7b2945e2b0a5a7da818b9068fec84ff" category="paragraph">"Assignablesscaps" ： ["/subscriptions/d333af45-0d07-4154 － 943D-C25 FBzzzzz" 、 "/subscriptions/54b91999 － b3e6-4599 － 908e-416e0zzzzz" 、 "/subscription/398e471c － 3b4ae-7b5bzzz"</block>
-  <block id="6f9f22d6485de6a589f8f20d2b582c9e" category="paragraph">以下示例说明了如何使用 Azure CLI 2.0 创建自定义角色：</block>
-  <block id="fab06a69bdd687fda623071c212e3c11" category="paragraph">`AZ role definition create -role-definition C ： \Policy_for_cloud Manager_Azure_3.9.8.json`</block>
   <block id="5baa38c3e3ec02608b08189c2df5b21b" category="paragraph">现在，您应该拥有一个名为 Cloud Manager Operator 的自定义角色，可以将该角色分配给 Connector 虚拟机。</block>
   <block id="62f4ce6a86cc06fad623085534bfe52a" category="list-text">为一个或多个订阅向 Connector 虚拟机分配角色：</block>
   <block id="de9b3cb95daa3e2112ea5bcd079ad1aa" category="list-text">打开 * 订阅 * 服务，然后选择要部署 Cloud Volumes ONTAP 系统的订阅。</block>
@@ -1742,7 +1693,6 @@
   <block id="a28c11d82be2375d6506ed209153e0c1" category="paragraph">_ipaddress_ 可以是 localhost ，专用 IP 地址或公有 IP 地址，具体取决于主机的配置。例如，如果连接器位于公有云中且没有公有 IP 地址，则必须输入与连接器主机连接的主机的专用 IP 地址。</block>
   <block id="b0e633e4702fbdbe73bffa8e5b9663fc" category="list-text">请在 NetApp Cloud Central 上注册或登录。</block>
   <block id="156630a57ac224c7313133a17e096859" category="list-text">如果您在 Google Cloud 中安装了 Connector ，请设置一个服务帐户，该帐户具有 Cloud Manager 在项目中创建和管理 Cloud Volumes ONTAP 系统所需的权限。</block>
-  <block id="dad21ad29aa843d9f08c7fc6d2c256c5" category="list-text"><block ref="b3e2dfdb02c4ef9473e0b3fb573ce75f" category="inline-link-rx"></block> 其中包括中定义的权限<block ref="e91a62d6158aa053a2e619736c05b1a6" category="inline-link-rx"></block>。</block>
   <block id="78a0d16b70372e27005759683969aed9" category="inline-link">将此服务帐户与 Connector VM 关联</block>
   <block id="065c40fb33b56030d4bbcc42fcbf0d16" category="list-text"><block ref="1a9447e1a13f89edfdde92dee038b283" category="inline-link-rx"></block>。</block>
   <block id="7417256b782529e98b63441ae2ff45ea" category="list-text">登录后，设置 Cloud Manager ：</block>
@@ -1757,17 +1707,13 @@
   <block id="a376d701bcf6f33dfc99e261c767ae1e" category="list-text">Google Cloud ：请参见上文第 7 步</block>
   <block id="40d888ab986f8a54cf9072a0737f622d" category="doc">从 Cloud Manager 在 AWS 中创建连接器</block>
   <block id="24a6e24dbd4eec4ffe9ac5f4338dec68" category="paragraph">此页面介绍如何直接从 Cloud Manager 在 AWS 中创建 Connector 。 <block ref="f56df5f8b4fd558a7482d6115403eadd" category="inline-link-macro-rx"></block>。</block>
-  <block id="a5e94222d72ddc1fb2fdfd796ec40c93" category="list-text">在 AWS IAM 控制台中，通过复制并粘贴 Connector IAM 策略中的文本来创建您自己的策略。</block>
-  <block id="2d730f3a28c08580541e1585e4c3f134" category="list-text">将上一步中创建的策略附加到要从 Cloud Manager 创建 Connector 的 IAM 用户。</block>
   <block id="3faf40ec673a27da72957bee9f22e597" category="paragraph">AWS 用户现在具有从 Cloud Manager 创建 Connector 所需的权限。在 Cloud Manager 提示时，您需要为此用户指定 AWS 访问密钥。</block>
   <block id="555955942c711a4d2bbe3fdd1980539b" category="paragraph">您可以通过 Cloud Manager 直接从其用户界面在 AWS 中创建 Connector 。</block>
   <block id="696168c9b9e3d6be0b4ff452721f4186" category="list-text">您选择的 AWS 区域中的 VPC ，子网和密钥对。</block>
-  <block id="31394c3a86d99c92bf2cb604d7b8bd52" category="list-text">如果您不希望 Cloud Manager 自动为 Connector 创建 IAM 角色，则需要创建您自己的角色<block ref="a089a902a75ad2c7ce37bae7ba8de60b" category="inline-link-rx"></block>。</block>
   <block id="7cddf1ab764729128f3c7130203d73a0" category="list-text">选择 * Amazon Web Services* 作为您的云提供商，然后单击 * 继续 * 。</block>
   <block id="694c0d1ad033ac65143fd7073852f718" category="list-text">* 详细信息 * ：提供有关连接器的详细信息。</block>
   <block id="bb535485e7b97661af60ecc59e655498" category="list-text">输入实例的名称。</block>
   <block id="edda80be79ac3f7cac925a65c6a3e5b5" category="list-text">向实例添加自定义标记（元数据）。</block>
-  <block id="76248c9f08925cdddbdcf5f973612b9f" category="list-text">选择是希望 Cloud Manager 创建具有所需权限的新角色，还是要选择使用设置的现有角色<block ref="2fe36c4005f7d4d6030a3d009fe3d90e" category="inline-link-rx"></block>。</block>
   <block id="bc08dffbc581e8fd57ce1bac9b369e13" category="list-text">选择是否要对 Connector 的 EBS 磁盘进行加密。您可以选择使用默认加密密钥或自定义密钥。</block>
   <block id="9a5f9a8791099f371ab5a4d09e6974a7" category="list-text">* 网络 * ：指定实例的 VPC ，子网和密钥对，选择是否启用公有 IP 地址，并可选择指定代理配置。</block>
   <block id="9a803f44b0636f099b88c5cad1f6544a" category="summary">开始使用 Cloud Manager ，以便您可以开始使用 NetApp 的云服务跨混合多云管理数据。设置完成后，您可以管理您的 NetApp 帐户，连接器，云提供商帐户等。</block>
@@ -1853,7 +1799,6 @@
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">云网络研讨会</block>
   <block id="f350efde95c992c9fb3c75c0e8aefcf0" category="list-text">在 * 角色 * 选项卡中，选择 * Azure SetupAsService* 角色，然后单击 * 下一步 * 。</block>
   <block id="448746f589ceea8f1b3191a05fe6c57c" category="paragraph">将 AWS 凭据添加到 Connector ，以便它可以在其他 AWS 帐户中部署和管理 Cloud Volumes ONTAP 。您可以在其他帐户中提供 IAM 角色的 ARN ，也可以提供 AWS 访问密钥。</block>
-  <block id="a7670b1f58884f1ec2ecfbedc687193d" category="list-text">从查看连接器部署策略<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block></block>
   <block id="ba26e4556a0f160834687982b0479336" category="section-title">2022 年 2 月 27 日</block>
   <block id="3ac47455b10c6fb4061a70a91fdbfde2" category="section-title">2022 年 1 月 30 日</block>
   <block id="586301717819197e24001cac47efdaaa" category="section-title">2022 年 1 月 2 日</block>
@@ -1869,22 +1814,13 @@
   <block id="d42fa6c698bffd937b50724aa035c2cb" category="section-title">2021 年 2 月 9 日</block>
   <block id="56871f8b2603f3216127f57d5542b3ae" category="section-title">设置 AWS 身份验证</block>
   <block id="d86822a8a437c0121eb90d96b8941d16" category="paragraph">Cloud Manager 需要先向 AWS 进行身份验证，然后才能在 VPC 中部署 Connector 实例。您可以选择以下身份验证方法之一：</block>
-  <block id="c09f2e8bf26d5b89650345ce64a72729" category="list-text">让 Cloud Manager 承担 IAM 角色</block>
-  <block id="9090a5b56ee3987b74cdf74ad414661f" category="list-text">为 IAM 用户提供 AWS 访问密钥和机密密钥</block>
-  <block id="236a8e62b3972cd5f32e0bdf357731a7" category="paragraph">您使用的身份验证方法必须具有在 AWS 中部署 Connector 实例所需的权限。</block>
   <block id="30db7b9fd99be0ab8460cabb34938d21" category="section-title">设置 IAM 角色</block>
   <block id="50ddbbe6b962ea257339e20cddd80182" category="paragraph">设置一个 IAM 角色， Cloud Manager 可以承担此角色，以便在 AWS 中部署 Connector 。</block>
-  <block id="6def7e4cb7f5db1eb46c3ef625472320" category="list-text">从下载 Connector IAM 策略<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block>。</block>
-  <block id="030666f5f4873ade91adc709ec10ea4d" category="paragraph">此策略包含在 AWS 中创建 Connector 所需的权限。在 Cloud Manager 创建 Connector 时，它会将一组新的权限应用于 Connector 实例。</block>
   <block id="0e78dc7220ea8b6abafe6ef7aaad9998" category="list-text">转到目标帐户中的 AWS IAM 控制台。</block>
   <block id="eec3f9d91aeef5beb63d80162a34ba3b" category="list-text">选择 * 其他 AWS 帐户 * ，然后输入 Cloud Manager SaaS 帐户的 ID ： 952013314444</block>
-  <block id="cb7eb4c83c01cf01decd10b272ecd3de" category="list-text">创建一个包含先前下载的 Connector IAM 策略中所示权限的策略。</block>
-  <block id="171bb61bae05c7779ab40b861597ba33" category="list-text">复制 IAM 角色的角色 ARN ，以便您可以在创建 Connector 时将其粘贴到 Cloud Manager 中。</block>
   <block id="d47c23803528fa45fad33a3f83dfcf54" category="paragraph">IAM 角色现在具有所需的权限。</block>
   <block id="c3f217f9a4bf83b62b55576a453f4e95" category="section-title">为 IAM 用户设置权限</block>
   <block id="90f42b795a98a48d78b53e8d6d353987" category="paragraph">创建 Connector 时，您可以为拥有部署 Connector 实例所需权限的 IAM 用户提供 AWS 访问密钥和机密密钥。</block>
-  <block id="feeae7fc16d497b9cfb3dac7745882d8" category="list-text">从下载 Connector 部署策略<block ref="685f869a0580bc1af63188a3b940f7ac" category="inline-link-rx"></block>。</block>
-  <block id="2fee7712f844ac3827af8e70987e1692" category="paragraph">此 IAM 策略包括在 AWS 中创建 Connector 所需的权限。在 Cloud Manager 创建 Connector 时，它会将一组新的权限应用于 Connector 实例。</block>
   <block id="2148f456d9af28f7a3c6836b09b86d79" category="list-text">确保您有权访问 IAM 用户的访问密钥和机密密钥。</block>
   <block id="94ee7072c2750da1997438a715efb7d4" category="section-title">创建连接器</block>
   <block id="4f17567a3649c9a7e40e769fe63ec8b1" category="list-text">AWS 身份验证方法： Cloud Manager 可承担的 IAM 角色的 ARN ，或者 IAM 用户的 AWS 访问密钥和机密密钥。</block>
@@ -1907,7 +1843,6 @@
   <block id="d1640a3b53ec580119ad1efa519fa5a4" category="list-text"><block ref="d1640a3b53ec580119ad1efa519fa5a4" category="inline-link-rx"></block></block>
   <block id="571331341f9a044145a7015b8d5b9b03" category="list-text"><block ref="571331341f9a044145a7015b8d5b9b03" category="inline-link-rx"></block></block>
   <block id="a37da40b1cf1ce86308b603dbc497d9d" category="paragraph"><block ref="443587ef67dfdb72c89535a3fb85e4c4" category="inline-link-macro-rx"></block>。</block>
-  <block id="2ccfed3e301f0a6be8255ec614634e40" category="paragraph">从 Cloud Manager 部署 Connector 时，您需要为 IAM 用户提供 IAM 角色的 ARN 或访问密钥。您使用的身份验证方法必须具有在 AWS 中部署 Connector 实例所需的权限。中列出了所需的权限<block ref="9be18605563c3a58e34718e4132dfa94" category="inline-link-rx"></block>。</block>
   <block id="8ecde67149129962cfc66840199e548a" category="paragraph">当 Cloud Manager 在 AWS 中启动 Connector 实例时，它会为此实例创建 IAM 角色和实例配置文件。此外，它还会附加一个策略，为 Connector 提供管理该 AWS 帐户中资源和进程的权限。 <block ref="b8a131e0e4ba17426040261bffd33680" category="inline-link-macro-rx"></block>。</block>
   <block id="de60a486c1b92dffa7eb55af0b1c8bb0" category="paragraph">可以通过两种方式添加其他 AWS 凭据。</block>
   <block id="9a512cb6f8c6b3e4e3ee11942b6c1ca9" category="paragraph">向 Cloud Manager 添加新的 AWS 凭据可为 Cloud Manager 提供创建和管理适用于 ONTAP 的 FSX 工作环境或创建 Connector 所需的权限。</block>
@@ -1989,8 +1924,6 @@
   <block id="5e9d36e4528c82da2b7294c252e52427" category="list-text">要使Connector能够部署Cloud Volumes ONTAP 、需要新的AWS权限。</block>
   <block id="bfd761a70b5f9cd277ef7c878344df38" category="paragraph">现在、在单个可用性区域(AZ)中部署HA对时、创建AWS分布放置组需要以下权限：</block>
   <block id="0080f4096e51a12d4256890c125c5c46" category="paragraph">现在、要优化Cloud Manager创建布局组的方式、需要这些权限。</block>
-  <block id="eaf263597aafb24c99ce4e16af420ae8" category="inline-link">Cloud Manager 策略页面</block>
-  <block id="26dd25d183752a9f37249174f3d3ff89" category="paragraph">请务必为您添加到Cloud Manager的每组AWS凭据提供这些权限。您可以在上找到最新的权限列表<block ref="0e92ab1ca454f31f07a6e5fba6519a3a" category="inline-link-rx"></block>。</block>
   <block id="5e16db4c47abe8cb1c5bd746df2fd94a" category="section-title">2022 年 4 月 3 日</block>
   <block id="5dc3495f29e6f1332d6d809ba30cbf83" category="section-title">连接器3.9.17</block>
   <block id="dc45cdfe41bbcfa7f2d8bf1ed54a89ed" category="list-text">现在，您可以通过让 Cloud Manager 承担您在环境中设置的 IAM 角色来创建 Connector 。此身份验证方法比共享 AWS 访问密钥和机密密钥更安全。</block>
@@ -2030,18 +1963,11 @@
   <block id="27fe4eb3edbaff8f250e2d51f7462681" category="section-title">软件包</block>
   <block id="407c4e9fac86b98147da49acd4fa0d01" category="section-title">端口</block>
   <block id="3c29f8c71add9d192508a1409906b5cf" category="paragraph">此页面介绍如何直接从Cloud Manager在Google Cloud中创建Connector。 <block ref="f56df5f8b4fd558a7482d6115403eadd" category="inline-link-macro-rx"></block>。</block>
-  <block id="265157c47da67d7829e580d4e498814c" category="paragraph">在部署Connector之前、您需要确保Google Cloud帐户具有正确的权限、并且已为Connector VM设置服务帐户。</block>
-  <block id="e32a11bfee0ac384bf304116edad5b72" category="inline-link">适用于Google Cloud的连接器部署策略</block>
-  <block id="e31760fac1a7adfa41132adaff0abf52" category="list-text">确保部署Connector的Google Cloud用户在中具有权限<block ref="e51fdc439ac794ccecf0832f25d2c22b" category="inline-link-rx"></block>。</block>
-  <block id="b42f82c4ad27a30bff1121f55882a07c" category="inline-link">适用于Google Cloud的Cloud Manager策略</block>
-  <block id="c0dbffc55b00e76faab42aaa6e7e035b" category="list-text"><block ref="b3e2dfdb02c4ef9473e0b3fb573ce75f" category="inline-link-rx"></block> 其中包括中定义的权限<block ref="b2da2d8566bd2cf4941d85fc39037563" category="inline-link-rx"></block>。同样，您需要使用 gcloud 命令行。</block>
   <block id="bffde7130bcbd48dc4d26900909a6ec0" category="inline-link">创建Google Cloud服务帐户并应用您刚刚创建的自定义角色</block>
   <block id="8ffe57ff2d6f0334349512874d9ed89d" category="list-text"><block ref="e91ca9f63029ef70f3223d4f72fac132" category="inline-link-rx"></block>。</block>
-  <block id="4d146cf655f47126afe85429c3491d43" category="paragraph">现在、Google Cloud用户具有创建Connector所需的权限、并且已为Connector VM设置服务帐户。</block>
   <block id="c9c5c65fb4af9cf90eb99b3b84424189" category="cell">身份</block>
   <block id="229ac9492e379cef84bf38f29f6941cd" category="cell">用于部署Connector的Google帐户</block>
   <block id="a546c9049428d60032b181f2f82657b4" category="cell">服务项目</block>
-  <block id="7687e23e0eab2e92a5ee0cfc67ebab98" category="list-text"><block ref="7687e23e0eab2e92a5ee0cfc67ebab98" category="inline-link-rx"></block></block>
   <block id="0739a8d84cae34de0d2732632c0d3e8e" category="cell">在服务项目中部署Connector</block>
   <block id="483a6486004960ab28236293d3cf2bce" category="cell">连接器服务帐户</block>
   <block id="9165bdf7bcd983e5b9eeeea3649fe93d" category="cell">代表部署与Google Cloud API进行交互。允许 Cloud Manager 使用共享网络。</block>
@@ -2166,7 +2092,6 @@
   <block id="6060e8f925263dfdc63a751c294072e0" category="list-text">Google Cloud Storage发现</block>
   <block id="cb7056b970dafeecb7fd7cc3be301248" category="paragraph">在工作空间管理员创建 Cloud Volumes ONTAP 工作环境并使用上述任何其他服务之前，客户管理员需要先创建连接器。管理员可以通过多种方式创建Connector：</block>
   <block id="29a0d45ad000865bf5504b2da4dc6816" category="paragraph">以下各节介绍了如何对每个NetApp云服务使用权限。如果您的公司策略规定仅在需要时提供权限、则此信息会很有用。</block>
-  <block id="c6705240238244043d7e0d39f6ce1db1" category="section-title">AppTemplate标记</block>
   <block id="0cae22bc84eb90b52cc86e22b140eb0c" category="paragraph">在使用AppTemplate标记服务时、Connector会发出以下API请求来管理AWS资源上的标记：</block>
   <block id="693adfb773a054f1c9287da186e8ce5d" category="list-text">EC2：CreateTags</block>
   <block id="3a2cbdfb7b022d729d851d5052148241" category="list-text">EC2：DeleteTags</block>
@@ -2329,4 +2254,142 @@
   <block id="87d47630996394fbe848adac841d4925" category="paragraph">通知可跟踪您在Cloud Manager中启动的操作的进度、以便您验证操作是否成功。您可以通过它们查看当前登录会话期间启动的许多Cloud Manager操作的状态。目前、并非所有服务都会将信息报告到通知中心。</block>
   <block id="e8bcd4ad549fa51ff8495440daac2515" category="paragraph">*注意：*如果Connector安装在无法访问Internet的站点上、则不支持发送电子邮件通知。</block>
   <block id="5d85fadabc5fc8c195c36c4e3f0560e1" category="list-text">在Cloud Manager菜单栏中、单击*设置&gt;时间线*。</block>
+  <block id="4dc69c94d3a012316bf202425be2931b" category="paragraph">从 Cloud Manager 部署 Connector 时，您需要使用有权部署 Connector 虚拟机的 Azure 帐户或服务主体。中列出了所需的权限 <block ref="21b574a2506cebaac25d928c2c71e30c" category="inline-link-macro-rx"></block>。</block>
+  <block id="68eee87acea7aba9406b2232110c9ef1" category="paragraph">从 Cloud Manager 部署 Connector 时，您需要为 IAM 用户提供 IAM 角色的 ARN 或访问密钥。您使用的身份验证方法必须具有在 AWS 中部署 Connector 实例所需的权限。中列出了所需的权限 <block ref="44a7d63a6eb2c2f6422e9cdaac125624" category="inline-link-macro-rx"></block>。</block>
+  <block id="2042d03d6dd2d593f6fabfa8c7c0b91c" category="admonition">Cloud Manager Operator是Connector策略中提供的默认名称。如果您为角色选择了其他名称，请选择该名称。</block>
+  <block id="6534ae3540891eec0e4feef8e844bf94" category="list-text">创建自定义角色：</block>
+  <block id="94e19270110a66c15c7d6d1718fb017f" category="inline-link-macro">Connector的自定义角色权限</block>
+  <block id="3e75f6bb25578c951967e7bdcb93a618" category="list-text">复制的内容 <block ref="e41800fb708ad5eec4d221bf716e5746" category="inline-link-macro-rx"></block> 并将其保存在JSON文件中。</block>
+  <block id="c4781b51f102d0986224cfc0ac63e265" category="admonition">Cloud Manager Operator是Cloud Manager策略中提供的默认名称。如果您为角色选择了其他名称，请选择该名称。</block>
+  <block id="68d143cf782abb32ef2c0a2af3d73ed4" category="inline-link-macro">查看Connector的最新IAM策略</block>
+  <block id="09bd71829ddb9c7aa4915fa8ccecf682" category="paragraph">请务必为您添加到Cloud Manager的每组AWS凭据提供这些权限。 <block ref="43fc0841595bdc0f90ae6430b0122798" category="inline-link-macro-rx"></block>。</block>
+  <block id="c6327a576f1d9b438597322e6545500c" category="section-title">有关Azure地区的说明</block>
+  <block id="fdf818accfe04434a4c9fd9ccfe6d56c" category="list-text">在Azure中复制新自定义角色所需的权限、并将其保存在JSON文件中。</block>
+  <block id="ec0850dcc2018013f143e0c201414761" category="admonition">此策略仅包含从Cloud Manager在Azure中启动Connector VM所需的权限。请勿在其他情况下使用此策略。在Cloud Manager创建Connector时、它会将一组新的权限应用于Connector VM、从而使Connector能够管理公有 云环境中的资源。</block>
+  <block id="6beeae0bdc78c57583db2029e3f5c09d" category="list-text">通过将Azure订阅ID添加到可分配范围来修改JSON。</block>
+  <block id="4cca684df8c889c784e30e6f0215cff5" category="admonition">Azure SetupAsService是Azure的Connector部署策略中提供的默认名称。如果您为角色选择了其他名称，请选择该名称。</block>
+  <block id="bc3d26f932a03033b70d3ed650139a18" category="inline-link-macro">使用此页面上的策略</block>
+  <block id="abf8184d7235dd233e5934b1942aa0da" category="list-text">如果您不希望 Cloud Manager 自动为 Connector 创建 Azure 角色，则需要创建您自己的角色 <block ref="7706b04266d0a3d170ef3034140acd41" category="inline-link-macro-rx"></block>。</block>
+  <block id="2d9f6e18a46b9b5f0ff70453e504f154" category="list-text">* 详细信息 * ：输入实例的名称，指定标记，然后选择是希望 Cloud Manager 创建具有所需权限的新角色，还是要选择使用设置的现有角色 <block ref="b569336f779a413e2d7fa8c0ccb0306d" category="inline-link-macro-rx"></block>。</block>
+  <block id="ee287ea34a3a3f825af36a568d19db87" category="list-text">在AWS中设置权限：</block>
+  <block id="5233bb914244fc027aadf39f8fa71c54" category="inline-link-macro">Connector的IAM策略</block>
+  <block id="b64243bcb22e21e7e1467b54df4202dc" category="list-text">在IAM控制台中、通过复制和粘贴内容来创建您自己的策略 <block ref="9b22ee86ed2d831066d00816566458ca" category="inline-link-macro-rx"></block>。</block>
+  <block id="9037a544b6235ea8187a8635a58472a8" category="summary">要使用Cloud Manager中的功能和服务、您需要提供权限、以便Cloud Manager可以在您的云环境中执行操作。使用此页面上的链接快速访问Cloud Manager中所需的权限。</block>
+  <block id="b3a198480d00554547dd9e631862d78a" category="doc">Cloud Manager权限摘要</block>
+  <block id="67059685a450a23eec531851d108d003" category="paragraph">要使用Cloud Manager中的功能和服务、您需要提供权限、以便Cloud Manager可以在您的云环境中执行操作。使用此页面上的链接可根据您的目标快速访问所需的权限。</block>
+  <block id="d2c0c7feb18d0e89bab9d23b6ec4c042" category="section-title">AWS权限</block>
+  <block id="97e7c9a7d06eac006a28bf05467fcc8b" category="cell">链接。</block>
+  <block id="f56912566696fa3cc8524bcac5febbeb" category="cell">连接器部署</block>
+  <block id="8b9626d32b3b481da1af74e564a51d83" category="cell">从Cloud Manager创建Connector的用户需要特定权限才能在AWS中部署实例。</block>
+  <block id="d99414f8f5e20547ce6080dc0574cc4f" category="cell"><block ref="d99414f8f5e20547ce6080dc0574cc4f" category="inline-link-macro-rx"></block></block>
+  <block id="9d79131734042a17283af57f76b63c58" category="cell">连接器操作</block>
+  <block id="ad4c36428be81ec26bd2a1f8babc06cd" category="inline-link-macro">从市场启动Connector</block>
+  <block id="00232842735eab80a07d1168667e8d7f" category="inline-link-macro">向Connector添加更多AWS凭据</block>
+  <block id="24c395bc269fa5d88d7e4d108ba0da35" category="cell">Cloud Manager启动Connector时、它会将一个策略附加到实例、该实例提供管理AWS帐户中资源和进程所需的权限。如果需要、您需要自行设置策略 <block ref="787401877fd7ca3a591bfd314e63203c" category="inline-link-macro-rx"></block> 或者 <block ref="aec3821661a331ee5026b7ddbb2bcb98" category="inline-link-macro-rx"></block>。此外、您还需要确保在后续版本中添加新权限时策略是最新的。</block>
+  <block id="f8a3b3003a624ccf880a2b952a5d299a" category="cell"><block ref="f8a3b3003a624ccf880a2b952a5d299a" category="inline-link-macro-rx"></block></block>
+  <block id="0b7fc44a4fc16ca2deedd18213df11d0" category="cell">Cloud Volumes ONTAP 操作</block>
+  <block id="c956cc0566a3c85793fe60a934f62e93" category="cell">必须将IAM角色附加到AWS中的每个Cloud Volumes ONTAP 节点。HA调解器也是如此。默认选项是让Cloud Manager为您创建IAM角色、但您可以使用自己的角色。</block>
+  <block id="421a1f316880c0380ff3114c3bf34f83" category="inline-link">了解如何自己设置IAM角色</block>
+  <block id="ffbe386f72014cdbd78c6829e58132e4" category="cell"><block ref="ffbe386f72014cdbd78c6829e58132e4" category="inline-link-rx"></block></block>
+  <block id="bf689424a4d3a62d9c0d40a07107c3d2" category="section-title">Azure权限</block>
+  <block id="1f7f6c43fb083783f63bb348e6c78b02" category="cell">从Cloud Manager部署Connector时、您需要使用有权在Azure中部署Connector VM的Azure帐户或服务主体。</block>
+  <block id="833aa0eb30b79ccbf3b3b90cf590431c" category="cell"><block ref="833aa0eb30b79ccbf3b3b90cf590431c" category="inline-link-macro-rx"></block></block>
+  <block id="35e329ec26cbb29ccb69575550b85dbe" category="paragraph">当Cloud Manager在Azure中部署Connector VM时、它会创建一个自定义角色、此角色可提供在该Azure订阅中管理资源和进程所需的权限。</block>
+  <block id="652a30691608448a6f2f15a1d2bb02f5" category="inline-link-macro">向Connector添加更多Azure凭据</block>
+  <block id="4761b97d877b53fcd0d29188f8b2e501" category="paragraph">如果需要、您需要自己设置自定义角色 <block ref="308129c76f0376a995c0002ce47a9448" category="inline-link-macro-rx"></block> 或者 <block ref="3a714b4b67994f94abb2f77ce85a395b" category="inline-link-macro-rx"></block>。</block>
+  <block id="bcfaa2da0752134728f286af2b223842" category="paragraph">此外、您还需要确保在后续版本中添加新权限时策略是最新的。</block>
+  <block id="24cce65a483e1205b8ca7bc0bf14c6c9" category="paragraph"><block ref="24cce65a483e1205b8ca7bc0bf14c6c9" category="inline-link-macro-rx"></block></block>
+  <block id="d3846482b7a5f3467b05518965422219" category="section-title">Google Cloud权限</block>
+  <block id="63e458106cb32794874bcfc59dfde10d" category="cell">从Cloud Manager部署Connector的Google Cloud用户需要特定权限才能在Google Cloud中部署Connector。</block>
+  <block id="8bbd308345d88bc23fd26357cd36b8d9" category="inline-link-macro">设置部署Connector的权限</block>
+  <block id="7cc5ce266f83ca6bb61fcf1d69abc989" category="cell"><block ref="7cc5ce266f83ca6bb61fcf1d69abc989" category="inline-link-macro-rx"></block></block>
+  <block id="4615a4ef4e9a2046020762579b463f37" category="cell">Connector VM实例的服务帐户必须具有执行日常操作的特定权限。在从Cloud Manager部署服务帐户时、您需要将其与Connector相关联。此外、您还需要确保在后续版本中添加新权限时策略是最新的。</block>
+  <block id="6f49fc8cf495de2c87fc577f2c62e947" category="inline-link-macro">为Connector设置服务帐户</block>
+  <block id="484d2bdec1174d6a3be1f07dd5f249b3" category="cell"><block ref="484d2bdec1174d6a3be1f07dd5f249b3" category="inline-link-macro-rx"></block></block>
+  <block id="124a0238887f0e11fed151d258ffa9a1" category="summary">当Cloud Manager在Azure中启动Connector VM时、它会将一个自定义角色附加到该VM、从而使Connector能够管理该Azure订阅中的资源和进程。Connector使用权限对多个Azure服务进行API调用。</block>
+  <block id="9fbcb95374723e2f8d5b7c17a2ece586" category="section-title">自定义角色权限</block>
+  <block id="35065a906fcb04c8b9fad94c74ed75b6" category="paragraph">下面显示的自定义角色提供了Connector管理Azure网络中的资源和进程所需的权限。</block>
+  <block id="78c0255afda922e171f580cd42b43dc8" category="paragraph">直接从Cloud Manager创建Connector时、Cloud Manager会自动将此自定义角色应用于Connector。</block>
+  <block id="83b9ca4036ac15d5479b1b6947eb5d6b" category="paragraph">如果您从Azure Marketplace部署Connector、或者在Linux主机上手动安装Connector、则需要您自己设置自定义角色。</block>
+  <block id="c5078b96055d6b776ee265ca4c7650c2" category="paragraph">您还需要确保角色是最新的、因为在后续版本中添加了新权限。</block>
+  <block id="92ec95b8916ebc493b6546010073c81f" category="section-title">如何使用Azure权限</block>
+  <block id="ab75cfa6ae53348a737404e49985eb65" category="paragraph">如果有新版本的 Connector 软件可用，则这些软件将发布到 NetApp 支持站点。 <block ref="f17f7484922764d58b748b63a8956073" category="inline-link-macro-rx"></block>。</block>
+  <block id="940367e9614507c6040f5fd96db79244" category="summary">当Cloud Manager在AWS中启动Connector实例时、它会向此实例附加一个策略、此策略可为Connector提供管理该AWS帐户中资源和进程的权限。Connector使用这些权限对多个AWS服务进行API调用、包括EC2、S3、CloudFormation、IAM、 密钥管理服务等。</block>
+  <block id="3c73284cb0936bc8d2c30644f2659e9e" category="paragraph">当Cloud Manager在AWS中启动Connector实例时、它会向此实例附加一个策略、此策略可为Connector提供管理该AWS帐户中资源和进程的权限。Connector使用这些权限对多个AWS服务进行API调用、包括EC2、S3、CloudFormation、IAM、 密钥管理服务(KMS)等。</block>
+  <block id="4e1f839391e849a6065024e60ace4c38" category="section-title">IAM策略</block>
+  <block id="d4d0602f330087eb24859ead29d741c3" category="paragraph">下面显示的IAM策略提供了Connector根据您的AWS区域管理公有 云环境中的资源和流程所需的权限。</block>
+  <block id="94cdfbdecc16eb6caf53279c011b5b92" category="paragraph">直接从Cloud Manager创建Connector时、Cloud Manager会自动将此策略应用于Connector。</block>
+  <block id="4862cb85107f653706d201ef95242294" category="paragraph">如果您从AWS Marketplace部署Connector、或者在Linux主机上手动安装Connector、则需要自己设置策略。</block>
+  <block id="222ddb2f355a49f64fb3858123f2b97b" category="open-title">标准区域</block>
+  <block id="1411debdb32e6b128ca27ec92a708cbd" category="open-title">GovCloud (美国)地区</block>
+  <block id="a8416eae2db8c97eb943559351fab358" category="open-title">C2S环境</block>
+  <block id="7aeec8e03839d4257ba5f4202385f180" category="paragraph">= AWS权限的使用方式</block>
+  <block id="47a02297a8a7a625b8d56a1bf4ed5dcd" category="paragraph">== AppTemplate标记</block>
+  <block id="30ed8b0e985eaba7a7073c132f8cb03b" category="paragraph">==云备份</block>
+  <block id="67d4a69ca3cbae45477957d43a887a02" category="paragraph">==云数据感知</block>
+  <block id="a30f1c854df5756a9cc0eacb77ef62ce" category="paragraph">==云分层</block>
+  <block id="d0acc8326b3b20bd03e68cce411bbe59" category="paragraph">== Cloud Volumes ONTAP</block>
+  <block id="ae6217be8cef3f2bfa9e18fc14e3f6e5" category="paragraph">==全局文件缓存</block>
+  <block id="ef78c533302dd923d5ae17d103f26aae" category="paragraph">== Kubernetes</block>
+  <block id="6686aeeff6eb0de250e6d134bb4b8cd5" category="list-text">通过复制和粘贴内容来创建策略 <block ref="9b22ee86ed2d831066d00816566458ca" category="inline-link-macro-rx"></block>。</block>
+  <block id="f3a061f1a8165759dd31c8b1fe6bda72" category="list-text">在IAM控制台中、通过复制和粘贴内容来创建策略 <block ref="9b22ee86ed2d831066d00816566458ca" category="inline-link-macro-rx"></block>。</block>
+  <block id="3d35bba2e5ea6e739fb94736dc402017" category="inline-link">查看适用于 ONTAP 的 FSX 所需的权限</block>
+  <block id="df00618b6e4c6f7fcb9a7fbb4c65b54e" category="list-text"><block ref="df00618b6e4c6f7fcb9a7fbb4c65b54e" category="inline-link-rx"></block></block>
+  <block id="d2ec6bce44b6da11cd78a79db47dd385" category="inline-link-macro">查看连接器部署策略</block>
+  <block id="7722e2baf33400aae940b1e2a4e00eea" category="list-text"><block ref="7722e2baf33400aae940b1e2a4e00eea" category="inline-link-macro-rx"></block></block>
+  <block id="af09c9d6553dfbe0021a0452bc11211e" category="list-text">让Cloud Manager承担具有所需权限的IAM角色</block>
+  <block id="4964e9eef6df2fe316a2618afd8cd963" category="list-text">为具有所需权限的IAM用户提供AWS访问密钥和机密密钥</block>
+  <block id="176c8e3e6fabfa396e8a23e04654324a" category="paragraph">无论选择哪一种方式、您都需要首先创建一个包含所需权限的IAM策略。</block>
+  <block id="0fdc81bb400ca1e69ba8ff758bfa0311" category="section-title">创建IAM策略</block>
+  <block id="fc798a3e1f027a96227a1a78228762a2" category="paragraph">此策略仅包含从Cloud Manager在AWS中启动Connector实例所需的权限。请勿在其他情况下使用此策略。</block>
+  <block id="cdbc96d9f51b4a4cc0abf4a8a2d70333" category="paragraph">在Cloud Manager创建Connector时、它会将一组新的权限应用于Connector实例、从而使Connector能够管理公有 云环境中的资源。</block>
+  <block id="1e71ce7defc90d8f5a2c46c08ba968df" category="list-text">转到AWS IAM控制台。</block>
+  <block id="cda6184a38ec01634b0cabf02341cb56" category="list-text">单击*策略&gt;创建策略*。</block>
+  <block id="b52a6ab6cdcb340c9e1189b56821ffd8" category="list-text">单击*。JSON*。</block>
+  <block id="26d4a7a50dfbae842d907e3b8000633e" category="list-text">复制并粘贴以下策略：</block>
+  <block id="e46847d94dd6255ac0cabcdc93eed31f" category="list-text">单击*下一步*并根据需要添加标记。</block>
+  <block id="83f97720ed2c284e94fe989612d7ae1a" category="list-text">单击*下一步*并输入名称和问题描述。</block>
+  <block id="ab899735d36938b4c6cb8edd18a222e5" category="list-text">单击*创建策略*。</block>
+  <block id="888f9124d143a04d4aba749163e89d0b" category="paragraph">将此策略附加到Cloud Manager可以承担的IAM角色或IAM用户。</block>
+  <block id="dbab690717fb052924566c13e8768748" category="list-text">选择在上一节中创建的策略。</block>
+  <block id="4a105ee5824457bca6e51655f62430e8" category="list-text">创建角色后、复制角色ARN、以便您可以在创建Connector时将其粘贴到Cloud Manager中。</block>
+  <block id="380aef99fa69053a3675c5cd0a2aaee2" category="list-text">在AWS IAM控制台中、单击*用户*、然后选择用户名。</block>
+  <block id="91ae93d60d63596e2482a109b23c1290" category="list-text">单击*添加权限&gt;直接附加现有策略*。</block>
+  <block id="8bcbf62e98416780ffe2095559aba87a" category="list-text">选择创建的策略。</block>
+  <block id="7480dbf3472d377494469f75467b8989" category="list-text">单击*下一步*、然后单击*添加权限*。</block>
+  <block id="e0704797fef70128c24dd4546bea3df2" category="list-text">如果您不希望 Cloud Manager 自动为 Connector 创建 IAM 角色，则需要创建您自己的角色 <block ref="33c2e52293a8423cf2f0baa8f297e502" category="inline-link-macro-rx"></block>。</block>
+  <block id="f7f5e7e3e9ba567310782ed8cfddf80c" category="list-text">选择是希望 Cloud Manager 创建具有所需权限的新角色，还是要选择使用设置的现有角色 <block ref="8b098a06817becf62c06297dd76999b5" category="inline-link-macro-rx"></block>。</block>
+  <block id="dd35c8de0229dd896078da10fa6ca77d" category="inline-link-macro">GCP的连接器策略</block>
+  <block id="073869152f1998576e0d772f1465dce4" category="list-text"><block ref="b3e2dfdb02c4ef9473e0b3fb573ce75f" category="inline-link-rx"></block> 其中包括中定义的权限 <block ref="0557e57dd138b7d2b4d9ced6dcd6f706" category="inline-link-macro-rx"></block>。</block>
+  <block id="7d40e5b2df9f6a487aff23fae4508f3a" category="paragraph">在部署Connector之前、您需要确保Google Cloud帐户具有正确的权限。</block>
+  <block id="ba705115117b5dcb31d65899295aecf9" category="inline-link">创建自定义角色</block>
+  <block id="0aa183718a32c03ac7cbbaec481079e7" category="list-text"><block ref="096cb47a3a431ca48d961fc1d7d5bf4d" category="inline-link-rx"></block> 其中包括以下权限：</block>
+  <block id="2753360f5951ababc3a6aa09aa10aae3" category="list-text">将自定义角色附加到要从Cloud Manager部署Connector的用户。</block>
+  <block id="5da55b582cbca296c8d85616607ef88b" category="paragraph">Google Cloud用户现在具有创建Connector所需的权限。</block>
+  <block id="e92c53a75d4fe3a5a6d14cc447878464" category="paragraph">需要使用服务帐户为Connector提供在Google Cloud中管理资源所需的权限。创建此服务帐户时，您需要将其与 Connector VM 关联。</block>
+  <block id="a42abd0896ac3b5a1898196b7b272e89" category="paragraph">此服务帐户的权限与您在上一节中设置的权限不同。</block>
+  <block id="a4b90b417735642fce23ce0ce7441ca3" category="paragraph">已设置Connector VM的服务帐户。</block>
+  <block id="aecabcaa0f622aafe82a445d66cf8ca7" category="inline-link-macro">以上部分中的权限</block>
+  <block id="3c011542a6f32f96698424943f4c21db" category="list-text"><block ref="3c011542a6f32f96698424943f4c21db" category="inline-link-macro-rx"></block></block>
+  <block id="e99cec7b008996e3bd5b81e8019e24ba" category="list-text"><block ref="e99cec7b008996e3bd5b81e8019e24ba" category="inline-link-macro-rx"></block></block>
+  <block id="ffeb29f758cf37b9f2c9b599fb609031" category="list-text">您的Google Cloud帐户所需的权限、如本页面第一部分所述。</block>
+  <block id="f56eaa1aab7c91f2f987469fb824ff7a" category="inline-link-macro">查看所需的AWS权限</block>
+  <block id="c3eae6aa2c5fdc205f8fa520ed336419" category="list-text"><block ref="c3eae6aa2c5fdc205f8fa520ed336419" category="inline-link-macro-rx"></block></block>
+  <block id="bcccd030f9d90bb330cfffec45ec9788" category="inline-link-macro">查看所需的Azure权限</block>
+  <block id="f2917154cd33debbf5c614f3ed8d8432" category="list-text"><block ref="f2917154cd33debbf5c614f3ed8d8432" category="inline-link-macro-rx"></block></block>
+  <block id="e659e5bd7844b3de198ad057241f000c" category="inline-link-macro">查看所需的Google Cloud权限</block>
+  <block id="0d91890f70b2d05c1f747290c14ff72b" category="list-text"><block ref="0d91890f70b2d05c1f747290c14ff72b" category="inline-link-macro-rx"></block></block>
+  <block id="338a6f193e9988b8f40b3128d5e4ffb7" category="inline-link-macro">了解Connector如何使用AWS权限</block>
+  <block id="0e4f7db7cba89c0c2240f4376d660bcd" category="list-text"><block ref="0e4f7db7cba89c0c2240f4376d660bcd" category="inline-link-macro-rx"></block></block>
+  <block id="a039d4d02d5241a9510700b22c46787e" category="inline-link-macro">了解Connector如何使用Azure权限</block>
+  <block id="ed77eaa958b504a128d7cae7dddcc2e8" category="list-text"><block ref="ed77eaa958b504a128d7cae7dddcc2e8" category="inline-link-macro-rx"></block></block>
+  <block id="c642d46c647eb91ef90ede639948cb4e" category="inline-link-macro">了解Connector如何使用Google Cloud权限</block>
+  <block id="e3ab4c013397e346e8f211ff03ac44b2" category="list-text"><block ref="e3ab4c013397e346e8f211ff03ac44b2" category="inline-link-macro-rx"></block></block>
+  <block id="a5ff3790bcaa1d04dae7de637857bb65" category="paragraph">Cloud Manager需要在Google Cloud中执行操作的权限。这些权限包含在NetApp提供的自定义角色中。您可能希望了解 Cloud Manager 使用这些权限执行的操作。</block>
+  <block id="6b45b097205607d8631a7d487a76da98" category="section-title">服务帐户权限</block>
+  <block id="7ed95920f3d958d414a782a8af607000" category="paragraph">下面显示的自定义角色提供了Connector在Google Cloud网络中管理资源和进程所需的权限。</block>
+  <block id="60b59d59647a26f17a4decb8cfe7b702" category="inline-link-macro">查看分步说明</block>
+  <block id="ae81c7a36dd08cf53ecb511b4f9f0335" category="paragraph">您需要将此自定义角色应用于连接到Connector VM的服务帐户。 <block ref="1d7f634038d3d5655a7471210f5f8839" category="inline-link-macro-rx"></block>。</block>
+  <block id="823b2e7894c2b52c1e9adc9ea10b9be5" category="section-title">如何使用Google Cloud权限</block>
+  <block id="a4f605cd0aab29ee5fb50f28627cef5d" category="sidebar">权限摘要</block>
 </blocks>

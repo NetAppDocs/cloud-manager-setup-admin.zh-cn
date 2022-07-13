@@ -25,35 +25,198 @@ TIP: 在创建首个 Cloud Volumes ONTAP 工作环境时，如果您还没有连
 
 
 
-== 设置权限
+== 设置部署Connector的权限
 
-在部署Connector之前、您需要确保Google Cloud帐户具有正确的权限、并且已为Connector VM设置服务帐户。
+在部署Connector之前、您需要确保Google Cloud帐户具有正确的权限。
 
 .步骤
-. 确保部署Connector的Google Cloud用户在中具有权限 https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml["适用于Google Cloud的连接器部署策略"^]。
+. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["创建自定义角色"^] 其中包括以下权限：
 +
-https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["您可以使用 YAML 文件创建自定义角色"^] 然后将其附加到用户。您需要使用 gcloud 命令行创建角色。
+[source, yaml]
+----
+title: Connector deployment policy
+description: Permissions for the user who deploys the Connector from Cloud Manager
+stage: GA
+includedPermissions:
+- compute.disks.create
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.get
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.networks.updatePolicy
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- resourcemanager.projects.get
+- compute.instances.setServiceAccount
+- iam.serviceAccounts.list
+----
+. 将自定义角色附加到要从Cloud Manager部署Connector的用户。
 
-. 设置一个服务帐户，该帐户具有 Cloud Manager 在项目中创建和管理 Cloud Volumes ONTAP 系统所需的权限。
+
+Google Cloud用户现在具有创建Connector所需的权限。
+
+
+
+== 为Connector设置服务帐户
+
+需要使用服务帐户为Connector提供在Google Cloud中管理资源所需的权限。创建此服务帐户时，您需要将其与 Connector VM 关联。
+
+此服务帐户的权限与您在上一节中设置的权限不同。
+
+.步骤
+. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["创建自定义角色"^] 其中包括以下权限：
 +
-创建此服务帐户时，您需要将其与 Connector VM 关联。
+[source, yaml]
+----
+title: NetApp Cloud Manager
+description: Permissions for the service account associated with the Connector instance.
+stage: GA
+includedPermissions:
+- iam.serviceAccounts.actAs
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- compute.networks.updatePolicy
+- compute.backendServices.create
+- compute.addresses.list
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.addAccessConfig
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.delete
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.instances.getSerialPortOutput
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- compute.instances.setServiceAccount
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- logging.logEntries.list
+- logging.privateLogEntries.list
+- resourcemanager.projects.get
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+- storage.buckets.update
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list
+----
+. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["创建Google Cloud服务帐户并应用您刚刚创建的自定义角色"^]。
+. 如果要在其他项目中部署 Cloud Volumes ONTAP ， https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console["通过向该项目添加具有 Cloud Manager 角色的服务帐户来授予访问权限"^]。您需要对每个项目重复此步骤。
 
-+
-.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["在 GCP 中创建角色"^] 其中包括中定义的权限 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml["适用于Google Cloud的Cloud Manager策略"^]。同样，您需要使用 gcloud 命令行。
-+
-此 YAML 文件中包含的权限与步骤 1 中的权限不同。
 
-.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["创建Google Cloud服务帐户并应用您刚刚创建的自定义角色"^]。
-.. 如果要在其他项目中部署 Cloud Volumes ONTAP ， https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console["通过向该项目添加具有 Cloud Manager 角色的服务帐户来授予访问权限"^]。您需要对每个项目重复此步骤。
+已设置Connector VM的服务帐户。
 
 
 
-
-现在、Google Cloud用户具有创建Connector所需的权限、并且已为Connector VM设置服务帐户。
-
-
-
-=== 共享 VPC 权限
+== 共享 VPC 权限
 
 如果您使用共享 VPC 将资源部署到服务项目中，则需要以下权限。此表仅供参考，您的环境应在 IAM 配置完成后反映权限表。
 
@@ -63,7 +226,7 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 
 
 | 用于部署Connector的Google帐户 | 自定义 | 服务项目  a| 
-* https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml["在此 .yaml 文件中找到的权限"^]
+* link:task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector["以上部分中的权限"]
 
  a| 
 * compute.networkUser
@@ -72,7 +235,7 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 
 
 | 连接器服务帐户 | 自定义 | 服务项目  a| 
-* https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml["在此 .yaml 文件中找到的权限"^]
+* link:task-creating-connectors-gcp.html#set-up-permissions-for-the-connector["以上部分中的权限"]
 
  a| 
 * compute.networkUser
@@ -137,7 +300,7 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 直接从 Cloud Manager 用户界面或使用 gcloud 在 Google Cloud 中创建 Connector 。
 
 .您需要什么？ #8217 ；将需要什么
-* 。 https://mysupport.netapp.com/site/info/cloud-manager-policies["所需权限"^] 适用于您的 Google Cloud 帐户，如本页面第一部分所述。
+* 您的Google Cloud帐户所需的权限、如本页面第一部分所述。
 * Google Cloud 项目。
 * 一种具有创建和管理 Cloud Volumes ONTAP 所需权限的服务帐户，如本页面第一部分所述。
 * 您选择的 Google Cloud 区域中的 VPC 和子网。

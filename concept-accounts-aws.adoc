@@ -20,7 +20,7 @@ summary: 通过 Cloud Manager ，您可以选择部署 Cloud Volumes ONTAP 时�
 
 == 初始 AWS 凭据
 
-从 Cloud Manager 部署 Connector 时，您需要为 IAM 用户提供 IAM 角色的 ARN 或访问密钥。您使用的身份验证方法必须具有在 AWS 中部署 Connector 实例所需的权限。中列出了所需的权限 https://mysupport.netapp.com/site/info/cloud-manager-policies["AWS 的连接器部署策略"^]。
+从 Cloud Manager 部署 Connector 时，您需要为 IAM 用户提供 IAM 角色的 ARN 或访问密钥。您使用的身份验证方法必须具有在 AWS 中部署 Connector 实例所需的权限。中列出了所需的权限 link:task-creating-connectors-aws.html["AWS 的连接器部署策略"]。
 
 当 Cloud Manager 在 AWS 中启动 Connector 实例时，它会为此实例创建 IAM 角色和实例配置文件。此外，它还会附加一个策略，为 Connector 提供管理该 AWS 帐户中资源和进程的权限。 link:reference-permissions-aws.html["查看 Cloud Manager 如何使用权限"]。
 

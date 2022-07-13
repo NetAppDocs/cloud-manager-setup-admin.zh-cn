@@ -129,7 +129,7 @@ _ipaddress_ 可以是 localhost ，专用 IP 地址或公有 IP 地址，具体�
 . 请在 NetApp Cloud Central 上注册或登录。
 . 如果您在 Google Cloud 中安装了 Connector ，请设置一个服务帐户，该帐户具有 Cloud Manager 在项目中创建和管理 Cloud Volumes ONTAP 系统所需的权限。
 +
-.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["在 GCP 中创建角色"^] 其中包括中定义的权限 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml["适用于 GCP 的 Cloud Manager 策略"^]。
+.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["在 GCP 中创建角色"^] 其中包括中定义的权限 link:reference-permissions-gcp.html["GCP的连接器策略"]。
 .. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["创建 GCP 服务帐户并应用刚刚创建的自定义角色"^]。
 .. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes["将此服务帐户与 Connector VM 关联"^]。
 .. 如果要在其他项目中部署 Cloud Volumes ONTAP ， https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console["通过向该项目添加具有 Cloud Manager 角色的服务帐户来授予访问权限"^]。您需要对每个项目重复此步骤。

@@ -143,7 +143,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/mai
 现在、要优化Cloud Manager创建布局组的方式、需要这些权限。
 
 +
-请务必为您添加到Cloud Manager的每组AWS凭据提供这些权限。您可以在上找到最新的权限列表 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略页面"^]。
+请务必为您添加到Cloud Manager的每组AWS凭据提供这些权限。 link:reference-permissions-aws.html["查看Connector的最新IAM策略"]。
 
 
 

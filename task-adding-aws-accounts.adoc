@@ -82,7 +82,7 @@ NOTE: 从 Cloud Manager 部署 Connector 时， Cloud Manager 会自动为部署
 +
 ** 在 * 可信实体类型 * 下，选择 * AWS 帐户 * 。
 ** 选择 * 其他 AWS 帐户 * ，然后输入 Connector 实例所在帐户的 ID 。
-** 使用 Cloud Manager IAM 策略创建策略，该策略可从获得 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略页面"^]。
+** 通过复制和粘贴内容来创建策略 link:reference-permissions-aws.html["Connector的IAM策略"]。
 
 
 . 复制 IAM 角色的角色 ARN ，以便稍后将其粘贴到 Cloud Manager 中。
@@ -97,8 +97,7 @@ NOTE: 从 Cloud Manager 部署 Connector 时， Cloud Manager 会自动为部署
 如果要为 IAM 用户提供 Cloud Manager 的 AWS 密钥，则需要向该用户授予所需的权限。Cloud Manager IAM 策略定义了允许云管理器使用的 AWS 操作和资源。
 
 .步骤
-. 从下载 Cloud Manager IAM 策略 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略页面"^]。
-. 从 IAM 控制台，通过从 Cloud Manager IAM 策略复制和粘贴文本来创建您自己的策略。
+. 在IAM控制台中、通过复制和粘贴内容来创建策略 link:reference-permissions-aws.html["Connector的IAM策略"]。
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html["AWS 文档：创建 IAM 策略"^]
 
@@ -166,7 +165,9 @@ image:screenshot_accounts_switch_aws.png["单击详细信息和 amp ；凭据页
 ** 选择 * 其他 AWS 帐户 * 并输入 Cloud Manager SaaS 的 ID ： 952013314444
 ** 创建包含创建Connector所需权限的策略。
 +
-从查看连接器部署策略 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略页面"^]
+*** https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["查看适用于 ONTAP 的 FSX 所需的权限"^]
+*** link:task-creating-connectors-aws.html#create-an-iam-policy["查看连接器部署策略"]
+
 
 
 

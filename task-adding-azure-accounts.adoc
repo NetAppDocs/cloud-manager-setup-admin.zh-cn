@@ -40,7 +40,7 @@ summary: '创建 Cloud Volumes ONTAP 系统时，您需要选择要用于该系�
 *** 选择 * Cloud Manager Operator* 角色。
 +
 
-NOTE: Cloud Manager Operator 是中提供的默认名称 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 策略"]。如果您为角色选择了其他名称，请选择该名称。
+NOTE: Cloud Manager Operator是Connector策略中提供的默认名称。如果您为角色选择了其他名称，请选择该名称。
 
 *** 分配对 * 虚拟机 * 的访问权限。
 *** 选择创建 Connector 虚拟机的订阅。
@@ -120,12 +120,10 @@ image:screenshot_azure_ad.gif["显示了 Microsoft Azure 中的 Active Directory
 您必须将服务主体绑定到一个或多个 OnCommand 订阅，并为其分配自定义 "Cloud Manager 操作员 " 角色，以便 管理器在 Azure 中具有权限。
 
 .步骤
-. 下载 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager Azure 策略"^]。
+. 创建自定义角色：
 +
-
-TIP: 右键单击链接并单击 * 将链接另存为 ...* 以下载此文件。
-
-. 通过将 Azure 订阅 ID 添加到可分配范围来修改 JSON 文件。
+.. 复制的内容 link:reference-permissions-azure.html["Connector的自定义角色权限"] 并将其保存在JSON文件中。
+.. 通过将 Azure 订阅 ID 添加到可分配范围来修改 JSON 文件。
 +
 您应该为每个 Azure 订阅添加 ID 、用户将从中创建 Cloud Volumes ONTAP 系统。
 
@@ -140,26 +138,28 @@ TIP: 右键单击链接并单击 * 将链接另存为 ...* 以下载此文件。
 "/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
 "/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
 ----
-. 使用 JSON 文件在 Azure 中创建自定义角色。
+.. 使用 JSON 文件在 Azure 中创建自定义角色。
 +
 以下步骤介绍如何在 Azure Cloud Shell 中使用 Bash 创建角色。
 
 +
-.. start https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] 并选择 Bash 环境。
-.. 上传 JSON 文件。
+*** start https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] 并选择 Bash 环境。
+*** 上传 JSON 文件。
 +
 image:screenshot_azure_shell_upload.png["Azure Cloud Shell 的屏幕截图，您可以在其中选择上传文件的选项。"]
 
-.. 输入以下 Azure 命令行界面命令：
+*** 输入以下 Azure 命令行界面命令：
 +
 [source, azurecli]
 ----
-az role definition create --role-definition Policy_for_cloud_Manager_Azure_3.9.8.json
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
 ----
-
-
 +
-现在，您应具有一个名为 _Cloud Manager Operator_ 的自定义角色。
+现在，您应该拥有一个名为 Cloud Manager Operator 的自定义角色，可以将该角色分配给 Connector 虚拟机。
+
+
+
+
 
 . 将应用程序分配给角色：
 +

@@ -17,13 +17,9 @@ summary: 最好直接从 Cloud Manager 创建 Connector ，但如果您不想指
 最好直接从 Cloud Manager 创建 Connector ，但如果您不想指定 AWS 访问密钥，则可以从 AWS Marketplace 启动 Connector 。创建并设置 Connector 后， Cloud Manager 将在您创建新的工作环境时自动使用它。
 
 .步骤
-. 为 EC2 实例创建 IAM 策略和角色：
+. 在AWS中设置权限：
 +
-.. 从以下位置下载 Cloud Manager IAM 策略：
-+
-https://mysupport.netapp.com/site/info/cloud-manager-policies["NetApp Cloud Manager ： AWS ， Azure 和 GCP 策略"^]
-
-.. 从 IAM 控制台，通过从 Cloud Manager IAM 策略复制和粘贴文本来创建您自己的策略。
+.. 在IAM控制台中、通过复制和粘贴内容来创建您自己的策略 link:reference-permissions-aws.html["Connector的IAM策略"]。
 .. 创建角色类型为 Amazon EC2 的 IAM 角色，并将您在上一步骤中创建的策略附加到该角色。
 
 

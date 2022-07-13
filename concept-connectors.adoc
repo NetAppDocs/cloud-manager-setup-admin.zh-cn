@@ -134,7 +134,10 @@ summary: 大多数情况下，您需要在云或内部网络中部署 Connector 
 
 从 Cloud Manager 创建 Connector 的用户需要特定权限才能在您选择的云提供商中部署此实例。Cloud Manager 将在您创建 Connector 时提醒您权限要求。
 
-https://mysupport.netapp.com/site/info/cloud-manager-policies["查看每个云提供商的策略"^]。
+* link:task-creating-connectors-aws.html["查看所需的AWS权限"]
+* link:task-creating-connectors-azure.html["查看所需的Azure权限"]
+* link:task-creating-connectors-gcp.html["查看所需的Google Cloud权限"]
+
 
 
 
@@ -146,7 +149,10 @@ Connector 需要特定的云提供商权限才能代表您执行操作。例如�
 
 如果您自己从 AWS Marketplace ， Azure Marketplace 或通过手动安装软件来创建 Connector ，则需要确保已设置正确的权限。
 
-https://mysupport.netapp.com/site/info/cloud-manager-policies["查看每个云提供商的策略"^]
+* link:reference-permissions-aws.html["了解Connector如何使用AWS权限"]
+* link:reference-permissions-azure.html["了解Connector如何使用Azure权限"]
+* link:reference-permissions-gcp.html["了解Connector如何使用Google Cloud权限"]
+
 
 
 
