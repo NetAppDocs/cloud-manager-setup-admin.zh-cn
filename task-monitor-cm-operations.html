@@ -961,7 +961,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-03 15:53:52 +0000">07/03/2022</time>
+    <time datetime="2022-07-13 19:26:08 +0000">07/13/2022</time>
     
   
 
@@ -1020,7 +1020,7 @@
 <h2 id="使用通知中心监控活动">使用通知中心监控活动</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>通知可跟踪您在Cloud Manager中启动的操作的进度、以便您验证操作是否成功。您可以通过它们查看当前登录会话期间启动的许多Cloud Manager操作的状态。</p>
+<p>通知可跟踪您在Cloud Manager中启动的操作的进度、以便您验证操作是否成功。您可以通过它们查看当前登录会话期间启动的许多Cloud Manager操作的状态。目前、并非所有服务都会将信息报告到通知中心。</p>
 </div>
 <div class="paragraph">
 <p>您可以通过单击通知铃(<span class="image"><img src="./media/icon_bell.png" alt="通知铃"></span>）。铃中小气泡的颜色表示处于活动状态的最高级别严重性通知。因此，如果您看到红色气泡，则表示您应查看一条重要通知。</p>
@@ -1038,8 +1038,8 @@
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 31.25%;">
-<col style="width: 68.75%;">
+<col style="width: 27.5%;">
+<col style="width: 72.5%;">
 </colgroup>
 <thead>
 <tr>
@@ -1091,6 +1091,9 @@
 <h3 id="设置电子邮件通知设置">设置电子邮件通知设置</h3>
 <div class="paragraph">
 <p>您可以通过电子邮件发送特定类型的通知、以便即使未登录到Cloud Manager、您也可以了解重要的系统活动。您可以向NetApp帐户中的任何用户或需要了解某些类型的系统活动的任何其他收件人发送电子邮件。</p>
+</div>
+<div class="paragraph">
+<p>*注意：*如果Connector安装在无法访问Internet的站点上、则不支持发送电子邮件通知。</p>
 </div>
 <div class="paragraph">
 <p>默认情况下、客户管理员将收到所有"严重"和"建议"通知的电子邮件。默认情况下、所有其他用户和收件人都配置为不接收任何通知电子邮件。</p>
@@ -1173,7 +1176,7 @@
 <div class="title">步骤</div>
 <ol class="arabic">
 <li>
-<p>从左侧导航菜单中、选择*时间线*。</p>
+<p>在Cloud Manager菜单栏中、单击*设置&gt;时间线*。</p>
 </li>
 <li>
 <p>在筛选器下，单击 * 服务 * ，启用 * 租户 * ，然后单击 * 应用 * 。</p>
