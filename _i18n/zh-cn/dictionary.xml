@@ -1670,7 +1670,6 @@
   <block id="7fe2b3cad6e0fd3e01f58b23a9a48525" category="paragraph"><block ref="7fe2b3cad6e0fd3e01f58b23a9a48525" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3fc84828d29031ccb044fc851a791dd5" category="inline-link-macro">设置 NetApp 帐户</block>
   <block id="72c3eeaa29779a60f2efe95a1c173302" category="paragraph">有关分步说明，请参见 <block ref="2e63be6a139b9c6424fb3c44b74add23" category="inline-link-macro-rx"></block>。</block>
-  <block id="6b9aff54334b24c64be5688e6f9c12cc" category="section-title">MAX Cloud Volumes ONTAP 系统</block>
   <block id="ff73074ccafb0bcfc1c49a09ceb6532f" category="section-title">帐户设置</block>
   <block id="6f42c9f4b429467eb11ea5ae99b87c9d" category="paragraph">通过 Cloud Manager 中的 Manage Account 小工具，客户管理员可以管理 NetApp 帐户。如果您刚刚创建了帐户，则从头开始。但是，如果您已设置帐户，则会看到与该帐户关联的用户，工作空间，连接器和订阅。</block>
   <block id="e8d4079a6995ce39f10add4f26ab239b" category="paragraph">" 概述 " 页面将显示 " 帐户名称 " 和 " 帐户 ID" 。注册某些服务时，您可能需要提供帐户 ID 。此页面还包括一些 Cloud Manager 配置选项。</block>
@@ -2114,7 +2113,6 @@
   <block id="5c61dbbb22810fcf5149eb1192885607" category="cell">可以通过电子邮件向帐户用户和其他人发送通知</block>
   <block id="e92861fef775acb8c5a64f8d282a8b80" category="cell">无电子邮件功能</block>
   <block id="d6706ddca18dfba027152ceaeffb550e" category="section-title">使用通知中心监控活动</block>
-  <block id="18aff76a65beb281247b3066c1a37525" category="paragraph">通知可跟踪您在Cloud Manager中启动的操作的进度、以便您验证操作是否成功。您可以通过它们查看当前登录会话期间启动的许多Cloud Manager操作的状态。</block>
   <block id="5cf9ecbcae765efe1cb17d1c802e39cb" category="paragraph">您可以通过单击通知铃(<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。铃中小气泡的颜色表示处于活动状态的最高级别严重性通知。因此，如果您看到红色气泡，则表示您应查看一条重要通知。</block>
   <block id="6c836fac6db418cb1aa7dbc3dbd8ff62" category="inline-xref">设置电子邮件通知设置</block>
   <block id="411759a1626269084faceb1751fdaca6" category="paragraph">此外、您还可以将Cloud Manager配置为通过电子邮件发送通知、以便即使未登录到系统、您也能了解重要的系统活动。您可以将电子邮件发送给您的NetApp云帐户中的任何Cloud Central用户、也可以发送给需要了解某些类型的系统活动的任何其他收件人。请参见 <block ref="2fb0285882e9333d924eb054161cd903" category="inline-xref-macro-rx"></block> 。</block>
@@ -2151,7 +2149,6 @@
   <block id="acd827f1422fd31386324c56e2be6d81" category="inline-image-macro">显示如何为警报和通知添加新电子邮件收件人的屏幕截图。</block>
   <block id="5e56842d0cfbf695522e945a01570eba" category="paragraph"><block ref="5e56842d0cfbf695522e945a01570eba" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b434da4c5ce39b5e4a95ec5159a66676" category="list-text">输入姓名、电子邮件地址、选择收件人将收到的通知类型、然后单击*添加新收件人*。</block>
-  <block id="34cb1ceabae36f23fad53ac3e3680af5" category="list-text">从左侧导航菜单中、选择*时间线*。</block>
   <block id="19d38e2a40bebb64998474cbec167167" category="list-text">向现有Connector添加其他AWS凭据</block>
   <block id="2d85cb7a34de23c6b7db0459f207a310" category="paragraph">通过向现有连接器添加新的 AWS 凭据，您可以使用同一连接器在另一个 AWS 帐户中部署 Cloud Volumes ONTAP 。 <block ref="c25c39db29c727f1578fc8385e3c589b" category="inline-xref-macro-rx"></block>。</block>
   <block id="b43214d44180a6ca97389c1482285fbf" category="list-text">将AWS凭据添加到Cloud Manager以创建Connector</block>
@@ -2326,9 +2323,10 @@
   <block id="b272876bb8d27e636bb70f2dce15cb34" category="list-text">EKS：ListClusters</block>
   <block id="457a1b6178515d282232753f808e8cf5" category="list-text">EKS：Describe集群</block>
   <block id="53ac904630fdbb4d62f208e001934c7c" category="list-text">IAM：GetInstanceProfile</block>
-  <block id="7acc5c4a78b2f3e43bbeb07b9c5f8108" category="inline-link">了解有关此限制的更多信息</block>
-  <block id="b6eb1b17db480470497e94d3911d9e12" category="paragraph">每个NetApp帐户都限制为Cloud Volumes ONTAP 系统的最大数量。<block ref="ed7500cfb54e6cf775da8a8506d96f75" category="inline-link-rx"></block></block>
   <block id="1da5b30af8a0c5d1ce771dde6d9be98e" category="paragraph"><block ref="1da5b30af8a0c5d1ce771dde6d9be98e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0ce7c9606b5f3d67c288c6ffe90a846e" category="paragraph"><block ref="0ce7c9606b5f3d67c288c6ffe90a846e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="991b7c6e5c5e3b71cf64a28ea679cff0" category="paragraph"><block ref="8b6b603d70c42ac6b5c1db56412efc72" category="inline-link-rx"></block>。</block>
+  <block id="87d47630996394fbe848adac841d4925" category="paragraph">通知可跟踪您在Cloud Manager中启动的操作的进度、以便您验证操作是否成功。您可以通过它们查看当前登录会话期间启动的许多Cloud Manager操作的状态。目前、并非所有服务都会将信息报告到通知中心。</block>
+  <block id="e8bcd4ad549fa51ff8495440daac2515" category="paragraph">*注意：*如果Connector安装在无法访问Internet的站点上、则不支持发送电子邮件通知。</block>
+  <block id="5d85fadabc5fc8c195c36c4e3f0560e1" category="list-text">在Cloud Manager菜单栏中、单击*设置&gt;时间线*。</block>
 </blocks>
