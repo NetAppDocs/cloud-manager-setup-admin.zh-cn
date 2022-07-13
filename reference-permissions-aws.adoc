@@ -626,11 +626,16 @@ summary: 当Cloud Manager在AWS中启动Connector实例时、它会向此实例�
 }
 ----
 --
-= AWS权限的使用方式
+====
+
+
+== 如何使用AWS权限
 
 以下各节介绍了如何对每个NetApp云服务使用权限。如果您的公司策略规定仅在需要时提供权限、则此信息会很有用。
 
-== AppTemplate标记
+
+
+=== AppTemplate标记
 
 在使用AppTemplate标记服务时、Connector会发出以下API请求来管理AWS资源上的标记：
 
@@ -644,7 +649,9 @@ summary: 当Cloud Manager在AWS中启动Connector实例时、它会向此实例�
 * 标记：未标记资源
 
 
-==云备份
+
+
+=== 云备份
 
 Connector会发出以下API请求来部署Cloud Backup的还原实例：
 
@@ -711,7 +718,9 @@ Connector会发出以下API请求来管理Amazon S3中的备份：
 * 粘附：BatechDelete分区
 
 
-==云数据感知
+
+
+=== 云数据感知
 
 Connector发出以下API请求以部署Cloud Data sense实例：
 
@@ -761,7 +770,9 @@ Connector发出以下API请求以部署Cloud Data sense实例：
 * STS：AssumeRole
 
 
-==云分层
+
+
+=== 云分层
 
 在使用Cloud Tiering时、Connector会发出以下API请求、将数据分层到Amazon S3。
 
@@ -781,7 +792,9 @@ Connector发出以下API请求以部署Cloud Data sense实例：
 
 | EC2：Describe注册 | 是的。 | 是的。 
 |===
-== Cloud Volumes ONTAP
+
+
+=== Cloud Volumes ONTAP
 
 Connector会发出以下API请求、以便在AWS中部署和管理Cloud Volumes ONTAP。
 
@@ -1050,7 +1063,9 @@ Connector会发出以下API请求、以便在AWS中部署和管理Cloud Volumes 
 
 | EC2：ModifyVolume | 否 | 是的。 | 否 
 |===
-==全局文件缓存
+
+
+=== 全局文件缓存
 
 Connector会发出以下API请求、以便在部署期间部署全局文件缓存实例：
 
@@ -1059,7 +1074,9 @@ Connector会发出以下API请求、以便在部署期间部署全局文件缓�
 * CloudFormation：ListStack
 
 
-== Kubernetes
+
+
+=== Kubernetes
 
 Connector会发出以下API请求来发现和管理Amazon EKS集群：
 
@@ -1068,5 +1085,3 @@ Connector会发出以下API请求来发现和管理Amazon EKS集群：
 * EKS：Describe集群
 * IAM：GetInstanceProfile
 
-
-====
