@@ -699,6 +699,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 参考</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/reference-permissions.html">
+        权限摘要
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/reference-permissions-aws.html">
         Connector 的 AWS 权限
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/reference-permissions-azure.html">
         Connector 的 Azure 权限
@@ -961,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 14:21:46 +0000">05/09/2022</time>
+    <time datetime="2022-07-13 19:42:24 +0000">07/13/2022</time>
     
   
 
@@ -994,31 +998,202 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="设置权限">设置权限</h2>
+<h2 id="设置部署connector的权限">设置部署Connector的权限</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>在部署Connector之前、您需要确保Google Cloud帐户具有正确的权限、并且已为Connector VM设置服务帐户。</p>
+<p>在部署Connector之前、您需要确保Google Cloud帐户具有正确的权限。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步骤</div>
 <ol class="arabic">
 <li>
-<p>确保部署Connector的Google Cloud用户在中具有权限 <a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">"适用于Google Cloud的连接器部署策略"</a>。</p>
-<div class="paragraph">
-<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"您可以使用 YAML 文件创建自定义角色"</a> 然后将其附加到用户。您需要使用 gcloud 命令行创建角色。</p>
+<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"创建自定义角色"</a> 其中包括以下权限：</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">title: Connector deployment policy
+description: Permissions for the user who deploys the Connector from Cloud Manager
+stage: GA
+includedPermissions:
+- compute.disks.create
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.get
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.networks.updatePolicy
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- resourcemanager.projects.get
+- compute.instances.setServiceAccount
+- iam.serviceAccounts.list</code></pre>
+</div>
 </div>
 </li>
 <li>
-<p>设置一个服务帐户，该帐户具有 Cloud Manager 在项目中创建和管理 Cloud Volumes ONTAP 系统所需的权限。</p>
-<div class="paragraph">
-<p>创建此服务帐户时，您需要将其与 Connector VM 关联。</p>
+<p>将自定义角色附加到要从Cloud Manager部署Connector的用户。</p>
+</li>
+</ol>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"在 GCP 中创建角色"</a> 其中包括中定义的权限 <a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">"适用于Google Cloud的Cloud Manager策略"</a>。同样，您需要使用 gcloud 命令行。</p>
 <div class="paragraph">
-<p>此 YAML 文件中包含的权限与步骤 1 中的权限不同。</p>
+<p>Google Cloud用户现在具有创建Connector所需的权限。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="为connector设置服务帐户">为Connector设置服务帐户</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>需要使用服务帐户为Connector提供在Google Cloud中管理资源所需的权限。创建此服务帐户时，您需要将其与 Connector VM 关联。</p>
+</div>
+<div class="paragraph">
+<p>此服务帐户的权限与您在上一节中设置的权限不同。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud" target="_blank" rel="noopener">"创建自定义角色"</a> 其中包括以下权限：</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">title: NetApp Cloud Manager
+description: Permissions for the service account associated with the Connector instance.
+stage: GA
+includedPermissions:
+- iam.serviceAccounts.actAs
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- compute.networks.updatePolicy
+- compute.backendServices.create
+- compute.addresses.list
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.addAccessConfig
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.delete
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.instances.getSerialPortOutput
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- compute.instances.setServiceAccount
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- logging.logEntries.list
+- logging.privateLogEntries.list
+- resourcemanager.projects.get
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+- storage.buckets.update
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list</code></pre>
+</div>
 </div>
 </li>
 <li>
@@ -1029,14 +1204,14 @@
 </li>
 </ol>
 </div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
-<p>现在、Google Cloud用户具有创建Connector所需的权限、并且已为Connector VM设置服务帐户。</p>
+<p>已设置Connector VM的服务帐户。</p>
 </div>
-<div class="sect2">
-<h3 id="共享-vpc-权限">共享 VPC 权限</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="共享-vpc-权限">共享 VPC 权限</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>如果您使用共享 VPC 将资源部署到服务项目中，则需要以下权限。此表仅供参考，您的环境应在 IAM 配置完成后反映权限表。</p>
 </div>
@@ -1067,7 +1242,7 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml" target="_blank" rel="noopener">"在此 .yaml 文件中找到的权限"</a></p>
+<p><a href="task-creating-connectors-gcp.html#set-up-permissions-to-deploy-the-connector">"以上部分中的权限"</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -1087,7 +1262,7 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.10_GCP.yaml" target="_blank" rel="noopener">"在此 .yaml 文件中找到的权限"</a></p>
+<p><a href="task-creating-connectors-gcp.html#set-up-permissions-for-the-connector">"以上部分中的权限"</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -1180,7 +1355,6 @@
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
 <h2 id="启用-google-cloud-api">启用 Google Cloud API</h2>
 <div class="sectionbody">
@@ -1226,7 +1400,7 @@
 <div class="title">您需要什么？ #8217 ；将需要什么</div>
 <ul>
 <li>
-<p>。 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"所需权限"</a> 适用于您的 Google Cloud 帐户，如本页面第一部分所述。</p>
+<p>您的Google Cloud帐户所需的权限、如本页面第一部分所述。</p>
 </li>
 <li>
 <p>Google Cloud 项目。</p>

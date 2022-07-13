@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head class="at-element-marker">
-  <title>Google Cloud 中连接器的所需权限 | NetApp Documentation</title>
+  <title>适用于 Connector 的 Google Cloud 权限 | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Google Cloud 中连接器的所需权限 | NetApp Documentation" />
+  <meta property="og:title" content="适用于 Connector 的 Google Cloud 权限 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/reference-permissions-gcp.html" />
 	<meta property="og:description" content="Cloud Manager 需要在云提供商中执行操作的权限。这些权限包括在 NetApp 提供的策略中。您可能希望了解 Cloud Manager 使用这些权限执行的操作。" />
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[Google Cloud 中连接器的所需权限](https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/reference-permissions-gcp.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/reference-permissions-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />提供者指南</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[适用于 Connector 的 Google Cloud 权限](https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/reference-permissions-gcp.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/reference-permissions-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />提供者指南</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此页面上</div>
@@ -695,6 +695,8 @@
 
 
 
+
+
     <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
@@ -877,7 +879,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 参考</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/reference-permissions-aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/reference-permissions.html">
+        权限摘要
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/reference-permissions-aws.html">
         Connector 的 AWS 权限
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/reference-permissions-azure.html">
         Connector 的 Azure 权限
@@ -954,26 +958,142 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Google Cloud 中连接器的所需权限</h1>
+  <h1 class="n-doc__component-detail-heading">适用于 Connector 的 Google Cloud 权限</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 20:51:46 +0000">06/07/2022</time>
+    <time datetime="2022-07-13 19:42:24 +0000">07/13/2022</time>
     
   
 
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Manager 需要在云提供商中执行操作的权限。中包括这些权限 <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">"NetApp 提供的策略"</a>。您可能希望了解 Cloud Manager 使用这些权限执行的操作。</p>
+<p>Cloud Manager需要在Google Cloud中执行操作的权限。这些权限包含在NetApp提供的自定义角色中。您可能希望了解 Cloud Manager 使用这些权限执行的操作。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="服务帐户权限">服务帐户权限</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>下面显示的自定义角色提供了Connector在Google Cloud网络中管理资源和进程所需的权限。</p>
 </div>
 <div class="paragraph">
-<p>适用于 GCP 的 Cloud Manager 策略包括 Cloud Manager 部署和管理 Cloud Volumes ONTAP 所需的权限。</p>
+<p>您需要将此自定义角色应用于连接到Connector VM的服务帐户。 <a href="task-creating-connectors-gcp.html">"查看分步说明"</a>。</p>
 </div>
+<div class="paragraph">
+<p>您还需要确保角色是最新的、因为在后续版本中添加了新权限。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">title: NetApp Cloud Manager
+description: Permissions for the service account associated with the Connector instance.
+stage: GA
+includedPermissions:
+- iam.serviceAccounts.actAs
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- compute.networks.updatePolicy
+- compute.backendServices.create
+- compute.addresses.list
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.addAccessConfig
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.delete
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.instances.getSerialPortOutput
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.subnetworks.use
+- compute.subnetworks.useExternalIp
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- compute.instances.setServiceAccount
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- logging.logEntries.list
+- logging.privateLogEntries.list
+- resourcemanager.projects.get
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+- storage.buckets.update
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+- storage.objects.get
+- storage.objects.list</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="如何使用google-cloud权限">如何使用Google Cloud权限</h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -1104,6 +1224,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 
     </article>
     <!-- Page Container -->
