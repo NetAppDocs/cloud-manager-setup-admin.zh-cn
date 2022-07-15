@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head class="at-element-marker">
-  <title>从 AWS Marketplace 创建 Connector | NetApp Documentation</title>
+  <title>查看Azure Blob帐户 | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="从 AWS Marketplace 创建 Connector | NetApp Documentation" />
+  <meta property="og:title" content="查看Azure Blob帐户 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/task-launching-aws-mktp.html" />
-	<meta property="og:description" content="最好直接从 Cloud Manager 创建 Connector ，但如果您不想指定 AWS 访问密钥，则可以从 AWS Marketplace 启动 Connector 。创建并设置 Connector 后， Cloud Manager 将在您创建新的工作环境时自动使用它。" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/task-viewing-azure-blob.html" />
+	<meta property="og:description" content="在Azure中安装Connector后、Cloud Manager可以自动发现有关安装此Connector的Azure订阅中的Azure存储帐户的信息。Azure Blob工作环境已添加到Canvas中、您可以查看此信息。" />
   <meta property="og:image" content="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="最好直接从 Cloud Manager 创建 Connector ，但如果您不想指定 AWS 访问密钥，则可以从 AWS Marketplace 启动 Connector 。创建并设置 Connector 后， Cloud Manager 将在您创建新的工作环境时自动使用它。">
-  <meta name="keywords" content=" install connector, create connector, deploy connector, installation, installing, marketplace, aws, launch, launching, ec2 console, iam role"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="在Azure中安装Connector后、Cloud Manager可以自动发现有关安装此Connector的Azure订阅中的Azure存储帐户的信息。Azure Blob工作环境已添加到Canvas中、您可以查看此信息。">
+  <meta name="keywords" content=" blob storage, blob working environment, azure blob storage accounts, azure blob working environment"><!-- Icons -->
   <link rel="icon" href="/zh-cn/cloud-manager-setup-admin/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/zh-cn/cloud-manager-setup-admin/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[从 AWS Marketplace 创建 Connector](https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/task-launching-aws-mktp.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/task-launching-aws-mktp.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />提供者指南</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/issues/new?body=Page%3A%20[查看Azure Blob帐户](https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/task-viewing-azure-blob.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-setup-admin/images/discuss-sm.svg" alt="" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-setup-admin/blob/main/task-viewing-azure-blob.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/cloud-manager-setup-admin/images/edit-sm.svg" alt="" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/cloud-manager-setup-admin/images/article-sm.svg" alt="" class="github-icon" />提供者指南</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此页面上</div>
@@ -290,15 +290,15 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/task-launching-aws-mktp.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-setup-admin/task-viewing-azure-blob.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-viewing-azure-blob.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/task-launching-aws-mktp.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-setup-admin/task-viewing-azure-blob.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/cloud-manager-setup-admin/task-launching-aws-mktp.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-setup-admin/task-viewing-azure-blob.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/task-launching-aws-mktp.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-setup-admin/task-viewing-azure-blob.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -553,8 +553,6 @@
             高级部署
           </a>
           
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
-  
 
 
 
@@ -605,6 +603,8 @@
           
 
 
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
 
 
 
@@ -864,7 +864,7 @@
       <ul><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 高级部署</div>
       </a>
-      <ul><li class="  active "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/task-launching-aws-mktp.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/task-launching-aws-mktp.html">
         从 AWS Marketplace 创建
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/task-launching-azure-mktp.html">
         从 Azure Marketplace 创建
@@ -887,7 +887,7 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/task-viewing-amazon-s3.html">
         查看Amazon S3存储分段
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/task-viewing-azure-blob.html">
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/task-viewing-azure-blob.html">
         查看Azure Blob帐户
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/cloud-manager-setup-admin/task-viewing-gcp-storage.html">
         查看Google Cloud存储分段
@@ -996,7 +996,7 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">从 AWS Marketplace 创建 Connector</h1>
+  <h1 class="n-doc__component-detail-heading">查看Azure Blob帐户</h1>
 </div>
 
 
@@ -1011,111 +1011,42 @@
 </p>
 
 <div class="paragraph lead">
-<p>最好直接从 Cloud Manager 创建 Connector ，但如果您不想指定 AWS 访问密钥，则可以从 AWS Marketplace 启动 Connector 。创建并设置 Connector 后， Cloud Manager 将在您创建新的工作环境时自动使用它。</p>
+<p>在Azure中安装Connector后、Cloud Manager可以自动发现有关安装此Connector的Azure订阅中的Azure存储帐户的信息。Azure Blob工作环境已添加到Canvas中、您可以查看此信息。</p>
+</div>
+<div class="paragraph">
+<p>您可以查看有关Azure存储帐户的详细信息、包括位置、资源组、总容量和已用容量等。这些帐户可用作云备份、云分层或Cloud Sync 操作的目标。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步骤</div>
 <ol class="arabic">
 <li>
-<p>在AWS中设置权限：</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>在IAM控制台中、通过复制和粘贴内容来创建您自己的策略 <a href="reference-permissions-aws.html">"Connector的IAM策略"</a>。</p>
-</li>
-<li>
-<p>创建角色类型为 Amazon EC2 的 IAM 角色，并将您在上一步骤中创建的策略附加到该角色。</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>现在转到 <a href="https://aws.amazon.com/marketplace/pp/B018REK8QG" target="_blank" rel="noopener">"AWS Marketplace 上的 Cloud Manager 页面"</a> 从 AMI 部署 Cloud Manager 。</p>
+<p><a href="task-creating-connectors-azure.html">"安装连接器"</a> 在要查看Azure存储帐户的Azure帐户中。</p>
 <div class="paragraph">
-<p>IAM 用户必须具有 AWS Marketplace 权限才能订阅和取消订阅。</p>
+<p>之后不久、您将自动看到Azure Blob工作环境。</p>
 </div>
-</li>
-<li>
-<p>在 Marketplace 页面上，单击 * 继续订阅 * ，然后单击 * 继续配置 * 。</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_subscribe_cm.gif" alt="屏幕截图显示了 AWS Marketplace 上的 Continue to Subscribe and Continue to Configuration 按钮。"></span></p>
+<p><span class="image"><img src="./media/screenshot-azure-blob-we.png" alt="Azure Blob工作环境的屏幕截图。"></span></p>
 </div>
 </li>
 <li>
-<p>更改任何默认选项，然后单击 * 继续启动 * 。</p>
-</li>
-<li>
-<p>在 * 选择操作 * 下，选择 * 通过 EC2 启动 * ，然后单击 * 启动 * 。</p>
+<p>单击工作环境，然后从右窗格中选择一项操作。</p>
 <div class="paragraph">
-<p>以下步骤介绍了如何从 EC2 控制台启动实例，因为控制台允许您将 IAM 角色附加到 Cloud Manager 实例。使用 * 从网站启动 * 操作无法实现这一点。</p>
+<p><span class="image"><img src="./media/screenshot-azure-actions.png" alt="选择Azure Blob工作环境后显示操作窗格的屏幕截图。此窗格将显示存储帐户的总数以及使用Sync服务的操作。"></span></p>
 </div>
 </li>
 <li>
-<p>按照提示配置和部署实例：</p>
-<div class="ulist">
-<ul>
-<li>
-<p>* 选择实例类型 * ：根据区域可用性，选择支持的实例类型之一（建议使用 T3.xlarge ）。</p>
+<p>单击*同步数据*可将数据与Azure Blob存储同步或与Azure Blob存储同步。</p>
 <div class="paragraph">
-<p><a href="task-installing-linux.html">"查看实例要求"</a>。</p>
+<p>有关详细信息，请参见 <a href="https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html" target="_blank" rel="noopener">"Cloud Sync 服务概述"</a>。</p>
 </div>
 </li>
 <li>
-<p>* 配置实例 * ：选择一个 VPC 和子网，选择您在第 1 步中创建的 IAM 角色，启用终止保护（建议），然后选择符合您要求的任何其他配置选项。</p>
+<p>单击*进入工作环境*以查看有关Azure Blob中Azure存储帐户的详细信息。</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aws_iam_role.gif" alt="显示 AWS 中配置实例页面上的字段的屏幕截图。此时将选择您应在步骤 1 中创建的 IAM 角色。"></span></p>
-</div>
-</li>
-<li>
-<p>* 添加存储 * ：保留默认存储选项。</p>
-</li>
-<li>
-<p>* 添加标记 * ：根据需要输入实例的标记。</p>
-</li>
-<li>
-<p>* 配置安全组 * ：指定 Connector 实例所需的连接方法： SSH ， HTTP 和 HTTPS 。</p>
-</li>
-<li>
-<p>* 审阅 * ：查看您选择的内容，然后单击 * 启动 * 。</p>
-<div class="paragraph">
-<p>AWS 使用指定的设置启动软件。Connector 实例和软件应在大约五分钟内运行。</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>从已连接到 Connector 实例的主机打开 Web 浏览器，然后输入以下 URL ：</p>
-<div class="paragraph">
-<p>http://<em>ipaddress</em>:80[]</p>
-</div>
-</li>
-<li>
-<p>登录后，设置 Connector ：</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>指定要与 Connector 关联的 NetApp 帐户。</p>
-<div class="paragraph">
-<p><a href="concept-netapp-accounts.html">"了解 NetApp 客户"</a>。</p>
-</div>
-</li>
-<li>
-<p>输入系统名称。</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_set_up_cloud_manager.gif" alt="屏幕截图显示了 &quot;Set Up Connector&quot; 屏幕，可用于选择 NetApp 帐户并为系统命名。"></span></p>
+<p><span class="image"><img src="./media/screenshot-azure-blob-details.png" alt="显示Azure Blob工作环境详细信息的屏幕截图：存储帐户总数、位置总数、资源组、总容量和已用容量等。"></span></p>
 </div>
 </li>
 </ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>现在，您可以使用 NetApp 帐户安装并设置 Connector 。Cloud Manager 将在您创建新的工作环境时自动使用此 Connector 。但是，如果您有多个 Connector ，则需要 <a href="task-managing-connectors.html">"在它们之间切换"</a>。</p>
-</div>
-<div class="paragraph">
-<p>如果您在创建Connector的同一AWS帐户中有Amazon S3存储分段、则会在Canvas上自动显示Amazon S3工作环境。 <a href="task-viewing-amazon-s3.html">"详细了解如何使用此工作环境"</a>。</p>
 </div>
 
     </article>
