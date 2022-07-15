@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-viewing-gcp-storage.html 
+keywords: google cloud storage buckets, google cloud storage, google cloud storage working environment 
+summary: 在Google Cloud中安装Connector后、Cloud Manager可以自动发现有关安装Connector的Google帐户中的Google Cloud分段的信息。Google Cloud Storage工作环境已添加到Canvas中、您可以查看此信息。 
+---
+= 查看Google Cloud存储分段
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在Google Cloud中安装Connector后、Cloud Manager可以自动发现有关安装Connector的Google帐户中的Google Cloud存储分段的信息。Google Cloud Storage工作环境已添加到Canvas中、您可以查看此信息。
+
+您可以查看有关Google Cloud存储分段的详细信息、包括位置、访问状态、存储类、总容量和已用容量等。这些存储分段可用作云备份、云分层或Cloud Sync 操作的目标。
+
+.步骤
+. link:task-creating-connectors-gcp.html["安装连接器"] 在要查看Google Cloud存储分段的Google帐户中。
++
+之后、您应很快自动看到Google Cloud Storage工作环境。
+
++
+image:screenshot-gcp-cloud-storage-we.png["Google Cloud Storage工作环境的屏幕截图。"]
+
+. 单击工作环境，然后从右窗格中选择一项操作。
++
+image:screenshot-gcp-cloud-storage-actions.png["选择Google Cloud Storage工作环境后显示操作窗格的屏幕截图。此窗格将显示分段总数以及使用Sync服务的操作。"]
+
+. 单击*同步数据*可将数据同步到Google Cloud存储分段或从Google Cloud存储分段同步数据。
++
+有关详细信息，请参见 https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html["Cloud Sync 服务概述"^]。
+
+. 单击*进入工作环境*以查看有关Google帐户中各个存储分段的详细信息。
++
+image:screenshot-gcp-cloud-storage-details.png["显示Google Cloud Storage工作环境详细信息的屏幕截图：分段、容量和位置总数、然后显示每个分段详细信息的表。"]
+
+

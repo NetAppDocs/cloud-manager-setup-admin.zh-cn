@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-viewing-azure-blob.html 
+keywords: blob storage, blob working environment, azure blob storage accounts, azure blob working environment 
+summary: 在Azure中安装Connector后、Cloud Manager可以自动发现有关安装此Connector的Azure订阅中的Azure存储帐户的信息。Azure Blob工作环境已添加到Canvas中、您可以查看此信息。 
+---
+= 查看Azure Blob帐户
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在Azure中安装Connector后、Cloud Manager可以自动发现有关安装此Connector的Azure订阅中的Azure存储帐户的信息。Azure Blob工作环境已添加到Canvas中、您可以查看此信息。
+
+您可以查看有关Azure存储帐户的详细信息、包括位置、资源组、总容量和已用容量等。这些帐户可用作云备份、云分层或Cloud Sync 操作的目标。
+
+.步骤
+. link:task-creating-connectors-azure.html["安装连接器"] 在要查看Azure存储帐户的Azure帐户中。
++
+之后不久、您将自动看到Azure Blob工作环境。
+
++
+image:screenshot-azure-blob-we.png["Azure Blob工作环境的屏幕截图。"]
+
+. 单击工作环境，然后从右窗格中选择一项操作。
++
+image:screenshot-azure-actions.png["选择Azure Blob工作环境后显示操作窗格的屏幕截图。此窗格将显示存储帐户的总数以及使用Sync服务的操作。"]
+
+. 单击*同步数据*可将数据与Azure Blob存储同步或与Azure Blob存储同步。
++
+有关详细信息，请参见 https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html["Cloud Sync 服务概述"^]。
+
+. 单击*进入工作环境*以查看有关Azure Blob中Azure存储帐户的详细信息。
++
+image:screenshot-azure-blob-details.png["显示Azure Blob工作环境详细信息的屏幕截图：存储帐户总数、位置总数、资源组、总容量和已用容量等。"]
+
+

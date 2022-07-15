@@ -146,3 +146,5 @@ NOTE: Cloud Manager Operator是Cloud Manager策略中提供的默认名称。如
 
 
 现在， Connector 拥有管理公有云环境中的资源和流程所需的权限。Cloud Manager 将在您创建新的工作环境时自动使用此 Connector 。但是，如果您有多个 Connector ，则需要 link:task-managing-connectors.html["在它们之间切换"]。
+
+如果您在创建Connector的同一Azure帐户中使用Azure Blob存储、则会在Canvas上自动显示Azure Blob工作环境。 link:task-viewing-azure-blob.html["详细了解如何使用此工作环境"]。
