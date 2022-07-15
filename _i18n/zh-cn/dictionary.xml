@@ -2241,7 +2241,6 @@
   <block id="457a1b6178515d282232753f808e8cf5" category="list-text">EKS：Describe集群</block>
   <block id="53ac904630fdbb4d62f208e001934c7c" category="list-text">IAM：GetInstanceProfile</block>
   <block id="1da5b30af8a0c5d1ce771dde6d9be98e" category="paragraph"><block ref="1da5b30af8a0c5d1ce771dde6d9be98e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0ce7c9606b5f3d67c288c6ffe90a846e" category="paragraph"><block ref="0ce7c9606b5f3d67c288c6ffe90a846e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="991b7c6e5c5e3b71cf64a28ea679cff0" category="paragraph"><block ref="8b6b603d70c42ac6b5c1db56412efc72" category="inline-link-rx"></block>。</block>
   <block id="87d47630996394fbe848adac841d4925" category="paragraph">通知可跟踪您在Cloud Manager中启动的操作的进度、以便您验证操作是否成功。您可以通过它们查看当前登录会话期间启动的许多Cloud Manager操作的状态。目前、并非所有服务都会将信息报告到通知中心。</block>
   <block id="e8bcd4ad549fa51ff8495440daac2515" category="paragraph">*注意：*如果Connector安装在无法访问Internet的站点上、则不支持发送电子邮件通知。</block>
@@ -2430,4 +2429,5 @@
   <block id="449d304f6ee19f4cd91497b67641d687" category="paragraph"><block ref="2381483aa809d20dc8ed09c651a1b090" category="inline-link-macro-rx"></block>。</block>
   <block id="49056d93dd3cd3fc9129ebadcf6877e0" category="inline-link-macro">查看Cloud Manager的权限摘要</block>
   <block id="289c267aad7151f388f9cb33c2dd25ca" category="paragraph">我们还创建了一个页面、用于提供指向每个策略的链接。 <block ref="95fc2556330780df6dd239853ed18808" category="inline-link-macro-rx"></block>。</block>
+  <block id="75c4b088a92b16dc79074e212617e6c6" category="paragraph"><block ref="75c4b088a92b16dc79074e212617e6c6" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
