@@ -207,6 +207,8 @@ includedPermissions:
 - iam.serviceAccounts.list
 - storage.objects.get
 - storage.objects.list
+- monitoring.timeSeries.list
+- storage.buckets.getIamPolicy
 ----
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["创建Google Cloud服务帐户并应用您刚刚创建的自定义角色"^]。
 . 如果要在其他项目中部署 Cloud Volumes ONTAP ， https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console["通过向该项目添加具有 Cloud Manager 角色的服务帐户来授予访问权限"^]。您需要对每个项目重复此步骤。

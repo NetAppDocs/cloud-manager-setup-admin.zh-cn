@@ -122,6 +122,8 @@ includedPermissions:
 - iam.serviceAccounts.list
 - storage.objects.get
 - storage.objects.list
+- monitoring.timeSeries.list
+- storage.buckets.getIamPolicy
 ----
 
 
@@ -217,4 +219,7 @@ includedPermissions:
 
 
 | —compute.instanceGroups.get—compute.addresses。get | 在HA对上创建和管理Storage VM。 
+
+
+| —monitoration.timesery.list—storage.bames.getIamPolicy | 了解有关Google Cloud存储分段的信息。 
 |===
