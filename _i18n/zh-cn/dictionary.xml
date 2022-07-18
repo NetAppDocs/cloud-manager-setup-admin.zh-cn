@@ -2426,10 +2426,10 @@
   <block id="fd07056b3157389b873051e9d2dd6d40" category="section-title">策略更改</block>
   <block id="4c2e66937d2d8ba8680502b29c20f843" category="paragraph">我们通过直接在文档中添加Cloud Manager策略来更新文档。这意味着您现在可以查看Connector和Cloud Volumes ONTAP 所需的权限以及说明如何设置这些权限的步骤。以前可以从NetApp支持站点上的页面访问这些策略。</block>
   <block id="28f37fc0eb4fe20ff92020d4d8d46b8d" category="inline-link-macro">以下示例显示了用于创建Connector的AWS IAM角色权限</block>
-  <block id="449d304f6ee19f4cd91497b67641d687" category="paragraph"><block ref="2381483aa809d20dc8ed09c651a1b090" category="inline-link-macro-rx"></block>。</block>
   <block id="49056d93dd3cd3fc9129ebadcf6877e0" category="inline-link-macro">查看Cloud Manager的权限摘要</block>
-  <block id="289c267aad7151f388f9cb33c2dd25ca" category="paragraph">我们还创建了一个页面、用于提供指向每个策略的链接。 <block ref="95fc2556330780df6dd239853ed18808" category="inline-link-macro-rx"></block>。</block>
   <block id="75c4b088a92b16dc79074e212617e6c6" category="paragraph"><block ref="75c4b088a92b16dc79074e212617e6c6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="54f877a36cc65a39f4c972facb5d5a3d" category="cell">—monitoration.timesery.list—storage.bames.getIamPolicy</block>
   <block id="884e026d3505b2b3847b25f6cecb4de7" category="cell">了解有关Google Cloud存储分段的信息。</block>
+  <block id="2c6996f5a98ca1cbcfa64873c18f13e9" category="paragraph"><block ref="077586b4338f7fc9c66e0ae0e2365a30" category="inline-link-rx"></block>。</block>
+  <block id="2533820d9e3e679d169b5decdbf29c60" category="paragraph">我们还创建了一个页面、用于提供指向每个策略的链接。<block ref="3bc30da5781f88e99acbb8ce33011928" category="inline-link-rx"></block>。</block>
 </blocks>
